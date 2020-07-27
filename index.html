@@ -1,897 +1,665 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Liu">
+    
+    
+    
+    
+    
+    
+    <title>Hexo</title>
+    <link href="http://yoursite.com" rel="prefetch" />
 
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
 <link rel="stylesheet" href="/css/style.css">
 
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
 <meta name="generator" content="Hexo 4.2.1"></head>
-
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-css_note" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/27/css_note/" class="article-date">
-  <time datetime="2020-07-27T11:28:17.914Z" itemprop="datePublished">2020-07-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/27/css_note/">css_note</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="CSS-Study"><a href="#CSS-Study" class="headerlink" title="CSS Study"></a>CSS Study</h1><h2 id="一、CSS-初步"><a href="#一、CSS-初步" class="headerlink" title="一、CSS 初步"></a>一、CSS 初步</h2><hr>
-<h3 id="添加-CSS"><a href="#添加-CSS" class="headerlink" title="添加 CSS"></a>添加 CSS</h3><p><code>把 styles.css 和 index.html 联结起来，可以在HTML文档中，&lt;head&gt;语句模块里面加上下面的代码：</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel&#x3D;&quot;styesheet&quot; href&#x3D;&quot;styles.css&gt;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="二、构建-CSS-块"><a href="#二、构建-CSS-块" class="headerlink" title="二、构建 CSS 块"></a>二、构建 CSS 块</h2><hr>
-<h3 id="层叠与继承"><a href="#层叠与继承" class="headerlink" title="层叠与继承"></a>层叠与继承</h3><h4 id="1-冲突规则"><a href="#1-冲突规则" class="headerlink" title="1. 冲突规则"></a>1. 冲突规则</h4><ol>
-<li><h3 id="层叠"><a href="#层叠" class="headerlink" title="层叠"></a>层叠</h3> <code>Stylesheets cascade（样式表层叠） — 简单的说，css规则的顺序很重要；当应用两条同级别的规则到一个元素的时候，写在后面的就是实际使用的规则。</code></li>
-<li><h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><ul>
-<li><h4 id="一个元素选择器不是很具体-—-会选择页面上该类型的所有元素-—-所以它的优先级就会低一些。"><a href="#一个元素选择器不是很具体-—-会选择页面上该类型的所有元素-—-所以它的优先级就会低一些。" class="headerlink" title="一个元素选择器不是很具体 — 会选择页面上该类型的所有元素 — 所以它的优先级就会低一些。"></a><code>一个元素选择器不是很具体 — 会选择页面上该类型的所有元素 — 所以它的优先级就会低一些。</code></h4></li>
-<li><h4 id="一个类选择器稍微具体点-—-它会选择该页面中有特定-class-属性值的元素-—-所以它的优先级就要高一点。"><a href="#一个类选择器稍微具体点-—-它会选择该页面中有特定-class-属性值的元素-—-所以它的优先级就要高一点。" class="headerlink" title="一个类选择器稍微具体点 — 它会选择该页面中有特定 class 属性值的元素 — 所以它的优先级就要高一点。"></a><code>一个类选择器稍微具体点 — 它会选择该页面中有特定 class 属性值的元素 — 所以它的优先级就要高一点。</code></h4></li>
-</ul>
-</li>
-<li><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3> <code>如果设置一个元素的 color 和 font-family ，每个在里面的元素也都会有相同的属性，除非直接在元素上设置属性。</code><h4 id="2-理解继承"><a href="#2-理解继承" class="headerlink" title="2. 理解继承"></a>2. 理解继承</h4></li>
-<li><h3 id="控制继承"><a href="#控制继承" class="headerlink" title="控制继承"></a>控制继承</h3> <code>CSS 为控制继承提供了四个特殊的通用属性值。每个css属性都接收这些值。</code><ul>
-<li><h4 id="inherit设置该属性会使子元素属性和父元素相同。实际上，就是-quot-开启继承-quot"><a href="#inherit设置该属性会使子元素属性和父元素相同。实际上，就是-quot-开启继承-quot" class="headerlink" title="inherit设置该属性会使子元素属性和父元素相同。实际上，就是 &quot;开启继承&quot;."></a>inherit<code>设置该属性会使子元素属性和父元素相同。实际上，就是 &quot;开启继承&quot;.</code></h4></li>
-<li><h4 id="initial-设置属性值和浏览器默认样式相同。如果浏览器默认样式中未设置且该属性是自然继承的，那么会设置为-inherit-。"><a href="#initial-设置属性值和浏览器默认样式相同。如果浏览器默认样式中未设置且该属性是自然继承的，那么会设置为-inherit-。" class="headerlink" title="initial 设置属性值和浏览器默认样式相同。如果浏览器默认样式中未设置且该属性是自然继承的，那么会设置为 inherit 。"></a>initial <code>设置属性值和浏览器默认样式相同。如果浏览器默认样式中未设置且该属性是自然继承的，那么会设置为 inherit 。</code></h4></li>
-<li><h4 id="unset-将属性重置为自然值，也就是如果属性是自然继承那么就是-inherit，否则和-initial一样"><a href="#unset-将属性重置为自然值，也就是如果属性是自然继承那么就是-inherit，否则和-initial一样" class="headerlink" title="unset 将属性重置为自然值，也就是如果属性是自然继承那么就是 inherit，否则和 initial一样"></a>unset <code>将属性重置为自然值，也就是如果属性是自然继承那么就是 inherit，否则和 initial一样</code></h4></li>
-</ul>
-</li>
-<li><h3 id="重设所有属性值"><a href="#重设所有属性值" class="headerlink" title="重设所有属性值"></a>重设所有属性值</h3> <code>CSS 的 shorthand 属性 all 可以用于同时将这些继承值中的一个应用于（几乎）所有属性。它的值可以是其中任意一个(inherit, initial, unset, or revert)。这是一种撤销对样式所做更改的简便方法，以便回到之前已知的起点。</code></li>
-</ol>
-<hr>
-<h3 id="CSS-选择器"><a href="#CSS-选择器" class="headerlink" title="CSS 选择器"></a>CSS 选择器</h3><h4 id="1-选择器列表"><a href="#1-选择器列表" class="headerlink" title="1. 选择器列表"></a>1. 选择器列表</h4><p><code>单独的选择器可以被混编为一个“选择器列表”，这样，规则就可以应用到所有的单个选择器上,如果任何一个选择器无效 (存在语法错误)，那么整条规则都会被忽略。</code></p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">h1, .special &#123; </span><br><span class="line">    color: blue; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><h4 id="2-选择器的种类"><a href="#2-选择器的种类" class="headerlink" title="2. 选择器的种类"></a>2. 选择器的种类</h4><ol>
-<li><h3 id="类型、类、id选择器"><a href="#类型、类、id选择器" class="headerlink" title="类型、类、id选择器"></a>类型、类、id选择器</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123;&#125;   &#x2F;*类型选择器*&#x2F;</span><br><span class="line">.box &#123;&#125;  &#x2F;*类选择器*&#x2F;</span><br><span class="line">#unique &#123;&#125;  &#x2F;*ID 选择器*&#x2F;</span><br></pre></td></tr></table></figure></li>
-<li><h3 id="标签属性选择器"><a href="#标签属性选择器" class="headerlink" title="标签属性选择器"></a>标签属性选择器</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a[title] &#123; &#125; &#x2F;*根据一个元素上的某个标签的属性的存在以选择元素的不同方式*&#x2F;</span><br><span class="line">a[href&#x3D;&quot;https:&#x2F;&#x2F;example.com&quot;] &#123; &#125; &#x2F;*根据一个有特定值的标签属性是否存在来选择*&#x2F;</span><br></pre></td></tr></table></figure></li>
-<li><h3 id="伪类和伪元素"><a href="#伪类和伪元素" class="headerlink" title="伪类和伪元素"></a>伪类和伪元素</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*包含了伪类，用来样式化一个元素的特定状态*&#x2F;</span><br><span class="line">a:hover &#123; &#125;   &#x2F;*:hover伪类会在鼠标指针悬浮到一个元素上的时候选择这个元素：*&#x2F;</span><br><span class="line">&#x2F;*包含了伪元素，选择一个元素的某个部分而不是元素自己*&#x2F;</span><br><span class="line">p::first-line &#123; &#125;   &#x2F;*::first-line是会选择一个元素（下面的情况中是&lt;p&gt;）中的第一行，类似&lt;span&gt;包在了第一个被格式化的行外面，然后选择这个&lt;span&gt;。*&#x2F;</span><br></pre></td></tr></table></figure></li>
-<li><h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*将其他选择器组合起来，更复杂的选择元素*&#x2F;</span><br><span class="line">article &gt; p &#123; &#125;  &#x2F;*用运算符（&gt;）选择了&lt;article&gt;元素的初代子元素。*&#x2F;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><h4 id="1-块级盒子（Block-box）-和-内联盒子（Inline-box）"><a href="#1-块级盒子（Block-box）-和-内联盒子（Inline-box）" class="headerlink" title="1. 块级盒子（Block box） 和 内联盒子（Inline box）"></a>1. 块级盒子（Block box） 和 内联盒子（Inline box）</h4><ol>
-<li><h3 id="块级盒子（Block-box）标题-lt-h1-gt-等-和段落-lt-p-gt-默认情况下都是块级的盒子。"><a href="#块级盒子（Block-box）标题-lt-h1-gt-等-和段落-lt-p-gt-默认情况下都是块级的盒子。" class="headerlink" title="块级盒子（Block box）标题(&lt;h1&gt;等)和段落(&lt;p&gt;)默认情况下都是块级的盒子。"></a>块级盒子（Block box）<code>标题(&lt;h1&gt;等)和段落(&lt;p&gt;)默认情况下都是块级的盒子。</code></h3><ul>
-<li><h4 id="盒子会在内联的方向上扩展并占据父容器在该方向上的所有可用空间，在绝大数情况下意味着盒子会和父容器一样宽"><a href="#盒子会在内联的方向上扩展并占据父容器在该方向上的所有可用空间，在绝大数情况下意味着盒子会和父容器一样宽" class="headerlink" title="盒子会在内联的方向上扩展并占据父容器在该方向上的所有可用空间，在绝大数情况下意味着盒子会和父容器一样宽"></a><code>盒子会在内联的方向上扩展并占据父容器在该方向上的所有可用空间，在绝大数情况下意味着盒子会和父容器一样宽</code></h4></li>
-<li><h4 id="每个盒子都会换行"><a href="#每个盒子都会换行" class="headerlink" title="每个盒子都会换行"></a><code>每个盒子都会换行</code></h4></li>
-<li><h4 id="width-和-height-属性可以发挥作用"><a href="#width-和-height-属性可以发挥作用" class="headerlink" title="width 和 height 属性可以发挥作用"></a><code>width 和 height 属性可以发挥作用</code></h4></li>
-<li><h4 id="内边距（padding）-外边距（margin）-和-边框（border）-会将其他元素从当前盒子周围“推开”"><a href="#内边距（padding）-外边距（margin）-和-边框（border）-会将其他元素从当前盒子周围“推开”" class="headerlink" title="内边距（padding）, 外边距（margin） 和 边框（border） 会将其他元素从当前盒子周围“推开”"></a><code>内边距（padding）, 外边距（margin） 和 边框（border） 会将其他元素从当前盒子周围“推开”</code></h4></li>
-</ul>
-</li>
-<li><h3 id="内联盒子（Inline-box）-用做链接的-lt-a-gt-元素、-lt-span-gt-、-lt-em-gt-以及-lt-strong-gt-都是默认处于-inline-状态"><a href="#内联盒子（Inline-box）-用做链接的-lt-a-gt-元素、-lt-span-gt-、-lt-em-gt-以及-lt-strong-gt-都是默认处于-inline-状态" class="headerlink" title="内联盒子（Inline box） 用做链接的 &lt;a&gt; 元素、 &lt;span&gt;、 &lt;em&gt; 以及 &lt;strong&gt; 都是默认处于 inline 状态"></a>内联盒子（Inline box） <code>用做链接的 &lt;a&gt; 元素、 &lt;span&gt;、 &lt;em&gt; 以及 &lt;strong&gt; 都是默认处于 inline 状态</code></h3><ul>
-<li><h4 id="盒子不会产生换行。"><a href="#盒子不会产生换行。" class="headerlink" title="盒子不会产生换行。"></a><code>盒子不会产生换行。</code></h4></li>
-<li><h4 id="width-和-height-属性将不起作用。"><a href="#width-和-height-属性将不起作用。" class="headerlink" title="width 和 height 属性将不起作用。"></a><code>width 和 height 属性将不起作用。</code></h4></li>
-<li><h4 id="垂直方向的内边距、外边距以及边框会被应用但是不会把其他处于-inline-状态的盒子推开。"><a href="#垂直方向的内边距、外边距以及边框会被应用但是不会把其他处于-inline-状态的盒子推开。" class="headerlink" title="垂直方向的内边距、外边距以及边框会被应用但是不会把其他处于 inline 状态的盒子推开。"></a><code>垂直方向的内边距、外边距以及边框会被应用但是不会把其他处于 inline 状态的盒子推开。</code></h4></li>
-<li><h4 id="水平方向的内边距、外边距以及边框会被应用而且也会把其他处于-inline-状态的盒子推开。"><a href="#水平方向的内边距、外边距以及边框会被应用而且也会把其他处于-inline-状态的盒子推开。" class="headerlink" title="水平方向的内边距、外边距以及边框会被应用而且也会把其他处于 inline 状态的盒子推开。"></a><code>水平方向的内边距、外边距以及边框会被应用而且也会把其他处于 inline 状态的盒子推开。</code></h4><h4 id="2-CSS-盒模型"><a href="#2-CSS-盒模型" class="headerlink" title="2. CSS 盒模型"></a>2. CSS 盒模型</h4><code>完整的 CSS 盒模型应用于块级盒子，内联盒子只使用盒模型中定义的部分内容。模型定义了盒的每个部分 —— margin, border, padding, and content</code></li>
-</ul>
-</li>
-<li><h3 id="盒模型的各个部分"><a href="#盒模型的各个部分" class="headerlink" title="盒模型的各个部分"></a>盒模型的各个部分</h3><p> <img src="box-model.png" alt="BOX"></p>
-<ul>
-<li><h4 id="Content-box-这个区域是用来显示内容，大小可以通过设置-width-和-height"><a href="#Content-box-这个区域是用来显示内容，大小可以通过设置-width-和-height" class="headerlink" title="Content box: 这个区域是用来显示内容，大小可以通过设置 width 和 height."></a>Content box: <code>这个区域是用来显示内容，大小可以通过设置 width 和 height.</code></h4></li>
-<li><h4 id="Padding-box-包围在内容区域外部的空白区域；-大小通过-padding-相关属性设置。"><a href="#Padding-box-包围在内容区域外部的空白区域；-大小通过-padding-相关属性设置。" class="headerlink" title="Padding box: 包围在内容区域外部的空白区域； 大小通过 padding 相关属性设置。"></a>Padding box: <code>包围在内容区域外部的空白区域； 大小通过 padding 相关属性设置</code>。</h4></li>
-<li><h4 id="Border-box-边框盒包裹内容和内边距。大小通过-border-相关属性设置。"><a href="#Border-box-边框盒包裹内容和内边距。大小通过-border-相关属性设置。" class="headerlink" title="Border box: 边框盒包裹内容和内边距。大小通过 border 相关属性设置。"></a>Border box: <code>边框盒包裹内容和内边距。大小通过 border 相关属性设置。</code></h4></li>
-<li><h4 id="Margin-box-这是最外面的区域，是盒子和其他元素之间的空白区域。大小通过-margin-相关属性设置。"><a href="#Margin-box-这是最外面的区域，是盒子和其他元素之间的空白区域。大小通过-margin-相关属性设置。" class="headerlink" title="Margin box: 这是最外面的区域，是盒子和其他元素之间的空白区域。大小通过 margin 相关属性设置。"></a>Margin box: <code>这是最外面的区域，是盒子和其他元素之间的空白区域。大小通过 margin 相关属性设置。</code></h4></li>
-</ul>
-</li>
-<li><h3 id="标准盒模型"><a href="#标准盒模型" class="headerlink" title="标准盒模型"></a>标准盒模型</h3><p> <code>在标准模型 (标准模型宽度 = 410px (350 + 25 + 25 + 5 + 5)，高度 = 210px (150 + 25 + 25 + 5 + 5)，padding 加 border 再加 content box) 中，如果你给盒设置 width 和 height，实际设置的是 content box。 padding 和 border 再加上设置的宽高一起决定整个盒子的大小。</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 350px;</span><br><span class="line">    height: 150px;</span><br><span class="line">    margin: 25px;</span><br><span class="line">    padding: 25px;</span><br><span class="line">    border: 5px solid black;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
-<li><h3 id="替代（IE）盒模型"><a href="#替代（IE）盒模型" class="headerlink" title="替代（IE）盒模型"></a>替代（IE）盒模型</h3><p> <code>css还有一个替代盒模型。使用这个模型，所有宽度都是可见宽度，所以内容宽度是该宽度减去边框和填充部分。使用替代模型，通过为其设置 box-sizing: border-box 来实现。</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123; </span><br><span class="line">    box-sizing: border-box; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><h3 id="使用调试工具来查看盒模型-F12"><a href="#使用调试工具来查看盒模型-F12" class="headerlink" title="使用调试工具来查看盒模型 (F12)"></a>使用调试工具来查看盒模型 (F12)</h3><h4 id="3-外边距，内边距，边框-详细"><a href="#3-外边距，内边距，边框-详细" class="headerlink" title="3. 外边距，内边距，边框 (详细)"></a>3. 外边距，内边距，边框 (详细)</h4></li>
-<li><h3 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h3><p> <code>外边距属性值可以为正也可以为负。设置负值会导致和其他内容重叠。无论使用标准模型还是替代模型，外边距总是在计算可见部分后额外添加。</code></p>
-<ol>
-<li><h4 id="使用margin属性一次控制一个元素的所有边距，或者"><a href="#使用margin属性一次控制一个元素的所有边距，或者" class="headerlink" title="使用margin属性一次控制一个元素的所有边距，或者"></a>使用margin属性一次控制一个元素的所有边距，或者</h4></li>
-<li><h4 id="每边单独使用等价的普通属性控制："><a href="#每边单独使用等价的普通属性控制：" class="headerlink" title="每边单独使用等价的普通属性控制："></a>每边单独使用等价的普通属性控制：</h4><ul>
-<li><h4 id="margin"><a href="#margin" class="headerlink" title="margin"></a>margin</h4></li>
-<li><h4 id="margin-top"><a href="#margin-top" class="headerlink" title="margin-top"></a>margin-top</h4></li>
-<li><h4 id="margin-right"><a href="#margin-right" class="headerlink" title="margin-right"></a>margin-right</h4></li>
-<li><h4 id="margin-bottom"><a href="#margin-bottom" class="headerlink" title="margin-bottom"></a>margin-bottom</h4></li>
-<li><h4 id="margin-left"><a href="#margin-left" class="headerlink" title="margin-left"></a>margin-left</h4><h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2></li>
-</ul>
-</li>
-</ol>
-<ul>
-<li><h4 id="lt-length-gt-指定一个固定的宽度。可以为负数。"><a href="#lt-length-gt-指定一个固定的宽度。可以为负数。" class="headerlink" title="&lt;length&gt;:指定一个固定的宽度。可以为负数。"></a><code>&lt;length&gt;:指定一个固定的宽度。可以为负数。</code></h4></li>
-<li><h4 id="lt-percentage-gt-相对于该元素的包含块的宽度（相对于该块的百分比）。该值可以为负数。"><a href="#lt-percentage-gt-相对于该元素的包含块的宽度（相对于该块的百分比）。该值可以为负数。" class="headerlink" title="&lt;percentage&gt; 相对于该元素的包含块的宽度（相对于该块的百分比）。该值可以为负数。"></a><code>&lt;percentage&gt; 相对于该元素的包含块的宽度（相对于该块的百分比）。该值可以为负数。</code></h4></li>
-<li><h4 id="margin-auto-该盒子是水平居中的-上下边距为0"><a href="#margin-auto-该盒子是水平居中的-上下边距为0" class="headerlink" title="margin: auto;     /* 该盒子是水平居中的, 上下边距为0 */"></a>margin: auto;     /* 该盒子是水平居中的, 上下边距为0 */</h4>  <code>浏览器会自动选择一个合适的margin来应用。它可以用于将一个块居中。比如，div { width:50%;  margin:0 auto; } 会把这个div容器水平居中。</code><ul>
-<li><h5 id="只有一个-值时，这个值会被指定给全部的-四个边"><a href="#只有一个-值时，这个值会被指定给全部的-四个边" class="headerlink" title="只有一个  值时，这个值会被指定给全部的 四个边."></a><code>只有一个  值时，这个值会被指定给全部的 四个边.</code></h5></li>
-<li><h5 id="两个-值时，第一个值被匹配给-上和下-第二个值被匹配给-左和右"><a href="#两个-值时，第一个值被匹配给-上和下-第二个值被匹配给-左和右" class="headerlink" title="两个 值时，第一个值被匹配给 上和下, 第二个值被匹配给 左和右."></a><code>两个 值时，第一个值被匹配给 上和下, 第二个值被匹配给 左和右.</code></h5></li>
-<li><h5 id="三个-值时，第一个值被匹配给-上-第二个值被匹配给-左和右-第三个值被匹配给-下"><a href="#三个-值时，第一个值被匹配给-上-第二个值被匹配给-左和右-第三个值被匹配给-下" class="headerlink" title="三个 值时，第一个值被匹配给 上, 第二个值被匹配给 左和右, 第三个值被匹配给 下."></a><code>三个 值时，第一个值被匹配给 上, 第二个值被匹配给 左和右, 第三个值被匹配给 下.</code></h5></li>
-<li><h5 id="四个-值时，会依次按-上、右、下、左-的顺序匹配-即顺时针顺序"><a href="#四个-值时，会依次按-上、右、下、左-的顺序匹配-即顺时针顺序" class="headerlink" title="四个 值时，会依次按 上、右、下、左 的顺序匹配 (即顺时针顺序)."></a><code>四个 值时，会依次按 上、右、下、左 的顺序匹配 (即顺时针顺序).</code></h5></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h3 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h3><p> <code>边框是在边距和填充框之间绘制的。标准的盒模型，边框的大小将添加到框的宽度和高度。替代盒模型，那么边框的大小会使内容框更小，因为它会占用一些可用的宽度和高度。有四个边框，每个边框都有样式、宽度和颜色，我们可能需要对它们进行操作。</code></p>
-<ol>
-<li><h4 id="border属性一次设置所有四个边框的宽度、颜色和样式。"><a href="#border属性一次设置所有四个边框的宽度、颜色和样式。" class="headerlink" title="border属性一次设置所有四个边框的宽度、颜色和样式。"></a><code>border属性一次设置所有四个边框的宽度、颜色和样式。</code></h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123; </span><br><span class="line">    border: 1px solid black; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
- <strong>等价于</strong> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.box &#123; </span><br><span class="line">      border-width: 1px; </span><br><span class="line">      border-style: solid; </span><br><span class="line">      border-color: black; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><h4 id="分别设置每边的宽度、颜色和样式，可以使用："><a href="#分别设置每边的宽度、颜色和样式，可以使用：" class="headerlink" title="分别设置每边的宽度、颜色和样式，可以使用："></a><code>分别设置每边的宽度、颜色和样式，可以使用：</code></h4><ul>
-<li><h5 id="border-top"><a href="#border-top" class="headerlink" title="border-top"></a>border-top</h5></li>
-<li><h5 id="border-right"><a href="#border-right" class="headerlink" title="border-right"></a>border-right</h5></li>
-<li><h5 id="border-bottom"><a href="#border-bottom" class="headerlink" title="border-bottom"></a>border-bottom</h5></li>
-<li><h5 id="border-left"><a href="#border-left" class="headerlink" title="border-left"></a>border-left</h5></li>
-</ul>
-</li>
-<li><h4 id="设置所有边的颜色、样式或宽度，请使用以下属性："><a href="#设置所有边的颜色、样式或宽度，请使用以下属性：" class="headerlink" title="设置所有边的颜色、样式或宽度，请使用以下属性："></a><code>设置所有边的颜色、样式或宽度，请使用以下属性：</code></h4><ul>
-<li><h5 id="border-width"><a href="#border-width" class="headerlink" title="border-width"></a>border-width</h5></li>
-<li><h5 id="border-style"><a href="#border-style" class="headerlink" title="border-style"></a>border-style</h5></li>
-<li><h5 id="border-color"><a href="#border-color" class="headerlink" title="border-color"></a>border-color</h5></li>
-</ul>
-</li>
-<li><h4 id="设置单边的颜色、样式或宽度，可以使用最细粒度的普通属性之一"><a href="#设置单边的颜色、样式或宽度，可以使用最细粒度的普通属性之一" class="headerlink" title="设置单边的颜色、样式或宽度，可以使用最细粒度的普通属性之一"></a><code>设置单边的颜色、样式或宽度，可以使用最细粒度的普通属性之一</code></h4><ul>
-<li><h5 id="border-top-width"><a href="#border-top-width" class="headerlink" title="border-top-width"></a>border-top-width</h5></li>
-<li><h5 id="border-top-style"><a href="#border-top-style" class="headerlink" title="border-top-style"></a>border-top-style</h5></li>
-<li><h5 id="border-top-color"><a href="#border-top-color" class="headerlink" title="border-top-color"></a>border-top-color</h5></li>
-<li><h5 id="border-right-width"><a href="#border-right-width" class="headerlink" title="border-right-width"></a>border-right-width</h5></li>
-<li><h5 id="border-right-style"><a href="#border-right-style" class="headerlink" title="border-right-style"></a>border-right-style</h5></li>
-<li><h5 id="border-right-color"><a href="#border-right-color" class="headerlink" title="border-right-color"></a>border-right-color</h5></li>
-<li><h5 id="border-bottom-width"><a href="#border-bottom-width" class="headerlink" title="border-bottom-width"></a>border-bottom-width</h5></li>
-<li><h5 id="border-bottom-style"><a href="#border-bottom-style" class="headerlink" title="border-bottom-style"></a>border-bottom-style</h5></li>
-<li><h5 id="border-bottom-color"><a href="#border-bottom-color" class="headerlink" title="border-bottom-color"></a>border-bottom-color</h5></li>
-<li><h5 id="border-left-width"><a href="#border-left-width" class="headerlink" title="border-left-width"></a>border-left-width</h5></li>
-<li><h5 id="border-left-style"><a href="#border-left-style" class="headerlink" title="border-left-style"></a>border-left-style</h5></li>
-<li><h5 id="border-left-color"><a href="#border-left-color" class="headerlink" title="border-left-color"></a>border-left-color</h5></li>
-</ul>
-</li>
-<li><h4 id="圆角-border-radius"><a href="#圆角-border-radius" class="headerlink" title="圆角 border-radius"></a>圆角 border-radius</h4> <code>border-radius属性和与方框的每个角相关的长边来实现方框的圆角。可以使用两个长度或百分比作为值，第一个值定义水平半径，第二个值定义垂直半径。在很多情况下，您将只传递一个值，这两个值都将使用。</code><ul>
-<li><h5 id="使一个盒子的四个角都有10px的圆角半径："><a href="#使一个盒子的四个角都有10px的圆角半径：" class="headerlink" title="使一个盒子的四个角都有10px的圆角半径："></a><code>使一个盒子的四个角都有10px的圆角半径：</code></h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123; </span><br><span class="line">      border-radius: 10px; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><h5 id="右上角的水平半径为1em，垂直半径为10％："><a href="#右上角的水平半径为1em，垂直半径为10％：" class="headerlink" title="右上角的水平半径为1em，垂直半径为10％："></a><code>右上角的水平半径为1em，垂直半径为10％：</code></h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123; </span><br><span class="line">      border-top-right-radius: 1em 10%; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><h5 id="由方形变为圆"><a href="#由方形变为圆" class="headerlink" title="由方形变为圆"></a><code>由方形变为圆</code></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-</li>
-<li><h3 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h3><p> <code>内边距位于边框和内容区域之间。与外边距不同，不能有负数量的内边距，所以值必须是0或正的值。应用于元素的任何背景都将显示在内边距后面，内边距通常用于将内容推离边框。</code></p>
-<ol>
-<li><h4 id="使用padding简写属性控制元素所有边"><a href="#使用padding简写属性控制元素所有边" class="headerlink" title="使用padding简写属性控制元素所有边"></a><code>使用padding简写属性控制元素所有边</code></h4></li>
-<li><h4 id="每边单独使用等价的普通属性："><a href="#每边单独使用等价的普通属性：" class="headerlink" title="每边单独使用等价的普通属性："></a><code>每边单独使用等价的普通属性：</code></h4><ul>
-<li><h5 id="padding-top"><a href="#padding-top" class="headerlink" title="padding-top"></a>padding-top</h5></li>
-<li><h5 id="padding-right"><a href="#padding-right" class="headerlink" title="padding-right"></a>padding-right</h5></li>
-<li><h5 id="padding-bottom"><a href="#padding-bottom" class="headerlink" title="padding-bottom"></a>padding-bottom</h5></li>
-<li><h5 id="padding-left"><a href="#padding-left" class="headerlink" title="padding-left"></a>padding-left</h5><h4 id="4-使用display-inline-block"><a href="#4-使用display-inline-block" class="headerlink" title="4. 使用display: inline-block"></a>4. 使用display: inline-block</h4><code>display有一个特殊的值，它在内联和块之间提供了一个中间状态。这对于以下情况非常有用:不希望一个项切换到新行，但希望它可以设定宽度和高度，并避免上面看到的重叠。</code></li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<ul>
-<li><h4 id="一个元素使用-display-inline-block，实现我们需要的块级的部分效果："><a href="#一个元素使用-display-inline-block，实现我们需要的块级的部分效果：" class="headerlink" title="一个元素使用 display: inline-block，实现我们需要的块级的部分效果："></a><code>一个元素使用 display: inline-block，实现我们需要的块级的部分效果：</code></h4><ul>
-<li><h5 id="设置width-和height-属性会生效。"><a href="#设置width-和height-属性会生效。" class="headerlink" title="设置width 和height 属性会生效。"></a>设置width 和height 属性会生效。</h5></li>
-<li><h5 id="padding-margin-以及border-会推开其他元素。"><a href="#padding-margin-以及border-会推开其他元素。" class="headerlink" title="padding, margin, 以及border 会推开其他元素。"></a>padding, margin, 以及border 会推开其他元素。</h5></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="背景与边框"><a href="#背景与边框" class="headerlink" title="背景与边框"></a>背景与边框</h3><h4 id="1-CSS-的背景样式"><a href="#1-CSS-的背景样式" class="headerlink" title="1. CSS 的背景样式"></a>1. CSS 的背景样式</h4><ol>
-<li><h3 id="背景颜色-background-color"><a href="#背景颜色-background-color" class="headerlink" title="背景颜色 background-color"></a>背景颜色 background-color</h3> <code>background-color属性定义了CSS中任何元素的背景颜色。属性接受任何有效的&lt;color&gt;值。背景色扩展到元素的内容和内边距的下面。</code></li>
-<li><h3 id="背景图片-background-image"><a href="#背景图片-background-image" class="headerlink" title="背景图片 background-image"></a>背景图片 background-image</h3> <code>background-image属性允许在元素的背景中显示图像。</code><ul>
-<li><h4 id="控制背景平铺-background-repeat"><a href="#控制背景平铺-background-repeat" class="headerlink" title="控制背景平铺 background-repeat"></a>控制背景平铺 background-repeat</h4>  <code>background-repeat属性用于控制图像的平铺行为。可用的值是:</code><ul>
-<li><h5 id="no-repeat-—-不重复。"><a href="#no-repeat-—-不重复。" class="headerlink" title="no-repeat — 不重复。"></a>no-repeat — 不重复。</h5></li>
-<li><h5 id="repeat-x-—水平重复。"><a href="#repeat-x-—水平重复。" class="headerlink" title="repeat-x —水平重复。"></a>repeat-x —水平重复。</h5></li>
-<li><h5 id="repeat-y-—垂直重复。"><a href="#repeat-y-—垂直重复。" class="headerlink" title="repeat-y —垂直重复。"></a>repeat-y —垂直重复。</h5></li>
-<li><h5 id="repeat-—-在两个方向重复。"><a href="#repeat-—-在两个方向重复。" class="headerlink" title="repeat — 在两个方向重复。"></a>repeat — 在两个方向重复。</h5></li>
-</ul>
-</li>
-<li><h4 id="调整背景图像的大小-background-size"><a href="#调整背景图像的大小-background-size" class="headerlink" title="调整背景图像的大小  background-size"></a>调整背景图像的大小  background-size</h4>  <code>background-size属性，它可以设置长度或百分比值，来调整图像的大小以适应背景。也可以使用关键字:</code><ul>
-<li><h5 id="cover-—浏览器将使图像足够大，使它完全覆盖了盒子区，同时仍然保持其高宽比。在这种情况下，有些图像可能会跳出盒子外"><a href="#cover-—浏览器将使图像足够大，使它完全覆盖了盒子区，同时仍然保持其高宽比。在这种情况下，有些图像可能会跳出盒子外" class="headerlink" title="cover —浏览器将使图像足够大，使它完全覆盖了盒子区，同时仍然保持其高宽比。在这种情况下，有些图像可能会跳出盒子外"></a>cover —<code>浏览器将使图像足够大，使它完全覆盖了盒子区，同时仍然保持其高宽比。在这种情况下，有些图像可能会跳出盒子外</code></h5></li>
-<li><h5 id="contain-—-浏览器将使图像的大小适合盒子内。在这种情况下，如果图像的长宽比与盒子的长宽比不同，则可能在图像的任何一边或顶部和底部出现间隙。"><a href="#contain-—-浏览器将使图像的大小适合盒子内。在这种情况下，如果图像的长宽比与盒子的长宽比不同，则可能在图像的任何一边或顶部和底部出现间隙。" class="headerlink" title="contain — 浏览器将使图像的大小适合盒子内。在这种情况下，如果图像的长宽比与盒子的长宽比不同，则可能在图像的任何一边或顶部和底部出现间隙。"></a>contain — <code>浏览器将使图像的大小适合盒子内。在这种情况下，如果图像的长宽比与盒子的长宽比不同，则可能在图像的任何一边或顶部和底部出现间隙。</code></h5></li>
-</ul>
-</li>
-<li><h4 id="背景图像定位-background-position"><a href="#背景图像定位-background-position" class="headerlink" title="背景图像定位  background-position"></a>背景图像定位  background-position</h4>  <code>background-position属性允许您选择背景图像显示在其应用到的盒子中的位置。它使用的坐标系中，框的左上角是(0,0) (默认)，框沿着水平(x)和垂直(y)轴定位。</code><ul>
-<li><h5 id="常见的背景位置值有两个单独的值——一个水平值后面跟着一个垂直值。"><a href="#常见的背景位置值有两个单独的值——一个水平值后面跟着一个垂直值。" class="headerlink" title="常见的背景位置值有两个单独的值——一个水平值后面跟着一个垂直值。`"></a>常见的背景位置值有两个单独的值——一个水平值后面跟着一个垂直值。`</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.box &#123; </span><br><span class="line">      background-image: url(star.png); </span><br><span class="line">      background-repeat: no-repeat; </span><br><span class="line">      background-position: top center; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><h5 id="或者使用-长度值-and-百分比："><a href="#或者使用-长度值-and-百分比：" class="headerlink" title="或者使用 长度值, and 百分比："></a><code>或者使用 长度值, and 百分比：</code></h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.box &#123; </span><br><span class="line">      background-image: url(star.png); </span><br><span class="line">      background-repeat: no-repeat; </span><br><span class="line">      background-position: 20px 10%; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><h5 id="混合使用关键字，长度值以及百分比"><a href="#混合使用关键字，长度值以及百分比" class="headerlink" title="混合使用关键字，长度值以及百分比"></a><code>混合使用关键字，长度值以及百分比</code></h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">      background-image: url(star.png);</span><br><span class="line">      background-repeat: no-repeat;</span><br><span class="line">      background-position: top 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><h5 id="4-value语法来指示到盒子的某些边的距离"><a href="#4-value语法来指示到盒子的某些边的距离" class="headerlink" title="4-value语法来指示到盒子的某些边的距离"></a><code>4-value语法来指示到盒子的某些边的距离</code></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.box &#123; </span><br><span class="line">      background-image: url(star.png); </span><br><span class="line">      background-repeat: no-repeat; </span><br><span class="line">      background-position: top 20px right 10px; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><h4 id="渐变背景"><a href="#渐变背景" class="headerlink" title="渐变背景"></a>渐变背景</h4>  <code>使用background-image属性设置。</code></li>
-<li><h4 id="多背景图像"><a href="#多背景图像" class="headerlink" title="多背景图像"></a>多背景图像</h4>  <code>在单个属性值中指定多个background-image值，用逗号分隔每个值，会发生图像重叠.其他 background-*属性也可以有值逗号分隔的方式休市对应的的background-image：</code>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background-image: url(image1.png), url(image2.png), url(image3.png), url(image1.png);</span><br><span class="line">background-repeat: no-repeat, repeat-x, repeat;</span><br></pre></td></tr></table></figure></li>
-<li><h4 id="背景附加"><a href="#背景附加" class="headerlink" title="背景附加"></a>背景附加</h4>  <code>指定如何滚动时，内容滚动。这是由background-attachment属性控制的，它可以接受以下值:</code><ul>
-<li><h5 id="scroll-使元素的背景在页面滚动时滚动。如果滚动了元素内容，则背景不会移动。实际上，背景被固定在页面的相同位置，所以它会随着页面的滚动而滚动。"><a href="#scroll-使元素的背景在页面滚动时滚动。如果滚动了元素内容，则背景不会移动。实际上，背景被固定在页面的相同位置，所以它会随着页面的滚动而滚动。" class="headerlink" title="scroll:使元素的背景在页面滚动时滚动。如果滚动了元素内容，则背景不会移动。实际上，背景被固定在页面的相同位置，所以它会随着页面的滚动而滚动。"></a>scroll:<code>使元素的背景在页面滚动时滚动。如果滚动了元素内容，则背景不会移动。实际上，背景被固定在页面的相同位置，所以它会随着页面的滚动而滚动。</code></h5></li>
-<li><h5 id="fixed-使元素的背景固定在视图端口上，这样当页面或元素内容滚动时，它就不会滚动。它将始终保持在屏幕上相同的位置。"><a href="#fixed-使元素的背景固定在视图端口上，这样当页面或元素内容滚动时，它就不会滚动。它将始终保持在屏幕上相同的位置。" class="headerlink" title="fixed: 使元素的背景固定在视图端口上，这样当页面或元素内容滚动时，它就不会滚动。它将始终保持在屏幕上相同的位置。"></a>fixed: <code>使元素的背景固定在视图端口上，这样当页面或元素内容滚动时，它就不会滚动。它将始终保持在屏幕上相同的位置。</code></h5></li>
-<li><h5 id="local-这个值是后来添加的-它只在Internet-Explorer-9-中受支持，而其他的在IE4-中受支持-，因为滚动值相当混乱，在很多情况下并不能真正实现您想要的功能。局部值将背景固定在设置的元素上，因此当您滚动元素时，背景也随之滚动。"><a href="#local-这个值是后来添加的-它只在Internet-Explorer-9-中受支持，而其他的在IE4-中受支持-，因为滚动值相当混乱，在很多情况下并不能真正实现您想要的功能。局部值将背景固定在设置的元素上，因此当您滚动元素时，背景也随之滚动。" class="headerlink" title="local: 这个值是后来添加的(它只在Internet Explorer 9+中受支持，而其他的在IE4+中受支持)，因为滚动值相当混乱，在很多情况下并不能真正实现您想要的功能。局部值将背景固定在设置的元素上，因此当您滚动元素时，背景也随之滚动。"></a>local: <code>这个值是后来添加的(它只在Internet Explorer 9+中受支持，而其他的在IE4+中受支持)，因为滚动值相当混乱，在很多情况下并不能真正实现您想要的功能。局部值将背景固定在设置的元素上，因此当您滚动元素时，背景也随之滚动。</code></h5></li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="CSS-的值与单位"><a href="#CSS-的值与单位" class="headerlink" title="CSS 的值与单位"></a>CSS 的值与单位</h3><ol>
-<li><h4 id="数字，长度和百分比"><a href="#数字，长度和百分比" class="headerlink" title="数字，长度和百分比"></a>数字，长度和百分比</h4><table>
-<thead>
-<tr>
-<th align="center">数值类型</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">integer</td>
-<td align="center">整数</td>
-</tr>
-<tr>
-<td align="center">number</td>
-<td align="center">表示一个小数——它可能有小数点后面的部分，也可能没有</td>
-</tr>
-<tr>
-<td align="center">dimension</td>
-<td align="center">有一个附加的单位，例如45deg、5s或10px。<dimension>是一个伞形类别，包括<length>、<angle>、<time>和<resolution>类型。</td>
-</tr>
-<tr>
-<td align="center">percentage</td>
-<td align="center">表示一些其他值的一部分，例如50%。百分比值总是相对于另一个量，例如，一个元素的长度相对于其父元素的长度。</td>
-</tr>
-</tbody></table>
-</li>
-<li><h4 id="绝对长度"><a href="#绝对长度" class="headerlink" title="绝对长度"></a>绝对长度</h4><table>
-<thead>
-<tr>
-<th align="center">单位</th>
-<th align="center">名称</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">cm</td>
-<td align="center">厘米</td>
-</tr>
-<tr>
-<td align="center">mm</td>
-<td align="center">毫米</td>
-</tr>
-<tr>
-<td align="center">Q</td>
-<td align="center">四分之一毫米</td>
-</tr>
-<tr>
-<td align="center">in</td>
-<td align="center">英寸</td>
-</tr>
-<tr>
-<td align="center">pc</td>
-<td align="center">十二点活字</td>
-</tr>
-<tr>
-<td align="center">pt</td>
-<td align="center">点</td>
-</tr>
-<tr>
-<td align="center">px</td>
-<td align="center">像素</td>
-</tr>
-</tbody></table>
-</li>
-<li><h4 id="相对长度与单位"><a href="#相对长度与单位" class="headerlink" title="相对长度与单位"></a>相对长度与单位</h4><table>
-<thead>
-<tr>
-<th align="center">单位</th>
-<th align="center">相对于</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">em</td>
-<td align="center">在 font-size 中使用是相对于父元素的字体大小，在其他属性中使用是相对于自身的字体大小，如 width</td>
-</tr>
-<tr>
-<td align="center">ex</td>
-<td align="center">字符“x”的高度</td>
-</tr>
-<tr>
-<td align="center">ch</td>
-<td align="center">数字“0”的宽度</td>
-</tr>
-<tr>
-<td align="center">rem</td>
-<td align="center">根元素的字体大小</td>
-</tr>
-<tr>
-<td align="center">lh</td>
-<td align="center">元素的line-height</td>
-</tr>
-<tr>
-<td align="center">vw</td>
-<td align="center">视窗宽度的1%</td>
-</tr>
-<tr>
-<td align="center">vh</td>
-<td align="center">视窗高度的1%</td>
-</tr>
-<tr>
-<td align="center">vmin</td>
-<td align="center">视窗较小尺寸的1%</td>
-</tr>
-<tr>
-<td align="center">vmax</td>
-<td align="center">视图大尺寸的1%</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-<hr>
-<h2 id="三、样式化-文本"><a href="#三、样式化-文本" class="headerlink" title="三、样式化 文本"></a>三、样式化 文本</h2><h3 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h3><p><code>作用于字体的属性，会直接应用到文本中，比如使用哪种字体，字体的大小是怎样的，字体是粗体还是斜体，等等。</code></p>
-<ol>
-<li><h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色:"></a>颜色:</h3><p> <code>color 属性设置选中元素的前景内容的颜色</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">    color &#x3D; red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><h3 id="字体种类"><a href="#字体种类" class="headerlink" title="字体种类:"></a>字体种类:</h3><p> <code>font-family  属性, 允许为浏览器指定一个字体 (或者一个字体的列表)，然后浏览器可以将这种字体应用到选中的元素上。浏览器只会把在当前机器上可用的字体应用到当前正在访问的网站上；如果字体不可用，那么就会用浏览器默认的字体代替 default font.</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">font-family: arial;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><h4 id="网络安全字体："><a href="#网络安全字体：" class="headerlink" title="网络安全字体："></a>网络安全字体：</h4><p> <code>可以应用到所有系统 (Arial, Courier New, Georgia, Times New Roman, Trebuchet MS, Verdana)</code></p>
-</li>
-<li><h4 id="默认字体"><a href="#默认字体" class="headerlink" title="默认字体:"></a>默认字体:</h4><p> <code>serif, sans-serif, monospace, cursive,和 fantasy。</code></p>
-<table>
-<thead>
-<tr>
-<th align="center">serif</th>
-<th align="center">sans-serif</th>
-<th align="center">monospace</th>
-<th align="center">cursive</th>
-<th align="center">fantasy</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">有衬线的字体 （衬线一词是指字体笔画尾端的小装饰，存在于某些印刷体字体中）</td>
-<td align="center">没有衬线的字体</td>
-<td align="center">每个字符具有相同宽度的字体，通常用于代码列表</td>
-<td align="center">用于模拟笔迹的字体，具有流动的连接笔画</td>
-<td align="center">用来装饰的字体</td>
-</tr>
-</tbody></table>
-</li>
-<li><h4 id="字体栈"><a href="#字体栈" class="headerlink" title="字体栈:"></a>字体栈:</h4><p> <code>包含一个font-family属性，其值由几个用逗号分离的字体名称组成，便于浏览器多种选择</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">    font-family: &quot;Trebuchet MS&quot;, Verdana, sans-serif;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-<li><h3 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小:"></a>字体大小:</h3><p> <code>font-size 属性设置，可以取大多数单位，常用单位为: px, em, rem</code></p>
-<p> <code>使用 em / rem 时以 父元素/根元素的大小为基础大小</code></p>
-<table>
-<thead>
-<tr>
-<th align="center">px(像素)</th>
-<th align="center">em</th>
-<th align="center">rem</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">绝对单位,任何情况下，页面上的文本所计算出来的像素值都是一样的</td>
-<td align="center">1em 等于我们设计的当前元素的父元素上设置的字体大小 ,em可以调整任何东西的大小，不只是文本</td>
-<td align="center">1rem 等于 HTML 中的根元素的字体大小 ，而不是父元素，更容易计算字体大小</td>
-</tr>
-</tbody></table>
-</li>
-<li><h3 id="字体样式，字体粗细，文本转换和文本装饰"><a href="#字体样式，字体粗细，文本转换和文本装饰" class="headerlink" title="字体样式，字体粗细，文本转换和文本装饰"></a>字体样式，字体粗细，文本转换和文本装饰</h3><ol>
-<li><h4 id="font-style-用来打开和关闭文本-italic-斜体-。-可能的值如下："><a href="#font-style-用来打开和关闭文本-italic-斜体-。-可能的值如下：" class="headerlink" title="font-style: 用来打开和关闭文本 italic (斜体)。 可能的值如下："></a>font-style: <code>用来打开和关闭文本 italic (斜体)。 可能的值如下：</code></h4><ul>
-<li><h5 id="normal-将文本设置为普通字体-将存在的斜体关闭"><a href="#normal-将文本设置为普通字体-将存在的斜体关闭" class="headerlink" title="normal: 将文本设置为普通字体 (将存在的斜体关闭)"></a>normal: <code>将文本设置为普通字体 (将存在的斜体关闭)</code></h5></li>
-<li><h5 id="italic-如果当前字体的斜体版本可用，那么文本设置为斜体版本；如果不可用，那么会利用-oblique-状态来模拟-italics。"><a href="#italic-如果当前字体的斜体版本可用，那么文本设置为斜体版本；如果不可用，那么会利用-oblique-状态来模拟-italics。" class="headerlink" title="italic: 如果当前字体的斜体版本可用，那么文本设置为斜体版本；如果不可用，那么会利用 oblique 状态来模拟 italics。"></a>italic: <code>如果当前字体的斜体版本可用，那么文本设置为斜体版本；如果不可用，那么会利用 oblique 状态来模拟 italics。</code></h5></li>
-<li><h5 id="oblique-将文本设置为斜体字体的模拟版本，也就是将普通文本倾斜的样式应用到文本中。"><a href="#oblique-将文本设置为斜体字体的模拟版本，也就是将普通文本倾斜的样式应用到文本中。" class="headerlink" title="oblique: 将文本设置为斜体字体的模拟版本，也就是将普通文本倾斜的样式应用到文本中。"></a>oblique: <code>将文本设置为斜体字体的模拟版本，也就是将普通文本倾斜的样式应用到文本中。</code></h5></li>
-</ul>
-</li>
-<li><h4 id="font-weight-设置文字的粗体大小。这里有很多值可选-比如-light-normal-bold-extrabold-black-等等-不过事实上你很少会用到-normal-和-bold以外的值："><a href="#font-weight-设置文字的粗体大小。这里有很多值可选-比如-light-normal-bold-extrabold-black-等等-不过事实上你很少会用到-normal-和-bold以外的值：" class="headerlink" title="font-weight: 设置文字的粗体大小。这里有很多值可选 (比如 -light, -normal, -bold, -extrabold, -black, 等等), 不过事实上你很少会用到 normal 和 bold以外的值："></a>font-weight: <code>设置文字的粗体大小。这里有很多值可选 (比如 -light, -normal, -bold, -extrabold, -black, 等等), 不过事实上你很少会用到 normal 和 bold以外的值：</code></h4><ul>
-<li><h5 id="normal-bold-普通-加粗字体"><a href="#normal-bold-普通-加粗字体" class="headerlink" title="normal, bold: 普通, 加粗字体"></a>normal, bold: <code>普通, 加粗字体</code></h5></li>
-<li><h5 id="lighter-bolder-将当前元素的粗体设置为比其父元素粗体更细或更粗一步。100–900-数值粗体值，如果需要，可提供比上述关键字更精细的粒度控制。"><a href="#lighter-bolder-将当前元素的粗体设置为比其父元素粗体更细或更粗一步。100–900-数值粗体值，如果需要，可提供比上述关键字更精细的粒度控制。" class="headerlink" title="lighter, bolder: 将当前元素的粗体设置为比其父元素粗体更细或更粗一步。100–900: 数值粗体值，如果需要，可提供比上述关键字更精细的粒度控制。"></a>lighter, bolder: <code>将当前元素的粗体设置为比其父元素粗体更细或更粗一步。100–900: 数值粗体值，如果需要，可提供比上述关键字更精细的粒度控制。</code></h5></li>
-</ul>
-</li>
-<li><h4 id="text-transform-允许你设置要转换的字体。值包括："><a href="#text-transform-允许你设置要转换的字体。值包括：" class="headerlink" title="text-transform: 允许你设置要转换的字体。值包括："></a>text-transform: <code>允许你设置要转换的字体。值包括：</code></h4><ul>
-<li><h5 id="none-防止任何转型。"><a href="#none-防止任何转型。" class="headerlink" title="none: 防止任何转型。"></a>none: <code>防止任何转型。</code></h5></li>
-<li><h5 id="uppercase-将所有文本转为大写。"><a href="#uppercase-将所有文本转为大写。" class="headerlink" title="uppercase: 将所有文本转为大写。"></a>uppercase: <code>将所有文本转为大写。</code></h5></li>
-<li><h5 id="lowercase-将所有文本转为小写。"><a href="#lowercase-将所有文本转为小写。" class="headerlink" title="lowercase: 将所有文本转为小写。"></a>lowercase: <code>将所有文本转为小写。</code></h5></li>
-<li><h5 id="capitalize-转换所有单词让其首字母大写。"><a href="#capitalize-转换所有单词让其首字母大写。" class="headerlink" title="capitalize: 转换所有单词让其首字母大写。"></a>capitalize: <code>转换所有单词让其首字母大写。</code></h5></li>
-<li><h5 id="full-width-将所有字形转换成全角，即固定宽度的正方形，类似于等宽字体，允许拉丁字符和亚洲语言字形（如中文，日文，韩文）对齐。"><a href="#full-width-将所有字形转换成全角，即固定宽度的正方形，类似于等宽字体，允许拉丁字符和亚洲语言字形（如中文，日文，韩文）对齐。" class="headerlink" title="full-width: 将所有字形转换成全角，即固定宽度的正方形，类似于等宽字体，允许拉丁字符和亚洲语言字形（如中文，日文，韩文）对齐。"></a>full-width: <code>将所有字形转换成全角，即固定宽度的正方形，类似于等宽字体，允许拉丁字符和亚洲语言字形（如中文，日文，韩文）对齐。</code></h5></li>
-</ul>
-</li>
-<li><h4 id="text-decoration-设置-取消字体上的文本装饰-你将主要使用此方法在设置链接时取消设置链接上的默认下划线-可以接受多个值，同时为一段文本设置上、下、中划线-可用值为："><a href="#text-decoration-设置-取消字体上的文本装饰-你将主要使用此方法在设置链接时取消设置链接上的默认下划线-可以接受多个值，同时为一段文本设置上、下、中划线-可用值为：" class="headerlink" title="text-decoration: 设置/取消字体上的文本装饰 (你将主要使用此方法在设置链接时取消设置链接上的默认下划线, 可以接受多个值，同时为一段文本设置上、下、中划线) 可用值为："></a>text-decoration: <code>设置/取消字体上的文本装饰 (你将主要使用此方法在设置链接时取消设置链接上的默认下划线, 可以接受多个值，同时为一段文本设置上、下、中划线) 可用值为：</code></h4><ul>
-<li><h5 id="none-取消已经存在的任何文本装饰。"><a href="#none-取消已经存在的任何文本装饰。" class="headerlink" title="none: 取消已经存在的任何文本装饰。"></a>none: <code>取消已经存在的任何文本装饰。</code></h5></li>
-<li><h5 id="underline-文本下划线"><a href="#underline-文本下划线" class="headerlink" title="underline: 文本下划线."></a>underline: <code>文本下划线.</code></h5></li>
-<li><h5 id="overlinre-文本上划线"><a href="#overlinre-文本上划线" class="headerlink" title="overlinre: 文本上划线"></a>overlinre: <code>文本上划线</code></h5></li>
-<li><h5 id="line-through-穿过文本的线"><a href="#line-through-穿过文本的线" class="headerlink" title="line-through: 穿过文本的线"></a>line-through: <code>穿过文本的线</code></h5></li>
-</ul>
-</li>
-<li><h4 id="文字阴影-text-shadow-属性。这最多需要-4-个值-正偏移-1px向右移动，负偏移-1px向左移动"><a href="#文字阴影-text-shadow-属性。这最多需要-4-个值-正偏移-1px向右移动，负偏移-1px向左移动" class="headerlink" title="文字阴影: text-shadow 属性。这最多需要 4 个值 (正偏移 1px向右移动，负偏移 -1px向左移动) :"></a>文字阴影: <code>text-shadow 属性。这最多需要 4 个值 (正偏移 1px向右移动，负偏移 -1px向左移动) :</code></h4><ul>
-<li><h5 id="阴影与原始文本的水平偏移，可以使用大多数的-CSS-单位-length-and-size-units-但是-px-是比较合适的。这个值必须指定。"><a href="#阴影与原始文本的水平偏移，可以使用大多数的-CSS-单位-length-and-size-units-但是-px-是比较合适的。这个值必须指定。" class="headerlink" title="阴影与原始文本的水平偏移，可以使用大多数的 CSS 单位 length and size units, 但是 px 是比较合适的。这个值必须指定。"></a><code>阴影与原始文本的水平偏移，可以使用大多数的 CSS 单位 length and size units, 但是 px 是比较合适的。这个值必须指定。</code></h5></li>
-<li><h5 id="阴影与原始文本的垂直偏移-效果基本上就像水平偏移，除了它向上-向下移动阴影，而不是左-右。这个值必须指定。"><a href="#阴影与原始文本的垂直偏移-效果基本上就像水平偏移，除了它向上-向下移动阴影，而不是左-右。这个值必须指定。" class="headerlink" title="阴影与原始文本的垂直偏移;效果基本上就像水平偏移，除了它向上/向下移动阴影，而不是左/右。这个值必须指定。"></a><code>阴影与原始文本的垂直偏移;效果基本上就像水平偏移，除了它向上/向下移动阴影，而不是左/右。这个值必须指定。</code></h5></li>
-<li><h5 id="模糊半径-更高的值意味着阴影分散得更广泛。如果不包含此值，则默认为0，这意味着没有模糊。可以使用大多数的-CSS-单位-length-and-size-units"><a href="#模糊半径-更高的值意味着阴影分散得更广泛。如果不包含此值，则默认为0，这意味着没有模糊。可以使用大多数的-CSS-单位-length-and-size-units" class="headerlink" title="模糊半径 - 更高的值意味着阴影分散得更广泛。如果不包含此值，则默认为0，这意味着没有模糊。可以使用大多数的 CSS 单位 length and size units."></a><code>模糊半径 - 更高的值意味着阴影分散得更广泛。如果不包含此值，则默认为0，这意味着没有模糊。可以使用大多数的 CSS 单位 length and size units.</code></h5></li>
-<li><h5 id="阴影的基础颜色，可以使用大多数的-CSS-颜色单位-CSS-color-unit-如果没有指定，默认为-black"><a href="#阴影的基础颜色，可以使用大多数的-CSS-颜色单位-CSS-color-unit-如果没有指定，默认为-black" class="headerlink" title="阴影的基础颜色，可以使用大多数的 CSS 颜色单位 CSS color unit. 如果没有指定，默认为 black."></a><code>阴影的基础颜色，可以使用大多数的 CSS 颜色单位 CSS color unit. 如果没有指定，默认为 black.</code></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">    text-shadow: 4px 4px 5px red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><h5 id="多种阴影-包含以逗号分隔的多个阴影值，将多个阴影应用于同一文本"><a href="#多种阴影-包含以逗号分隔的多个阴影值，将多个阴影应用于同一文本" class="headerlink" title="多种阴影 包含以逗号分隔的多个阴影值，将多个阴影应用于同一文本"></a>多种阴影 <code>包含以逗号分隔的多个阴影值，将多个阴影应用于同一文本</code></h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">text-shadow: -1px -1px 1px #aaa,</span><br><span class="line">            0px 4px 1px rgba(0,0,0,0.5),</span><br><span class="line">            4px 4px 5px rgba(0,0,0,0.7),</span><br><span class="line">            0px 0px 7px rgba(0,0,0,0.4);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="文本布局"><a href="#文本布局" class="headerlink" title="文本布局"></a>文本布局</h3><p><code>作用于文本的间距以及其他布局功能的属性，比如，允许操纵行与字之间的空间，以及在内容框中，文本如何对齐。</code></p>
-<ol>
-<li><h3 id="文本对齐"><a href="#文本对齐" class="headerlink" title="文本对齐:"></a>文本对齐:</h3><p> <code>text-align 属性用来控制文本如何和它所在的内容盒子对齐。可用值如下:</code></p>
-<ul>
-<li><h4 id="left-左对齐文本。"><a href="#left-左对齐文本。" class="headerlink" title="left: 左对齐文本。"></a>left: <code>左对齐文本。</code></h4></li>
-<li><h4 id="right-右对齐文本。"><a href="#right-右对齐文本。" class="headerlink" title="right: 右对齐文本。"></a>right: <code>右对齐文本。</code></h4></li>
-<li><h4 id="center-居中文字"><a href="#center-居中文字" class="headerlink" title="center: 居中文字"></a>center: <code>居中文字</code></h4></li>
-<li><h4 id="justify-使文本展开，改变单词之间的差距，使所有文本行的宽度相同。你需要仔细使用，它可以看起来很可怕。特别是当应用于其中有很多长单词的段落时。如果你要使用这个，你也应该考虑一起使用别的东西，比如-hyphens，打破一些更长的词语。"><a href="#justify-使文本展开，改变单词之间的差距，使所有文本行的宽度相同。你需要仔细使用，它可以看起来很可怕。特别是当应用于其中有很多长单词的段落时。如果你要使用这个，你也应该考虑一起使用别的东西，比如-hyphens，打破一些更长的词语。" class="headerlink" title="justify: 使文本展开，改变单词之间的差距，使所有文本行的宽度相同。你需要仔细使用，它可以看起来很可怕。特别是当应用于其中有很多长单词的段落时。如果你要使用这个，你也应该考虑一起使用别的东西，比如 hyphens，打破一些更长的词语。"></a>justify: <code>使文本展开，改变单词之间的差距，使所有文本行的宽度相同。你需要仔细使用，它可以看起来很可怕。特别是当应用于其中有很多长单词的段落时。如果你要使用这个，你也应该考虑一起使用别的东西，比如 hyphens，打破一些更长的词语。</code></h4></li>
-</ul>
-</li>
-<li><h3 id="行高"><a href="#行高" class="headerlink" title="行高:"></a>行高:</h3><p>  <code>line-height 属性设置文本每行之间的高，可以接受大多数单位，不过也可以设置一个无单位的值，作为乘数，通常这种是比较好的做法。无单位的值乘以 font-size 来获得 line-height。当行与行之间拉开空间，正文文本通常看起来更好更容易阅读。推荐的行高大约是 1.5–2 (双倍间距。) 所以要把我们的文本行高设置为字体高度的1.5倍，你可以使用这个:</code></p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">line-height: 1.5;</span><br></pre></td></tr></table></figure></code></pre></li>
-<li><h3 id="字母和单词间距"><a href="#字母和单词间距" class="headerlink" title="字母和单词间距:"></a>字母和单词间距:</h3><p> <code>letter-spacing 和 word-spacing 属性允许你设置你的文本中的字母与字母之间的间距、或是单词与单词之间的间距。你不会经常使用它们，但是可能可以通过它们，来获得一个特定的外观，或者让较为密集的文字更加可读。它们可以接受大多数单位</code></p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">把这个样式应用到 &lt;p&gt; 段落的第一行：</span><br><span class="line">p::first-line &#123;</span><br><span class="line">        letter-spacing: 2px;</span><br><span class="line">        word-spacing: 4px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre></li>
-<li><h3 id="其他可能用到的属性"><a href="#其他可能用到的属性" class="headerlink" title="其他可能用到的属性"></a>其他可能用到的属性</h3><ul>
-<li><h4 id="Font-样式"><a href="#Font-样式" class="headerlink" title="Font 样式:"></a>Font 样式:</h4><ul>
-<li><h5 id="font-variant-在小型大写字母和普通文本选项之间切换。"><a href="#font-variant-在小型大写字母和普通文本选项之间切换。" class="headerlink" title="font-variant: 在小型大写字母和普通文本选项之间切换。"></a>font-variant: <code>在小型大写字母和普通文本选项之间切换。</code></h5></li>
-<li><h5 id="font-kerning-开启或关闭字体间距选项。"><a href="#font-kerning-开启或关闭字体间距选项。" class="headerlink" title="font-kerning: 开启或关闭字体间距选项。"></a>font-kerning: <code>开启或关闭字体间距选项。</code></h5></li>
-<li><h5 id="font-feature-settings-开启或关闭不同的-OpenType-字体特性。"><a href="#font-feature-settings-开启或关闭不同的-OpenType-字体特性。" class="headerlink" title="font-feature-settings: 开启或关闭不同的 OpenType 字体特性。"></a>font-feature-settings: <code>开启或关闭不同的 OpenType 字体特性。</code></h5></li>
-<li><h5 id="font-variant-alternates-控制给定的自定义字体的替代字形的使用。"><a href="#font-variant-alternates-控制给定的自定义字体的替代字形的使用。" class="headerlink" title="font-variant-alternates: 控制给定的自定义字体的替代字形的使用。"></a>font-variant-alternates: <code>控制给定的自定义字体的替代字形的使用。</code></h5></li>
-<li><h5 id="font-variant-caps-控制大写字母替代字形的使用。"><a href="#font-variant-caps-控制大写字母替代字形的使用。" class="headerlink" title="font-variant-caps: 控制大写字母替代字形的使用。"></a>font-variant-caps: <code>控制大写字母替代字形的使用。</code></h5></li>
-<li><h5 id="font-variant-east-asian-控制东亚文字替代字形的使用-像日语和汉语。"><a href="#font-variant-east-asian-控制东亚文字替代字形的使用-像日语和汉语。" class="headerlink" title="font-variant-east-asian: 控制东亚文字替代字形的使用, 像日语和汉语。"></a>font-variant-east-asian: <code>控制东亚文字替代字形的使用, 像日语和汉语。</code></h5></li>
-<li><h5 id="font-variant-ligatures-控制文本中使用的连写和上下文形式。"><a href="#font-variant-ligatures-控制文本中使用的连写和上下文形式。" class="headerlink" title="font-variant-ligatures: 控制文本中使用的连写和上下文形式。"></a>font-variant-ligatures: <code>控制文本中使用的连写和上下文形式。</code></h5></li>
-<li><h5 id="font-variant-numeric-控制数字，分式和序标的替代字形的使用。"><a href="#font-variant-numeric-控制数字，分式和序标的替代字形的使用。" class="headerlink" title="font-variant-numeric: 控制数字，分式和序标的替代字形的使用。"></a>font-variant-numeric: <code>控制数字，分式和序标的替代字形的使用。</code></h5></li>
-<li><h5 id="font-variant-position-控制位于上标或下标处，字号更小的替代字形的使用。"><a href="#font-variant-position-控制位于上标或下标处，字号更小的替代字形的使用。" class="headerlink" title="font-variant-position: 控制位于上标或下标处，字号更小的替代字形的使用。"></a>font-variant-position: <code>控制位于上标或下标处，字号更小的替代字形的使用。</code></h5></li>
-<li><h5 id="font-size-adjust-独立于字体的实际大小尺寸，调整其可视大小尺寸。"><a href="#font-size-adjust-独立于字体的实际大小尺寸，调整其可视大小尺寸。" class="headerlink" title="font-size-adjust: 独立于字体的实际大小尺寸，调整其可视大小尺寸。"></a>font-size-adjust: <code>独立于字体的实际大小尺寸，调整其可视大小尺寸。</code></h5></li>
-<li><h5 id="font-stretch-在给定字体的可选拉伸版本中切换。"><a href="#font-stretch-在给定字体的可选拉伸版本中切换。" class="headerlink" title="font-stretch: 在给定字体的可选拉伸版本中切换。"></a>font-stretch: <code>在给定字体的可选拉伸版本中切换。</code></h5></li>
-<li><h5 id="text-underline-position-指定下划线的排版位置，通过使用"><a href="#text-underline-position-指定下划线的排版位置，通过使用" class="headerlink" title="text-underline-position: 指定下划线的排版位置，通过使用"></a>text-underline-position: <code>指定下划线的排版位置，通过使用</code></h5></li>
-<li><h5 id="text-decoration-line-属性的underline-值。"><a href="#text-decoration-line-属性的underline-值。" class="headerlink" title="text-decoration-line 属性的underline 值。"></a>text-decoration-line <code>属性的underline 值。</code></h5></li>
-<li><h5 id="text-rendering-尝试执行一些文本渲染优化。"><a href="#text-rendering-尝试执行一些文本渲染优化。" class="headerlink" title="text-rendering: 尝试执行一些文本渲染优化。"></a>text-rendering: <code>尝试执行一些文本渲染优化。</code></h5></li>
-</ul>
-</li>
-<li><h4 id="文本布局样式："><a href="#文本布局样式：" class="headerlink" title="文本布局样式："></a>文本布局样式：</h4><ul>
-<li><h5 id="text-indent-指定文本内容的第一行前面应该留出多少的水平空间。"><a href="#text-indent-指定文本内容的第一行前面应该留出多少的水平空间。" class="headerlink" title="text-indent: 指定文本内容的第一行前面应该留出多少的水平空间。"></a>text-indent: <code>指定文本内容的第一行前面应该留出多少的水平空间。</code></h5></li>
-<li><h5 id="text-overflow-定义如何向用户表示存在被隐藏的溢出内容。"><a href="#text-overflow-定义如何向用户表示存在被隐藏的溢出内容。" class="headerlink" title="text-overflow: 定义如何向用户表示存在被隐藏的溢出内容。"></a>text-overflow: <code>定义如何向用户表示存在被隐藏的溢出内容。</code></h5></li>
-<li><h5 id="white-space-定义如何处理元素内部的空白和换行。"><a href="#white-space-定义如何处理元素内部的空白和换行。" class="headerlink" title="white-space: 定义如何处理元素内部的空白和换行。"></a>white-space: <code>定义如何处理元素内部的空白和换行。</code></h5></li>
-<li><h5 id="word-break-指定是否能在单词内部换行。"><a href="#word-break-指定是否能在单词内部换行。" class="headerlink" title="word-break: 指定是否能在单词内部换行。"></a>word-break: <code>指定是否能在单词内部换行。</code></h5></li>
-<li><h5 id="direction-定义文本的方向-这取决于语言，并且通常最好让HTML来处理这部分，因为它是和文本内容相关联的。"><a href="#direction-定义文本的方向-这取决于语言，并且通常最好让HTML来处理这部分，因为它是和文本内容相关联的。" class="headerlink" title="direction: 定义文本的方向 (这取决于语言，并且通常最好让HTML来处理这部分，因为它是和文本内容相关联的。)"></a>direction: <code>定义文本的方向 (这取决于语言，并且通常最好让HTML来处理这部分，因为它是和文本内容相关联的。)</code></h5></li>
-<li><h5 id="hyphens-为支持的语言开启或关闭连字符。"><a href="#hyphens-为支持的语言开启或关闭连字符。" class="headerlink" title="hyphens: 为支持的语言开启或关闭连字符。"></a>hyphens: <code>为支持的语言开启或关闭连字符。</code></h5></li>
-<li><h5 id="line-break-对东亚语言采用更强或更弱的换行规则。"><a href="#line-break-对东亚语言采用更强或更弱的换行规则。" class="headerlink" title="line-break: 对东亚语言采用更强或更弱的换行规则。"></a>line-break: <code>对东亚语言采用更强或更弱的换行规则。</code></h5></li>
-<li><h5 id="text-align-last-定义一个块或行的最后一行，恰好位于一个强制换行前时，如何对齐。"><a href="#text-align-last-定义一个块或行的最后一行，恰好位于一个强制换行前时，如何对齐。" class="headerlink" title="text-align-last: 定义一个块或行的最后一行，恰好位于一个强制换行前时，如何对齐。"></a>text-align-last: <code>定义一个块或行的最后一行，恰好位于一个强制换行前时，如何对齐。</code></h5></li>
-<li><h5 id="text-orientation-定义行内文本的方向。"><a href="#text-orientation-定义行内文本的方向。" class="headerlink" title="text-orientation: 定义行内文本的方向。"></a>text-orientation: <code>定义行内文本的方向。</code></h5></li>
-<li><h5 id="word-wrap-指定浏览器是否可以在单词内换行以避免超出范围。"><a href="#word-wrap-指定浏览器是否可以在单词内换行以避免超出范围。" class="headerlink" title="word-wrap: 指定浏览器是否可以在单词内换行以避免超出范围。"></a>word-wrap: <code>指定浏览器是否可以在单词内换行以避免超出范围。</code></h5></li>
-<li><h5 id="writing-mode-定义文本行布局为水平还是垂直，以及后继文本流的方向。"><a href="#writing-mode-定义文本行布局为水平还是垂直，以及后继文本流的方向。" class="headerlink" title="writing-mode: 定义文本行布局为水平还是垂直，以及后继文本流的方向。"></a>writing-mode: <code>定义文本行布局为水平还是垂直，以及后继文本流的方向。</code></h5><h3 id="样式列表"><a href="#样式列表" class="headerlink" title="样式列表"></a>样式列表</h3><h4 id="列表特定样式"><a href="#列表特定样式" class="headerlink" title="列表特定样式"></a>列表特定样式</h4><code>三个属性可以在 &lt;ul&gt; 或  &lt;ol&gt; 元素上设置：</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li><h5 id="list-style-type-：设置用于列表的项目符号的类型，例如无序列表的方形或圆形项目符号，或有序列表的数字，字母或罗马数字。"><a href="#list-style-type-：设置用于列表的项目符号的类型，例如无序列表的方形或圆形项目符号，或有序列表的数字，字母或罗马数字。" class="headerlink" title="list-style-type ：设置用于列表的项目符号的类型，例如无序列表的方形或圆形项目符号，或有序列表的数字，字母或罗马数字。"></a>list-style-type ：<code>设置用于列表的项目符号的类型，例如无序列表的方形或圆形项目符号，或有序列表的数字，字母或罗马数字。</code></h5></li>
-<li><h5 id="list-style-position-：设置在每个项目开始之前，项目符号是出现在列表项内，还是出现在其外。"><a href="#list-style-position-：设置在每个项目开始之前，项目符号是出现在列表项内，还是出现在其外。" class="headerlink" title="list-style-position ：设置在每个项目开始之前，项目符号是出现在列表项内，还是出现在其外。"></a>list-style-position ：<code>设置在每个项目开始之前，项目符号是出现在列表项内，还是出现在其外。</code></h5></li>
-<li><h5 id="list-style-image-：允许您为项目符号使用自定义图片，而不是简单的方形或圆形。"><a href="#list-style-image-：允许您为项目符号使用自定义图片，而不是简单的方形或圆形。" class="headerlink" title="list-style-image ：允许您为项目符号使用自定义图片，而不是简单的方形或圆形。"></a>list-style-image ：<code>允许您为项目符号使用自定义图片，而不是简单的方形或圆形。</code></h5></li>
-</ul>
-<ol>
-<li><h4 id="符号样式"><a href="#符号样式" class="headerlink" title="符号样式"></a>符号样式</h4> <code>list-style-type  属性允许设置列表元素的 marker（比如圆点、符号、或者自定义计数器样式）</code><ul>
-<li><h5 id="disc-实心圆点-默认值"><a href="#disc-实心圆点-默认值" class="headerlink" title="disc 实心圆点 (默认值)"></a>disc 实心圆点 (默认值)</h5></li>
-<li><h5 id="circle-空心圆点"><a href="#circle-空心圆点" class="headerlink" title="circle 空心圆点"></a>circle 空心圆点</h5></li>
-<li><h5 id="square-实心方块"><a href="#square-实心方块" class="headerlink" title="square 实心方块"></a>square 实心方块</h5></li>
-<li><h5 id="decimal-十进制阿拉伯数字-从1开始"><a href="#decimal-十进制阿拉伯数字-从1开始" class="headerlink" title="decimal 十进制阿拉伯数字,从1开始"></a>decimal 十进制阿拉伯数字,从1开始</h5></li>
-<li><h5 id="cjk-decimal-中日韩十进制数-例如-一-二-三-九八-九九-一〇〇"><a href="#cjk-decimal-中日韩十进制数-例如-一-二-三-九八-九九-一〇〇" class="headerlink" title="cjk-decimal 中日韩十进制数, 例如: 一, 二, 三, ..., 九八, 九九, 一〇〇"></a>cjk-decimal 中日韩十进制数, <code>例如: 一, 二, 三, ..., 九八, 九九, 一〇〇</code></h5></li>
-<li><h5 id="decimal-leading-zero-E-g-01-02-03-…-98-99"><a href="#decimal-leading-zero-E-g-01-02-03-…-98-99" class="headerlink" title="decimal-leading-zero, E.g. 01, 02, 03, … 98, 99"></a>decimal-leading-zero, <code>E.g. 01, 02, 03, … 98, 99</code></h5></li>
-<li><h5 id="lower-roman-E-g-i-ii-iii-iv-v…"><a href="#lower-roman-E-g-i-ii-iii-iv-v…" class="headerlink" title="lower-roman, E.g. i, ii, iii, iv, v…"></a>lower-roman, <code>E.g. i, ii, iii, iv, v…</code></h5></li>
-<li><h5 id="upper-roman-E-g-I-II-III-IV-V…"><a href="#upper-roman-E-g-I-II-III-IV-V…" class="headerlink" title="upper-roman, E.g. I, II, III, IV, V…"></a>upper-roman, <code>E.g. I, II, III, IV, V…</code></h5></li>
-<li><h5 id="lower-greek-E-g-α-β-γ…"><a href="#lower-greek-E-g-α-β-γ…" class="headerlink" title="lower-greek, E.g. α, β, γ…"></a>lower-greek, <code>E.g. α, β, γ…</code></h5></li>
-<li><h5 id="lower-alpha-E-g-a-b-c-…-z"><a href="#lower-alpha-E-g-a-b-c-…-z" class="headerlink" title="lower-alpha, E.g. a, b, c, … z"></a>lower-alpha, <code>E.g. a, b, c, … z</code></h5></li>
-<li><h5 id="upper-alpha-E-g-A-B-C-…-Z"><a href="#upper-alpha-E-g-A-B-C-…-Z" class="headerlink" title="upper-alpha, E.g. A, B, C, … Z"></a>upper-alpha, <code>E.g. A, B, C, … Z</code></h5></li>
-</ul>
-</li>
-<li><h4 id="项目符号位置"><a href="#项目符号位置" class="headerlink" title="项目符号位置"></a>项目符号位置</h4> <code>list-style-position 设置在每个项目开始之前，项目符号是出现在列表项内，还是出现在其外。默认值为 outside，这使项目符号位于列表项之外。如果值设置为 inside，项目条目则位于行内。</code></li>
-<li><h4 id="使用自定义的项目符号图片"><a href="#使用自定义的项目符号图片" class="headerlink" title="使用自定义的项目符号图片"></a>使用自定义的项目符号图片</h4> <code>list-style-image 属性允许对于项目符号使用自定义图片,在控制项目符号的位置，大小等方面是有限的,可以对无序排列更改</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ul li &#123;</span><br><span class="line">        padding-left: 2rem;</span><br><span class="line">        background-image: url(star.svg);</span><br><span class="line">        background-position: 0 0;</span><br><span class="line">        background-size: 1.6rem 1.6rem;</span><br><span class="line">        background-repeat: no-repeat;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h5 id="管理列表计数"><a href="#管理列表计数" class="headerlink" title="管理列表计数"></a>管理列表计数</h5><code>在有序列表上进行不同的计数方式。例如： 从1以外的数字开始，或向后倒数，或者按步或多于1计数。</code></li>
-<li><h4 id="start"><a href="#start" class="headerlink" title="start"></a>start</h4> <code>start 属性允许你从1 以外的数字开始计数。</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol start&#x3D;&quot;4&quot;&gt;</span><br><span class="line">    &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ol&gt;</span><br></pre></td></tr></table></figure></li>
-<li><h4 id="reversed"><a href="#reversed" class="headerlink" title="reversed"></a>reversed</h4> <code>reversed 属性将启动列表倒计数</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol start&#x3D;&quot;4&quot; reversed&gt;</span><br><span class="line">    &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ol&gt;</span><br></pre></td></tr></table></figure></li>
-<li><h4 id="value"><a href="#value" class="headerlink" title="value"></a>value</h4> <code>value 属性允许设置列表项指定数值</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol start&#x3D;&quot;4&quot; reversed&gt;</span><br><span class="line">    &lt;li value&#x3D;2&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li value&#x3D;4&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li value&#x3D;6&gt;&lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ol&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="样式化链接"><a href="#样式化链接" class="headerlink" title="样式化链接"></a>样式化链接</h3></li>
-<li><h4 id="链接状态"><a href="#链接状态" class="headerlink" title="链接状态"></a>链接状态</h4> <code>链接存在时处于不同的状态，每一个状态都可以用对应的 伪类 来应用样式:</code><ul>
-<li><h5 id="Link-没有访问过的-这是链接的默认状态，当它没有处在其他状态的时候，它可以使用-link-伪类来应用样式。"><a href="#Link-没有访问过的-这是链接的默认状态，当它没有处在其他状态的时候，它可以使用-link-伪类来应用样式。" class="headerlink" title="Link (没有访问过的): 这是链接的默认状态，当它没有处在其他状态的时候，它可以使用:link 伪类来应用样式。"></a>Link (没有访问过的): <code>这是链接的默认状态，当它没有处在其他状态的时候，它可以使用:link 伪类来应用样式。</code></h5></li>
-<li><h5 id="Visited-这个链接已经被访问过了-存在于浏览器的历史纪录-它可以使用-visited-伪类来应用样式。"><a href="#Visited-这个链接已经被访问过了-存在于浏览器的历史纪录-它可以使用-visited-伪类来应用样式。" class="headerlink" title="Visited: 这个链接已经被访问过了(存在于浏览器的历史纪录), 它可以使用 :visited 伪类来应用样式。"></a>Visited: <code>这个链接已经被访问过了(存在于浏览器的历史纪录), 它可以使用 :visited 伪类来应用样式。</code></h5></li>
-<li><h5 id="Hover-当用户的鼠标光标刚好停留在这个链接，它可以使用-hover-伪类来应用样式。"><a href="#Hover-当用户的鼠标光标刚好停留在这个链接，它可以使用-hover-伪类来应用样式。" class="headerlink" title="Hover: 当用户的鼠标光标刚好停留在这个链接，它可以使用 :hover 伪类来应用样式。"></a>Hover: <code>当用户的鼠标光标刚好停留在这个链接，它可以使用 :hover 伪类来应用样式。</code></h5></li>
-<li><h5 id="Focus-一个链接当它被选中的时候-比如通过键盘的-Tab-移动到这个链接的时候，或者使用编程的方法来选中这个链接-HTMLElement-focus-它可以使用-focus-伪类来应用样式。"><a href="#Focus-一个链接当它被选中的时候-比如通过键盘的-Tab-移动到这个链接的时候，或者使用编程的方法来选中这个链接-HTMLElement-focus-它可以使用-focus-伪类来应用样式。" class="headerlink" title="Focus: 一个链接当它被选中的时候 (比如通过键盘的 Tab  移动到这个链接的时候，或者使用编程的方法来选中这个链接 HTMLElement.focus()) 它可以使用 :focus 伪类来应用样式。"></a>Focus: <code>一个链接当它被选中的时候 (比如通过键盘的 Tab  移动到这个链接的时候，或者使用编程的方法来选中这个链接 HTMLElement.focus()) 它可以使用 :focus 伪类来应用样式。</code></h5></li>
-<li><h5 id="Active-一个链接当它被激活的时候-比如被点击的时候-，它可以使用-active-伪类来应用样式。"><a href="#Active-一个链接当它被激活的时候-比如被点击的时候-，它可以使用-active-伪类来应用样式。" class="headerlink" title="Active: 一个链接当它被激活的时候 (比如被点击的时候)，它可以使用 :active 伪类来应用样式。"></a>Active: <code>一个链接当它被激活的时候 (比如被点击的时候)，它可以使用 :active 伪类来应用样式。</code></h5></li>
-</ul>
-</li>
-<li><h4 id="默认样式"><a href="#默认样式" class="headerlink" title="默认样式"></a>默认样式</h4><ul>
-<li><h5 id="链接具有下划线。"><a href="#链接具有下划线。" class="headerlink" title="链接具有下划线。"></a><code>链接具有下划线。</code></h5></li>
-<li><h5 id="未访问过的-Unvisited-的链接是蓝色的。"><a href="#未访问过的-Unvisited-的链接是蓝色的。" class="headerlink" title="未访问过的 (Unvisited) 的链接是蓝色的。"></a><code>未访问过的 (Unvisited) 的链接是蓝色的。</code></h5></li>
-<li><h5 id="访问过的-Visited-的链接是紫色的"><a href="#访问过的-Visited-的链接是紫色的" class="headerlink" title="``访问过的 (Visited) 的链接是紫色的.`"></a>``访问过的 (Visited) 的链接是紫色的.`</h5></li>
-<li><h5 id="悬停-Hover-在一个链接的时候鼠标的光标会变成一个小手的图标。"><a href="#悬停-Hover-在一个链接的时候鼠标的光标会变成一个小手的图标。" class="headerlink" title="悬停 (Hover) 在一个链接的时候鼠标的光标会变成一个小手的图标。`"></a>悬停 (Hover) 在一个链接的时候鼠标的光标会变成一个小手的图标。`</h5></li>
-<li><h5 id="选中-Focus-链接的时候，链接周围会有一个轮廓，你应该可以按-tab-来选中这个页面的链接-在-Mac-上-你可能需要使用Full-Keyboard-Access-All-controls-选项，然后再按下-Ctrl-F7-，这样就可以起作用"><a href="#选中-Focus-链接的时候，链接周围会有一个轮廓，你应该可以按-tab-来选中这个页面的链接-在-Mac-上-你可能需要使用Full-Keyboard-Access-All-controls-选项，然后再按下-Ctrl-F7-，这样就可以起作用" class="headerlink" title="选中 (Focus) 链接的时候，链接周围会有一个轮廓，你应该可以按 tab 来选中这个页面的链接 (在 Mac 上, 你可能需要使用Full Keyboard Access: All controls 选项，然后再按下 Ctrl + F7 ，这样就可以起作用)"></a><code>选中 (Focus) 链接的时候，链接周围会有一个轮廓，你应该可以按 tab 来选中这个页面的链接 (在 Mac 上, 你可能需要使用Full Keyboard Access: All controls 选项，然后再按下 Ctrl + F7 ，这样就可以起作用)</code></h5></li>
-<li><h5 id="激活-Active-链接的时候会变成红色-当你点击链接时，请尝试按住鼠标按钮。"><a href="#激活-Active-链接的时候会变成红色-当你点击链接时，请尝试按住鼠标按钮。" class="headerlink" title="激活 (Active) 链接的时候会变成红色 (当你点击链接时，请尝试按住鼠标按钮。)"></a><code>激活 (Active) 链接的时候会变成红色 (当你点击链接时，请尝试按住鼠标按钮。)</code></h5></li>
-</ul>
-</li>
-<li><h4 id="将样式应用到一些链接-必需按顺序"><a href="#将样式应用到一些链接-必需按顺序" class="headerlink" title="将样式应用到一些链接 (必需按顺序)"></a>将样式应用到一些链接 (必需按顺序)</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">a:link &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">a:visited &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">a:focus &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">a:hover &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">a:active &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><h4 id="在链接中包含图标-属性选择器——a-href-quot-http-quot-选中-lt-a-gt-元素，但是这样只会选中那些拥有-href-属性，且属性的值包含-quot-http-quot-的-lt-a-gt-的元素。指定位置为100-，使其出现在内容的右边，距离上方是0px-padding-right-，为背景图片留出空间，这样就不会和文本重叠。"><a href="#在链接中包含图标-属性选择器——a-href-quot-http-quot-选中-lt-a-gt-元素，但是这样只会选中那些拥有-href-属性，且属性的值包含-quot-http-quot-的-lt-a-gt-的元素。指定位置为100-，使其出现在内容的右边，距离上方是0px-padding-right-，为背景图片留出空间，这样就不会和文本重叠。" class="headerlink" title="在链接中包含图标 (属性选择器——a[href*=&quot;http&quot;] 选中 &lt;a&gt; 元素，但是这样只会选中那些拥有 href 属性，且属性的值包含 &quot;http&quot; 的 &lt;a&gt;的元素。指定位置为100%，使其出现在内容的右边，距离上方是0px,  padding-right ，为背景图片留出空间，这样就不会和文本重叠。)"></a><code>在链接中包含图标 (属性选择器——a[href*=&quot;http&quot;] 选中 &lt;a&gt; 元素，但是这样只会选中那些拥有 href 属性，且属性的值包含 &quot;http&quot; 的 &lt;a&gt;的元素。指定位置为100%，使其出现在内容的右边，距离上方是0px,  padding-right ，为背景图片留出空间，这样就不会和文本重叠。)</code></h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a[href*&#x3D;&quot;http&quot;] &#123;</span><br><span class="line">        background: url(&#39;https:&#x2F;&#x2F;mdn.mozillademos.org&#x2F;files&#x2F;12982&#x2F;external-link-52.png&#39;) no-repeat 100% 0;</span><br><span class="line">        background-size: 16px 16px;</span><br><span class="line">        padding-right: 19px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><h4 id="样式化链接为按钮"><a href="#样式化链接为按钮" class="headerlink" title="样式化链接为按钮"></a>样式化链接为按钮</h4> <a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/%E4%B8%BA%E6%96%87%E6%9C%AC%E6%B7%BB%E5%8A%A0%E6%A0%B7%E5%BC%8F/Styling_links," target="_blank" rel="noopener" title="样式化按钮">具体请看</a></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/27/css_note/" data-id="ckd4fijpt0000gwx848ce324j" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python_常用模块" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/26/python_%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/" class="article-date">
-  <time datetime="2020-07-26T11:09:30.776Z" itemprop="datePublished">2020-07-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/26/python_%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/">python_常用模块</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="模块制作"><a href="#模块制作" class="headerlink" title="模块制作"></a>模块制作</h1><ol>
-<li><strong>“”” “”” / #</strong> : <code>顶格写的注释被称为文档 (__doc__)，在模块中的注释与帮助，可以通过 help(model_name) 查看</code></li>
-<li><strong>import model_name / from model_name import function_name</strong><h1 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h1></li>
-<li><strong>random 随机模块</strong><ol>
-<li><code>random.random     随机生成 0~1 间小数</code></li>
-<li><code>random.randint    随机生成指定范围的整数，包含上下限</code></li>
-<li><code>random.randrange  随机生成指定 range 范围的整数，不包含上限    randrange(self, start, stop=None, step=1, _int=int)</code></li>
-<li><code>random.choice     随机获取指定序列的一个元素</code></li>
-<li><code>random.sample     随机获取指定序列的指定个元素 sample(self, population, k) (k:获取元素数目，population:指定序列(列表))</code></li>
-<li><code>random.shuffle    随机打乱序列(列表)数据</code></li>
-</ol>
-</li>
-<li><strong>pip 内置包管理工具</strong><ol>
-<li><code>pip install package (-i 国内源地址  换源)</code></li>
-<li><code>pip uninstall package</code></li>
-<li><code>pip list  展示</code></li>
-<li><code>pip update 更新</code></li>
-<li><code>windows 安装不上部分包</code><ol>
-<li><code>安装 wheel 包 (先支持安装 .whl 包)</code></li>
-<li><code>pip install package.whl</code></li>
-</ol>
-</li>
-<li><code>linux 压缩包安装</code><ol>
-<li><code>解压</code></li>
-<li><code>找到 setup.py</code></li>
-<li><code>python setup.py install 安装包</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><strong>os 路径</strong><ol>
-<li><code>os.system(&quot;cmd命令&quot;) 调用 cmd 并执行命令</code></li>
-<li><code>os.chdir  修改 python 工作路径 os.chdir(&quot;D:\\&quot;)</code></li>
-<li><code>os.mkdir  创建文件夹，在当前路径下</code></li>
-<li><code>os.path</code><ol>
-<li><code>os.path.isdir   是否是文件夹</code></li>
-<li><code>os.path.getsize 获取文件/夹大小</code></li>
-<li><code>os.path.join(&#39;a&#39;, &#39;b&#39;)   自动拼接成路径 ==&gt; &#39;a\\b&#39;</code></li>
-<li><code>os.path.dirname 返回文件目录，可以嵌套一直向上返回目录</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; os.path.dirname(os.path.dirname(os.path.abspath(&#39;board&#39;)))</span><br><span class="line">     &#39;E:\\python_study\\Django&#39;</span><br></pre></td></tr></table></figure></li>
-<li><code>os.path.abspath 绝对路径</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><strong>sys 系统</strong><ol>
-<li><code>sys.argv 接收调用python脚本时传递的参数，以列表格式，第一个参数是文件本身相对路径</code></li>
-<li><code>sys.exit()    涉及到时间以及内存分配方面释放</code></li>
-</ol>
-</li>
-<li><strong>file</strong> :<br>  <code>open(file, mode=&#39;r&#39;, buffering=None, encoding=None, errors=None, newline=None, closefd=True) 读取文件</code></li>
-<li><strong>WordCloud 词云模块</strong>  <figure class="highlight plain"><figcaption><span>install wordcloud```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">     1. &#96;常用参数&#96;</span><br><span class="line">         + &#96;width 词云图片宽度，默认400像素&#96;</span><br><span class="line">         + &#96;height 词云图片高度 默认200像素&#96;</span><br><span class="line">         + &#96;background_color 词云图片的背景颜色，默认为黑色&#96;</span><br><span class="line">         + &#96;font_step 字号增大的步进间隔 默认1号&#96;</span><br><span class="line">         + &#96;font_path 指定字体路径 默认None，对于中文可用font_path&#x3D;&#39;msyh.ttc&#39;&#96;</span><br><span class="line">         + &#96;mini_font_size 最小字号 默认4号&#96;</span><br><span class="line">         + &#96;max_font_size 最大字号 根据高度自动调节&#96;</span><br><span class="line">         + &#96;max_words 最大词数 默认200&#96;</span><br><span class="line">         + &#96;stop_words 不显示的单词 stop_words&#x3D;&#123;&quot;python&quot;,&quot;java&quot;&#125;&#96;</span><br><span class="line">         + &#96;Scale 默认值1。值越大，图像密度越大越清晰&#96;</span><br><span class="line">         + &#96;prefer_horizontal：默认值0.90，浮点数类型。表示在水平如果不合适，就旋转为垂直方向，水平放置的词数占0.9？&#96;</span><br><span class="line">         + &#96;relative_scaling：默认值0.5，浮点型。设定按词频倒序排列，上一个词相对下一位词的大小倍数。有如下取值：“0”表示大小标准只参考频率排名，“1”如果词频是2倍，大小也是2倍&#96;</span><br><span class="line">         + &#96;mask 指定词云形状图片，默认为矩形&#96;</span><br><span class="line">           &#96;通过以下代码读入外部词云形状图片（需要先pip install imageio安装imageio）&#96;</span><br><span class="line">             &#96;&#96;&#96;python</span><br><span class="line">           import imageio</span><br><span class="line">           from wordcloud import WordCloud</span><br><span class="line">           mk &#x3D; imageio.imread(&quot;picture.png&quot;)</span><br><span class="line">           w &#x3D; WordCloud(mask&#x3D;mk)</span><br><span class="line">           &#96;&#96;&#96;     </span><br><span class="line">7. **jieba 中文分词**</span><br><span class="line">     &#96;&#96;&#96;pip install jieba</span><br></pre></td></tr></table></figure>
-<ol>
-<li><code>方法</code><ul>
-<li><code>jieba.cut: 返回的结构是一个可迭代的 generator，可以使用 for 循环来获得分词后得到的每一个词语(unicode)</code> <ul>
-<li><code>cut(self, sentence, cut_all=False, HMM=True, use_paddle=False)</code></li>
-<li><code>参数</code><ol>
-<li><code>需要分词的字符串</code></li>
-<li><code>cut_all 参数: 用来控制是否采用全模式</code></li>
-<li><code>HMM 参数: 用来控制是否使用 HMM 模型</code></li>
-<li><code>use_paddle 参数: 用来控制是否使用paddle模式下的分词模式，paddle模式采用延迟加载方式，通过enable_paddle接口安装paddlepaddle-tiny，并且import相关代码</code></li>
-</ol>
-</li>
-</ul>
-</li>
-<li><code>jieba.cut_for_search: 返回的结构是一个可迭代的 generator，可以使用 for 循环来获得分词后得到的每一个词语(unicode)</code><ul>
-<li><code>cut_for_search(self, sentence, HMM=True)</code></li>
-<li><code>参数</code><ol>
-<li><code>需要分词的字符串</code></li>
-<li><code>是否使用 HMM 模型。该方法适合用于搜索引擎构建倒排索引的分词，粒度比较细</code></li>
-</ol>
-</li>
-</ul>
-</li>
-<li><code>jieba.lcut: 返回list</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lcut</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> list(self.cut(*args, **kwargs))</span><br></pre></td></tr></table></figure></li>
-<li><code>jieba.lcut_for_search: 返回 list</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lcut_for_search</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> list(self.cut_for_search(*args, **kwargs))</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-</li>
-<li><strong>turtle 绘图</strong><br>  <code>turtle: 绘图包</code><br>  <code>fillcolor：填充颜色</code><br>  <code>begin_fill/end_fill 开始/结束填充</code><ol>
-<li>设置画布大小<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">turtle.screensize(canvwidth&#x3D;None,canvheight&#x3D;None,bg&#x3D;None)，</span><br><span class="line">    参数分别为画布的宽(单位像素),高,背景颜色。</span><br><span class="line">如： turtle.screensize(800,600,&quot;green&quot;)</span><br><span class="line">    turtle.screensize()#返回默认大小(400,300)</span><br></pre></td></tr></table></figure></li>
-<li>画笔(画笔的属性，颜色、画线的宽度等)<ul>
-<li>参数<ul>
-<li>turtle.pensize(): 设置画笔的宽度；</li>
-<li>turtle.pencolor(): 没有参数传入，返回当前画笔颜色，传入参数设置画笔颜色，可以是字符串如”green”,”red”,也可以是RGB3元组。</li>
-<li>turtle.speed(speed): 设置画笔移动速度，画笔绘制的速度范围[0,10]整数，数字越大越快。</li>
-<li>turtle.forward(distance): 向当前画笔方向移动distance像素长度</li>
-<li>turtle.backward(distance): 向当前画笔相反方向移动distance像素长度</li>
-<li>turtle.right(degree): 顺时针移动degree°</li>
-<li>turtle.left(degree): 逆时针移动degree°</li>
-<li>turtle.pendown(): 移动时绘制图形，缺省时也为绘制</li>
-<li>turtle.goto(x,y): 将画笔移动到坐标为x,y的位置</li>
-<li>turtle.penup(): 提起笔移动，不绘制图形，用于另起一个地方绘制</li>
-<li>turtle.circle(): 画圆，半径为正(负)，表示圆心在画笔的左边(右边)画圆</li>
-<li>setx( ): 将当前x轴移动到指定位置</li>
-<li>sety( ): 将当前y轴移动到指定位置</li>
-<li>setheading(angle): 设置当前朝向为angle角度</li>
-<li>home(): 设置当前画笔位置为原点，朝向东。</li>
-<li>dot(r): 绘制一个指定直径和颜色的圆点</li>
-</ul>
-</li>
-<li>画笔控制命令<ul>
-<li>turtle.fillcolor(colorstring): 绘制图形的填充颜色</li>
-<li>turtle.color(color1, color2): 同时设置pencolor=color1, fillcolor=color2</li>
-<li>turtle.filling(): 返回当前是否在填充状态</li>
-<li>turtle.begin_fill(): 准备开始填充图形</li>
-<li>turtle.end_fill(): 填充完成</li>
-<li>turtle.hideturtle(): 隐藏画笔的turtle形状</li>
-<li>turtle.showturtle(): 显示画笔的turtle形状</li>
-</ul>
-</li>
-<li>全局控制命令<ul>
-<li>turtle.clear(): 清空turtle窗口，但是turtle的位置和状态不会改变</li>
-<li>turtle.reset(): 清空窗口，重置turtle状态为起始状态</li>
-<li>turtle.undo(): 撤销上一个turtle动作</li>
-<li>turtle.isvisible(): 返回当前turtle是否可见</li>
-<li>stamp(): 复制当前图形</li>
-<li>turtle.write(s [,font=(“font-name”,font_size,”font_type”)]): 写文本，s为文本内容，font是字体的参数，分别为字体名称，大小和类型；font为可选项，font参数也是可选项</li>
-<li>turtle.delay(delay=None): 设置或返回以毫秒为单位的绘图延迟</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><strong>MyQR 二维码生成器</strong> <pre><code class="python"><span class="keyword">from</span> MyQR <span class="keyword">import</span> myqr
-<span class="keyword">import</span> os
-myqr.run(
-        word = <span class="string">''</span>,           <span class="comment"># 可以是字符串也可以是网址 (网址前加 http(s)://)</span>
-        version = <span class="number">1</span>,         <span class="comment"># 容错率等级 1 为最高</span>
-        level = <span class="string">'H'</span>,          <span class="comment"># 控制纠错水平，范围是 L, M, Q, H，从左向右依次增高</span>
-        picture = <span class="string">''</span>,        <span class="comment"># 二维码和图片合成，二维码路径</span>
-        colorized = <span class="string">'True'</span>,  <span class="comment"># 是否为彩色二维码</span>
-        contrast = <span class="number">1.0</span>,      <span class="comment"># 调节图片对比度, 1.0 表示原始图片，更小的值表示更低对比度，更大反之，1.0 为默认</span>
-        brightness = <span class="number">1.0</span>,    <span class="comment"># 调节图片亮度，越大越亮，越小越暗</span>
-        save_name = <span class="string">''</span>,      <span class="comment"># 生成二维码图片名称，可以是 jpg, png, bmp, gif</span>
-        save_dir = os.getcwd()  <span class="comment"># 控制生成位置</span>
-        )</code></pre>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/26/python_%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/" data-id="ckd2zd1s60000acx8bqhu8j9t" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/26/hello-world/" class="article-date">
-  <time datetime="2020-07-26T11:07:53.209Z" itemprop="datePublished">2020-07-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/26/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/26/hello-world/" data-id="ckd2zbw2x00000gx84zer9qx6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
 </section>
-        
-          <aside id="sidebar">
-  
+    <!-- 欧尼酱功能, 谁用谁知道 -->
     
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://yoursite.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">Hexo</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="current">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="">
+                    <a href="/tags">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
     </div>
-  </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<div class="alert well fade in" id="gal-issue" role="alert">
+    <!-- TODO 添加关闭公告框功能 -->
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <!-- 这里自行配置公告内容 -->
+    这里是公告内容
+    <br>
+    配置相关说明请看<strong>_config.yml</strong>
+    <!-- 自行配置公告内容结束 -->
+</div>
 
-
-  
+<div id="article-list">
+     
+     
+     <div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/07/27/css_note/">css_note</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/26/python_%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/">python_常用模块</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/26/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
+    <div class="data-article hidden-xs">
+        <span class="month">07月</span>
+        <span class="day">27</span>
     </div>
-  </div>
+    <!-- 大型设备文章 -->
+    <section class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2020/07/27/css_note/">
+                    <span>css_note</span>
+                </a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            
+            <!-- TODO 添加评论统计 -->
+            <!--<span class="label label-gal">
+                <i class="fa fa-comments"></i>
+                <a href="/2020/07/27/css_note/#comments">739</a>
+            </span>-->
+        </div>
+        <div class="alert alert-gal article-body content-article">
+            <div class="item">
+                <a href="/2020/07/27/css_note/">
+                    <div class="img">
+                        
+                        <img src="/imgs/preview/preview4.jpg" alt="css_note">
+                    </div>
+                    <div class="info">
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="visible-xs">
+        <div class="title-article">
+            <center>
+                <h4>
+                    <a href="/2020/07/27/css_note/">
+                        <span>css_note</span>
+                    </a>
+                </h4>
+            </center>
+        </div>
+        <p></p>
+        <center>
+            <i class="fa fa-calendar"></i> 2020-07-27
+        </center>
+        <p></p>
+        <p></p>
+        <center>
+            
+            
+        </center>
+        <p></p>
+        <div class="alert alert-gal article-body content-article">
+            <p style="text-align: center;">
+                <a href="/2020/07/27/css_note/">
+                    
+                    <img src="/imgs/preview/preview4.jpg" alt="css_note">
+                </a>
+            </p>
+        </div>
+        
+        <a class="btn btn-danger pull-right read-more btn-block" href="/2020/07/27/css_note/">
+            阅读全文
+            <!--<span class="badge">739</span>-->
+        </a>
+    </section>
+</div>
+     
+     <div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
+    
+    <div class="data-article hidden-xs">
+        <span class="month">07月</span>
+        <span class="day">26</span>
+    </div>
+    <!-- 大型设备文章 -->
+    <section class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2020/07/26/python_%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/">
+                    <span>python_常用模块</span>
+                </a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            
+            <!-- TODO 添加评论统计 -->
+            <!--<span class="label label-gal">
+                <i class="fa fa-comments"></i>
+                <a href="/2020/07/26/python_%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/#comments">739</a>
+            </span>-->
+        </div>
+        <div class="alert alert-gal article-body content-article">
+            <div class="item">
+                <a href="/2020/07/26/python_%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/">
+                    <div class="img">
+                        
+                        <img src="/imgs/preview/preview4.jpg" alt="python_常用模块">
+                    </div>
+                    <div class="info">
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="visible-xs">
+        <div class="title-article">
+            <center>
+                <h4>
+                    <a href="/2020/07/26/python_%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/">
+                        <span>python_常用模块</span>
+                    </a>
+                </h4>
+            </center>
+        </div>
+        <p></p>
+        <center>
+            <i class="fa fa-calendar"></i> 2020-07-26
+        </center>
+        <p></p>
+        <p></p>
+        <center>
+            
+            
+        </center>
+        <p></p>
+        <div class="alert alert-gal article-body content-article">
+            <p style="text-align: center;">
+                <a href="/2020/07/26/python_%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/">
+                    
+                    <img src="/imgs/preview/preview2.jpg" alt="python_常用模块">
+                </a>
+            </p>
+        </div>
+        
+        <a class="btn btn-danger pull-right read-more btn-block" href="/2020/07/26/python_%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/">
+            阅读全文
+            <!--<span class="badge">739</span>-->
+        </a>
+    </section>
+</div>
+     
+     <div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
+    
+    <div class="data-article hidden-xs">
+        <span class="month">07月</span>
+        <span class="day">26</span>
+    </div>
+    <!-- 大型设备文章 -->
+    <section class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2020/07/26/hello-world/">
+                    <span>Hello World</span>
+                </a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            
+            <!-- TODO 添加评论统计 -->
+            <!--<span class="label label-gal">
+                <i class="fa fa-comments"></i>
+                <a href="/2020/07/26/hello-world/#comments">739</a>
+            </span>-->
+        </div>
+        <div class="alert alert-gal article-body content-article">
+            <div class="item">
+                <a href="/2020/07/26/hello-world/">
+                    <div class="img">
+                        
+                        <img src="/imgs/preview/preview4.jpg" alt="Hello World">
+                    </div>
+                    <div class="info">
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="visible-xs">
+        <div class="title-article">
+            <center>
+                <h4>
+                    <a href="/2020/07/26/hello-world/">
+                        <span>Hello World</span>
+                    </a>
+                </h4>
+            </center>
+        </div>
+        <p></p>
+        <center>
+            <i class="fa fa-calendar"></i> 2020-07-26
+        </center>
+        <p></p>
+        <p></p>
+        <center>
+            
+            
+        </center>
+        <p></p>
+        <div class="alert alert-gal article-body content-article">
+            <p style="text-align: center;">
+                <a href="/2020/07/26/hello-world/">
+                    
+                    <img src="/imgs/preview/preview2.jpg" alt="Hello World">
+                </a>
+            </p>
+        </div>
+        
+        <a class="btn btn-danger pull-right read-more btn-block" href="/2020/07/26/hello-world/">
+            阅读全文
+            <!--<span class="badge">739</span>-->
+        </a>
+    </section>
+</div>
+     
+</div>
+<!-- 前方最多7个 < 1 2 3 4 5 6 -->
+<!-- 前方超过第7页则分为 < 1 ... (n - 3) (n - 2) (n - 1) n, 此时前面为固定的6个 -->
 
-  
+<!-- 后方最多8个 (n + 1) 到 (n + 7) > -->
+<!-- 如果末页和当前页相差超过7, 此时后面为固定的6个, (n + 1) (n + 2) (n + 3) ... total > -->
+
+
+
+<div id="gal-pagination" class="clearfix">
+    <ul class="pagination pagination-gal pull-right">
+        
+        
+        
+        
+        <li class="current">
+            <span>1</span>
+        </li>
+        
+        
+        
+        
+    </ul>
+</div>
+
+<!-- 加上这段代码原因： gitment在首页加载时, 如果找不到对应的控件会报错，此处加上，同时设置为none，防止报错 -->   
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
 </aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Liu
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
     </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</aside>
     
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/27/css_note/">css_note</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/python_%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/">python_常用模块</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/python_%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/">python_常用模块</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/27/css_note/">css_note</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+                
+                <li>
+                    <a href="/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/ZEROKISEKI/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Liu Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
 
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-  <script type="text/javascript" src="/js/love.js"></script>
-  <script type="text/javascript" src="\js\FunnyTitle.js"></script>
-  <script type="text/javascript"
-  color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
-  </script>
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"scripFrom":"local","model":{"jsonPath":"/live2dw/assets/chitose.model.json"},"display":{"position":"right","width":150,"heigut":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
 </html>
