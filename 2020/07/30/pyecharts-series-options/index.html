@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Liu">
+    
+    
+    
+    
+    
+    
+    <title>pyecharts_series_options | Hexo</title>
+    <link href="http://yoursite.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://yoursite.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">Hexo</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="">
+                    <a href="/tags">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">Hexo</a>
+        >
+        <span>pyecharts_series_options</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-07-30
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2020-07-30
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2 id="pyecharts-配置项"><a href="#pyecharts-配置项" class="headerlink" title="pyecharts 配置项"></a>pyecharts 配置项</h2><p><a href="http://pyecharts.org/#/zh-cn/" target="_blank" rel="noopener">全部来自于官方文档，主要用于方便自己查找</a><br><strong>系列配置项 (按常用顺序排序)</strong></p>
+<ol>
+<li><p><code>ItemStyleOpts：图元样式配置项</code></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">class ItemStyleOpts(</span><br><span class="line">     # 图形的颜色。</span><br><span class="line">     # 颜色可以使用 RGB 表示，比如 &#39;rgb(128, 128, 128)&#39;，如果想要加上 alpha 通道表示不透明度，</span><br><span class="line">     # 可以使用 RGBA，比如 &#39;rgba(128, 128, 128, 0.5)&#39;，也可以使用十六进制格式，比如 &#39;#ccc&#39;。</span><br><span class="line">     # 除了纯色之外颜色也支持渐变色和纹理填充</span><br><span class="line">     # </span><br><span class="line">     # 线性渐变，前四个参数分别是 x0, y0, x2, y2, 范围从 0 - 1，相当于在图形包围盒中的百分比，</span><br><span class="line">     # 如果 globalCoord 为 &#96;true&#96;，则该四个值是绝对的像素位置</span><br><span class="line">     # color: &#123;</span><br><span class="line">     #    type: &#39;linear&#39;,</span><br><span class="line">     #    x: 0,</span><br><span class="line">     #    y: 0,</span><br><span class="line">     #    x2: 0,</span><br><span class="line">     #    y2: 1,</span><br><span class="line">     #    colorStops: [&#123;</span><br><span class="line">     #        offset: 0, color: &#39;red&#39; &#x2F;&#x2F; 0% 处的颜色</span><br><span class="line">     #    &#125;, &#123;</span><br><span class="line">     #        offset: 1, color: &#39;blue&#39; &#x2F;&#x2F; 100% 处的颜色</span><br><span class="line">     #    &#125;],</span><br><span class="line">     #    global: false &#x2F;&#x2F; 缺省为 false</span><br><span class="line">     # &#125;</span><br><span class="line">     # </span><br><span class="line">     # 径向渐变，前三个参数分别是圆心 x, y 和半径，取值同线性渐变</span><br><span class="line">     # color: &#123;</span><br><span class="line">     #    type: &#39;radial&#39;,</span><br><span class="line">     #    x: 0.5,</span><br><span class="line">     #    y: 0.5,</span><br><span class="line">     #    r: 0.5,</span><br><span class="line">     #    colorStops: [&#123;</span><br><span class="line">     #        offset: 0, color: &#39;red&#39; &#x2F;&#x2F; 0% 处的颜色</span><br><span class="line">     #    &#125;, &#123;</span><br><span class="line">     #        offset: 1, color: &#39;blue&#39; &#x2F;&#x2F; 100% 处的颜色</span><br><span class="line">     #    &#125;],</span><br><span class="line">     #    global: false &#x2F;&#x2F; 缺省为 false</span><br><span class="line">     # &#125;</span><br><span class="line">     # </span><br><span class="line">     # 纹理填充</span><br><span class="line">     # color: &#123;</span><br><span class="line">     #    image: imageDom, &#x2F;&#x2F; 支持为 HTMLImageElement, HTMLCanvasElement，不支持路径字符串</span><br><span class="line">     #    repeat: &#39;repeat&#39; &#x2F;&#x2F; 是否平铺, 可以是 &#39;repeat-x&#39;, &#39;repeat-y&#39;, &#39;no-repeat&#39;</span><br><span class="line">     # &#125;</span><br><span class="line">     color: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 阴线 图形的颜色。</span><br><span class="line">     color0: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 图形的描边颜色。支持的颜色格式同 color，不支持回调函数。</span><br><span class="line">     border_color: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 阴线 图形的描边颜色。</span><br><span class="line">     border_color0: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 描边宽度，默认不描边。</span><br><span class="line">     border_width: Optional[Numeric] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 支持 &#39;dashed&#39;, &#39;dotted&#39;。</span><br><span class="line">     border_type: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 图形透明度。支持从 0 到 1 的数字，为 0 时不绘制该图形。</span><br><span class="line">     opacity: Optional[Numeric] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 区域的颜色。    </span><br><span class="line">     area_color: Optional[str] &#x3D; None,</span><br><span class="line"> )</span><br></pre></td></tr></table></figure></li>
+<li><p><code>TextStyleOpts：文字样式配置项</code></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">class TextStyleOpts(</span><br><span class="line">     # 文字颜色。</span><br><span class="line">     color: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 文字字体的风格</span><br><span class="line">     # 可选：&#39;normal&#39;，&#39;italic&#39;，&#39;oblique&#39;</span><br><span class="line">     font_style: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 主标题文字字体的粗细，可选：</span><br><span class="line">     # &#39;normal&#39;，&#39;bold&#39;，&#39;bolder&#39;，&#39;lighter&#39;</span><br><span class="line">     font_weight: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 文字的字体系列</span><br><span class="line">     # 还可以是 &#39;serif&#39; , &#39;monospace&#39;, &#39;Arial&#39;, &#39;Courier New&#39;, &#39;Microsoft YaHei&#39;, ...</span><br><span class="line">     font_family: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 文字的字体大小</span><br><span class="line">     font_size: Optional[Numeric] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 文字水平对齐方式，默认自动</span><br><span class="line">     align: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 文字垂直对齐方式，默认自动</span><br><span class="line">     vertical_align: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 行高</span><br><span class="line">     line_height: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 文字块背景色。可以是直接的颜色值，例如：&#39;#123234&#39;, &#39;red&#39;, &#39;rgba(0,23,11,0.3)&#39;</span><br><span class="line">     background_color: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 文字块边框颜色</span><br><span class="line">     border_color: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 文字块边框宽度</span><br><span class="line">     border_width: Optional[Numeric] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 文字块的圆角</span><br><span class="line">     border_radius: Union[Numeric, Sequence, None] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 文字块的内边距 </span><br><span class="line">     # 例如 padding: [3, 4, 5, 6]：表示 [上, 右, 下, 左] 的边距</span><br><span class="line">     # 例如 padding: 4：表示 padding: [4, 4, 4, 4]</span><br><span class="line">     # 例如 padding: [3, 4]：表示 padding: [3, 4, 3, 4]</span><br><span class="line">     padding: Union[Numeric, Sequence, None] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 文字块的背景阴影颜色</span><br><span class="line">     shadow_color: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 文字块的背景阴影长度</span><br><span class="line">     shadow_blur: Optional[Numeric] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 文字块的宽度</span><br><span class="line">     width: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 文字块的高度</span><br><span class="line">     height: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 在 rich 里面，可以自定义富文本样式。利用富文本样式，可以在标签中做出非常丰富的效果</span><br><span class="line">     # 具体配置可以参考一下 https:&#x2F;&#x2F;www.echartsjs.com&#x2F;tutorial.html#%E5%AF%8C%E6%96%87%E6%9C%AC%E6%A0%87%E7%AD%BE</span><br><span class="line">     rich: Optional[dict] &#x3D; None,</span><br><span class="line"> )</span><br></pre></td></tr></table></figure></li>
+<li><p><code>LabelOpts：标签配置项</code></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line">   class LabelOpts(</span><br><span class="line">        # 是否显示标签。</span><br><span class="line">        is_show: bool &#x3D; True,</span><br><span class="line">    </span><br><span class="line">        # 标签的位置。可选</span><br><span class="line">        # &#39;top&#39;，&#39;left&#39;，&#39;right&#39;，&#39;bottom&#39;，&#39;inside&#39;，&#39;insideLeft&#39;，&#39;insideRight&#39;</span><br><span class="line">        # &#39;insideTop&#39;，&#39;insideBottom&#39;， &#39;insideTopLeft&#39;，&#39;insideBottomLeft&#39;</span><br><span class="line">        # &#39;insideTopRight&#39;，&#39;insideBottomRight&#39;</span><br><span class="line">        position: Union[str, Sequence] &#x3D; &quot;top&quot;,</span><br><span class="line">    </span><br><span class="line">        # 文字的颜色。</span><br><span class="line">        # 如果设置为 &#39;auto&#39;，则为视觉映射得到的颜色，如系列色。</span><br><span class="line">        color: Optional[str] &#x3D; None,</span><br><span class="line">    </span><br><span class="line">        # 距离图形元素的距离。当 position 为字符描述值（如 &#39;top&#39;、&#39;insideRight&#39;）时候有效。</span><br><span class="line">        distance: Union[Numeric, Sequence, None] &#x3D; None,</span><br><span class="line">    </span><br><span class="line">        # 文字的字体大小</span><br><span class="line">        font_size: Numeric &#x3D; 12,</span><br><span class="line">    </span><br><span class="line">        # 文字字体的风格，可选：</span><br><span class="line">        # &#39;normal&#39;，&#39;italic&#39;，&#39;oblique&#39;</span><br><span class="line">        font_style: Optional[str] &#x3D; None,</span><br><span class="line">    </span><br><span class="line">        # 文字字体的粗细，可选：</span><br><span class="line">        # &#39;normal&#39;，&#39;bold&#39;，&#39;bolder&#39;，&#39;lighter&#39;</span><br><span class="line">        font_weight: Optional[str] &#x3D; None,</span><br><span class="line">    </span><br><span class="line">        # 文字的字体系列</span><br><span class="line">        # 还可以是 &#39;serif&#39; , &#39;monospace&#39;, &#39;Arial&#39;, &#39;Courier New&#39;, &#39;Microsoft YaHei&#39;, ...</span><br><span class="line">        font_family: Optional[str] &#x3D; None,</span><br><span class="line">    </span><br><span class="line">        # 标签旋转。从 -90 度到 90 度。正值是逆时针。</span><br><span class="line">        rotate: Optional[Numeric] &#x3D; None,</span><br><span class="line">    </span><br><span class="line">        # 刻度标签与轴线之间的距离。</span><br><span class="line">        margin: Optional[Numeric] &#x3D; 8,</span><br><span class="line">    </span><br><span class="line">        # 坐标轴刻度标签的显示间隔，在类目轴中有效。</span><br><span class="line">        # 默认会采用标签不重叠的策略间隔显示标签。</span><br><span class="line">        # 可以设置成 0 强制显示所有标签。</span><br><span class="line">        # 如果设置为 1，表示『隔一个标签显示一个标签』，如果值为 2，表示隔两个标签显示一个标签，以此类推。</span><br><span class="line">        # 可以用数值表示间隔的数据，也可以通过回调函数控制。回调函数格式如下：</span><br><span class="line">        # (index:number, value: string) &#x3D;&gt; boolean</span><br><span class="line">        # 第一个参数是类目的 index，第二个值是类目名称，如果跳过则返回 false。</span><br><span class="line">        interval: Union[Numeric, str, None]&#x3D; None,</span><br><span class="line">    </span><br><span class="line">        # 文字水平对齐方式，默认自动。可选：</span><br><span class="line">        # &#39;left&#39;，&#39;center&#39;，&#39;right&#39;</span><br><span class="line">        horizontal_align: Optional[str] &#x3D; None,</span><br><span class="line">    </span><br><span class="line">        # 文字垂直对齐方式，默认自动。可选：</span><br><span class="line">        # &#39;top&#39;，&#39;middle&#39;，&#39;bottom&#39;</span><br><span class="line">        vertical_align: Optional[str] &#x3D; None,</span><br><span class="line">    </span><br><span class="line">        # 标签内容格式器，支持字符串模板和回调函数两种形式，字符串模板与回调函数返回的字符串均支持用 \n 换行。</span><br><span class="line">        # 模板变量有 &#123;a&#125;, &#123;b&#125;，&#123;c&#125;，&#123;d&#125;，&#123;e&#125;，分别表示系列名，数据名，数据值等。 </span><br><span class="line">        # 在 trigger 为 &#39;axis&#39; 的时候，会有多个系列的数据，此时可以通过 &#123;a0&#125;, &#123;a1&#125;, &#123;a2&#125; 这种后面加索引的方式表示系列的索引。 </span><br><span class="line">        # 不同图表类型下的 &#123;a&#125;，&#123;b&#125;，&#123;c&#125;，&#123;d&#125; 含义不一样。 其中变量&#123;a&#125;, &#123;b&#125;, &#123;c&#125;, &#123;d&#125;在不同图表类型下代表数据含义为：</span><br><span class="line">    </span><br><span class="line">        # 折线（区域）图、柱状（条形）图、K线图 : &#123;a&#125;（系列名称），&#123;b&#125;（类目值），&#123;c&#125;（数值）, &#123;d&#125;（无）</span><br><span class="line">        # 散点图（气泡）图 : &#123;a&#125;（系列名称），&#123;b&#125;（数据名称），&#123;c&#125;（数值数组）, &#123;d&#125;（无）</span><br><span class="line">        # 地图 : &#123;a&#125;（系列名称），&#123;b&#125;（区域名称），&#123;c&#125;（合并数值）, &#123;d&#125;（无）</span><br><span class="line">        # 饼图、仪表盘、漏斗图: &#123;a&#125;（系列名称），&#123;b&#125;（数据项名称），&#123;c&#125;（数值）, &#123;d&#125;（百分比）</span><br><span class="line">        # 示例：formatter: &#39;&#123;b&#125;: &#123;@score&#125;&#39;</span><br><span class="line">        # </span><br><span class="line">        # 回调函数，回调函数格式：</span><br><span class="line">        # (params: Object|Array) &#x3D;&gt; string</span><br><span class="line">        # 参数 params 是 formatter 需要的单个数据集。格式如下：</span><br><span class="line">        # &#123;</span><br><span class="line">        #    componentType: &#39;series&#39;,</span><br><span class="line">        #    &#x2F;&#x2F; 系列类型</span><br><span class="line">        #    seriesType: string,</span><br><span class="line">        #    &#x2F;&#x2F; 系列在传入的 option.series 中的 index</span><br><span class="line">        #    seriesIndex: number,</span><br><span class="line">        #    &#x2F;&#x2F; 系列名称</span><br><span class="line">        #    seriesName: string,</span><br><span class="line">        #    &#x2F;&#x2F; 数据名，类目名</span><br><span class="line">        #    name: string,</span><br><span class="line">        #    &#x2F;&#x2F; 数据在传入的 data 数组中的 index</span><br><span class="line">        #    dataIndex: number,</span><br><span class="line">        #    &#x2F;&#x2F; 传入的原始数据项</span><br><span class="line">        #    data: Object,</span><br><span class="line">        #    &#x2F;&#x2F; 传入的数据值</span><br><span class="line">        #    value: number|Array,</span><br><span class="line">        #    &#x2F;&#x2F; 数据图形的颜色</span><br><span class="line">        #    color: string,</span><br><span class="line">        # &#125;</span><br><span class="line">        formatter: Optional[str] &#x3D; None,</span><br><span class="line">    </span><br><span class="line">        # 在 rich 里面，可以自定义富文本样式。利用富文本样式，可以在标签中做出非常丰富的效果</span><br><span class="line">        # 具体配置可以参考一下 https:&#x2F;&#x2F;www.echartsjs.com&#x2F;tutorial.html#%E5%AF%8C%E6%96%87%E6%9C%AC%E6%A0%87%E7%AD%BE</span><br><span class="line">        rich: Optional[dict] &#x3D; None,</span><br><span class="line">    )</span><br><span class="line">   &#96;&#96;&#96;   </span><br><span class="line">4. &#96;LineStyleOpts：线样式配置项&#96;</span><br></pre></td></tr></table></figure>
+<p>class LineStyleOpts(</p>
+<pre><code># 是否显示
+is_show: bool = True,
+
+# 线宽。
+width: Numeric = 1,
+
+# 图形透明度。支持从 0 到 1 的数字，为 0 时不绘制该图形。
+opacity: Numeric = 1,
+
+# 线的弯曲度，0 表示完全不弯曲
+curve: Numeric = 0,
+
+# 线的类型。可选：
+# &apos;solid&apos;, &apos;dashed&apos;, &apos;dotted&apos;
+type_: str = &quot;solid&quot;,
+
+# 线的颜色。
+# 颜色可以使用 RGB 表示，比如 &apos;rgb(128, 128, 128)&apos;，如果想要加上 alpha 通道表示不透明度，
+# 可以使用 RGBA，比如 &apos;rgba(128, 128, 128, 0.5)&apos;，也可以使用十六进制格式，比如 &apos;#ccc&apos;。
+# 除了纯色之外颜色也支持渐变色和纹理填充
+# 
+# 线性渐变，前四个参数分别是 x0, y0, x2, y2, 范围从 0 - 1，相当于在图形包围盒中的百分比，
+# 如果 globalCoord 为 `true`，则该四个值是绝对的像素位置
+# color: {
+#    type: &apos;linear&apos;,
+#    x: 0,
+#    y: 0,
+#    x2: 0,
+#    y2: 1,
+#    colorStops: [{
+#        offset: 0, color: &apos;red&apos; // 0% 处的颜色
+#    }, {
+#        offset: 1, color: &apos;blue&apos; // 100% 处的颜色
+#    }],
+#    global: false // 缺省为 false
+# }
+# 
+# 径向渐变，前三个参数分别是圆心 x, y 和半径，取值同线性渐变
+# color: {
+#    type: &apos;radial&apos;,
+#    x: 0.5,
+#    y: 0.5,
+#    r: 0.5,
+#    colorStops: [{
+#        offset: 0, color: &apos;red&apos; // 0% 处的颜色
+#    }, {
+#        offset: 1, color: &apos;blue&apos; // 100% 处的颜色
+#    }],
+#    global: false // 缺省为 false
+# }
+# 
+# 纹理填充
+# color: {
+#    image: imageDom, // 支持为 HTMLImageElement, HTMLCanvasElement，不支持路径字符串
+#    repeat: &apos;repeat&apos; // 是否平铺, 可以是 &apos;repeat-x&apos;, &apos;repeat-y&apos;, &apos;no-repeat&apos;
+# }
+color: Union[str, Sequence, None] = None,</code></pre><p> )</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5. &#96;Lines3DEffectOpts：3D线样式配置项&#96;</span><br></pre></td></tr></table></figure>
+<p>class Line3DEffectOpts(</p>
+<pre><code># 是否显示尾迹特效，默认不显示。
+is_show: bool = True,
+
+# 尾迹特效的周期。
+period: Numeric = 4,
+
+# 轨迹特效的移动动画是否是固定速度，单位按三维空间的尺寸
+# 设置为非 null 的值后会忽略 period 配置项。
+constant_speed: Optional[Numeric] = None,
+
+# 尾迹的宽度。
+trail_width: Numeric = 4,
+
+# 尾迹的长度，范围从 0 到 1，为线条长度的百分比。
+trail_length: Numeric = 0.1,
+
+# 尾迹的颜色，默认跟线条颜色相同。
+trail_color: Optional[str] = None,
+
+# 尾迹的不透明度，默认跟线条不透明度相同。
+trail_opacity: Optional[Numeric] = None,</code></pre><p> )</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6. &#96;SplitLineOpts：分割线配置项&#96;</span><br></pre></td></tr></table></figure>
+<p>class SplitLineOpts(</p>
+<pre><code># 是否显示分割线
+is_show: bool = False,
+
+# 线风格配置项，参考 `series_options.SplitLineOpts`
+linestyle_opts: LineStyleOpts = LineStyleOpts()</code></pre><p> )</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7. &#96;MarkPointItem：标记点数据项&#96;</span><br></pre></td></tr></table></figure>
+<p>class MarkPointItem(</p>
+<pre><code># 标注名称。
+name: Optional[str] = None,
+
+# 特殊的标注类型，用于标注最大值最小值等。可选:
+# &apos;min&apos; 最大值。
+# &apos;max&apos; 最大值。
+# &apos;average&apos; 平均值。
+type_: Optional[str] = None,
+
+# 在使用 type 时有效，用于指定在哪个维度上指定最大值最小值，可以是 
+# 0（xAxis, radiusAxis），
+# 1（yAxis, angleAxis），默认使用第一个数值轴所在的维度。
+value_index: Optional[Numeric] = None,
+
+# 在使用 type 时有效，用于指定在哪个维度上指定最大值最小值。这可以是维度的直接名称，
+# 例如折线图时可以是 x、angle 等、candlestick 图时可以是 open、close 等维度名称。
+value_dim: Optional[str] = None,
+
+# 标注的坐标。坐标格式视系列的坐标系而定，可以是直角坐标系上的 x, y，
+# 也可以是极坐标系上的 radius, angle。例如 [121, 2323]、[&apos;aa&apos;, 998]。
+coord: Optional[Sequence] = None,
+
+# 相对容器的屏幕 x 坐标，单位像素。
+x: Optional[Numeric] = None,
+
+# 相对容器的屏幕 y 坐标，单位像素。
+y: Optional[Numeric] = None,
+
+# 标注值，可以不设。
+value: Optional[Numeric] = None,
+
+# 标记的图形。
+# ECharts 提供的标记类型包括 &apos;circle&apos;, &apos;rect&apos;, &apos;roundRect&apos;, &apos;triangle&apos;, 
+# &apos;diamond&apos;, &apos;pin&apos;, &apos;arrow&apos;, &apos;none&apos;
+# 可以通过 &apos;image://url&apos; 设置为图片，其中 URL 为图片的链接，或者 dataURI。
+symbol: Optional[str] = None,
+
+# 标记的大小，可以设置成诸如 10 这样单一的数字，也可以用数组分开表示宽和高，
+# 例如 [20, 10] 表示标记宽为 20，高为 10。
+symbol_size: Union[Numeric, Sequence] = None,
+
+# 标记点样式配置项，参考 `series_options.ItemStyleOpts`
+itemstyle_opts: Union[ItemStyleOpts, dict, None] = None,</code></pre><p> )</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">8. &#96;MarkPointOpts：标记点配置项&#96;</span><br></pre></td></tr></table></figure>
+<p>class MarkPointOpts(</p>
+<pre><code># 标记点数据，参考 `series_options.MarkPointItem`
+data: Sequence[Union[MarkPointItem, dict]] = None,
+
+# 标记的图形。
+# ECharts 提供的标记类型包括 &apos;circle&apos;, &apos;rect&apos;, &apos;roundRect&apos;, &apos;triangle&apos;, 
+# &apos;diamond&apos;, &apos;pin&apos;, &apos;arrow&apos;, &apos;none&apos;
+# 可以通过 &apos;image://url&apos; 设置为图片，其中 URL 为图片的链接，或者 dataURI。
+symbol: Optional[str] = None,
+
+# 标记的大小，可以设置成诸如 10 这样单一的数字，也可以用数组分开表示宽和高，
+# 例如 [20, 10] 表示标记宽为 20，高为 10。
+# 如果需要每个数据的图形大小不一样，可以设置为如下格式的回调函数：
+# (value: Array|number, params: Object) =&gt; number|Array
+# 其中第一个参数 value 为 data 中的数据值。第二个参数 params 是其它的数据项参数。
+symbol_size: Union[None, Numeric] = None,
+
+# 标签配置项，参考 `series_options.LabelOpts`
+label_opts: LabelOpts = LabelOpts(position=&quot;inside&quot;, color=&quot;#fff&quot;),</code></pre><p> )</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9. &#96;MarkLineItem：标记线数据项&#96;</span><br></pre></td></tr></table></figure>
+<p>class MarkLineItem(</p>
+<pre><code># 标注名称。
+name: Optional[str] = None,
+
+# 特殊的标注类型，用于标注最大值最小值等。可选:
+# &apos;min&apos; 最大值。
+# &apos;max&apos; 最大值。
+# &apos;average&apos; 平均值。
+type_: Optional[str] = None,
+
+# 相对容器的屏幕 x 坐标，单位像素。
+x: Union[str, Numeric, None] = None,
+
+# 相对容器的屏幕 y 坐标，单位像素。
+y: Union[str, Numeric, None] = None,
+
+# 在使用 type 时有效，用于指定在哪个维度上指定最大值最小值，可以是 
+# 0（xAxis, radiusAxis），
+# 1（yAxis, angleAxis），默认使用第一个数值轴所在的维度。
+value_index: Optional[Numeric] = None,
+
+# 在使用 type 时有效，用于指定在哪个维度上指定最大值最小值。这可以是维度的直接名称，
+# 例如折线图时可以是 x、angle 等、candlestick 图时可以是 open、close 等维度名称。
+value_dim: Optional[str] = None,
+
+# 起点或终点的坐标。坐标格式视系列的坐标系而定，可以是直角坐标系上的 x, y，
+# 也可以是极坐标系上的 radius, angle。
+coord: Optional[Sequence] = None,
+
+# 终点标记的图形。
+# ECharts 提供的标记类型包括 &apos;circle&apos;, &apos;rect&apos;, &apos;roundRect&apos;, &apos;triangle&apos;,
+#  &apos;diamond&apos;, &apos;pin&apos;, &apos;arrow&apos;, &apos;none&apos;
+# 可以通过 &apos;image://url&apos; 设置为图片，其中 URL 为图片的链接，或者 dataURI。
+symbol: Optional[str] = None,
+
+# 标记的大小，可以设置成诸如 10 这样单一的数字，也可以用数组分开表示宽和高，
+# 例如 [20, 10] 表示标记宽为 20，高为 10。
+symbol_size: Optional[Numeric] = None,</code></pre><p> )</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10. &#96;MarkLineOpts：标记线配置项&#96;</span><br></pre></td></tr></table></figure>
+<p> class MarkLineOpts(</p>
+<pre><code># 图形是否不响应和触发鼠标事件，默认为 false，即响应和触发鼠标事件。
+is_silent: bool = False,
+
+# 标记线数据，参考 `series_options.MarkLineItem`
+data: Sequence[Union[MarkLineItem, dict]] = None,
+
+# 标线两端的标记类型，可以是一个数组分别指定两端，也可以是单个统一指定，具体格式见 data.symbol。
+symbol: Optional[str] = None,
+
+# 标线两端的标记大小，可以是一个数组分别指定两端，也可以是单个统一指定。
+symbol_size: Union[None, Numeric] = None,
+
+# 标线数值的精度，在显示平均值线的时候有用。
+precision: int = 2,
+
+# 标签配置项，参考 `series_options.LabelOpts`
+label_opts: LabelOpts = LabelOpts(),
+
+# 标记线样式配置项，参考 `series_options.LineStyleOpts`
+linestyle_opts: Union[LineStyleOpts, dict, None] = None,</code></pre><p> )</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">11. &#96;MarkAreaItem：标记区域数据项&#96;</span><br></pre></td></tr></table></figure>
+<p> class MarkAreaItem(</p>
+<pre><code># 区域名称, 仅仅就是一个名称而已
+name: Optional[str] = None,
+
+# 特殊的标注类型，用于标注最大值最小值等。
+# &apos;min&apos; 最大值。
+# &apos;max&apos; 最大值。
+# &apos;average&apos; 平均值。
+type_: Sequence[Optional[str], Optional[str]] = (None, None),
+
+# 在使用 type 时有效，用于指定在哪个维度上指定最大值最小值，可以是 0（xAxis, radiusAxis），1（yAxis, angleAxis）。
+# 默认使用第一个数值轴所在的维度。
+value_index: Sequence[Optional[Numeric], Optional[Numeric]] = (None, None),
+
+# 在使用 type 时有效，用于指定在哪个维度上指定最大值最小值。
+# 这可以是维度的直接名称，例如折线图时可以是 x、angle 等、candlestick 图时可以是 open、close 等维度名称。
+value_dim: Sequence[Optional[str], Optional[str]] = (None, None),
+
+# 相对容器的屏幕 x 坐标，单位像素，支持百分比形式，例如 &apos;20%&apos;。
+x: Sequence[Union[str, Numeric, None], Union[str, Numeric, None]] = (None, None),
+
+# 相对容器的屏幕 y 坐标，单位像素，支持百分比形式，例如 &apos;20%&apos;。
+y: Sequence[Union[str, Numeric, None], Union[str, Numeric, None]] = (None, None),
+
+# 标签配置项，参考 `series_options.LabelOpts`
+label_opts: Union[LabelOpts, dict, None] = None,
+
+# 该数据项区域的样式，起点和终点项的 itemStyle 会合并到一起。参考 `series_options.ItemStyleOpts`
+itemstyle_opts: Union[ItemStyleOpts, dict, None] = None,</code></pre><p> )</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">12. &#96;MarkAreaOpts：标记区域配置项&#96;</span><br></pre></td></tr></table></figure>
+<p> class MarkAreaOpts(</p>
+<pre><code># 图形是否不响应和触发鼠标事件，默认为 False，即响应和触发鼠标事件。
+is_silent: bool = False,
+
+# 标签配置项，参考 `series_options.LabelOpts`
+label_opts: LabelOpts = LabelOpts(),
+
+# 标记区域数据，参考 `series_options.MarkAreaItem`
+data: Sequence[Union[MarkAreaItem, Sequence, dict]] = None,
+
+# 该数据项区域的样式。参考 `series_options.ItemStyleOpts`
+itemstyle_opts: ItemStyleOpts = None,</code></pre><p> )</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">13. &#96;EffectOpts：涟漪特效配置项&#96;</span><br></pre></td></tr></table></figure>
+<p> class EffectOpts(</p>
+<pre><code># 是否显示特效。
+is_show: bool = True,
+
+# 波纹的绘制方式，可选 &apos;stroke&apos; 和 &apos;fill&apos;，Scatter 类型有效。
+brush_type: str = &quot;stroke&quot;,
+
+# 动画中波纹的最大缩放比例，Scatter 类型有效。
+scale: Numeric = 2.5,
+
+# 动画的周期，秒数，Scatter 类型有效。
+period: Numeric = 4,
+
+# 特效标记的颜色
+color: Optional[str] = None,
+
+# 特效图形的标记。
+# ECharts 提供的标记类型包括 &apos;circle&apos;, &apos;rect&apos;, &apos;roundRect&apos;, &apos;triangle&apos;, 
+# &apos;diamond&apos;, &apos;pin&apos;, &apos;arrow&apos;, &apos;none&apos;
+# 可以通过 &apos;image://url&apos; 设置为图片，其中 URL 为图片的链接，或者 dataURI。
+symbol: Optional[str] = None,
+
+# 特效标记的大小，可以设置成诸如 10 这样单一的数字，也可以用数组分开表示高和宽，
+# 例如 [20, 10] 表示标记宽为 20，高为 10。
+symbol_size: Optional[Numeric] = None,
+
+# 特效尾迹的长度。取从 0 到 1 的值，数值越大尾迹越长。Geo 图设置 Lines 类型时有效。
+trail_length: Optional[Numeric] = None,</code></pre><p> )</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">14. &#96;AreaStyleOpts：区域填充样式配置项&#96;</span><br></pre></td></tr></table></figure>
+<p> class AreaStyleOpts(</p>
+<pre><code># 图形透明度。支持从 0 到 1 的数字，为 0 时不绘制该图形。
+opacity: Optional[Numeric] = 0,
+# 填充的颜色。
+# 颜色可以使用 RGB 表示，比如 &apos;rgb(128, 128, 128)&apos;，如果想要加上 alpha 通道表示不透明度，
+# 可以使用 RGBA，比如 &apos;rgba(128, 128, 128, 0.5)&apos;，也可以使用十六进制格式，比如 &apos;#ccc&apos;。
+# 除了纯色之外颜色也支持渐变色和纹理填充
+# 
+# 线性渐变，前四个参数分别是 x0, y0, x2, y2, 范围从 0 - 1，相当于在图形包围盒中的百分比，
+# 如果 globalCoord 为 `true`，则该四个值是绝对的像素位置
+# color: {
+#    type: &apos;linear&apos;,
+#    x: 0,
+#    y: 0,
+#    x2: 0,
+#    y2: 1,
+#    colorStops: [{
+#        offset: 0, color: &apos;red&apos; // 0% 处的颜色
+#    }, {
+#        offset: 1, color: &apos;blue&apos; // 100% 处的颜色
+#    }],
+#    global: false // 缺省为 false
+# }
+# 
+# 径向渐变，前三个参数分别是圆心 x, y 和半径，取值同线性渐变
+# color: {
+#    type: &apos;radial&apos;,
+#    x: 0.5,
+#    y: 0.5,
+#    r: 0.5,
+#    colorStops: [{
+#        offset: 0, color: &apos;red&apos; // 0% 处的颜色
+#    }, {
+#        offset: 1, color: &apos;blue&apos; // 100% 处的颜色
+#    }],
+#    global: false // 缺省为 false
+# }
+# 
+# 纹理填充
+# color: {
+#    image: imageDom, // 支持为 HTMLImageElement, HTMLCanvasElement，不支持路径字符串
+#    repeat: &apos;repeat&apos; // 是否平铺, 可以是 &apos;repeat-x&apos;, &apos;repeat-y&apos;, &apos;no-repeat&apos;
+# }
+color: Optional[str] = None</code></pre><p> )</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">15. &#96;SplitAreaOpts：分隔区域配置项&#96;</span><br></pre></td></tr></table></figure>
+<p> class SplitAreaOpts(</p>
+<pre><code># 是否显示分隔区域。
+is_show=True, 
+# 分隔区域的样式配置项，参考 `series_options.AreaStyleOpts`
+areastyle_opts: AreaStyleOpts = AreaStyleOpts()</code></pre><p> )</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">16. &#96;MinorTickOpts：次级刻度配置项&#96;</span><br></pre></td></tr></table></figure>
+<p> class MinorTickOpts(</p>
+<pre><code># 是否显示次刻度线。
+is_show: bool = False,
+
+# 次刻度线分割数，默认会分割成 5 段
+split_number: Numeric = 5,
+
+# 次刻度线的长度。
+length: Numeric = 3,
+
+# 次刻度线的样式
+linestyle_opts: Union[LineStyleOpts, dict, None] = None,</code></pre><p> )</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">17. &#96;MinorSplitLineOpts：次级分割线配置项&#96;</span><br></pre></td></tr></table></figure>
+<p> class MinorSplitLineOpts(</p>
+<pre><code># 是否显示次分隔线。默认不显示。
+is_show: bool = False,
+
+# 次分隔线线宽。
+width: Numeric = 1,
+
+# 次分隔线线的类型。可选：&apos;solid&apos;，&apos;dashed&apos;，&apos;dotted&apos;
+type_: str = &quot;solid&quot;,
+
+# 图形透明度。支持从 0 到 1 的数字，为 0 时不绘制该图形。
+opacity: Union[Numeric, None] = None,
+
+# 线的样式
+linestyle_opts: Union[LineStyleOpts, dict, None] = None,</code></pre><p> )<br> ```</p>
+</li>
+</ol>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Liu
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-chang-yong-ming-ling/">linux_常用命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/27/css-note/">css_note</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/python-chang-yong-mo-kuai/">python_常用模块</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/python-chang-yong-mo-kuai/">python_常用模块</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/27/css-note/">css_note</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-chang-yong-ming-ling/">linux_常用命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2020/07/30/pyecharts-series-options/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/07/30/pyecharts-series-options/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/07/30/pyecharts-series-options/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://www.crushing.xyz/" target="_blank">GODLIN</a>
+    </li>
+    
+    <li>
+        <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/#id9" target="_blank">BeautifulSoup 中文文档</a>
+    </li>
+    
+    <li>
+        <a href="https://requests.readthedocs.io/zh_CN/latest/user/quickstart.html" target="_blank">Requests 中文文档</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/forgotten-forever" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/xia-chong-yu-bing-74-74" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Liu Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <script type="text/javascript" src="\js\FunnyTitle.js"></script>
+    <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"scripFrom":"local","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"heigut":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>

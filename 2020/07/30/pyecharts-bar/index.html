@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Liu">
+    
+    
+    
+    
+    
+    
+    <title>pyecharts_Bar | Hexo</title>
+    <link href="http://yoursite.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://yoursite.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">Hexo</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="">
+                    <a href="/tags">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">Hexo</a>
+        >
+        <span>pyecharts_Bar</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-07-30
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2020-07-30
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="pyecharts-Bar"><a href="#pyecharts-Bar" class="headerlink" title="pyecharts_Bar"></a>pyecharts_Bar</h1><p><a href="http://pyecharts.org/#/zh-cn/" target="_blank" rel="noopener">全部来自于官方文档，主要用于方便自己查找</a></p>
+<h2 id="Bar-柱状图-条形图"><a href="#Bar-柱状图-条形图" class="headerlink" title="Bar: 柱状图/条形图"></a><code>Bar: 柱状图/条形图</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Bar(init_opts&#x3D;opts.InitOpts())</span><br><span class="line">.add_xaxis(x_data)</span><br><span class="line">.add_yaxis(y_data)</span><br><span class="line"> # 系列配置项</span><br><span class="line">.set_series_opts()</span><br><span class="line"> # 全局配置项</span><br><span class="line">.set_global_opts(</span><br><span class="line">                title_opts&#x3D;opts.TitleOpts(title&#x3D;&quot;标题&quot;),</span><br><span class="line">                # 工具箱选择项</span><br><span class="line">                toolbox_opts&#x3D;opts.ToolboxOpts(),</span><br><span class="line">                # 图例配置项</span><br><span class="line">                legend_opts&#x3D;opts.legendOpts(is_show&#x3D;False),</span><br><span class="line">                # 坐标轴配置项</span><br><span class="line">                yaxis_opts&#x3D;opts.AxisOpts(type_&#x3D;&quot;value&quot;),</span><br><span class="line">                # 原生图形元素组件</span><br><span class="line">                opts.GraphicGroup(graphic_item&#x3D;opts.GraphicItem()) </span><br><span class="line">                )  </span><br><span class="line">.render()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>.add_yaxis()</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">def add_yaxis(</span><br><span class="line">    # 系列名称，用于 tooltip 的显示，legend 的图例筛选。</span><br><span class="line">    series_name: str,</span><br><span class="line"></span><br><span class="line">    # 系列数据</span><br><span class="line">    y_axis: Sequence[Numeric, opts.BarItem, dict],</span><br><span class="line"></span><br><span class="line">    # 是否选中图例</span><br><span class="line">    is_selected: bool &#x3D; True,</span><br><span class="line"></span><br><span class="line">    # 使用的 x 轴的 index，在单个图表实例中存在多个 x 轴的时候有用。</span><br><span class="line">    xaxis_index: Optional[Numeric] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 使用的 y 轴的 index，在单个图表实例中存在多个 y 轴的时候有用。</span><br><span class="line">    yaxis_index: Optional[Numeric] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 是否启用图例 hover 时的联动高亮</span><br><span class="line">    is_legend_hover_link: bool &#x3D; True,</span><br><span class="line"></span><br><span class="line">    # 系列 label 颜色</span><br><span class="line">    color: Optional[str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 是否显示柱条的背景色。通过 backgroundStyle 配置背景样式。</span><br><span class="line">    is_show_background: bool &#x3D; False,</span><br><span class="line"></span><br><span class="line">    # 每一个柱条的背景样式。需要将 showBackground 设置为 true 时才有效。</span><br><span class="line">    background_style: types.Union[types.BarBackground, dict, None] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 数据堆叠，同个类目轴上系列配置相同的　stack　值可以堆叠放置。</span><br><span class="line">    stack: Optional[str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 柱条的宽度，不设时自适应。</span><br><span class="line">    # 可以是绝对值例如 40 或者百分数例如 &#39;60%&#39;。百分数基于自动计算出的每一类目的宽度。</span><br><span class="line">    # 在同一坐标系上，此属性会被多个 &#39;bar&#39; 系列共享。此属性应设置于此坐标系中最后一个 &#39;bar&#39; 系列上才会生效，并且是对此坐标系中所有 &#39;bar&#39; 系列生效。</span><br><span class="line">    bar_width: types.Union[types.Numeric, str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 柱条的最大宽度。比 barWidth 优先级高。</span><br><span class="line">    bar_max_width: types.Union[types.Numeric, str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 柱条的最小宽度。在直角坐标系中，默认值是 1。否则默认值是 null。比 barWidth 优先级高。</span><br><span class="line">    bar_min_width: types.Union[types.Numeric, str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 柱条最小高度，可用于防止某数据项的值过小而影响交互。</span><br><span class="line">    bar_min_height: types.Numeric &#x3D; 0,</span><br><span class="line"></span><br><span class="line">    # 同一系列的柱间距离，默认为类目间距的 20%，可设固定值</span><br><span class="line">    category_gap: Union[Numeric, str] &#x3D; &quot;20%&quot;,</span><br><span class="line"></span><br><span class="line">    # 不同系列的柱间距离，为百分比（如 &#39;30%&#39;，表示柱子宽度的 30%）。</span><br><span class="line">    # 如果想要两个系列的柱子重叠，可以设置 gap 为 &#39;-100%&#39;。这在用柱子做背景的时候有用。</span><br><span class="line">    gap: Optional[str] &#x3D; &quot;30%&quot;,</span><br><span class="line"></span><br><span class="line">    # 是否开启大数据量优化，在数据图形特别多而出现卡顿时候可以开启。</span><br><span class="line">    # 开启后配合 largeThreshold 在数据量大于指定阈值的时候对绘制进行优化。</span><br><span class="line">    # 缺点：优化后不能自定义设置单个数据项的样式。</span><br><span class="line">    is_large: bool &#x3D; False,</span><br><span class="line"></span><br><span class="line">    # 开启绘制优化的阈值。</span><br><span class="line">    large_threshold: types.Numeric &#x3D; 400,</span><br><span class="line"></span><br><span class="line">    # 使用 dimensions 定义 series.data 或者 dataset.source 的每个维度的信息。</span><br><span class="line">    # 注意：如果使用了 dataset，那么可以在 dataset.source 的第一行&#x2F;列中给出 dimension 名称。</span><br><span class="line">    # 于是就不用在这里指定 dimension。</span><br><span class="line">    # 但是，如果在这里指定了 dimensions，那么 ECharts 不再会自动从 dataset.source 的第一行&#x2F;列中获取维度信息。</span><br><span class="line">    dimensions: types.Union[types.Sequence, None] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 当使用 dataset 时，seriesLayoutBy 指定了 dataset 中用行还是列对应到系列上，也就是说，系列“排布”到 dataset 的行还是列上。可取值：</span><br><span class="line">    # &#39;column&#39;：默认，dataset 的列对应于系列，从而 dataset 中每一列是一个维度（dimension）。</span><br><span class="line">    # &#39;row&#39;：dataset 的行对应于系列，从而 dataset 中每一行是一个维度（dimension）。</span><br><span class="line">    series_layout_by: str &#x3D; &quot;column&quot;,</span><br><span class="line"></span><br><span class="line">    # 如果 series.data 没有指定，并且 dataset 存在，那么就会使用 dataset。</span><br><span class="line">    # datasetIndex 指定本系列使用那个 dataset。</span><br><span class="line">    dataset_index: types.Numeric &#x3D; 0,</span><br><span class="line"></span><br><span class="line">    # 是否裁剪超出坐标系部分的图形。柱状图：裁掉所有超出坐标系的部分，但是依然保留柱子的宽度</span><br><span class="line">    is_clip: bool &#x3D; True,</span><br><span class="line"></span><br><span class="line">    # 柱状图所有图形的 zlevel 值。</span><br><span class="line">    z_level: types.Numeric &#x3D; 0,</span><br><span class="line"></span><br><span class="line">    # 柱状图组件的所有图形的z值。控制图形的前后顺序。</span><br><span class="line">    # z值小的图形会被z值大的图形覆盖。</span><br><span class="line">    # z相比zlevel优先级更低，而且不会创建新的 Canvas。</span><br><span class="line">    z: types.Numeric &#x3D; 2,</span><br><span class="line"></span><br><span class="line">    # 标签配置项，参考 &#96;series_options.LabelOpts&#96;</span><br><span class="line">    label_opts: Union[opts.LabelOpts, dict] &#x3D; opts.LabelOpts(),</span><br><span class="line"></span><br><span class="line">    # 标记点配置项，参考 &#96;series_options.MarkPointOpts&#96;</span><br><span class="line">    markpoint_opts: Union[opts.MarkPointOpts, dict, None] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 标记线配置项，参考 &#96;series_options.MarkLineOpts&#96;</span><br><span class="line">    markline_opts: Union[opts.MarkLineOpts, dict, None] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 提示框组件配置项，参考 &#96;series_options.TooltipOpts&#96;</span><br><span class="line">    tooltip_opts: Union[opts.TooltipOpts, dict, None] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 图元样式配置项，参考 &#96;series_options.ItemStyleOpts&#96;</span><br><span class="line">    itemstyle_opts: Union[opts.ItemStyleOpts, dict, None] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 可以定义 data 的哪个维度被编码成什么。</span><br><span class="line">    encode: types.Union[types.JSFunc, dict, None] &#x3D; None,</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol>
+<li><code>BarItem：柱状图数据项</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class BarItem(</span><br><span class="line">     # 数据项名称。</span><br><span class="line">     name: Optional[str] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 单个数据项的数值。</span><br><span class="line">     value: Optional[Numeric] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 单个柱条文本的样式设置，参考 &#96;series_options.LabelOpts&#96;。</span><br><span class="line">     label_opts: Union[LabelOpts, dict, None] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 图元样式配置项，参考 &#96;series_options.ItemStyleOpts&#96;</span><br><span class="line">     itemstyle_opts: Union[ItemStyleOpts, dict, None] &#x3D; None,</span><br><span class="line"> </span><br><span class="line">     # 提示框组件配置项，参考 &#96;series_options.TooltipOpts&#96;</span><br><span class="line">     tooltip_opts: Union[TooltipOpts, dict, None] &#x3D; None,</span><br><span class="line"> )</span><br></pre></td></tr></table></figure></li>
+<li><code>BarBackgroundStyleOpts：柱状图背景样式配置</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">class BarBackgroundStyleOpts(</span><br><span class="line">    # 柱条的颜色。</span><br><span class="line">    color: str &#x3D; &quot;rgba(180, 180, 180, 0.2)&quot;,</span><br><span class="line"></span><br><span class="line">    # 柱条的描边颜色。</span><br><span class="line">    border_color: str &#x3D; &quot;#000&quot;,</span><br><span class="line"></span><br><span class="line">    # 柱条的描边宽度，默认不描边。</span><br><span class="line">    border_width: Numeric &#x3D; 0,</span><br><span class="line"></span><br><span class="line">    # 柱条的描边类型，默认为实线，支持 &#39;dashed&#39;, &#39;dotted&#39;。</span><br><span class="line">    border_type: str &#x3D; &quot;solid&quot;,</span><br><span class="line"></span><br><span class="line">    # 圆角半径，单位px，支持传入数组分别指定 4 个圆角半径。 如:</span><br><span class="line">    # barBorderRadius: 5, &#x2F;&#x2F; 统一设置四个角的圆角大小</span><br><span class="line">    # barBorderRadius: [5, 5, 0, 0] &#x2F;&#x2F;（顺时针左上，右上，右下，左下）</span><br><span class="line">    bar_border_radius: Union[Numeric, Sequence] &#x3D; 0,</span><br><span class="line"></span><br><span class="line">    # 图形阴影的模糊大小。</span><br><span class="line">    # 该属性配合 shadowColor,shadowOffsetX, shadowOffsetY 一起设置图形的阴影效果。</span><br><span class="line">    shadow_blur: Optional[Numeric] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 阴影颜色。支持的格式同color。</span><br><span class="line">    shadow_color: Optional[str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 阴影水平方向上的偏移距离。</span><br><span class="line">    shadow_offset_x: Numeric &#x3D; 0,</span><br><span class="line"></span><br><span class="line">    # 阴影垂直方向上的偏移距离。</span><br><span class="line">    shadow_offset_y: Numeric &#x3D; 0,</span><br><span class="line"></span><br><span class="line">    # 图形透明度。支持从 0 到 1 的数字，为 0 时不绘制该图形。</span><br><span class="line">    opacity: Optional[Numeric] &#x3D; None,</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Liu
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-chang-yong-ming-ling/">linux_常用命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/27/css-note/">css_note</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/python-chang-yong-mo-kuai/">python_常用模块</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/python-chang-yong-mo-kuai/">python_常用模块</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/27/css-note/">css_note</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-chang-yong-ming-ling/">linux_常用命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2020/07/30/pyecharts-bar/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/07/30/pyecharts-bar/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/07/30/pyecharts-bar/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://www.crushing.xyz/" target="_blank">GODLIN</a>
+    </li>
+    
+    <li>
+        <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/#id9" target="_blank">BeautifulSoup 中文文档</a>
+    </li>
+    
+    <li>
+        <a href="https://requests.readthedocs.io/zh_CN/latest/user/quickstart.html" target="_blank">Requests 中文文档</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/forgotten-forever" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/xia-chong-yu-bing-74-74" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Liu Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <script type="text/javascript" src="\js\FunnyTitle.js"></script>
+    <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"scripFrom":"local","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"heigut":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
