@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Liu">
+    
+    
+    
+    
+    
+    
+    <title>pixabay_爬取 | Hexo</title>
+    <link href="http://yoursite.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://yoursite.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">Hexo</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/scrapy-study/">scrapy_study</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">Hexo</a>
+        >
+        <span>pixabay_爬取</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/scrapy-study/">scrapy_study</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-07-31
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2020-07-31
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/scrapy-study/">scrapy_study</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2 id="记一次简单的爬虫学习"><a href="#记一次简单的爬虫学习" class="headerlink" title="记一次简单的爬虫学习"></a>记一次简单的爬虫学习</h2><p><strong>批量爬取 pixabay 图片</strong></p>
+<p><a href="https://pixabay.com/zh/images/search/" target="_blank" rel="noopener">pixabay图片查找地址</a></p>
+<p><a href="https://pixabay.com/api/docs/" target="_blank" rel="noopener">pixabay网站提供的API</a></p>
+<hr>
+<h5 id="1-pixabay-是一个做的很好的免费图片获取网站，里边有很多高质量免费的图片，有一天我想能不能写一个批量获取图片的爬虫，用于收集那些漂亮图片"><a href="#1-pixabay-是一个做的很好的免费图片获取网站，里边有很多高质量免费的图片，有一天我想能不能写一个批量获取图片的爬虫，用于收集那些漂亮图片" class="headerlink" title="1. pixabay 是一个做的很好的免费图片获取网站，里边有很多高质量免费的图片，有一天我想能不能写一个批量获取图片的爬虫，用于收集那些漂亮图片"></a>1. pixabay 是一个做的很好的免费图片获取网站，里边有很多高质量免费的图片，有一天我想能不能写一个批量获取图片的爬虫，用于收集那些漂亮图片</h5><p><img src="/2020/07/31/pixabay-pa-qu/pixabay_search.png" alt></p>
+<h5 id="2-说做就做，我先对网站进行最简单的分析-急性子，甚至源码都没细看-然后就开始急急切切的开始了爬取"><a href="#2-说做就做，我先对网站进行最简单的分析-急性子，甚至源码都没细看-然后就开始急急切切的开始了爬取" class="headerlink" title="2. 说做就做，我先对网站进行最简单的分析(急性子，甚至源码都没细看),然后就开始急急切切的开始了爬取"></a>2. 说做就做，我先对网站进行最简单的分析(急性子，甚至源码都没细看),然后就开始急急切切的开始了爬取</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">link = <span class="string">'https://pixabay.com/zh/images/search/'</span></span><br><span class="line">headers = &#123;<span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '</span></span><br><span class="line">                         <span class="string">'Chrome/78.0.3904.97 Safari/537.36'</span>&#125;</span><br><span class="line">response = requests.get(link, headers=headers)</span><br><span class="line">soup = BeautifulSoup(response.text, <span class="string">'lxml'</span>)</span><br><span class="line">print(soup)</span><br></pre></td></tr></table></figure>
+<h5 id="结果当然是失败了，并且基本上没有获得什么有用的信息"><a href="#结果当然是失败了，并且基本上没有获得什么有用的信息" class="headerlink" title="结果当然是失败了，并且基本上没有获得什么有用的信息"></a>结果当然是失败了，并且基本上没有获得什么有用的信息</h5><p><img src="/2020/07/31/pixabay-pa-qu/fail_scrapy.png" alt></p>
+<h5 id="3-然后再对网页源码报头进行仔细查看后仍然一头雾水的我，想到了可能会提供的有-API-接口，然后通过-CTRL-F在源码中搜索，找到了官方提供的-API-结构-赞美官方"><a href="#3-然后再对网页源码报头进行仔细查看后仍然一头雾水的我，想到了可能会提供的有-API-接口，然后通过-CTRL-F在源码中搜索，找到了官方提供的-API-结构-赞美官方" class="headerlink" title="3. 然后再对网页源码报头进行仔细查看后仍然一头雾水的我，想到了可能会提供的有 API 接口，然后通过 CTRL + F在源码中搜索，找到了官方提供的 API 结构(赞美官方)"></a>3. 然后再对网页源码报头进行仔细查看后仍然一头雾水的我，想到了可能会提供的有 API 接口，然后通过 <strong>CTRL + F</strong>在源码中搜索，找到了官方提供的 API 结构(赞美官方)</h5><p><a href="https://pixabay.com/api/docs/" target="_blank" rel="noopener">pixabay网站提供的API</a></p>
+<p><img src="/2020/07/31/pixabay-pa-qu/pixabay_API.png" alt></p>
+<h5 id="通过阅读官方文档就能发现只需要注册官方就可以提供一个-API-key，每小时下载量也够我这个个人用户使用"><a href="#通过阅读官方文档就能发现只需要注册官方就可以提供一个-API-key，每小时下载量也够我这个个人用户使用" class="headerlink" title="通过阅读官方文档就能发现只需要注册官方就可以提供一个 API key，每小时下载量也够我这个个人用户使用"></a>通过阅读官方文档就能发现只需要注册官方就可以提供一个 API key，每小时下载量也够我这个个人用户使用</h5><p><img src="/2020/07/31/pixabay-pa-qu/API_text.png" alt></p>
+<h5 id="官方提供了非常详细的-网址的各种参量拼接方式，以及爬出样本以供分析-出乎意料的是还有影片的接口及查询方式"><a href="#官方提供了非常详细的-网址的各种参量拼接方式，以及爬出样本以供分析-出乎意料的是还有影片的接口及查询方式" class="headerlink" title="官方提供了非常详细的 网址的各种参量拼接方式，以及爬出样本以供分析(出乎意料的是还有影片的接口及查询方式)"></a>官方提供了非常详细的 网址的各种参量拼接方式，以及爬出样本以供分析(出乎意料的是还有影片的接口及查询方式)</h5><h6 id="对链接构成简单分析后，我发现对于自己需要提供的仅仅是KEY-图片类型-image-type-，搜索条件-q-，爬取页数-page-，每页爬取数-per-page"><a href="#对链接构成简单分析后，我发现对于自己需要提供的仅仅是KEY-图片类型-image-type-，搜索条件-q-，爬取页数-page-，每页爬取数-per-page" class="headerlink" title="对链接构成简单分析后，我发现对于自己需要提供的仅仅是KEY, 图片类型(image_type)，搜索条件(q)，爬取页数(page)，每页爬取数(per_page)"></a>对链接构成简单分析后，我发现对于自己需要提供的仅仅是<strong>KEY</strong>, <strong>图片类型(image_type)</strong>，<strong>搜索条件(q)</strong>，<strong>爬取页数(page)</strong>，<strong>每页爬取数(per_page)</strong></h6><p><img src="/2020/07/31/pixabay-pa-qu/API_text1.png" alt></p>
+<hr>
+<p><img src="/2020/07/31/pixabay-pa-qu/img_example.png" alt></p>
+<hr>
+<p><img src="/2020/07/31/pixabay-pa-qu/video_text.png" alt><br><code>于是一段简单的拼接 URL 构成了,也考虑到了翻页的情况</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def get_json(page, condition, image_type):</span><br><span class="line">    page +&#x3D; 1</span><br><span class="line">    key &#x3D; &#39;&#39;</span><br><span class="line">    url &#x3D; &#39;https:&#x2F;&#x2F;pixabay.com&#x2F;api&#x2F;&#39;</span><br><span class="line"></span><br><span class="line">    pa &#x3D; &#123;</span><br><span class="line">        &#39;key&#39;: key,</span><br><span class="line">        &#39;q&#39;: condition,</span><br><span class="line">        &#39;image_type&#39;: image_type,</span><br><span class="line">        &#39;lang&#39;: &#39;zh&#39;,</span><br><span class="line">        &#39;page&#39;: page,</span><br><span class="line">        &#39;per_page&#39;: 200,</span><br><span class="line">    &#125;</span><br><span class="line">    r &#x3D; requests.get(url, params&#x3D;pa, headers&#x3D;headers)</span><br><span class="line">    decode_json &#x3D; json.loads(r.text)</span><br><span class="line">    return decode_json</span><br></pre></td></tr></table></figure>
+<h5 id="4-根据官方提供的例子进行分析，挑出自己需要的部分"><a href="#4-根据官方提供的例子进行分析，挑出自己需要的部分" class="headerlink" title="4. 根据官方提供的例子进行分析，挑出自己需要的部分"></a>4. 根据官方提供的例子进行分析，挑出自己需要的部分</h5><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"total"</span>: <span class="number">4692</span>,</span><br><span class="line"><span class="attr">"totalHits"</span>: <span class="number">500</span>,</span><br><span class="line"><span class="attr">"hits"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">"id"</span>: <span class="number">195893</span>,</span><br><span class="line">        <span class="attr">"pageURL"</span>: <span class="string">"https://pixabay.com/en/blossom-bloom-flower-195893/"</span>,</span><br><span class="line">        <span class="attr">"type"</span>: <span class="string">"photo"</span>,</span><br><span class="line">        <span class="attr">"tags"</span>: <span class="string">"blossom, bloom, flower"</span>,</span><br><span class="line">        <span class="attr">"previewURL"</span>: <span class="string">"https://cdn.pixabay.com/photo/2013/10/15/09/12/flower-195893_150.jpg"</span>,</span><br><span class="line">        <span class="attr">"previewWidth"</span>: <span class="number">150</span>,</span><br><span class="line">        <span class="attr">"previewHeight"</span>: <span class="number">84</span>,</span><br><span class="line">        <span class="attr">"webformatURL"</span>: <span class="string">"https://pixabay.com/get/35bbf209e13e39d2_640.jpg"</span>,</span><br><span class="line">        <span class="attr">"webformatWidth"</span>: <span class="number">640</span>,</span><br><span class="line">        <span class="attr">"webformatHeight"</span>: <span class="number">360</span>,</span><br><span class="line">        <span class="attr">"largeImageURL"</span>: <span class="string">"https://pixabay.com/get/ed6a99fd0a76647_1280.jpg"</span>,</span><br><span class="line">        <span class="attr">"fullHDURL"</span>: <span class="string">"https://pixabay.com/get/ed6a9369fd0a76647_1920.jpg"</span>,</span><br><span class="line">        <span class="attr">"imageURL"</span>: <span class="string">"https://pixabay.com/get/ed6a9364a9fd0a76647.jpg"</span>,</span><br><span class="line">        <span class="attr">"imageWidth"</span>: <span class="number">4000</span>,</span><br><span class="line">        <span class="attr">"imageHeight"</span>: <span class="number">2250</span>,</span><br><span class="line">        <span class="attr">"imageSize"</span>: <span class="number">4731420</span>,</span><br><span class="line">        <span class="attr">"views"</span>: <span class="number">7671</span>,</span><br><span class="line">        <span class="attr">"downloads"</span>: <span class="number">6439</span>,</span><br><span class="line">        <span class="attr">"favorites"</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">"likes"</span>: <span class="number">5</span>,</span><br><span class="line">        <span class="attr">"comments"</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="attr">"user_id"</span>: <span class="number">48777</span>,</span><br><span class="line">        <span class="attr">"user"</span>: <span class="string">"Josch13"</span>,</span><br><span class="line">        <span class="attr">"userImageURL"</span>: <span class="string">"https://cdn.pixabay.com/user/2013/11/05/02-10-23-764_250x250.jpg"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">"id"</span>: <span class="number">73424</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="在这些里面我们需要的是-图片的类型、图片的标签、图片的大图链接-，由于最近在学习数据分析，于是我也爬取了图片的下载量、收藏量以及被标记为爱好的量"><a href="#在这些里面我们需要的是-图片的类型、图片的标签、图片的大图链接-，由于最近在学习数据分析，于是我也爬取了图片的下载量、收藏量以及被标记为爱好的量" class="headerlink" title="在这些里面我们需要的是 图片的类型、图片的标签、图片的大图链接 ，由于最近在学习数据分析，于是我也爬取了图片的下载量、收藏量以及被标记为爱好的量"></a>在这些里面我们需要的是 <strong>图片的类型、图片的标签、图片的大图链接</strong> ，由于最近在学习数据分析，于是我也爬取了图片的<strong>下载量、收藏量以及被标记为爱好的量</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data &#x3D; &#123;&#39;type&#39;: picture[&#39;type&#39;],</span><br><span class="line">        &#39;tags&#39;: picture[&#39;tags&#39;],</span><br><span class="line">        &#39;largeImageURL&#39;: picture[&#39;largeImageURL&#39;],</span><br><span class="line">        &#39;downloads&#39;: picture[&#39;downloads&#39;],  # 下载总数</span><br><span class="line">        &#39;favorites&#39;: picture[&#39;favorites&#39;],  # 收藏夹总数</span><br><span class="line">        &#39;like&#39;: picture[&#39;likes&#39;],  # 点赞总数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="然后就是对大体框架的编写"><a href="#然后就是对大体框架的编写" class="headerlink" title="然后就是对大体框架的编写"></a>然后就是对大体框架的编写</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> pymongo <span class="keyword">import</span> MongoClient</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_json</span><span class="params">(page, condition, image_type)</span>:</span></span><br><span class="line">    page += <span class="number">1</span></span><br><span class="line">    key = <span class="string">''</span></span><br><span class="line">    url = <span class="string">'https://pixabay.com/api/'</span></span><br><span class="line"></span><br><span class="line">    pa = &#123;</span><br><span class="line">        <span class="string">'key'</span>: key,</span><br><span class="line">        <span class="string">'q'</span>: condition,</span><br><span class="line">        <span class="string">'image_type'</span>: image_type,</span><br><span class="line">        <span class="string">'lang'</span>: <span class="string">'zh'</span>,</span><br><span class="line">        <span class="string">'page'</span>: page,</span><br><span class="line">        <span class="string">'per_page'</span>: <span class="number">200</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    r = requests.get(url, params=pa, headers=headers)</span><br><span class="line">    decode_json = json.loads(r.text)</span><br><span class="line">    <span class="keyword">return</span> decode_json</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">page = <span class="number">0</span></span><br><span class="line">id = <span class="number">0</span></span><br><span class="line">headers = &#123;<span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '</span></span><br><span class="line">                         <span class="string">'Chrome/78.0.3904.97 Safari/537.36'</span>&#125;</span><br><span class="line">condition = input(<span class="string">"请输入你的搜索条件(多个条件以+连接): "</span>)</span><br><span class="line">image_type = input(<span class="string">"请输入搜索图片类型( 'all, photo, illustration插图, vector矢量'): "</span>)</span><br><span class="line">number = input(<span class="string">'请输入想要查询的图片页数num (num*200每页200条数据): '</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 存入 Nosql 数据库</span></span><br><span class="line">client = MongoClient(<span class="string">'localhost'</span>, <span class="number">27017</span>)</span><br><span class="line">db = client.pixabay_database</span><br><span class="line">collection = db.pixabay</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">1</span>, int(number)):</span><br><span class="line">    decode_json = get_json(page, condition, image_type)</span><br><span class="line">    <span class="keyword">for</span> picture <span class="keyword">in</span> decode_json[<span class="string">'hits'</span>]:</span><br><span class="line">        id += <span class="number">1</span></span><br><span class="line">        data = &#123;<span class="string">'id'</span>: id,</span><br><span class="line">                <span class="string">'type'</span>: picture[<span class="string">'type'</span>],</span><br><span class="line">                <span class="string">'tags'</span>: picture[<span class="string">'tags'</span>],</span><br><span class="line">                <span class="string">'largeImageURL'</span>: picture[<span class="string">'largeImageURL'</span>],</span><br><span class="line">                <span class="string">'downloads'</span>: picture[<span class="string">'downloads'</span>],  <span class="comment"># 下载总数</span></span><br><span class="line">                <span class="string">'favorites'</span>: picture[<span class="string">'favorites'</span>],  <span class="comment"># 收藏夹总数</span></span><br><span class="line">                <span class="string">'like'</span>: picture[<span class="string">'likes'</span>],  <span class="comment"># 点赞总数</span></span><br><span class="line">                &#125;</span><br><span class="line">        print(<span class="string">'开始存入数据库'</span>)</span><br><span class="line">        collection.insert_one(data)</span><br><span class="line"><span class="comment"># 存入Mysql数据库</span></span><br><span class="line"><span class="string">'''db = pymysql.connect(host='localhost',</span></span><br><span class="line"><span class="string">                     user="root",</span></span><br><span class="line"><span class="string">                     passwd="root",</span></span><br><span class="line"><span class="string">                     port=3306,</span></span><br><span class="line"><span class="string">                     db='pixabay',</span></span><br><span class="line"><span class="string">                     charset='utf8')</span></span><br><span class="line"><span class="string">cursor = db.cursor()</span></span><br><span class="line"><span class="string">for _ in range(1, int(number)):</span></span><br><span class="line"><span class="string">    decode_json = get_json(page, condition, image_type)</span></span><br><span class="line"><span class="string">    for picture in decode_json['hits']:</span></span><br><span class="line"><span class="string">        id += 1</span></span><br><span class="line"><span class="string">        data = &#123;'id': id,</span></span><br><span class="line"><span class="string">                'type': picture['type'],</span></span><br><span class="line"><span class="string">                'tags': picture['tags'],</span></span><br><span class="line"><span class="string">                'largeImageURL': picture['largeImageURL'],</span></span><br><span class="line"><span class="string">                'downloads': picture['downloads'],  # 下载总数</span></span><br><span class="line"><span class="string">                'favorites': picture['favorites'],  # 收藏夹总数</span></span><br><span class="line"><span class="string">                'like': picture['likes'],  # 点赞总数</span></span><br><span class="line"><span class="string">                &#125;</span></span><br><span class="line"><span class="string">        print('开始存入数据库')</span></span><br><span class="line"><span class="string">        sql = """INSERT INTO pixabay</span></span><br><span class="line"><span class="string">                (type, tags, largeImageURL, downloads, favorites, likes)</span></span><br><span class="line"><span class="string">                VALUES</span></span><br><span class="line"><span class="string">                (%s, %s, %s, %s, %s, %s)</span></span><br><span class="line"><span class="string">             """</span></span><br><span class="line"><span class="string">        cursor.execute(sql, (</span></span><br><span class="line"><span class="string">        picture['type'], picture['tags'], picture['largeImageURL'], picture['downloads'], picture['favorites'],</span></span><br><span class="line"><span class="string">        picture['likes']))</span></span><br><span class="line"><span class="string">        db.commit()</span></span><br><span class="line"><span class="string"># print(data)</span></span><br><span class="line"><span class="string">cursor.close()</span></span><br><span class="line"><span class="string">db.close()'''</span></span><br><span class="line"><span class="comment"># 存为 CSV 格式</span></span><br><span class="line"><span class="string">'''with open('/helper_hu/analysis_pixabay/analysis_pixabay.csv', 'a+', encoding='UTF-8', newline='') as csvfile:</span></span><br><span class="line"><span class="string">    head = ['id', 'type', 'tags', 'largeImageURL', 'downloads', 'favorites', 'like']</span></span><br><span class="line"><span class="string">    writer = csv.writer(csvfile)</span></span><br><span class="line"><span class="string">    writer.writerow(head)</span></span><br><span class="line"><span class="string">    for _ in range(1, int(number)):</span></span><br><span class="line"><span class="string">        decode_json = get_json(page, condition, image_type)</span></span><br><span class="line"><span class="string">        for picture in decode_json['hits']:</span></span><br><span class="line"><span class="string">            id += 1</span></span><br><span class="line"><span class="string">            data = &#123;'id': id,</span></span><br><span class="line"><span class="string">                    'type': picture['type'],</span></span><br><span class="line"><span class="string">                    'tags': picture['tags'],</span></span><br><span class="line"><span class="string">                    'largeImageURL': picture['largeImageURL'],</span></span><br><span class="line"><span class="string">                    'downloads': picture['downloads'],  # 下载总数</span></span><br><span class="line"><span class="string">                    'favorites': picture['favorites'],  # 收藏夹总数</span></span><br><span class="line"><span class="string">                    'like': picture['likes'],  # 点赞总数</span></span><br><span class="line"><span class="string">                    &#125;</span></span><br><span class="line"><span class="string">            # head = list(data.keys())</span></span><br><span class="line"><span class="string">            rows = list(data.values())</span></span><br><span class="line"><span class="string">            writer.writerow(rows)</span></span><br><span class="line"><span class="string">            print('写入数据id=&#123;&#125;'.format(id))</span></span><br><span class="line"><span class="string">    time.sleep(1.0)</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/07/31/pixabay-pa-qu/mysql_img.png" alt><br><img src="/2020/07/31/pixabay-pa-qu/MongoDB_img.png" alt><br><img src="/2020/07/31/pixabay-pa-qu/csv_img.png" alt></p>
+<h6 id="小结：分别写了3种存储方式-MySQL、MangoDB以及CSV，之后我用读取CSV-数据的方法简单分析了一类图片下用户最喜欢的图片以及下载量最多的。"><a href="#小结：分别写了3种存储方式-MySQL、MangoDB以及CSV，之后我用读取CSV-数据的方法简单分析了一类图片下用户最喜欢的图片以及下载量最多的。" class="headerlink" title="小结：分别写了3种存储方式 MySQL、MangoDB以及CSV，之后我用读取CSV 数据的方法简单分析了一类图片下用户最喜欢的图片以及下载量最多的。"></a>小结：分别写了3种存储方式 MySQL、MangoDB以及CSV，之后我用读取CSV 数据的方法简单分析了一类图片下用户最喜欢的图片以及下载量最多的。</h6>
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Liu
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-chang-yong-ming-ling/">linux_常用命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/27/css-note/">css_note</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/python-chang-yong-mo-kuai/">python_常用模块</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/python-chang-yong-mo-kuai/">python_常用模块</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/27/css-note/">css_note</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-chang-yong-ming-ling/">linux_常用命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2020/07/31/pixabay-pa-qu/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/07/31/pixabay-pa-qu/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/07/31/pixabay-pa-qu/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/scrapy-study/" style="font-size: 12.054224265171314px;" class="tag-cloud-link">scrapy_study</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://www.crushing.xyz/" target="_blank">GODLIN</a>
+    </li>
+    
+    <li>
+        <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/#id9" target="_blank">BeautifulSoup 中文文档</a>
+    </li>
+    
+    <li>
+        <a href="https://requests.readthedocs.io/zh_CN/latest/user/quickstart.html" target="_blank">Requests 中文文档</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/forgotten-forever" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/xia-chong-yu-bing-74-74" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Liu Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <script type="text/javascript" src="\js\FunnyTitle.js"></script>
+    <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"scripFrom":"local","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"heigut":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
