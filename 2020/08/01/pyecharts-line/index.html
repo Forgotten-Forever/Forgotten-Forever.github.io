@@ -10,7 +10,7 @@
     
     
     
-    <title>python_常用模块 | Hexo</title>
+    <title>pyecharts-Line | Hexo</title>
     <link href="http://yoursite.com" rel="prefetch" />
 
     
@@ -180,13 +180,13 @@
         <i class="fa fa-home"></i>
         <a href="http://yoursite.com">Hexo</a>
         >
-        <span>python_常用模块</span>
+        <span>pyecharts-Line</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2020/07/26/python-chang-yong-mo-kuai/">python_常用模块</a>
+                <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -194,12 +194,12 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/Python-%E6%A8%A1%E5%9D%97/">Python 模块</a>
+                <a href="/tags/Pyecharts/">Pyecharts</a>
                 
             </span>
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2020-07-26
+                <i class="fa fa-calendar"></i> 2020-08-01
             </span>
             
         </div>
@@ -209,17 +209,17 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2020/07/26/python-chang-yong-mo-kuai/">python_常用模块</a>
+                    <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2020-07-26
+                <i class="fa fa-calendar"></i> 2020-08-01
             </p>
             <p>
                 
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/Python-%E6%A8%A1%E5%9D%97/">Python 模块</a>
+                <a href="/tags/Pyecharts/">Pyecharts</a>
                 
                 
                 
@@ -227,145 +227,12 @@
         </center>
     </div>
     <div class="content-article">
-        <h1 id="模块制作"><a href="#模块制作" class="headerlink" title="模块制作"></a>模块制作</h1><ol>
-<li><strong>“”” “”” / #</strong> : <code>顶格写的注释被称为文档 (__doc__)，在模块中的注释与帮助，可以通过 help(model_name) 查看</code></li>
-<li><strong>import model_name / from model_name import function_name</strong><h1 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h1></li>
-<li><strong>random 随机模块</strong><ol>
-<li><code>random.random     随机生成 0~1 间小数</code></li>
-<li><code>random.randint    随机生成指定范围的整数，包含上下限</code></li>
-<li><code>random.randrange  随机生成指定 range 范围的整数，不包含上限    randrange(self, start, stop=None, step=1, _int=int)</code></li>
-<li><code>random.choice     随机获取指定序列的一个元素</code></li>
-<li><code>random.sample     随机获取指定序列的指定个元素 sample(self, population, k) (k:获取元素数目，population:指定序列(列表))</code></li>
-<li><code>random.shuffle    随机打乱序列(列表)数据</code></li>
-</ol>
-</li>
-<li><strong>pip 内置包管理工具</strong><ol>
-<li><code>pip install package (-i 国内源地址  换源)</code></li>
-<li><code>pip uninstall package</code></li>
-<li><code>pip list  展示</code></li>
-<li><code>pip update 更新</code></li>
-<li><code>windows 安装不上部分包</code><ol>
-<li><code>安装 wheel 包 (先支持安装 .whl 包)</code></li>
-<li><code>pip install package.whl</code></li>
-</ol>
-</li>
-<li><code>linux 压缩包安装</code><ol>
-<li><code>解压</code></li>
-<li><code>找到 setup.py</code></li>
-<li><code>python setup.py install 安装包</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><strong>os 路径</strong><ol>
-<li><code>os.system(&quot;cmd命令&quot;) 调用 cmd 并执行命令</code></li>
-<li><code>os.chdir  修改 python 工作路径 os.chdir(&quot;D:\\&quot;)</code></li>
-<li><code>os.mkdir  创建文件夹，在当前路径下</code></li>
-<li><code>os.path</code><ol>
-<li><code>os.path.isdir   是否是文件夹</code></li>
-<li><code>os.path.getsize 获取文件/夹大小</code></li>
-<li><code>os.path.join(&#39;a&#39;, &#39;b&#39;)   自动拼接成路径 ==&gt; &#39;a\\b&#39;</code></li>
-<li><code>os.path.dirname 返回文件目录，可以嵌套一直向上返回目录</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; os.path.dirname(os.path.dirname(os.path.abspath(&#39;board&#39;)))</span><br><span class="line">     &#39;E:\\python_study\\Django&#39;</span><br></pre></td></tr></table></figure></li>
-<li><code>os.path.abspath 绝对路径</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><strong>sys 系统</strong><ol>
-<li><code>sys.argv 接收调用python脚本时传递的参数，以列表格式，第一个参数是文件本身相对路径</code></li>
-<li><code>sys.exit()    涉及到时间以及内存分配方面释放</code></li>
-</ol>
-</li>
-<li><strong>file</strong> :<br>  <code>open(file, mode=&#39;r&#39;, buffering=None, encoding=None, errors=None, newline=None, closefd=True) 读取文件</code></li>
-<li><strong>WordCloud 词云模块</strong>  <figure class="highlight plain"><figcaption><span>install wordcloud```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">     1. &#96;常用参数&#96;</span><br><span class="line">         + &#96;width 词云图片宽度，默认400像素&#96;</span><br><span class="line">         + &#96;height 词云图片高度 默认200像素&#96;</span><br><span class="line">         + &#96;background_color 词云图片的背景颜色，默认为黑色&#96;</span><br><span class="line">         + &#96;font_step 字号增大的步进间隔 默认1号&#96;</span><br><span class="line">         + &#96;font_path 指定字体路径 默认None，对于中文可用font_path&#x3D;&#39;msyh.ttc&#39;&#96;</span><br><span class="line">         + &#96;mini_font_size 最小字号 默认4号&#96;</span><br><span class="line">         + &#96;max_font_size 最大字号 根据高度自动调节&#96;</span><br><span class="line">         + &#96;max_words 最大词数 默认200&#96;</span><br><span class="line">         + &#96;stop_words 不显示的单词 stop_words&#x3D;&#123;&quot;python&quot;,&quot;java&quot;&#125;&#96;</span><br><span class="line">         + &#96;Scale 默认值1。值越大，图像密度越大越清晰&#96;</span><br><span class="line">         + &#96;prefer_horizontal：默认值0.90，浮点数类型。表示在水平如果不合适，就旋转为垂直方向，水平放置的词数占0.9？&#96;</span><br><span class="line">         + &#96;relative_scaling：默认值0.5，浮点型。设定按词频倒序排列，上一个词相对下一位词的大小倍数。有如下取值：“0”表示大小标准只参考频率排名，“1”如果词频是2倍，大小也是2倍&#96;</span><br><span class="line">         + &#96;mask 指定词云形状图片，默认为矩形&#96;</span><br><span class="line">           &#96;通过以下代码读入外部词云形状图片（需要先pip install imageio安装imageio）&#96;</span><br><span class="line">             &#96;&#96;&#96;python</span><br><span class="line">           import imageio</span><br><span class="line">           from wordcloud import WordCloud</span><br><span class="line">           mk &#x3D; imageio.imread(&quot;picture.png&quot;)</span><br><span class="line">           w &#x3D; WordCloud(mask&#x3D;mk)</span><br><span class="line">           &#96;&#96;&#96;     </span><br><span class="line">7. **jieba 中文分词**</span><br><span class="line">     &#96;&#96;&#96;pip install jieba</span><br></pre></td></tr></table></figure>
+        <h1 id="pyecharts-Line"><a href="#pyecharts-Line" class="headerlink" title="pyecharts_Line"></a>pyecharts_Line</h1><p><a href="http://pyecharts.org/#/zh-cn/" target="_blank" rel="noopener">全部来自于官方文档，主要用于方便自己查找</a></p>
+<h2 id="Line：折线-面积图"><a href="#Line：折线-面积图" class="headerlink" title="Line：折线/面积图"></a><code>Line：折线/面积图</code></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Line</span><br><span class="line"><span class="keyword">import</span> pyecharts.options <span class="keyword">as</span> opts</span><br><span class="line">x_data = []</span><br><span class="line">y_data = []</span><br><span class="line"></span><br><span class="line">(</span><br><span class="line">    Line(init_opts=opts.InitOpts())</span><br><span class="line">    .add_xaxis(x_data)</span><br><span class="line">    .add_yaxis(</span><br><span class="line">        series_name=<span class="string">'折线名称'</span>,</span><br><span class="line">        <span class="comment"># 折线数据 </span></span><br><span class="line">        y_axis= y_data,</span><br><span class="line">        <span class="comment"># 标记点为 </span></span><br><span class="line">        markpoint_opts=opts.MarkPointOpts(</span><br><span class="line">            data=[</span><br><span class="line">                opts.MarkPointItem(type_=<span class="string">'max'</span>, name=<span class="string">"最大值"</span>),</span><br><span class="line">                opts.MarkPointItem(type_=<span class="string">'min'</span>, name=<span class="string">'最小值'</span>),</span><br><span class="line">            ]</span><br><span class="line">        ),</span><br><span class="line">        <span class="comment"># 额外标记线</span></span><br><span class="line">        markline_opts=opts.MarkLineOpts(</span><br><span class="line">            data=[opts.MarkLineItem(type_=<span class="string">"average"</span>, name=<span class="string">"平均值"</span>)]</span><br><span class="line">        ),   </span><br><span class="line">    )</span><br><span class="line">    .set_series_opts(</span><br><span class="line">        <span class="comment"># 不透明度设置</span></span><br><span class="line">        areastyle_opts=opts.AreaStyleOpts(opacity=<span class="number">0.5</span>)</span><br><span class="line">    )</span><br><span class="line">    .set_global_opts(</span><br><span class="line">        title_opts=opts.TitleOpts(title=<span class="string">"主标题"</span>, subtitle=<span class="string">'副标题'</span>),</span><br><span class="line">        toolbox_opts=opts.TooltipOpts()</span><br><span class="line">    )</span><br><span class="line">    .render(<span class="string">"xxx.html"</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><strong>.add_yaxis()</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">def add_yaxis(</span><br><span class="line">    # 系列名称，用于 tooltip 的显示，legend 的图例筛选。</span><br><span class="line">    series_name: str,</span><br><span class="line"></span><br><span class="line">    # 系列数据</span><br><span class="line">    y_axis: types.Sequence[types.Union[opts.LineItem, dict]],</span><br><span class="line"></span><br><span class="line">    # 是否选中图例</span><br><span class="line">    is_selected: bool &#x3D; True,</span><br><span class="line"></span><br><span class="line">    # 是否连接空数据，空数据使用 &#96;None&#96; 填充</span><br><span class="line">    is_connect_nones: bool &#x3D; False,</span><br><span class="line"></span><br><span class="line">    # 使用的 x 轴的 index，在单个图表实例中存在多个 x 轴的时候有用。</span><br><span class="line">    xaxis_index: Optional[Numeric] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 使用的 y 轴的 index，在单个图表实例中存在多个 y 轴的时候有用。</span><br><span class="line">    yaxis_index: Optional[Numeric] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 系列 label 颜色</span><br><span class="line">    color: Optional[str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 是否显示 symbol, 如果 false 则只有在 tooltip hover 的时候显示。</span><br><span class="line">    is_symbol_show: bool &#x3D; True,</span><br><span class="line"></span><br><span class="line">    # 标记的图形。</span><br><span class="line">    # ECharts 提供的标记类型包括 &#39;circle&#39;, &#39;rect&#39;, &#39;roundRect&#39;, &#39;triangle&#39;, </span><br><span class="line">    # &#39;diamond&#39;, &#39;pin&#39;, &#39;arrow&#39;, &#39;none&#39;</span><br><span class="line">    # 可以通过 &#39;image:&#x2F;&#x2F;url&#39; 设置为图片，其中 URL 为图片的链接，或者 dataURI。</span><br><span class="line">    symbol: Optional[str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 标记的大小，可以设置成诸如 10 这样单一的数字，也可以用数组分开表示宽和高，</span><br><span class="line">    # 例如 [20, 10] 表示标记宽为 20，高为 10。</span><br><span class="line">    symbol_size: Union[Numeric, Sequence] &#x3D; 4,</span><br><span class="line"></span><br><span class="line">    # 数据堆叠，同个类目轴上系列配置相同的　stack　值可以堆叠放置。</span><br><span class="line">    stack: Optional[str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 是否平滑曲线</span><br><span class="line">    is_smooth: bool &#x3D; False,</span><br><span class="line"></span><br><span class="line">    # 是否裁剪超出坐标系部分的图形。折线图：裁掉所有超出坐标系的折线部分，拐点图形的逻辑按照散点图处理</span><br><span class="line">    is_clip: bool &#x3D; True,</span><br><span class="line"></span><br><span class="line">    # 是否显示成阶梯图</span><br><span class="line">    is_step: bool &#x3D; False,</span><br><span class="line"></span><br><span class="line">    # 是否开启 hover 在拐点标志上的提示动画效果。</span><br><span class="line">    is_hover_animation: bool &#x3D; True,</span><br><span class="line"></span><br><span class="line">    # 折线图所有图形的 zlevel 值。</span><br><span class="line">    # zlevel用于 Canvas 分层，不同zlevel值的图形会放置在不同的 Canvas 中，Canvas 分层是一种常见的优化手段。</span><br><span class="line">    # zlevel 大的 Canvas 会放在 zlevel 小的 Canvas 的上面。</span><br><span class="line">    z_level: types.Numeric &#x3D; 0,</span><br><span class="line"></span><br><span class="line">    # 折线图组件的所有图形的z值。控制图形的前后顺序。z值小的图形会被z值大的图形覆盖。</span><br><span class="line">    # z 相比 zlevel 优先级更低，而且不会创建新的 Canvas。</span><br><span class="line">    z: types.Numeric &#x3D; 0,</span><br><span class="line"></span><br><span class="line">    # 标记点配置项，参考 &#96;series_options.MarkPointOpts&#96;</span><br><span class="line">    markpoint_opts: Union[opts.MarkPointOpts, dict, None] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 标记线配置项，参考 &#96;series_options.MarkLineOpts&#96;</span><br><span class="line">    markline_opts: Union[opts.MarkLineOpts, dict, None] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 提示框组件配置项，参考 &#96;series_options.TooltipOpts&#96;</span><br><span class="line">    tooltip_opts: Union[opts.TooltipOpts, dict, None] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 标签配置项，参考 &#96;series_options.LabelOpts&#96;</span><br><span class="line">    label_opts: Union[opts.LabelOpts, dict] &#x3D; opts.LabelOpts(),</span><br><span class="line"></span><br><span class="line">    # 线样式配置项，参考 &#96;series_options.LineStyleOpts&#96;</span><br><span class="line">    linestyle_opts: Union[opts.LineStyleOpts, dict] &#x3D; opts.LineStyleOpts(),</span><br><span class="line"></span><br><span class="line">    # 填充区域配置项，参考 &#96;series_options.AreaStyleOpts&#96;</span><br><span class="line">    areastyle_opts: Union[opts.AreaStyleOpts, dict] &#x3D; opts.AreaStyleOpts(),</span><br><span class="line"></span><br><span class="line">    # 图元样式配置项，参考 &#96;series_options.ItemStyleOpts&#96;</span><br><span class="line">    itemstyle_opts: Union[opts.ItemStyleOpts, dict, None] &#x3D; None,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <ol>
-<li><code>方法</code><ul>
-<li><code>jieba.cut: 返回的结构是一个可迭代的 generator，可以使用 for 循环来获得分词后得到的每一个词语(unicode)</code> <ul>
-<li><code>cut(self, sentence, cut_all=False, HMM=True, use_paddle=False)</code></li>
-<li><code>参数</code><ol>
-<li><code>需要分词的字符串</code></li>
-<li><code>cut_all 参数: 用来控制是否采用全模式</code></li>
-<li><code>HMM 参数: 用来控制是否使用 HMM 模型</code></li>
-<li><code>use_paddle 参数: 用来控制是否使用paddle模式下的分词模式，paddle模式采用延迟加载方式，通过enable_paddle接口安装paddlepaddle-tiny，并且import相关代码</code></li>
-</ol>
-</li>
-</ul>
-</li>
-<li><code>jieba.cut_for_search: 返回的结构是一个可迭代的 generator，可以使用 for 循环来获得分词后得到的每一个词语(unicode)</code><ul>
-<li><code>cut_for_search(self, sentence, HMM=True)</code></li>
-<li><code>参数</code><ol>
-<li><code>需要分词的字符串</code></li>
-<li><code>是否使用 HMM 模型。该方法适合用于搜索引擎构建倒排索引的分词，粒度比较细</code></li>
-</ol>
-</li>
-</ul>
-</li>
-<li><code>jieba.lcut: 返回list</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lcut</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> list(self.cut(*args, **kwargs))</span><br></pre></td></tr></table></figure></li>
-<li><code>jieba.lcut_for_search: 返回 list</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lcut_for_search</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> list(self.cut_for_search(*args, **kwargs))</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-</li>
-<li><strong>turtle 绘图</strong><br>  <code>turtle: 绘图包</code><br>  <code>fillcolor：填充颜色</code><br>  <code>begin_fill/end_fill 开始/结束填充</code><ol>
-<li>设置画布大小<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">turtle.screensize(canvwidth&#x3D;None,canvheight&#x3D;None,bg&#x3D;None)，</span><br><span class="line">    参数分别为画布的宽(单位像素),高,背景颜色。</span><br><span class="line">如： turtle.screensize(800,600,&quot;green&quot;)</span><br><span class="line">    turtle.screensize()#返回默认大小(400,300)</span><br></pre></td></tr></table></figure></li>
-<li>画笔(画笔的属性，颜色、画线的宽度等)<ul>
-<li>参数<ul>
-<li>turtle.pensize(): 设置画笔的宽度；</li>
-<li>turtle.pencolor(): 没有参数传入，返回当前画笔颜色，传入参数设置画笔颜色，可以是字符串如”green”,”red”,也可以是RGB3元组。</li>
-<li>turtle.speed(speed): 设置画笔移动速度，画笔绘制的速度范围[0,10]整数，数字越大越快。</li>
-<li>turtle.forward(distance): 向当前画笔方向移动distance像素长度</li>
-<li>turtle.backward(distance): 向当前画笔相反方向移动distance像素长度</li>
-<li>turtle.right(degree): 顺时针移动degree°</li>
-<li>turtle.left(degree): 逆时针移动degree°</li>
-<li>turtle.pendown(): 移动时绘制图形，缺省时也为绘制</li>
-<li>turtle.goto(x,y): 将画笔移动到坐标为x,y的位置</li>
-<li>turtle.penup(): 提起笔移动，不绘制图形，用于另起一个地方绘制</li>
-<li>turtle.circle(): 画圆，半径为正(负)，表示圆心在画笔的左边(右边)画圆</li>
-<li>setx( ): 将当前x轴移动到指定位置</li>
-<li>sety( ): 将当前y轴移动到指定位置</li>
-<li>setheading(angle): 设置当前朝向为angle角度</li>
-<li>home(): 设置当前画笔位置为原点，朝向东。</li>
-<li>dot(r): 绘制一个指定直径和颜色的圆点</li>
-</ul>
-</li>
-<li>画笔控制命令<ul>
-<li>turtle.fillcolor(colorstring): 绘制图形的填充颜色</li>
-<li>turtle.color(color1, color2): 同时设置pencolor=color1, fillcolor=color2</li>
-<li>turtle.filling(): 返回当前是否在填充状态</li>
-<li>turtle.begin_fill(): 准备开始填充图形</li>
-<li>turtle.end_fill(): 填充完成</li>
-<li>turtle.hideturtle(): 隐藏画笔的turtle形状</li>
-<li>turtle.showturtle(): 显示画笔的turtle形状</li>
-</ul>
-</li>
-<li>全局控制命令<ul>
-<li>turtle.clear(): 清空turtle窗口，但是turtle的位置和状态不会改变</li>
-<li>turtle.reset(): 清空窗口，重置turtle状态为起始状态</li>
-<li>turtle.undo(): 撤销上一个turtle动作</li>
-<li>turtle.isvisible(): 返回当前turtle是否可见</li>
-<li>stamp(): 复制当前图形</li>
-<li>turtle.write(s [,font=(“font-name”,font_size,”font_type”)]): 写文本，s为文本内容，font是字体的参数，分别为字体名称，大小和类型；font为可选项，font参数也是可选项</li>
-<li>turtle.delay(delay=None): 设置或返回以毫秒为单位的绘图延迟</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><strong>MyQR 二维码生成器</strong> <pre class=" language-python"><span class="keyword">from</span> MyQR <span class="keyword"><code class="language-python"><span class="keyword">from</span> MyQR <span class="keyword">import</span> myqr
-<span class="keyword">import</span> os
-myqr.run(
-        word = <span class="string">''</span>,           <span class="comment"># 可以是字符串也可以是网址 (网址前加 http(s)://)</span>
-        version = <span class="number">1</span>,         <span class="comment"># 容错率等级 1 为最高</span>
-        level = <span class="string">'H'</span>,          <span class="comment"># 控制纠错水平，范围是 L, M, Q, H，从左向右依次增高</span>
-        picture = <span class="string">''</span>,        <span class="comment"># 二维码和图片合成，二维码路径</span>
-        colorized = <span class="string">'True'</span>,  <span class="comment"># 是否为彩色二维码</span>
-        contrast = <span class="number">1.0</span>,      <span class="comment"># 调节图片对比度, 1.0 表示原始图片，更小的值表示更低对比度，更大反之，1.0 为默认</span>
-        brightness = <span class="number">1.0</span>,    <span class="comment"># 调节图片亮度，越大越亮，越小越暗</span>
-        save_name = <span class="string">''</span>,      <span class="comment"># 生成二维码图片名称，可以是 jpg, png, bmp, gif</span>
-        save_dir = os.getcwd()  <span class="comment"># 控制生成位置</span>
-        )</code></pre>
-</li>
+<li><code>LineItem：折线图数据项</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class LineItem(</span><br><span class="line">    # 数据项名称。</span><br><span class="line">    name: Union[str, Numeric] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 数据项的值</span><br><span class="line">    value: Union[str, Numeric] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 单个数据标记的图形。</span><br><span class="line">    symbol: Optional[str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 单个数据标记的大小</span><br><span class="line">    symbol_size: Union[Sequence[Numeric], Numeric] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 单个数据标记的旋转角度（而非弧度）。</span><br><span class="line">    symbol_rotate: Optional[Numeric] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 如果 symbol 是 path:&#x2F;&#x2F; 的形式，是否在缩放时保持该图形的长宽比。</span><br><span class="line">    symbol_keep_aspect: bool &#x3D; False,</span><br><span class="line"></span><br><span class="line">    # 单个数据标记相对于原本位置的偏移。</span><br><span class="line">    symbol_offset: Optional[Sequence] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 标签配置项，参考 &#96;series_options.LabelOpts&#96;</span><br><span class="line">    label_opts: Union[LabelOpts, dict, None] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 图元样式配置项，参考 &#96;series_options.ItemStyleOpts&#96;</span><br><span class="line">    itemstyle_opts: Union[ItemStyleOpts, dict, None] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 提示框组件配置项，参考 &#96;series_options.TooltipOpts&#96;</span><br><span class="line">    tooltip_opts: Union[TooltipOpts, dict, None] &#x3D; None,</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
 </ol>
 
     </div>
@@ -573,17 +440,17 @@ myqr.run(
 
                 
                 <li>
-                    <a href="/2020/07/26/python-chang-yong-mo-kuai/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2020/08/01/pyecharts-line/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/07/26/python-chang-yong-mo-kuai/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2020/08/01/pyecharts-line/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/07/26/python-chang-yong-mo-kuai/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2020/08/01/pyecharts-line/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -591,15 +458,15 @@ myqr.run(
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/scrapy-study/" style="font-size: 12.805076901473631px;" class="tag-cloud-link">scrapy_study</a>
+    <a href="/tags/scrapy-study/" style="font-size: 11.541683183132546px;" class="tag-cloud-link">scrapy_study</a>
     
-    <a href="/tags/Linux-study/" style="font-size: 10.932008806554524px;" class="tag-cloud-link">Linux_study</a>
+    <a href="/tags/Linux-study/" style="font-size: 15.133007882216308px;" class="tag-cloud-link">Linux_study</a>
     
-    <a href="/tags/Pyecharts/" style="font-size: 15.554856837599004px;" class="tag-cloud-link">Pyecharts</a>
+    <a href="/tags/Pyecharts/" style="font-size: 17.048537896827092px;" class="tag-cloud-link">Pyecharts</a>
     
-    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 12.218305128244385px;" class="tag-cloud-link">Python 模块</a>
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 13.588962797643727px;" class="tag-cloud-link">Python 模块</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 17.538075523603407px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 19.64997491413574px;" class="tag-cloud-link">前端学习</a>
     
 </div>
                 
