@@ -10,7 +10,7 @@
     
     
     
-    <title>archive_a | Hexo</title>
+    <title>pyecharts-WordCloud | Hexo</title>
     <link href="http://yoursite.com" rel="prefetch" />
 
     
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li class="current">
+                <li class="">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -174,19 +174,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-archive">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://yoursite.com">Hexo</a>
         >
-        <span>归档</span>
+        <span>pyecharts-WordCloud</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/archives">归档</a>
+                <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Pyecharts/">Pyecharts</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-08-02
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -194,71 +209,34 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/archives">归档</a>
+                    <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2020-08-02
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Pyecharts/">Pyecharts</a>
+                
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        
-        
-            <h1 style="font-size: 24px; margin-top: 40px;">2020年</h1>
-            
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-             
-             
-                        <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
-                        <br>
-            
-             
-                        <a href="/2020/08/01/pyecharts-pie/">pyecharts-Pie</a>
-                        <br>
-            
-             
-                        <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
-                        <br>
-            
-             
-                        <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
-                        <br>
-            
-             
-                        <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
-                        <br>
-            
-             
-                        <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
-                        <br>
-            
-             
-                        <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
-                        <br>
-            
-             
-                        <a href="/2020/07/29/linux-chang-yong-ming-ling/">linux_常用命令</a>
-                        <br>
-            
-             
-                        <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
-                        <br>
-            
-             
-                        <a href="/2020/07/27/css-note/">css_note</a>
-                        <br>
-            
-             
-                        <a href="/2020/07/26/python-chang-yong-mo-kuai/">python_常用模块</a>
-                        <br>
-            
-             
-                        <a href="/2020/07/26/hello-world/">Hello World</a>
-                        <br>
-            
-                    </div>
-        
+    <div class="content-article">
+        <h1 id="pyecharts-WordCloud"><a href="#pyecharts-WordCloud" class="headerlink" title="pyecharts_WordCloud"></a>pyecharts_WordCloud</h1><p><a href="http://pyecharts.org/#/zh-cn/" target="_blank" rel="noopener">全部来自于官方文档，主要用于方便自己查找</a></p>
+<h2 id="WordCloud：词云图"><a href="#WordCloud：词云图" class="headerlink" title="WordCloud：词云图"></a><code>WordCloud：词云图</code></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> WordCloud</span><br><span class="line"><span class="keyword">import</span> pyecharts.options <span class="keyword">as</span> opts</span><br><span class="line">word = [ (<span class="string">"花鸟市场"</span>, <span class="number">1446</span>),</span><br><span class="line">         (<span class="string">"汽车"</span>, <span class="number">928</span>),</span><br><span class="line">        ...</span><br><span class="line">]   </span><br><span class="line">c = (WordCloud()</span><br><span class="line">    .add(series_name=<span class="string">''</span>,</span><br><span class="line">        data_pair=word,</span><br><span class="line">        word_size_range=[],</span><br><span class="line">        mask_image=<span class="string">''</span>,</span><br><span class="line">        textstyle_opts = opts.TextStyleOpts(font_family=<span class="string">'cursive'</span>)    </span><br><span class="line">    )</span><br><span class="line">    .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">'主标题'</span>))</span><br><span class="line">    .render(<span class="string">'xxx.html'</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>.add()<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">def add(</span><br><span class="line">    # 系列名称，用于 tooltip 的显示，legend 的图例筛选。</span><br><span class="line">    series_name: str,</span><br><span class="line"></span><br><span class="line">    # 系列数据项，[(word1, count1), (word2, count2)]</span><br><span class="line">    data_pair: Sequence,</span><br><span class="line"></span><br><span class="line">    # 词云图轮廓，有 &#39;circle&#39;, &#39;cardioid&#39;, &#39;diamond&#39;, &#39;triangle-forward&#39;, &#39;triangle&#39;, &#39;pentagon&#39;, &#39;star&#39; 可选</span><br><span class="line">    shape: str &#x3D; &quot;circle&quot;,</span><br><span class="line"></span><br><span class="line">    # 自定义的图片（目前支持 jpg, jpeg, png, ico 的格式，其他的图片格式待测试）</span><br><span class="line">    # 该参数支持：</span><br><span class="line">    # 1、 base64 （需要补充 data 头）；</span><br><span class="line">    # 2、本地文件路径（相对或者绝对路径都可以）</span><br><span class="line">    # 注：如果使用了 mask_image 之后第一次渲染会出现空白的情况，再刷新一次就可以了（Echarts 的问题）</span><br><span class="line">    # Echarts Issue: https:&#x2F;&#x2F;github.com&#x2F;ecomfe&#x2F;echarts-wordcloud&#x2F;issues&#x2F;74</span><br><span class="line">    mask_image: types.Optional[str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 单词间隔</span><br><span class="line">    word_gap: Numeric &#x3D; 20,</span><br><span class="line"></span><br><span class="line">    # 单词字体大小范围</span><br><span class="line">    word_size_range&#x3D;None,</span><br><span class="line"></span><br><span class="line">    # 旋转单词角度</span><br><span class="line">    rotate_step: Numeric &#x3D; 45,</span><br><span class="line"></span><br><span class="line">    # 距离左侧的距离</span><br><span class="line">    pos_left: types.Optional[str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 距离顶部的距离</span><br><span class="line">    pos_top: types.Optional[str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 距离右侧的距离</span><br><span class="line">    pos_right: types.Optional[str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 距离底部的距离</span><br><span class="line">    pos_bottom: types.Optional[str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 词云图的宽度</span><br><span class="line">    width: types.Optional[str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 词云图的高度</span><br><span class="line">    height: types.Optional[str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 允许词云图的数据展示在画布范围之外</span><br><span class="line">    is_draw_out_of_bound: bool &#x3D; False,</span><br><span class="line"></span><br><span class="line">    # 提示框组件配置项，参考 &#96;series_options.TooltipOpts&#96;</span><br><span class="line">    tooltip_opts: Union[opts.TooltipOpts, dict, None] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 词云图文字的配置</span><br><span class="line">    textstyle_opts: types.TextStyle &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 词云图文字阴影的范围</span><br><span class="line">    emphasis_shadow_blur: types.Optional[types.Numeric] &#x3D; None,</span><br><span class="line"></span><br><span class="line">    # 词云图文字阴影的颜色</span><br><span class="line">    emphasis_shadow_color: types.Optional[str] &#x3D; None,</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
+</ul>
+
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -403,6 +381,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2020/07/27/css-note/">css_note</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
                 </span>
             </li>
@@ -421,25 +405,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
+                    <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/01/pyecharts-pie/">pyecharts-Pie</a>
+                    <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
                 </span>
             </li>
             
@@ -460,17 +438,17 @@
 
                 
                 <li>
-                    <a href="/archives/2020/08/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2020/08/02/pyecharts-wordcloud/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/archives/2020/08/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2020/08/02/pyecharts-wordcloud/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/archives/2020/08/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2020/08/02/pyecharts-wordcloud/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -478,15 +456,15 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/scrapy-study/" style="font-size: 11.914691186948883px;" class="tag-cloud-link">scrapy_study</a>
+    <a href="/tags/scrapy-study/" style="font-size: 17.463834995736164px;" class="tag-cloud-link">scrapy_study</a>
     
-    <a href="/tags/Linux-study/" style="font-size: 14.340596933987516px;" class="tag-cloud-link">Linux_study</a>
+    <a href="/tags/Linux-study/" style="font-size: 15.580070083502854px;" class="tag-cloud-link">Linux_study</a>
     
-    <a href="/tags/Pyecharts/" style="font-size: 14.78448105266997px;" class="tag-cloud-link">Pyecharts</a>
+    <a href="/tags/Pyecharts/" style="font-size: 11.696747044609184px;" class="tag-cloud-link">Pyecharts</a>
     
-    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 13.058234686630641px;" class="tag-cloud-link">Python 模块</a>
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 16.42150971707595px;" class="tag-cloud-link">Python 模块</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 17.79932819126337px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 9.250519768493472px;" class="tag-cloud-link">前端学习</a>
     
 </div>
                 
