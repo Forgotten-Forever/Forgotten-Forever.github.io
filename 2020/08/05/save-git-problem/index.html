@@ -12,7 +12,7 @@
     
     
     
-    <title>tags: Pyecharts | BLOG</title>
+    <title>Windows下 Git 因移动文件夹导致的问题及解决 | BLOG</title>
     <link href="http://yoursite.com" rel="prefetch" />
 
     
@@ -170,19 +170,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-tag">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://yoursite.com">BLOG</a>
         >
-        <span>标签</span>
+        <span>Windows下 Git 因移动文件夹导致的问题及解决</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/tags/Pyecharts/index.html">Pyecharts</a>
+                <a href="/2020/08/05/save-git-problem/">Windows下 Git 因移动文件夹导致的问题及解决</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Windows-problem/">Windows problem</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-08-05
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -190,39 +205,53 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/tags/Pyecharts/index.html">Pyecharts</a>
+                    <a href="/2020/08/05/save-git-problem/">Windows下 Git 因移动文件夹导致的问题及解决</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2020-08-05
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Windows-problem/">Windows problem</a>
+                
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-            <a href="/2020/08/03/pyecharts-map/">pyecharts-Map</a>
-            <br>
-            
-            <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
-            <br>
-            
-            <a href="/2020/08/01/pyecharts-pie/">pyecharts-Pie</a>
-            <br>
-            
-            <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
-            <br>
-            
-            <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
-            <br>
-            
-            <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
-            <br>
-            
-            <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
-            <br>
-            
-            
-        </div>
+    <div class="content-article">
+        <h3 id="Git-因移动文件夹导致更新后不是覆盖原版本而是在重新创建在原路径下，以及鼠标右键快捷菜单中的Git-Bash-Here-与-Git-GUI-Here无法使用的问题解决方法"><a href="#Git-因移动文件夹导致更新后不是覆盖原版本而是在重新创建在原路径下，以及鼠标右键快捷菜单中的Git-Bash-Here-与-Git-GUI-Here无法使用的问题解决方法" class="headerlink" title="Git 因移动文件夹导致更新后不是覆盖原版本而是在重新创建在原路径下，以及鼠标右键快捷菜单中的Git Bash Here 与 Git GUI Here无法使用的问题解决方法"></a><code>Git 因移动文件夹导致更新后不是覆盖原版本而是在重新创建在原路径下，以及鼠标右键快捷菜单中的Git Bash Here 与 Git GUI Here无法使用的问题解决方法</code></h3><ol>
+<li><p>某年某月某日为了方便管理计算机下的软件，我对大部分软件进行了”搬家”，在对软件”搬家”的过程中 Git 产生了一些问题，我花费了半天时间对出现的比较重要的问题进行一点总结。</p>
+<p> 必须做的事 : <code>在直接移动文件夹后一定要记得在</code><strong>环境变量</strong><code>中更改所有与 Git 有关的环境变量至现在路径。</code></p>
+</li>
+<li><p>问题 1 :  <code>鼠标右键快捷菜单中的Git Bash Here 与 Git GUI Here失去图标，以及无法使用</code></p>
+<p> 解决 : <code>Windows 系统下鼠标右键快捷菜单的图标以及功能都与</code><strong>注册表</strong><code>有关。</code></p>
+<ol>
+<li><p><code>打开注册表编辑器</code>，<code>在</code> <strong>\HKEY_CLASSES_ROOT\Directory\Background\shell\git_gui\command</strong> <code>与</code><strong>\HKEY_CLASSES_ROOT\Directory\Background\shell\git_shell\command</strong> <code>下修改Icon 数据为 目前 git_gui.exe 的路径 (&quot;E:\GitHup\Git\cmd\git-gui.exe&quot; &quot;--working-dir&quot; &quot;%v.&quot;) 与 git_shell.exe 路径 (&quot;E:\GitHup\Git\git-bash.exe&quot; &quot;--cd=%v.&quot;) ,之后 鼠标右键快捷菜单的图标已经恢复，但功能仍未恢复</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/git_problem4.png" alt="注册表"></p>
+</li>
+<li><p><code>继续在</code><strong>注册表编辑器</strong><code>中</code><strong>\HKEY_CLASSES_ROOT\Directory\shell\git_gui\command</strong><code>与</code><strong>\HKEY_CLASSES_ROOT\Directory\shell\git_gui\command</strong><code>下修改 数据为目前 git_gui.exe 的路径 (&quot;E:\GitHup\Git\cmd\git-gui.exe&quot; &quot;--working-dir&quot; &quot;%1&quot;) 与 git_shell.exe 路径 (&quot;E:\GitHup\Git\git-bash.exe&quot; &quot;--cd=%1&quot;)，然后鼠标右键快捷菜单中图标也可以恢复</code><br><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/git_problem5.png" alt="注册表"></p>
+</li>
+</ol>
+<p> <em>部分没有立刻恢复可能需要重启计算机</em></p>
+</li>
+<li><p>问题 2 : <code>Git 因移动文件夹导致更新后不是覆盖原版本而是在重新创建在原路径下</code></p>
+<p> 解决 : <code>这个我的办法比较笨，我在注册表</code> <strong>Ctrl + F</strong> <code>查找所有Git 的数据以及注册文件, 然后进行修改为现在文件路径 (对于路径后的东西可以不管)</code><br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/git_problem1.png" alt="注册表"></p>
+</li>
+<li><p><code>对于移动后可能出现的其他问题，查看 Git 的全局变量寻找没改过的路径进行修改</code></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">路径： </span><br><span class="line">Git -&gt; etc -&gt; gitconfig  以记事本打开</span><br><span class="line">Git -&gt; mingw64 -&gt; etc -&gt; gitconfig  以记事本打开</span><br></pre></td></tr></table></figure>
+<p> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/git_problem2.png" alt="Git -&gt; etc -&gt; gitconfig"><br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/git_problem3.png" alt="Git -&gt; mingw64 -&gt; etc -&gt; gitconfig"><br> <code>分别修改内部 git 路径。</code></p>
+</li>
+</ol>
+<p><strong>纯属在百度上搜不到类似问题的解决，又由于自身 git 之前使用不善导致 git 内部许多东西都不想删掉，然后需要更新 git 才摸索出来这种办法</strong></p>
+
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -362,7 +391,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/26/python-chang-yong-mo-kuai/">python_常用模块</a>
+                    <a href="/2020/07/27/css-note/">css_note</a>
                 </span>
             </li>
             
@@ -386,12 +415,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
                 </span>
             </li>
@@ -404,13 +427,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2020/08/01/pyecharts-pie/">pyecharts-Pie</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/03/pyecharts-map/">pyecharts-Map</a>
+                    <a href="/2020/08/05/save-git-problem/">Windows下 Git 因移动文件夹导致的问题及解决</a>
                 </span>
             </li>
             
@@ -425,17 +454,17 @@
 
                 
                 <li>
-                    <a href="/tags/Pyecharts/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2020/08/05/save-git-problem/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/tags/Pyecharts/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2020/08/05/save-git-problem/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/tags/Pyecharts/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2020/08/05/save-git-problem/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -443,17 +472,17 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/scrapy-study/" style="font-size: 11.996472289151214px;" class="tag-cloud-link">scrapy_study</a>
+    <a href="/tags/scrapy-study/" style="font-size: 14.188253358864118px;" class="tag-cloud-link">scrapy_study</a>
     
-    <a href="/tags/Linux-study/" style="font-size: 9.248906602361384px;" class="tag-cloud-link">Linux_study</a>
+    <a href="/tags/Linux-study/" style="font-size: 13.997629851354008px;" class="tag-cloud-link">Linux_study</a>
     
-    <a href="/tags/Pyecharts/" style="font-size: 8.188018146831439px;" class="tag-cloud-link">Pyecharts</a>
+    <a href="/tags/Pyecharts/" style="font-size: 19.300884787528908px;" class="tag-cloud-link">Pyecharts</a>
     
-    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 16.227362458450052px;" class="tag-cloud-link">Python 模块</a>
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 14.020585139686952px;" class="tag-cloud-link">Python 模块</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 11.597108527143256px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 19.231954991091417px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/Windows-problem/" style="font-size: 8.615586565392631px;" class="tag-cloud-link">Windows problem</a>
+    <a href="/tags/Windows-problem/" style="font-size: 16.89780545223182px;" class="tag-cloud-link">Windows problem</a>
     
 </div>
                 
