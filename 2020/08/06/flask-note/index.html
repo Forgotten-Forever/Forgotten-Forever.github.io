@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Liu">
+    
+    <meta name="description" content="python 学习">
+    
+    
+    
+    
+    
+    
+    <title>Flask_note | BLOG</title>
+    <link href="http://yoursite.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/small_bg.jpg');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/https:/cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/null-608fcd3dbda24e58.gif'
+        var previews = 'https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview01.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview02.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview03.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview04.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview05.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview06.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview07.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview08.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview09.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview10.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview11.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview12.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview13.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview15.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://yoursite.com">
+                
+                <!-- 这里background直接使用logo_image(url) -->
+                <style>
+
+                </style>
+                    
+                <div class="navbar-brand"></div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Flask-Study/">Flask_Study</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Windows-problem/">Windows problem</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Linux-study/">Linux_study</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">BLOG</a>
+        >
+        <span>Flask_note</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2020/08/06/flask-note/">Flask_note</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Flask-Study/">Flask_Study</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-08-06
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2020/08/06/flask-note/">Flask_note</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2020-08-06
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Flask-Study/">Flask_Study</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h3 id="Flask-框架学习"><a href="#Flask-框架学习" class="headerlink" title="Flask 框架学习"></a>Flask 框架学习</h3><h4 id="通过-Pycharm-创建新的工程，创建-Falsk-项目"><a href="#通过-Pycharm-创建新的工程，创建-Falsk-项目" class="headerlink" title="通过 Pycharm 创建新的工程，创建 Falsk 项目"></a>通过 Pycharm 创建新的工程，创建 Falsk 项目</h4><p>生成的 Falsk 项目中带有一个 app.py 文件</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/project_build.png" alt><br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/First_img.png" alt><br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/First_startapp.png" alt><br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Flask_title1.png" alt></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/')  # 指定路由: '/' 根路由</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">return</span> <span class="string">'Hello World!'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"><span class="comment"># debug 默认为 False, debug=True 让开发变得友好，在修改App 文件后，刷新立即可以在本地服务上看到变化</span></span><br><span class="line"><span class="comment"># windows 可能做不到</span></span><br><span class="line"><span class="comment"># port 默认端口 5000 ,port=6333 更改端口</span></span><br><span class="line"><span class="comment"># host 默认为本地 127.0.0.1, host='0.0.0.0'面向局域网都可以访问</span></span><br><span class="line">    app.run(debug=<span class="literal">True</span>, port=<span class="number">6333</span>, host=<span class="string">'0.0.0.0'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="进行简单修改，对页面进行布局，渲染"><a href="#进行简单修改，对页面进行布局，渲染" class="headerlink" title="进行简单修改，对页面进行布局，渲染"></a>进行简单修改，对页面进行布局，渲染</h4><ol>
+<li><p>基础：在 return 内增加 HTML 类型文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"> </span><br><span class="line">app = Flask(__name__)</span><br><span class="line"> </span><br><span class="line"><span class="meta">@app.route('/')  # 指定路由</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">     <span class="comment"># 更改 return 内为 HTML 文件</span></span><br><span class="line">     <span class="keyword">return</span> <span class="string">'&lt;h1&gt;Hello&lt;/h1&gt;&lt;p&gt;Flask&lt;/p&gt;'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">     app.run(debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>优化: 在工程下建立文件夹 “templates” (现在版本已经实现自建),”templates” 中建立 “index.html” 文件<br>在 app.py 内引进  Flask_note 渲染<br><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Flask_title3.png" alt></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"> </span><br><span class="line"><span class="meta">@app.route('/')  # 指定路由</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># title=title 将 title 传入 index 作为标题</span></span><br><span class="line">    <span class="comment"># &lt;title&gt;&#123;&#123; title &#125;&#125;&lt;/title&gt;</span></span><br><span class="line">    <span class="comment"># 写在 &lt;p&gt;&#123;&#123; title &#125;&#125;&lt;/p&gt; 内，也可以调用 填入 'Flask Web test'</span></span><br><span class="line">    title = <span class="string">'Flask Web test'</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>, title=title)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>更高级渲染 (条件判断、循环)</p>
+<ul>
+<li><p>条件判断：<br>如果 title 为空则默认 标题为 ‘Falsk App’<br><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Flask_title4.png" alt><br><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Flask_title5.png" alt></p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if title %&#125;</span><br><span class="line">    &lt;title&gt;&#123;&#123; title &#125;&#125;&lt;&#x2F;title&gt;</span><br><span class="line">&#123;% else %&#125;</span><br><span class="line">    &lt;title&gt;Falsk App&lt;&#x2F;title&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line"><span class="keyword">return</span> render_template(<span class="string">'index.html'</span>,</span><br><span class="line">                      )</span><br></pre></td></tr></table></figure>
++ 循环 建立三个 &lt;p&gt;&lt;/p&gt;
+    ![](https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Flask_p.png)
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for p in data %&#125;</span><br><span class="line">&lt;p&gt;&#123;&#123; p &#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def hello_world():</span><br><span class="line">    title &#x3D; &#39;Flask Web test&#39;</span><br><span class="line">    paragraphs &#x3D; [</span><br><span class="line">        &quot;Selection 1&quot;,</span><br><span class="line">        &quot;Selection 2&quot;,</span><br><span class="line">        &quot;Selection 3&quot;</span><br><span class="line">    ]</span><br><span class="line">    return render_template(&#39;index.html&#39;,</span><br><span class="line">                            title&#x3D;title,</span><br><span class="line">                            data&#x3D;paragraphs)</span><br></pre></td></tr></table></figure></code></pre><hr>
+<h4 id="模板继承和引用"><a href="#模板继承和引用" class="headerlink" title="模板继承和引用"></a>模板继承和引用</h4><ol>
+<li><p>模板的继承</p>
+<ul>
+<li><p>在 “templates” 下建立 “base.html” 作为模板<br><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Flask_extends.png" alt></p>
+   <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    &#123;% if title %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">       <span class="tag">&lt;<span class="name">title</span>&gt;</span>Falsk App<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/"</span>&gt;</span>Flask App<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>在 “index.html” 中继承 “base.html” 模板</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends 'base.html' %&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>在 “index.html” 继承模板后，写入属于自己的东西<br>  在 “base.html” 文件相应位置写下 block 定义此自定义模块名称为 content</p>
+   <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    &#123;% if title %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">       <span class="tag">&lt;<span class="name">title</span>&gt;</span>Falsk App<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/"</span>&gt;</span>Flask App<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>在 “index.html” 文件中 引用并更改</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content%&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>模板的引用 (导入，对于会在很多地方用到的文件引用)<br>模板模块中定义的会被，引用模板的模块重写掉,如果没有引用则会显示模板模块内的内容，常规情况下默认为空<br>可以把每一个模块(导航栏，报头)新建一个 html 文件 (一个个小组件) 并引入继承到模块<br> “navbar.html” 自定义报头</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/"</span>&gt;</span>Flask App<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p> “base.html” 引入</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include 'navbar.html' %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h4 id="了解-flask-bootstrap-框架中已经定义好许多-class-的命名、风格-使界面布局更加好看，将布局封装到Flask的插件"><a href="#了解-flask-bootstrap-框架中已经定义好许多-class-的命名、风格-使界面布局更加好看，将布局封装到Flask的插件" class="headerlink" title="了解 flask-bootstrap (框架中已经定义好许多 class 的命名、风格) 使界面布局更加好看，将布局封装到Flask的插件"></a>了解 flask-bootstrap (框架中已经定义好许多 class 的命名、风格) 使界面布局更加好看，将布局封装到Flask的插件</h4><p>可以通过定义 class 的值定义组件位于 页面中的位置<br><a href="https://getbootstrap.com/" target="_blank" rel="noopener">Flask—bootstrap 重点学习官网</a><br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pip install flask-bootstrap</span><br><span class="line">from flask import Flask, render_template</span><br><span class="line">from flask_bootstrap import Bootstrap</span><br><span class="line"> </span><br><span class="line">app &#x3D; Flask(__name__)</span><br><span class="line">bootstrap &#x3D; Bootstrap(app)</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>HTML 中引用 bootstrap 从 bootstrap 的 base.html 中的库内引用</p>
+<p> <a href="https://getbootstrap.com/docs/3.3/components/#navbar" target="_blank" rel="noopener">Boot-straap 官方提供的模板</a></p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends "bootstrap/base.html" %&#125;</span><br><span class="line">&#123;% block title %&#125;This is an example page&#123;% endblock %&#125;</span><br><span class="line">&#123;% block navbar %&#125;</span><br><span class="line">&#123;#    &#123;% include 'navbar.html' %&#125;#&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, Bootstrap<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>重写 bootstrap 里面的类，使之满足自己的需求<br>在 <strong>“External Libraries -&gt; site-packages -&gt; flask_bootstrap -&gt; templates -&gt; bootstrap”</strong> 内修改内置的各种页面，或者，复制出来在自己的页面中引用修改</p>
+</li>
+<li><p>创建新的页面 (以点击形式进入新的连接)</p>
+<ul>
+<li>app.py<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@app.route(&#39;&#x2F;register&#39;)</span><br><span class="line">def register():</span><br><span class="line">    # 转到 regist.html 页面</span><br><span class="line"> return render_template(&#39;register.html&#39;)</span><br></pre></td></tr></table></figure></li>
+<li>register.html<br>引用 “base.html” 模板 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends &#39;base.html&#39; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block app_content %&#125;</span><br><span class="line">    &lt;h1&gt;Register Now&lt;&#x2F;h1&gt;</span><br><span class="line">&#123;%  endblock %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>base.html<br>引用 navbar.html 页面<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block navbar %&#125;</span><br><span class="line">    &#123;% include &#39;navbar.html&#39; %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line">    &lt;div class&#x3D;&quot;container&quot;&gt;</span><br><span class="line">        &#123;% block app_content %&#125;</span><br><span class="line">        &#123;% endblock %&#125;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>navbar.html.html<br>设置页面共有文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class&#x3D;&quot;nav navbar-nav navbar-right&quot;&gt;</span><br><span class="line">    &#123;#  只有当 request.endpoint 是 register 时 才是 active,否则是其他  #&#125;</span><br><span class="line">    &lt;li class&#x3D;&quot;&#123;% if request.endpoint &#x3D;&#x3D; &#39;register&#39; %&#125;active&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &#123;# 当点击 Regist 时 ，转到 register() 函数 ，由 render_template(register.html) 转到 register.html #&#125;</span><br><span class="line">        &lt;a href&#x3D;&quot;&#123;&#123; url_for(&#39;register&#39;) &#125;&#125;&quot;&gt;Register&lt;&#x2F;a&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="Flask-连接数据库、-Flask-mine-找回密码、Flask-登录-采用关系数据库，Flask提供flask-sqlalchemy连接数据库"><a href="#Flask-连接数据库、-Flask-mine-找回密码、Flask-登录-采用关系数据库，Flask提供flask-sqlalchemy连接数据库" class="headerlink" title="Flask 连接数据库、 Flask mine 找回密码、Flask 登录 (采用关系数据库，Flask提供flask-sqlalchemy连接数据库)"></a>Flask 连接数据库、 Flask mine 找回密码、Flask 登录 (采用关系数据库，Flask提供flask-sqlalchemy连接数据库)</h4><p><a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/" target="_blank" rel="noopener">flask_sqlalchemy 重点学习官方文档地址</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template</span><br><span class="line"><span class="keyword">from</span> flask_bootstrap <span class="keyword">import</span> Bootstrap</span><br><span class="line"><span class="keyword">from</span> flask_sqlalchemy <span class="keyword">import</span> SQLAlchemy</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"><span class="comment"># 给出的是本地的 SQLite 数据库链接地址，可以改为 MySQL 等，只需要改变app.config['SQLALCHEMY_DATABASE_URI'] 值</span></span><br><span class="line">app.config[<span class="string">'SQLALCHEMY_DATABASE_URI'</span>] = <span class="string">'sqlite:////tmp/test.db'</span></span><br><span class="line">db = SQLAlchemy(app)</span><br><span class="line">bootstrap = Bootstrap(app)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>为了方便管理，建议将 SQL 配置新建一个 config.py 用于整理配置文件<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"> </span><br><span class="line">basedir = os.path.abspath(os.path.dirname(__file__))</span><br><span class="line">  </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Config</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># 如果找到 SQLite 路径就是用，如果没有找到就新建一个</span></span><br><span class="line">    SQLALCHEMY_DATABASE_URI = os.environ.get(<span class="string">'DATABASE_URL'</span>) <span class="keyword">or</span> <span class="string">"sqlite:///"</span> + os.path.join(basedir, <span class="string">'app.db'</span>)</span><br><span class="line">    SQLALCHEMY_TRACK_MODIFICATIONS = <span class="literal">False</span></span><br></pre></td></tr></table></figure></li>
+<li>建立 models.py 存放构建数据库的结构 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> app <span class="keyword">import</span> db</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span><span class="params">(db.Model)</span>:</span></span><br><span class="line">    <span class="comment"># nullable 非空 ; unique 不能重复,出现相同就报错</span></span><br><span class="line">    id = db.Column(db.Integer, primary_key=<span class="literal">True</span>)</span><br><span class="line">    username = db.Column(db.String(<span class="number">20</span>), unique=<span class="literal">True</span>, nullable=<span class="literal">False</span>)</span><br><span class="line">    password = db.Column(db.String(<span class="number">20</span>), nullable=<span class="literal">False</span>)</span><br><span class="line">    email = db.Column(db.String(<span class="number">120</span>), unique=<span class="literal">True</span>, nullable=<span class="literal">False</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'&lt;User %r&gt;'</span> % self.username</span><br></pre></td></tr></table></figure></li>
+<li>要创建初始数据库，需要在 “Python Console” (3、4、5都在 Python Console 中执行) 导入对象并运行 “SQLAlchemy.create_all” 方法 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> app.models <span class="keyword">import</span> db</span><br><span class="line">db.create_all()</span><br></pre></td></tr></table></figure></li>
+<li>创建用户用于测试 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> app.models <span class="keyword">import</span> User</span><br><span class="line"><span class="keyword">from</span> app.models <span class="keyword">import</span> db</span><br><span class="line">user1 = User(username=<span class="string">""</span>, password=<span class="string">""</span>, email=<span class="string">""</span>)</span><br><span class="line"><span class="comment"># 添加进数据库，并运行指令</span></span><br><span class="line">db.session.add(user1)</span><br><span class="line">db.session.commit()</span><br></pre></td></tr></table></figure></li>
+<li>访问数据库中数据  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> app.models <span class="keyword">import</span> User</span><br><span class="line">u = User.query.all()</span><br><span class="line"><span class="comment"># [&lt;User 'Jack'&gt;]</span></span><br><span class="line">U = u[<span class="number">0</span>]</span><br><span class="line">U.password</span><br><span class="line"><span class="comment"># 'pwd'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h4 id="FlaskWTF-创建-Flask-中的表单，基本包含所有表单"><a href="#FlaskWTF-创建-Flask-中的表单，基本包含所有表单" class="headerlink" title="FlaskWTF 创建 Flask 中的表单，基本包含所有表单"></a>FlaskWTF 创建 Flask 中的表单，基本包含所有表单</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">下载:</span><br><span class="line">1. pip install flask-WTF</span><br><span class="line">2. pip install wtforms</span><br></pre></td></tr></table></figure>
+<p><a href="https://flask-wtf.readthedocs.io/en/stable/" target="_blank" rel="noopener">FlaskWTF 重点官网主页</a><br><a href="https://pythonhosted.org/Flask-Bootstrap/" target="_blank" rel="noopener">Flask Bootstrap 与 其他组件联系内容包括 WTF</a></p>
+<ol>
+<li>创建表单 forms.py (用于注册，规定注册页面的内容) <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># FlaskForm 主要负责整合 wtforms 的内容、类型 以及包装</span></span><br><span class="line"><span class="keyword">from</span> flask_wtf <span class="keyword">import</span> FlaskForm</span><br><span class="line"><span class="comment"># 定义数据类型字符串，密码，提交按钮</span></span><br><span class="line"><span class="keyword">from</span> wtforms <span class="keyword">import</span> StringField, PasswordField, SubmitField</span><br><span class="line"><span class="comment"># validators 验证者：需要的数据、数据范围Length(min=6, max=20)、Email、验证密码 EqualTo('password')</span></span><br><span class="line"><span class="keyword">from</span> wtforms.validators <span class="keyword">import</span> DataRequired, Length, Email, EqualTo</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RegisterForm</span><span class="params">(FlaskForm)</span>:</span></span><br><span class="line">    username = StringField(<span class="string">'Username'</span>, validators=[DataRequired(), Length(min=<span class="number">6</span>, max=<span class="number">20</span>)])</span><br><span class="line">    email = StringField(<span class="string">'Email'</span>, validators=[DataRequired(), Email()])</span><br><span class="line">    password = PasswordField(<span class="string">'Password'</span>, validators=[DataRequired(), Length(min=<span class="number">8</span>, max=<span class="number">20</span>)])</span><br><span class="line">    confirm = PasswordField(<span class="string">'Repeat Password'</span>, validators=[DataRequired(), EqualTo(<span class="string">'password'</span>)])</span><br><span class="line">    submit = SubmitField(<span class="string">'Register'</span>)</span><br></pre></td></tr></table></figure></li>
+<li>使用 Email类型 时需要下载支持 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install email_validator</span><br></pre></td></tr></table></figure>
+使用 FlaskWTF 需要秘钥设置， CSRF token 验证 每次随机生成</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/csrf_token.png" alt></p>
+<ul>
+<li>在 config.py 内设置   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">   # SECRET_KEY 秘钥为路径内或者 字符串 &#39;A-VERY-LONG-SECRET&#39; 可以随意设置，主要为了防止跨网站攻击</span><br><span class="line">SECRET_KEY &#x3D; os.environ.get(&#39;SECRET_KEY&#39;) or &#39;A-VERY-LONG-SECRET&#39;</span><br></pre></td></tr></table></figure></li>
+<li>在 app.py 主页设置   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.secret_key &#x3D; &#39;123456&#39;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>定义 app.py 内注册页面<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template, request, url_for</span><br><span class="line"><span class="keyword">from</span> flask_bootstrap <span class="keyword">import</span> Bootstrap</span><br><span class="line"><span class="keyword">from</span> flask_sqlalchemy <span class="keyword">import</span> SQLAlchemy</span><br><span class="line"> </span><br><span class="line"><span class="keyword">from</span> config <span class="keyword">import</span> Config</span><br><span class="line"><span class="comment"># 引用 form 内的 注册表单 RegisterForm</span></span><br><span class="line"><span class="keyword">from</span> app.forms <span class="keyword">import</span> RegisterForm</span><br><span class="line"> </span><br><span class="line">app = Flask(__name__)</span><br><span class="line">db = SQLAlchemy(app)</span><br><span class="line">bootstrap = Bootstrap(app)</span><br><span class="line"> </span><br><span class="line">app.config.from_object(Config)</span><br><span class="line"><span class="comment"># 设置 传递数据的方法为 "GET" 与 "POST"</span></span><br><span class="line"><span class="meta">@app.route('/register', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 调用 RegisterForm 表单定义</span></span><br><span class="line">    form = RegisterForm()</span><br><span class="line">    <span class="comment"># 定义如果点击后 pass</span></span><br><span class="line">    <span class="keyword">if</span> form.validate_on_submit():</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="comment"># 将表单传入 register,html</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'register.html'</span>, form=form)</span><br></pre></td></tr></table></figure></li>
+<li>定义 “register.html” : 引用 bootstrap 内的 wtf.html 内容<br>WTF 内部包含 表单提交的各种报错，验证等<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block app_content %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Register Now<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        &#123;# col-md-6 表单大小 #&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span></span><br><span class="line">            &#123;# 引用 bootstrap 内的 wtf.html 内容 #&#125;</span><br><span class="line">            &#123;% import 'bootstrap/wtf.html' as wtf %&#125;</span><br><span class="line">            &#123;# 重点 一句话获取表单 form.py 的设置,快速完成表单，而无需进行大量的微调 #&#125;</span><br><span class="line">            &#123;&#123; wtf.quick_form(form) &#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;%  endblock %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>额外: 人机验证 RECAPTCHA PUBLIC KEY 验证秘钥，验证是否为机器<br><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/PUBLIC_KEY.png" alt></li>
+</ol>
+<ul>
+<li>forms.py 添加验证 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from flask_wtf import FlaskForm, RecaptchaField</span><br><span class="line">recaptcha &#x3D; RecaptchaField()</span><br></pre></td></tr></table></figure></li>
+<li>config.py 注册秘钥 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   # RECAPTCHA PUBLIC KEY 验证秘钥，验证是否为机器人</span><br><span class="line">RECAPTCHA_PUBLIC_KEY &#x3D; os.environ.get(&#39;RECAPTCHA_PUBLIC_KEY&#39;) or &#39;A-VERY-LONG-PUBLIC-KEY&#39;</span><br><span class="line">   RECAPTCHA_PRIVATE_KEY &#x3D; os.environ.get(&#39;RECAPTCHA_PRIVATE_KEY&#39;) or &#39;A-VERY-LONG-PRIVATE_KEY&#39;</span><br></pre></td></tr></table></figure></li>
+<li>遇到报错 “需要网站所有者处理的错误：网站密钥无效”,需要自行注册页面</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="Flask-Bcrypt-加密数据项-，在服务端处理表单存入数据库"><a href="#Flask-Bcrypt-加密数据项-，在服务端处理表单存入数据库" class="headerlink" title="Flask-Bcrypt 加密数据项 ，在服务端处理表单存入数据库"></a>Flask-Bcrypt 加密数据项 ，在服务端处理表单存入数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install flask-bcrypt</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>加密数据项 “flask-bcrypy” 中的 “Bcrypy” 模块, 传入数据库</p>
+<p> 为了避免与 congig.py 内的引用构成 bug 新建 名为”app” 的 package 将除了数据库、config.py移入, 将 app.py 分为 <strong>init</strong>.py 与 route.py，在外部创建与 config.py 同级的 run.py<br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/get_data1.png" alt><br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/get_data2.png" alt></p>
+<ul>
+<li>__init__.py  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"><span class="keyword">from</span> flask_bootstrap <span class="keyword">import</span> Bootstrap</span><br><span class="line"><span class="keyword">from</span> flask_sqlalchemy <span class="keyword">import</span> SQLAlchemy</span><br><span class="line"><span class="comment"># 调用模块</span></span><br><span class="line"><span class="keyword">from</span> flask_bcrypt <span class="keyword">import</span> Bcrypt</span><br><span class="line">  </span><br><span class="line"><span class="keyword">from</span> config <span class="keyword">import</span> Config</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">app = Flask(__name__)</span><br><span class="line">db = SQLAlchemy(app)</span><br><span class="line"><span class="comment"># 定义模块</span></span><br><span class="line">bcrypt = Bcrypt(app)</span><br><span class="line">bootstrap = Bootstrap(app)</span><br><span class="line">  </span><br><span class="line">app.config.from_object(Config)</span><br><span class="line"><span class="keyword">from</span> app.route <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure></li>
+<li>route.py  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> render_template, flash</span><br><span class="line">  </span><br><span class="line"><span class="keyword">from</span> app <span class="keyword">import</span> app, bcrypt, db</span><br><span class="line"><span class="keyword">from</span> app.forms <span class="keyword">import</span> RegisterForm</span><br><span class="line"><span class="keyword">from</span> app.models <span class="keyword">import</span> User</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="meta">@app.route('/')  # 指定路由</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>)</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="meta">@app.route('/register', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">()</span>:</span></span><br><span class="line">    form = RegisterForm()</span><br><span class="line">    <span class="comment"># 获取提交上来的注册数据，进行处理</span></span><br><span class="line">    <span class="keyword">if</span> form.validate_on_submit():</span><br><span class="line">        username = form.username.data</span><br><span class="line">        email = form.email.data</span><br><span class="line">        <span class="comment"># 变种hash加密,相同密码生成值也不同</span></span><br><span class="line">        password = bcrypt.generate_password_hash(form.password.data)</span><br><span class="line">        <span class="comment"># 传入数据库内</span></span><br><span class="line">        user = User(username=username, email=email, password=password)</span><br><span class="line">        db.session.add(user)</span><br><span class="line">        db.session.commit()</span><br><span class="line">    <span class="comment"># 检查产生密码与hash 是否对应正确</span></span><br><span class="line">    <span class="comment"># bcrypt.check_password_hash(hash, password)</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'register.html'</span>, form=form)</span><br></pre></td></tr></table></figure></li>
+<li>run.py  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> app <span class="keyword">import</span> app</span><br><span class="line">  </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>在设置 “models.py” 数据库时，设置 “unique=True 不能重复”，遇见重复的就会报错，需要写函数来辅助判断用户名和密码是否在数据库中，然后给与提示</p>
+<ul>
+<li>forms.py 判断是否在数据库中重复，如果在给与报错<br>  <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Username_taken.png" alt><br>  <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Email_token.png" alt>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError</span><br><span class="line">class RegisterForm(FlaskForm):</span><br><span class="line">    def validate_username(self, username):</span><br><span class="line">        user &#x3D; User.query.filter_by(username&#x3D;username.data).first()</span><br><span class="line">        if user:</span><br><span class="line">            raise ValidationError(&#39;Username already token, please choose another one.&#39;)</span><br><span class="line">    </span><br><span class="line">    def validate_email(self, email):</span><br><span class="line">        email &#x3D; User.query.filter_by(email&#x3D;email.data).first()</span><br><span class="line">        if email:</span><br><span class="line">            raise ValidationError(&#39;Email already token, please choose another one.&#39;)</span><br></pre></td></tr></table></figure></li>
+<li>route.py  (flash提示注册成功，并跳转页面)  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> render_template, flash, redirect, url_for</span><br><span class="line"> </span><br><span class="line"><span class="keyword">from</span> app <span class="keyword">import</span> app, bcrypt, db  </span><br><span class="line"><span class="keyword">from</span> app.forms <span class="keyword">import</span> RegisterForm </span><br><span class="line"><span class="keyword">from</span> app.models <span class="keyword">import</span> User</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="meta">@app.route('/')  # 指定路由</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>)</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="meta">@app.route('/register', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">()</span>:</span></span><br><span class="line">    form = RegisterForm()</span><br><span class="line">    <span class="comment"># 获取提交上来的注册数据，进行处理</span></span><br><span class="line">    <span class="keyword">if</span> form.validate_on_submit():</span><br><span class="line">        username = form.username.data</span><br><span class="line">        email = form.email.data</span><br><span class="line">        <span class="comment"># 变种hash加密,相同密码生成值也不同</span></span><br><span class="line">        password = bcrypt.generate_password_hash(form.password.data)</span><br><span class="line">        user = User(username=username, email=email, password=password)</span><br><span class="line">        db.session.add(user)</span><br><span class="line">        db.session.commit()</span><br><span class="line">        <span class="comment"># flash 提示 "用户注册成功"，提示信息为 "success" 样式</span></span><br><span class="line">        flash(<span class="string">'Congrats registration success'</span>, category=<span class="string">'success'</span>)</span><br><span class="line">        <span class="comment"># 提示后转至 index.html 页面</span></span><br><span class="line">        <span class="keyword">return</span> redirect(url_for(<span class="string">'index'</span>))</span><br><span class="line">    <span class="comment"># 检查产生密码与hash 是否对应正确</span></span><br><span class="line">    <span class="comment"># bcrypt.check_password_hash(hash, password)</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'register.html'</span>, form=form)</span><br></pre></td></tr></table></figure></li>
+<li>base.html (修改 base.html 页面，确保 flash 成功显示在页面上)<br>  <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/flash_show.png" alt><br>  <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/flash_return.png" alt>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">        &#123;# 提示框 #&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">            &#123;# 页面大小 #&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-lg-6"</span>&gt;</span></span><br><span class="line">                &#123;# 判断与循环 #&#125;</span><br><span class="line">                &#123;% with messages = get_flashed_messages(with_categories=True) %&#125;</span><br><span class="line">                    &#123;% if messages %&#125;</span><br><span class="line">                        &#123;% for category, message in messages %&#125;</span><br><span class="line">                            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-&#123;&#123; category &#125;&#125;"</span>&gt;</span></span><br><span class="line">                                &#123;&#123; message &#125;&#125;</span><br><span class="line">                            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                        &#123;% endfor %&#125;</span><br><span class="line">                    &#123;% endif %&#125;</span><br><span class="line">                &#123;% endwith %&#125;</span><br><span class="line">      </span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        &#123;# 在 app_content 注册 上添加 注册成功 提示 #&#125;</span><br><span class="line">        &#123;% block app_content %&#125;</span><br><span class="line">        &#123;% endblock %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="Flask-login-用户登录包，包含很多用于登录、登出的函数"><a href="#Flask-login-用户登录包，包含很多用于登录、登出的函数" class="headerlink" title="Flask-login 用户登录包，包含很多用于登录、登出的函数"></a>Flask-login 用户登录包，包含很多用于登录、登出的函数</h4><p><code>pip install flask-login</code></p>
+<ol>
+<li><p>在 <strong>init</strong>.py 内引入 flask-login 包，并进行设置</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from flask_login import LoginManager</span><br><span class="line"></span><br><span class="line"># 登录界面的位置</span><br><span class="line">login.login_view &#x3D; &#39;login&#39;</span><br><span class="line"># 提示 &quot;You must login to access the page&quot; 提示框格式为 &quot;info&quot;</span><br><span class="line">login.login_message &#x3D; &quot;You must login to access the page&quot;</span><br><span class="line">login.login_message_category &#x3D; &quot;info&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>新建 login.html 登录页面，在 forms.py 下 新建 Login 函数，构造 登录需要的部件<br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/login.png" alt></p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block app_content %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Login In<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span></span><br><span class="line">            &#123;% import 'bootstrap/wtf.html' as wtf %&#125;</span><br><span class="line">            &#123;&#123; wtf.quick_form(form) &#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;%  endblock %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from wtforms import StringField, PasswordField, SubmitField, BooleanField</span><br><span class="line">class LoginForm(FlaskForm):</span><br><span class="line">     username &#x3D; StringField(&#39;Username&#39;, validators&#x3D;[DataRequired(), Length(min&#x3D;6, max&#x3D;20)])</span><br><span class="line">     password &#x3D; PasswordField(&#39;Password&#39;, validators&#x3D;[DataRequired(), Length(min&#x3D;8, max&#x3D;20)])</span><br><span class="line">     remember &#x3D; BooleanField(&#39;Remember&#39;)</span><br><span class="line">     submit &#x3D; SubmitField(&#39;Sign In&#39;)</span><br></pre></td></tr></table></figure></li>
+<li><p>修改 navbar.html 在主页面新增 “Login” 、”Logout” 选项框，</p>
+<p>增加判断项，在登录后只显示 “Logout” 选项，未登录时显示 “Login” 与 “Register” 选项，</p>
+<p>修改 主页面 (index.html) 显示为 Hello, <br><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/logout.png" alt><br><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/if_not_login.png" alt><br><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/if_login.png" alt></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class&#x3D;&quot;nav navbar-nav navbar-right&quot;&gt;</span><br><span class="line">  &#123;# 判断是否处于登录状态，current_user.is_authenticated 获取登录状态 #&#125;</span><br><span class="line">  &#123;% if not current_user.is_authenticated %&#125;</span><br><span class="line">    &#123;#    登录界面    #&#125;</span><br><span class="line">    &lt;li class&#x3D;&quot;&#123;% if request.endpoint &#x3D;&#x3D; &#39;login&#39; %&#125;active&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;&#123;&#123; url_for(&#39;login&#39;) &#125;&#125;&quot;&gt;Login In&lt;&#x2F;a&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">    &#123;#  只有当 request.endpoint 是 index 时 才是 active,否则是其他  #&#125;</span><br><span class="line">    &lt;li class&#x3D;&quot;&#123;% if request.endpoint &#x3D;&#x3D; &#39;register&#39; %&#125;active&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;&#123;&#123; url_for(&#39;register&#39;) &#125;&#125;&quot;&gt;Register&lt;&#x2F;a&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &#123;% else %&#125;</span><br><span class="line">    &#123;#    登出界面    #&#125;</span><br><span class="line">    &lt;li class&#x3D;&quot;&#123;% if request.endpoint &#x3D;&#x3D; &#39;logout&#39; %&#125;active&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;&#123;&#123; url_for(&#39;logout&#39;) &#125;&#125;&quot;&gt;Logout&lt;&#x2F;a&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends "base.html" %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block app_content %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;&#123; current_user.username &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>修改数据库设置 model.py，删除数据库重新构建数据库结构</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 引用 UserMinxin</span></span><br><span class="line"><span class="keyword">from</span> flask_login <span class="keyword">import</span> UserMixin</span><br><span class="line"><span class="comment"># 从 app 包的 __init__.py 引用 login </span></span><br><span class="line"><span class="keyword">from</span> app <span class="keyword">import</span> db, login</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta">@login.user_loader</span></span><br><span class="line"><span class="comment"># 获取登录用户的 id</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_user</span><span class="params">(user_id)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> User.query.filter_by(id=user_id).first()</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span><span class="params">(db.Model, UserMixin)</span>:</span></span><br><span class="line">    <span class="comment"># nullable 非空 ; unique 不能重复</span></span><br><span class="line">    id = db.Column(db.Integer, primary_key=<span class="literal">True</span>)</span><br><span class="line">    username = db.Column(db.String(<span class="number">20</span>), unique=<span class="literal">True</span>, nullable=<span class="literal">False</span>)</span><br><span class="line">    password = db.Column(db.String(<span class="number">20</span>), nullable=<span class="literal">False</span>)</span><br><span class="line">    email = db.Column(db.String(<span class="number">120</span>), unique=<span class="literal">True</span>, nullable=<span class="literal">False</span>)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'&lt;User %r&gt;'</span> % self.username</span><br></pre></td></tr></table></figure>
+<p>重构数据库:</p>
+<pre><code>在 &quot;Python Console&quot; 内重置数据库</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from app.models import db</span><br><span class="line">db.create_all()</span><br></pre></td></tr></table></figure></li>
+<li><p>设置 <strong>route.py</strong> 为登录方法进行实现</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> render_template, flash, redirect, url_for, request</span><br><span class="line"><span class="comment"># 从登录模块引入所需的方法</span></span><br><span class="line"><span class="keyword">from</span> flask_login <span class="keyword">import</span> login_user, login_required, current_user, logout_user</span><br><span class="line"><span class="keyword">from</span> app <span class="keyword">import</span> app, bcrypt, db</span><br><span class="line"><span class="comment"># 从 form.py 内引入 注册表格与登录表格</span></span><br><span class="line"><span class="keyword">from</span> app.forms <span class="keyword">import</span> RegisterForm, LoginForm</span><br><span class="line"><span class="keyword">from</span> app.models <span class="keyword">import</span> User</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta">@app.route('/')  # 指定路由</span></span><br><span class="line"><span class="comment"># 需要登录</span></span><br><span class="line"><span class="meta">@login_required</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta">@app.route('/register', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 判断是否是已经处于登录状态,如果是回到主界面</span></span><br><span class="line">    <span class="keyword">if</span> current_user.is_authenticated:</span><br><span class="line">        <span class="keyword">return</span> redirect(url_for(<span class="string">'index'</span>))</span><br><span class="line">    form = RegisterForm()</span><br><span class="line">    <span class="comment"># 获取提交上来的注册数据，进行处理</span></span><br><span class="line">    <span class="keyword">if</span> form.validate_on_submit():</span><br><span class="line">        username = form.username.data</span><br><span class="line">        email = form.email.data</span><br><span class="line">        <span class="comment"># 变种hash加密,相同密码生成值也不同</span></span><br><span class="line">        password = bcrypt.generate_password_hash(form.password.data)</span><br><span class="line">        user = User(username=username, email=email, password=password)</span><br><span class="line">        db.session.add(user)</span><br><span class="line">        db.session.commit()</span><br><span class="line">        flash(<span class="string">'Congrats registration success'</span>, category=<span class="string">'success'</span>)</span><br><span class="line">        <span class="keyword">return</span> redirect(url_for(<span class="string">'index'</span>))</span><br><span class="line">    <span class="comment"># 检查产生密码与hash 是否对应正确</span></span><br><span class="line">    <span class="comment"># bcrypt.check_password_hash(hash, password)</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'register.html'</span>, form=form)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 设置登录函数、登录页面、登录方法</span></span><br><span class="line"><span class="meta">@app.route('/login', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 判断是否是已经处于登录状态,如果是回到主界面</span></span><br><span class="line">    <span class="keyword">if</span> current_user.is_authenticated:</span><br><span class="line">        <span class="keyword">return</span> redirect(url_for(<span class="string">'index'</span>))</span><br><span class="line">    <span class="comment"># 获取 登录表格 </span></span><br><span class="line">    form = LoginForm()</span><br><span class="line">    <span class="comment"># 如果调交上来的数据不为空</span></span><br><span class="line">    <span class="keyword">if</span> form.validate_on_submit():</span><br><span class="line">        username = form.username.data</span><br><span class="line">        <span class="comment"># 获取密码，检查密码是否与数据库中匹配</span></span><br><span class="line">        password = form.password.data</span><br><span class="line">        remember = form.remember.data</span><br><span class="line">        <span class="comment"># 根据输入用户名找到数据库中用户信息</span></span><br><span class="line">        user = User.query.filter_by(username=username).first()</span><br><span class="line">        <span class="comment"># 如果用户存在且密码对应正确</span></span><br><span class="line">        <span class="keyword">if</span> user <span class="keyword">and</span> bcrypt.check_password_hash(user.password, password):</span><br><span class="line">            <span class="comment"># 设置是否记住登录信息单选框</span></span><br><span class="line">            login_user(user, remember=remember)</span><br><span class="line">            <span class="comment"># 返回登录成功信息</span></span><br><span class="line">            flash(<span class="string">"login success"</span>, category=<span class="string">'info'</span>)</span><br><span class="line">            <span class="comment"># http://127.0.0.1:5000/login?next=%2F 由 next 决定接下来进入的页面</span></span><br><span class="line">            <span class="keyword">if</span> request.args.get(<span class="string">'next'</span>):</span><br><span class="line">                next_page = request.args.get(<span class="string">'next'</span>)</span><br><span class="line">                <span class="keyword">return</span> redirect(next_page)</span><br><span class="line">            <span class="keyword">return</span> redirect(url_for(<span class="string">'index'</span>))</span><br><span class="line">        <span class="comment"># 如果用户不岑在或者密码错误，flash 出错误</span></span><br><span class="line">        flash(<span class="string">"User not exists or password not match"</span>, category=<span class="string">'danger'</span>)</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'login.html'</span>, form=form)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 设置登出函数、页面</span></span><br><span class="line"><span class="meta">@app.route('/logout')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">logout</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 直接引用 flask_login 模块中的 logout_user()</span></span><br><span class="line">    logout_user()</span><br><span class="line">    <span class="comment"># 登出后返回登录页面</span></span><br><span class="line">    <span class="keyword">return</span> redirect(url_for(<span class="string">'login'</span>))</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Liu
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/null-608fcd3dbda24e58.gif" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>python 学习</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/06/flask-note/">Flask_note</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/05/save-git-problem/">Windows下 Git 因移动文件夹导致的问题及解决</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/03/pyecharts-map/">pyecharts-Map</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/01/pyecharts-pie/">pyecharts-Pie</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/06/flask-note/">Flask_note</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/05/save-git-problem/">Windows下 Git 因移动文件夹导致的问题及解决</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-chang-yong-ming-ling/">linux_常用命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/27/css-note/">css_note</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/01/pyecharts-pie/">pyecharts-Pie</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/python-chang-yong-mo-kuai/">python_常用模块</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2020/08/06/flask-note/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/08/06/flask-note/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/08/06/flask-note/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Flask-Study/" style="font-size: 11.059856216179565px;" class="tag-cloud-link">Flask_Study</a>
+    
+    <a href="/tags/Windows-problem/" style="font-size: 18.84399994184778px;" class="tag-cloud-link">Windows problem</a>
+    
+    <a href="/tags/Linux-study/" style="font-size: 15.575543846098821px;" class="tag-cloud-link">Linux_study</a>
+    
+    <a href="/tags/scrapy-study/" style="font-size: 8.839258783216476px;" class="tag-cloud-link">scrapy_study</a>
+    
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 18.999922115554718px;" class="tag-cloud-link">前端学习</a>
+    
+    <a href="/tags/Pyecharts/" style="font-size: 12.213904467063486px;" class="tag-cloud-link">Pyecharts</a>
+    
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 16.036449262538596px;" class="tag-cloud-link">Python 模块</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://www.crushing.xyz/" target="_blank">GODLIN</a>
+    </li>
+    
+    <li>
+        <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/#id9" target="_blank">BeautifulSoup 中文文档</a>
+    </li>
+    
+    <li>
+        <a href="https://requests.readthedocs.io/zh_CN/latest/user/quickstart.html" target="_blank">Requests 中文文档</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/forgotten-forever" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/xia-chong-yu-bing-74-74" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Liu Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <script type="text/javascript" src="\js\FunnyTitle.js"></script>
+    <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"scripFrom":"local","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"heigut":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: 'https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/background',
+      ext: 'jpg',
+      maxCount: '10'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
