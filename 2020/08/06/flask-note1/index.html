@@ -12,7 +12,7 @@
     
     
     
-    <title>Flask_note | BLOG</title>
+    <title>Flask_note1 | BLOG</title>
     <link href="http://yoursite.com" rel="prefetch" />
 
     
@@ -176,13 +176,13 @@
         <i class="fa fa-home"></i>
         <a href="http://yoursite.com">BLOG</a>
         >
-        <span>Flask_note</span>
+        <span>Flask_note1</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2020/08/06/flask-note/">Flask_note</a>
+                <a href="/2020/08/06/flask-note1/">Flask_note1</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -205,7 +205,7 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2020/08/06/flask-note/">Flask_note</a>
+                    <a href="/2020/08/06/flask-note1/">Flask_note1</a>
                 </h4>
             </div>
             <p>
@@ -223,13 +223,14 @@
         </center>
     </div>
     <div class="content-article">
-        <h3 id="Flask-框架学习"><a href="#Flask-框架学习" class="headerlink" title="Flask 框架学习"></a>Flask 框架学习</h3><h4 id="通过-Pycharm-创建新的工程，创建-Falsk-项目"><a href="#通过-Pycharm-创建新的工程，创建-Falsk-项目" class="headerlink" title="通过 Pycharm 创建新的工程，创建 Falsk 项目"></a>通过 Pycharm 创建新的工程，创建 Falsk 项目</h4><p>生成的 Falsk 项目中带有一个 app.py 文件</p>
+        <p><a href="https://www.youtube.com/watch?v=RWviEK1Si68&list=PLDFBYdF-BxV1G4FBpG1EMyFtbsbZuJOvD" target="_blank" rel="noopener">根据Youtube上视频学习</a></p>
+<h3 id="Flask-框架学习"><a href="#Flask-框架学习" class="headerlink" title="Flask 框架学习"></a>Flask 框架学习</h3><h4 id="通过-Pycharm-创建新的工程，创建-Falsk-项目"><a href="#通过-Pycharm-创建新的工程，创建-Falsk-项目" class="headerlink" title="通过 Pycharm 创建新的工程，创建 Falsk 项目"></a>通过 Pycharm 创建新的工程，创建 Falsk 项目</h4><p>生成的 Falsk 项目中带有一个 app.py 文件</p>
 <p> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/project_build.png" alt><br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/First_img.png" alt><br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/First_startapp.png" alt><br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Flask_title1.png" alt></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/')  # 指定路由: '/' 根路由</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">return</span> <span class="string">'Hello World!'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"><span class="comment"># debug 默认为 False, debug=True 让开发变得友好，在修改App 文件后，刷新立即可以在本地服务上看到变化</span></span><br><span class="line"><span class="comment"># windows 可能做不到</span></span><br><span class="line"><span class="comment"># port 默认端口 5000 ,port=6333 更改端口</span></span><br><span class="line"><span class="comment"># host 默认为本地 127.0.0.1, host='0.0.0.0'面向局域网都可以访问</span></span><br><span class="line">    app.run(debug=<span class="literal">True</span>, port=<span class="number">6333</span>, host=<span class="string">'0.0.0.0'</span>)</span><br></pre></td></tr></table></figure>
 <h4 id="进行简单修改，对页面进行布局，渲染"><a href="#进行简单修改，对页面进行布局，渲染" class="headerlink" title="进行简单修改，对页面进行布局，渲染"></a>进行简单修改，对页面进行布局，渲染</h4><ol>
 <li><p>基础：在 return 内增加 HTML 类型文件</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"> </span><br><span class="line">app = Flask(__name__)</span><br><span class="line"> </span><br><span class="line"><span class="meta">@app.route('/')  # 指定路由</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">     <span class="comment"># 更改 return 内为 HTML 文件</span></span><br><span class="line">     <span class="keyword">return</span> <span class="string">'&lt;h1&gt;Hello&lt;/h1&gt;&lt;p&gt;Flask&lt;/p&gt;'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">     app.run(debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure></li>
-<li><p>优化: 在工程下建立文件夹 “templates” (现在版本已经实现自建),”templates” 中建立 “index.html” 文件<br>在 app.py 内引进  Flask_note 渲染<br><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Flask_title3.png" alt></p>
+<li><p>优化: 在工程下建立文件夹 “templates” (现在版本已经实现自建),”templates” 中建立 “index.html” 文件<br>在 app.py 内引进  Flask_note1 渲染<br><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Flask_title3.png" alt></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"> </span><br><span class="line"><span class="meta">@app.route('/')  # 指定路由</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># title=title 将 title 传入 index 作为标题</span></span><br><span class="line">    <span class="comment"># &lt;title&gt;&#123;&#123; title &#125;&#125;&lt;/title&gt;</span></span><br><span class="line">    <span class="comment"># 写在 &lt;p&gt;&#123;&#123; title &#125;&#125;&lt;/p&gt; 内，也可以调用 填入 'Flask Web test'</span></span><br><span class="line">    title = <span class="string">'Flask Web test'</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>, title=title)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure></li>
 <li><p>更高级渲染 (条件判断、循环)</p>
 <ul>
@@ -341,7 +342,7 @@
 <hr>
 <h4 id="Flask-login-用户登录包，包含很多用于登录、登出的函数"><a href="#Flask-login-用户登录包，包含很多用于登录、登出的函数" class="headerlink" title="Flask-login 用户登录包，包含很多用于登录、登出的函数"></a>Flask-login 用户登录包，包含很多用于登录、登出的函数</h4><p><code>pip install flask-login</code></p>
 <ol>
-<li><p>在 <strong>init</strong>.py 内引入 flask-login 包，并进行设置</p>
+<li><p>在 __init__.py 内引入 flask-login 包，并进行设置</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from flask_login import LoginManager</span><br><span class="line"></span><br><span class="line"># 登录界面的位置</span><br><span class="line">login.login_view &#x3D; &#39;login&#39;</span><br><span class="line"># 提示 &quot;You must login to access the page&quot; 提示框格式为 &quot;info&quot;</span><br><span class="line">login.login_message &#x3D; &quot;You must login to access the page&quot;</span><br><span class="line">login.login_message_category &#x3D; &quot;info&quot;</span><br></pre></td></tr></table></figure></li>
 <li><p>新建 login.html 登录页面，在 forms.py 下 新建 Login 函数，构造 登录需要的部件<br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/login.png" alt></p>
  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block app_content %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Login In<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span></span><br><span class="line">            &#123;% import 'bootstrap/wtf.html' as wtf %&#125;</span><br><span class="line">            &#123;&#123; wtf.quick_form(form) &#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;%  endblock %&#125;</span><br></pre></td></tr></table></figure>
@@ -420,7 +421,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/06/flask-note/">Flask_note</a>
+                    <a href="/2020/08/08/flask-note2/">Flask-note2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/06/flask-note1/">Flask_note1</a>
                 </span>
             </li>
             
@@ -472,12 +479,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -496,7 +497,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/06/flask-note/">Flask_note</a>
+                    <a href="/2020/07/26/hello-world/">Hello World</a>
                 </span>
             </li>
             
@@ -508,19 +509,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/29/linux-chang-yong-ming-ling/">linux_常用命令</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/07/27/css-note/">css_note</a>
+                    <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
                 </span>
             </li>
             
@@ -532,7 +521,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
+                    <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
                 </span>
             </li>
             
@@ -554,6 +543,18 @@
                 </span>
             </li>
             
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/08/flask-note2/">Flask-note2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/06/flask-note1/">Flask_note1</a>
+                </span>
+            </li>
+            
         </ul>
     </div>
 </aside>
@@ -565,17 +566,17 @@
 
                 
                 <li>
-                    <a href="/2020/08/06/flask-note/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2020/08/06/flask-note1/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/08/06/flask-note/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2020/08/06/flask-note1/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/08/06/flask-note/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2020/08/06/flask-note1/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -583,19 +584,19 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Flask-Study/" style="font-size: 11.059856216179565px;" class="tag-cloud-link">Flask_Study</a>
+    <a href="/tags/Flask-Study/" style="font-size: 14.450191031272135px;" class="tag-cloud-link">Flask_Study</a>
     
-    <a href="/tags/Windows-problem/" style="font-size: 18.84399994184778px;" class="tag-cloud-link">Windows problem</a>
+    <a href="/tags/Windows-problem/" style="font-size: 9.531510853008339px;" class="tag-cloud-link">Windows problem</a>
     
-    <a href="/tags/Linux-study/" style="font-size: 15.575543846098821px;" class="tag-cloud-link">Linux_study</a>
+    <a href="/tags/Linux-study/" style="font-size: 13.596296599964262px;" class="tag-cloud-link">Linux_study</a>
     
-    <a href="/tags/scrapy-study/" style="font-size: 8.839258783216476px;" class="tag-cloud-link">scrapy_study</a>
+    <a href="/tags/scrapy-study/" style="font-size: 19.064576311731884px;" class="tag-cloud-link">scrapy_study</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 18.999922115554718px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 12.891964345247455px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/Pyecharts/" style="font-size: 12.213904467063486px;" class="tag-cloud-link">Pyecharts</a>
+    <a href="/tags/Pyecharts/" style="font-size: 11.516521492784637px;" class="tag-cloud-link">Pyecharts</a>
     
-    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 16.036449262538596px;" class="tag-cloud-link">Python 模块</a>
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 8.385831699816858px;" class="tag-cloud-link">Python 模块</a>
     
 </div>
                 

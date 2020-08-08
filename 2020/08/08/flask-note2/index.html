@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Liu">
+    
+    <meta name="description" content="python 学习">
+    
+    
+    
+    
+    
+    
+    <title>Flask-note2 | BLOG</title>
+    <link href="http://yoursite.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/small_bg.jpg');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/https:/cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/null-608fcd3dbda24e58.gif'
+        var previews = 'https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview01.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview02.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview03.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview04.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview05.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview06.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview07.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview08.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview09.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview10.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview11.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview12.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview13.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview15.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://yoursite.com">
+                
+                <!-- 这里background直接使用logo_image(url) -->
+                <style>
+
+                </style>
+                    
+                <div class="navbar-brand"></div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Flask-Study/">Flask_Study</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Windows-problem/">Windows problem</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Linux-study/">Linux_study</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">BLOG</a>
+        >
+        <span>Flask-note2</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2020/08/08/flask-note2/">Flask-note2</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Flask-Study/">Flask_Study</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-08-08
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2020/08/08/flask-note2/">Flask-note2</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2020-08-08
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Flask-Study/">Flask_Study</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p><a href="https://www.youtube.com/watch?v=RWviEK1Si68&list=PLDFBYdF-BxV1G4FBpG1EMyFtbsbZuJOvD" target="_blank" rel="noopener">根据Youtube上视频学习</a></p>
+<h4 id="利用邮箱重置密码"><a href="#利用邮箱重置密码" class="headerlink" title="利用邮箱重置密码"></a>利用邮箱重置密码</h4><ol>
+<li>在登录界面 (login.html) 创建 “忘记密码，找回选项”</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Forget_Password.png" alt><br>    <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">        &#123;# 创建 找回密码界面 "send_password_reset_request.html" #&#125;</span><br><span class="line">        Password forget? <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for('send_password_reset_request') &#125;&#125;"</span>&gt;</span></span><br><span class="line">        Click here to reset your password.<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><br>2. 创建 找回密码界面 “send_password_reset_request.html” 界面配置与 注册界面类似<br>    <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block app_content %&#125;</span><br><span class="line">    # 重置密码标题</span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Send Reset Password Email<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span></span><br><span class="line">            &#123;% import 'bootstrap/wtf.html' as wtf %&#125;</span><br><span class="line">            &#123;&#123; wtf.quick_form(form) &#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;%  endblock %&#125;</span><br></pre></td></tr></table></figure><br>3. 在 forms.py 内创建 重置密码表单，</p>
+<pre><code>![](https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Email_not_exists.png)
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PasswordResetRequestForm</span><span class="params">(FlaskForm)</span>:</span></span><br><span class="line">    <span class="comment"># 输入 Email 表格</span></span><br><span class="line">    email = StringField(<span class="string">'Email'</span>, validators=[DataRequired(), Email()])</span><br><span class="line">    <span class="comment"># 发送邮件按钮</span></span><br><span class="line">    submit = SubmitField(<span class="string">'Send'</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">validate_email</span><span class="params">(self, email)</span>:</span></span><br><span class="line">        <span class="comment"># 获取 Email</span></span><br><span class="line">        email = User.query.filter_by(email=email.data).first()</span><br><span class="line">        <span class="comment"># 判断 邮箱是否存在 如果不存在 报错</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> email:</span><br><span class="line">            <span class="keyword">raise</span> ValidationError(<span class="string">'Email not exists.'</span>)</span><br></pre></td></tr></table></figure></code></pre><ol start="4">
+<li>在 route.py 页面设置 发用邮件验证界面 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@app.route(&#39;&#x2F;send_password_reset_request&#39;, methods&#x3D;[&quot;GET&quot;, &quot;POST&quot;])</span><br><span class="line">def send_password_reset_request():</span><br><span class="line">    # 判断是否是已经处于登录状态,如果是回到主界面</span><br><span class="line">    if current_user.is_authenticated:</span><br><span class="line">        return redirect(url_for(&#39;index&#39;))</span><br><span class="line">    form &#x3D; PasswordResetRequestForm()</span><br><span class="line">    return render_template(&#39;send_password_reset_request.html&#39;, form&#x3D;form)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h4 id="通过加密发送邮件给用户，安全实现密码更改-PyJWT-加密，flask-mail-发送邮件验证"><a href="#通过加密发送邮件给用户，安全实现密码更改-PyJWT-加密，flask-mail-发送邮件验证" class="headerlink" title="通过加密发送邮件给用户，安全实现密码更改 (PyJWT 加密，flask-mail 发送邮件验证)"></a>通过加密发送邮件给用户，安全实现密码更改 (PyJWT 加密，flask-mail 发送邮件验证)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install PyJWT</span><br><span class="line">pip install flask-mail</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>在 model.py 下创建加密规则与解密验证规则<br><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Token.png" alt><br><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Check_Token.png" alt></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jwt</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate_reset_password_token</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="comment"># 将 token 与用户名 作为验证信息加密 传输</span></span><br><span class="line">    <span class="keyword">return</span> jwt.encode(&#123;<span class="string">'id'</span>: self.id&#125;, current_app.config[<span class="string">'SECRET_KEY'</span>], algorithm=<span class="string">"HS256"</span>)</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check_reset_password_token</span><span class="params">(self, token)</span>:</span></span><br><span class="line">    <span class="comment"># 验证是加密的 验证信息 是否正确，是否遭到篡改</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        data = jwt.decode(token, current_app.config[<span class="string">'SECRET_KEY'</span>], algorithm=[<span class="string">"HS256"</span>])</span><br><span class="line">        <span class="keyword">return</span> User.query.filter_by(id=data[<span class="string">'id'</span>]).first()</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></table></figure></li>
+<li><p>在 __init__.py 内部导入 flask-mail</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from flask_mail import Mail</span><br><span class="line"># mail 需要很多配置 可以百度 flask mail config</span><br><span class="line">mail &#x3D; Mail(app)</span><br></pre></td></tr></table></figure></li>
+<li><p>配置 mail 设置 config (在 config.py内配置)</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/error_smtplib.png" alt></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Flask Gmail Config</span><br><span class="line"># 服务器 也可以用 qq 邮箱 smtp.qq.com (国内最好使用qq邮箱)</span><br><span class="line">MAIL_SERVER &#x3D; &#39;smtp.gmail.com&#39;</span><br><span class="line"># 端口 (不要使用默认端口 465 ，使用其他端口 25 或者其他的，否则会报错 smtplib.SMTPServerDisconnected: Connection unexpectedly closed)</span><br><span class="line">MAIL_PORT &#x3D; 25</span><br><span class="line">MAIL_USER_SSL &#x3D; True</span><br><span class="line"># 将 MAIL_USERNAME&#x2F;qq 写入环境变量,放入自己的 GMAIL&#x2F;qq 账号与 令牌 (GMAIL_PASSWORD，需要填入令牌)</span><br><span class="line">MAIL_USERNAME &#x3D; os.environ.get(&#39;GMAIL_USERNAME&#39;) or &#39;GMAIL_USERNAME&#39;</span><br><span class="line">MAIL_PASSWORD &#x3D; os.environ.get(&#39;GMAIL_PASSWORD&#39;) or &#39;GMAIL_PASSWORD&#39;</span><br></pre></td></tr></table></figure></li>
+<li><p>新建 email.py 页面 定义发送邮件</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> current_app, render_template</span><br><span class="line"><span class="keyword">from</span> flask_mail <span class="keyword">import</span> Message</span><br><span class="line"><span class="keyword">from</span> app <span class="keyword">import</span> mail</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">send_reset_password_mail</span><span class="params">(user, token)</span>:</span></span><br><span class="line">    msg = Message(<span class="string">"[Flask App] Reset Your Password!"</span>,</span><br><span class="line">                <span class="comment"># 发送者邮箱，在 config.py 内定义的 邮箱</span></span><br><span class="line">                sender=current_app.config[<span class="string">"MAIL_USERNAME"</span>],</span><br><span class="line">                <span class="comment"># 接受者邮箱</span></span><br><span class="line">                recipients=[user.email],</span><br><span class="line">                html=render_template(<span class="string">'reset_password_mail.html'</span>,user=user, token=token))</span><br><span class="line">    mail.send(message=msg)</span><br></pre></td></tr></table></figure></li>
+<li><p>在 route.py 内配置重设密码页面以及补全发送邮箱验证界面</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">def send_password_reset_request():</span><br><span class="line">     if current_user.is_authenticated:</span><br><span class="line">         return redirect(url_for(&#39;index&#39;))</span><br><span class="line">     form &#x3D; PasswordResetRequestForm()</span><br><span class="line">     # 获取提交上来的注册数据，进行处理</span><br><span class="line">     if form.validate_on_submit():</span><br><span class="line">         email &#x3D; form.email.data</span><br><span class="line">         user &#x3D; User.query.filter_by(email&#x3D;email).first()</span><br><span class="line">         # token 作为参数加密放入链接发送给用户</span><br><span class="line">         token &#x3D; user.generate_reset_password_token()</span><br><span class="line">         # 创建 email.py 发送给用户 加密 token</span><br><span class="line">         send_reset_password_mail(user, token)</span><br><span class="line">         # 建立 flash 提醒用户发送重设密码邮件成功</span><br><span class="line">         flash(&#39;Password reset requests mail is send, please check your mail.&#39;, category&#x3D;&#39;info&#39;)</span><br><span class="line">     return render_template(&#39;send_password_reset_request.html&#39;, form&#x3D;form)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">@app.route(&#39;&#x2F;reset_password&#39;, methods&#x3D;[&quot;GET&quot;, &quot;POST&quot;])</span><br><span class="line"># 重设密码界面 </span><br><span class="line">def reset_password():</span><br><span class="line">     # 判断用户登录状态</span><br><span class="line">     if current_user.is_authenticated:</span><br><span class="line">         return redirect(url_for(&#39;index&#39;))</span><br><span class="line">     form &#x3D; ResetPasswordForm()</span><br><span class="line">     # 根据表单渲染 reset_password.html 页面</span><br><span class="line">     return render_template(&#39;reset_password.html&#39;, form&#x3D;form)</span><br></pre></td></tr></table></figure></li>
+<li><p>创建发送给用户的 重设密码邮件 界面 “reset_password_mail.html”</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Dear &#123;&#123; user.username &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    To reset your password</span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for('reset_password', token=token, _external=True) &#125;&#125;"</span>&gt;</span></span><br><span class="line">        click here!</span><br><span class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Alternatively, you can paste the following link in your browser's address bar:<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; url_for('reset_password', token=token, _external=True) &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>If you have not requested a password reset simply ignore this message.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Sincerely,<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Flask App<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>创建重置密码页面 (reset_password.html) 与注册页面类似<br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/e_mail.png" alt><br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/reset_password.png" alt></p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends 'base.html' %&#125;l&gt;</span><br><span class="line"></span><br><span class="line">&#123;% block app_content %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Reset Your Password<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span></span><br><span class="line">            &#123;% import 'bootstrap/wtf.html' as wtf %&#125;</span><br><span class="line">            &#123;&#123; wtf.quick_form(form) &#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;%  endblock %&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>完善 更改用户密码功能 。(route.py)</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 将 &#39;&#x2F;reset_password&#39; 改为 &#39;&#x2F;reset_password&#x2F;&lt;token&gt;&#39; 获取传递过去的 token</span><br><span class="line">@app.route(&#39;&#x2F;reset_password&#x2F;&lt;token&gt;&#39;, methods&#x3D;[&quot;GET&quot;, &quot;POST&quot;])</span><br><span class="line">def reset_password(token):</span><br><span class="line">    if current_user.is_authenticated:</span><br><span class="line">        return redirect(url_for(&#39;index&#39;))</span><br><span class="line">    form &#x3D; ResetPasswordForm()</span><br><span class="line">    # 获取表单数据</span><br><span class="line">    if form.validate_on_submit():</span><br><span class="line">        # 解密 token 获得用户名</span><br><span class="line">        user &#x3D; User.check_reset_password_token(token&#x3D;token)</span><br><span class="line">        # 如果用户存在</span><br><span class="line">        if user:</span><br><span class="line">            # 获取用户新更改的密码，传入数据库进行更新操作</span><br><span class="line">            user.password &#x3D; bcrypt.generate_password_hash(form.password.data)</span><br><span class="line">            db.session.commit()</span><br><span class="line">            flash(&#39;Your Password reset is done, You can login now use new Password.&#39;, category&#x3D;&#39;info&#39;)</span><br><span class="line">        else:</span><br><span class="line">            flash(&quot;The user is not exist&quot;, category&#x3D;&#39;info&#39;)</span><br><span class="line">        return redirect(url_for(&#39;login&#39;))</span><br><span class="line">    return render_template(&#39;reset_password.html&#39;, form&#x3D;form)</span><br></pre></td></tr></table></figure>
+<p>为了方便，将 models.py 中的 验证密码改为 返回函数的静态方法，不需要实例化直接传参使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> @staticmethod</span><br><span class="line"> def check_reset_password_token(token):</span><br><span class="line"> # 验证是加密的 验证信息 是否正确，是否遭到篡改</span><br><span class="line"> try:</span><br><span class="line">      data &#x3D; jwt.decode(token, current_app.config[&#39;SECRET_KEY&#39;], algorithm&#x3D;[&quot;HS256&quot;])</span><br><span class="line">	return User.query.filter_by(id&#x3D;data[&#39;id&#39;]).first()</span><br><span class="line">except:</span><br><span class="line">	return</span><br></pre></td></tr></table></figure></li>
+<li><p>优化: 运用线程对发送邮件进行加速，使发送在后端进行，前端快速返回 (修改 email.py)</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> current_app, render_template</span><br><span class="line"><span class="keyword">from</span> flask_mail <span class="keyword">import</span> Message</span><br><span class="line"><span class="keyword">from</span> app <span class="keyword">import</span> mail, app</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">send_async_mail</span><span class="params">(app, msg)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> app.app_context():</span><br><span class="line">        mail.send(msg)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">send_reset_password_mail</span><span class="params">(user, token)</span>:</span></span><br><span class="line">    msg = Message(<span class="string">"[Flask App] Reset Your Password!"</span>,</span><br><span class="line">                   sender=current_app.config[<span class="string">"MAIL_USERNAME"</span>],</span><br><span class="line">                   recipients=[user.email],</span><br><span class="line">                   html=render_template(<span class="string">'reset_password_mail.html'</span>,user=user, token=token))</span><br><span class="line">    <span class="comment"># print(user.email, current_app.config["MAIL_USERNAME"])</span></span><br><span class="line">    <span class="comment"># mail.send(message=msg)</span></span><br><span class="line">    <span class="comment"># 调用线程在后端进行发送，前端快速进行页面更改</span></span><br><span class="line">    Thread(target=send_async_mail, args=(app, msg, )).start()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h4 id="对-index-主页进行修改，实现一对多表格-一个用户发送多个-Post-Tweet"><a href="#对-index-主页进行修改，实现一对多表格-一个用户发送多个-Post-Tweet" class="headerlink" title="对 index 主页进行修改，实现一对多表格 (一个用户发送多个 Post Tweet)"></a>对 index 主页进行修改，实现一对多表格 (一个用户发送多个 Post Tweet)</h4><p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Index1.png" alt></p>
+<ol>
+<li><p>修改 index.html，引入 form 表格</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends "base.html" %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block app_content %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;&#123; current_user.username &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span></span><br><span class="line">            &#123;% import 'bootstrap/wtf.html' as wtf %&#125;</span><br><span class="line">            &#123;&#123; wtf.quick_form(form) &#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>在 form.py 内增加 表单数据</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField</span><br><span class="line">class PortTweetForm(FlaskForm):</span><br><span class="line">     # 文本框</span><br><span class="line">     text &#x3D; TextAreaField(&#39;Say Something  ....&#39;, validators&#x3D;[DataRequired(), Length(min&#x3D;1, max&#x3D;40)])</span><br><span class="line">     submit &#x3D; SubmitField(&#39;Post Text&#39;)</span><br></pre></td></tr></table></figure></li>
+<li><p>删除旧的 app.db ，在 model.py 内 新建 Post 类用于存储发布的文本，并与 User 类中的数据库链接</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Post_form.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">from datetime import datetime</span><br><span class="line">class User(db.Model, UserMixin):</span><br><span class="line">    ...</span><br><span class="line">    # 第一个 &#39;Post&#39; 对于 class Post ; backref 返回的信息;&#39;author&#39; 数据库中存储 Post 进入数据的名称; lazy&#x3D;True 如果不用就不连接</span><br><span class="line">    posts &#x3D; db.relationship(&#39;Post&#39;, backref&#x3D;db.backref(&#39;author&#39;, lazy&#x3D;True))</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">class Post(db.Model):</span><br><span class="line">    id &#x3D; db.Column(db.Integer, primary_key&#x3D;True)</span><br><span class="line">    body &#x3D; db.Column(db.String(140), nullable&#x3D;False)</span><br><span class="line">    # 显示发布时间</span><br><span class="line">    timestamp &#x3D; db.Column(db.DateTime, default&#x3D;datetime.utcnow)</span><br><span class="line">    # 连接数据库中得到 user.id</span><br><span class="line">    user_id &#x3D; db.Column(db.Integer, db.ForeignKey(&#39;user.id&#39;), nullable&#x3D;False)</span><br><span class="line"></span><br><span class="line">    def __repr__(self):</span><br><span class="line">        return &#39;&lt;Post &#123;&#125;&gt;&#39;.format(self.body)</span><br></pre></td></tr></table></figure></li>
+<li><p>在 route.py 内 对 index 页面进行构造</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/Post1.png" alt></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">from app.models import User, Post</span><br><span class="line">@app.route(&#39;&#x2F;&#39;, methods&#x3D;[&#39;GET&#39;, &#39;POST&#39;])  # 指定路由</span><br><span class="line"># 需要登录</span><br><span class="line">@login_required</span><br><span class="line">def index():</span><br><span class="line">    form &#x3D; PortTweetForm()</span><br><span class="line">    if form.validate_on_submit():</span><br><span class="line">        body &#x3D; form.text.data</span><br><span class="line">        # 将 post 发送到数据库</span><br><span class="line">        post &#x3D; Post(body&#x3D;body)</span><br><span class="line">        current_user.posts.append(post)</span><br><span class="line">        db.session.commit()</span><br><span class="line">        flash(&#39;You have post a new tweet.&#39;, category&#x3D;&#39;success&#39;)</span><br><span class="line">    return render_template(&#39;index.html&#39;, form&#x3D;form)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h4 id="数据库的多对多关系-用户关注与取关"><a href="#数据库的多对多关系-用户关注与取关" class="headerlink" title="数据库的多对多关系 (用户关注与取关)"></a>数据库的多对多关系 (用户关注与取关)</h4><ol>
+<li>先定义 数据库中的 关注/取关 与 User 联系 (models.py) <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"># 简单的示范性的 关注关系 (只包含关注者与被关注着)，复杂的需要建立 class</span><br><span class="line">followers &#x3D; db.Table(&quot;followers&quot;,</span><br><span class="line">                     db.Column(&quot;follower_id&quot;, db.Integer, db.ForeignKey(&#39;user.id&#39;)),</span><br><span class="line">                     db.Column(&quot;followed_id&quot;, db.Integer, db.ForeignKey(&#39;user.id&#39;))</span><br><span class="line">                     )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class User(db.Model, UserMixin):</span><br><span class="line">    # nullable 非空 ; unique 不能重复</span><br><span class="line">    id &#x3D; db.Column(db.Integer, primary_key&#x3D;True)</span><br><span class="line">    username &#x3D; db.Column(db.String(20), unique&#x3D;True, nullable&#x3D;False)</span><br><span class="line">    password &#x3D; db.Column(db.String(20), nullable&#x3D;False)</span><br><span class="line">    email &#x3D; db.Column(db.String(120), unique&#x3D;True, nullable&#x3D;False)</span><br><span class="line">    # 第一个 &#39;Post&#39; 对于 class Post ; backref 返回的信息;&#39;author&#39; 数据库中存储 Post 进入数据的名称; lazy&#x3D;True 如果不用就不连接</span><br><span class="line">    posts &#x3D; db.relationship(&#39;Post&#39;, backref&#x3D;db.backref(&#39;author&#39;, lazy&#x3D;True))</span><br><span class="line">    </span><br><span class="line">    # &#39;User&#39;: 关注者与被关注着链接是用户之间的连接; primaryjoin&#x3D;(followers.c.follower_id&#x3D;&#x3D;id) 左边的关注着与右边的关注者通过 id 相互连接</span><br><span class="line">    # 先正向连接，然后 backref 反向链接</span><br><span class="line">    followed &#x3D; db.relationship(</span><br><span class="line">        &#39;User&#39;, secondary&#x3D;followers,</span><br><span class="line">        primaryjoin&#x3D;(followers.c.follower_id &#x3D;&#x3D; id),</span><br><span class="line">        secondaryjoin&#x3D;(followers.c.followed_id &#x3D;&#x3D; id),</span><br><span class="line">        backref&#x3D;db.backref(&#39;followers&#39;, lazy&#x3D;True), lazy&#x3D;True</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    def __repr__(self):</span><br><span class="line">        return &#39;&lt;User %r&gt;&#39; % self.username</span><br><span class="line"></span><br><span class="line">    def generate_reset_password_token(self):</span><br><span class="line">        # 将 token 与用户名 作为验证信息加密 传输</span><br><span class="line">        return jwt.encode(&#123;&#39;id&#39;: self.id&#125;, current_app.config[&#39;SECRET_KEY&#39;], algorithm&#x3D;&quot;HS256&quot;)</span><br><span class="line"></span><br><span class="line">    @staticmethod</span><br><span class="line">    def check_reset_password_token(token):</span><br><span class="line">        # 验证是加密的 验证信息 是否正确，是否遭到篡改</span><br><span class="line">        try:</span><br><span class="line">            data &#x3D; jwt.decode(token, current_app.config[&#39;SECRET_KEY&#39;], algorithm&#x3D;[&quot;HS256&quot;])</span><br><span class="line">            return User.query.filter_by(id&#x3D;data[&#39;id&#39;]).first()</span><br><span class="line">        except:</span><br><span class="line">            return</span><br><span class="line">    </span><br><span class="line">    # 定义关注</span><br><span class="line">    def follow(self, user):</span><br><span class="line">        if not self.is_following(user):</span><br><span class="line">            self.followed.append(user)</span><br><span class="line">    </span><br><span class="line">    # 定义取关</span><br><span class="line">    def unfollow(self, user):</span><br><span class="line">        if self.is_following(user):</span><br><span class="line">            self.followed.remove(user)</span><br><span class="line">    </span><br><span class="line">    # 判断是否关注</span><br><span class="line">    def is_following(self, user):</span><br><span class="line">        # 从 followed 找到当前已经关注的，如果 &gt;0 则已经关注</span><br><span class="line">        return self.followed.count(user) &gt; 0</span><br></pre></td></tr></table></figure></li>
+<li>对主页 index.html 进行修改 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"align-right"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"thumbnail text-center"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;&#123; current_user.avatar_img &#125;&#125;"</span> <span class="attr">alt</span>=<span class="string">"avatar"</span> <span class="attr">width</span>=<span class="string">"100px"</span> &gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"caption"</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">h3</span>&gt;</span>&#123;&#123; current_user.username &#125;&#125;<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span> <span class="attr">role</span>=<span class="string">"button"</span>&gt;</span>&#123;&#123; n_followers &#125;&#125; followers<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"btn btn-default"</span> <span class="attr">role</span>=<span class="string">"button"</span>&gt;</span>&#123;&#123; n_followed &#125;&#125; followed<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>在 models.py User 数据库中加入默认头像 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class User(db.Model, UserMixin):</span><br><span class="line">     ...</span><br><span class="line">     avatar_img &#x3D; db.Column(db.String(120), default&#x3D;&#39;.&#x2F;static&#x2F;asset&#x2F;test.jpg&#39;, nullable&#x3D;False)</span><br><span class="line">     ...</span><br></pre></td></tr></table></figure></li>
+<li>在 route.py 中定义 index.html 中的 followers 与 followed  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@app.route(&#39;&#x2F;&#39;, methods&#x3D;[&#39;GET&#39;, &#39;POST&#39;])  # 指定路由</span><br><span class="line"># 需要登录</span><br><span class="line">@login_required</span><br><span class="line">def index():</span><br><span class="line">    ...</span><br><span class="line">    n_followers &#x3D; len(current_user.followers)</span><br><span class="line">    n_followed &#x3D; len(current_user.followed)</span><br><span class="line">    return render_template(&#39;index.html&#39;, form&#x3D;form, n_followers&#x3D;n_followers, n_followed&#x3D;n_followed)</span><br></pre></td></tr></table></figure>
+<img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/follower.png" alt></li>
+</ol>
+<hr>
+<h4 id="在主页显示用户的发帖-使用-bootstrap-的-Media-heading"><a href="#在主页显示用户的发帖-使用-bootstrap-的-Media-heading" class="headerlink" title="在主页显示用户的发帖 (使用 bootstrap 的 Media heading)"></a>在主页显示用户的发帖 (使用 bootstrap 的 Media heading)</h4><p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/index_post.png" alt></p>
+<ol>
+<li>在 index.html 中设置 Media heading 模块 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for post in posts %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"media"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"media-left"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">                # 头像</span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;&#123; post.author,avatar_img &#125;&#125;"</span> <span class="attr">alt</span>=<span class="string">"avatar"</span> <span class="attr">width</span>=<span class="string">"64px"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"media-body"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"media-heading"</span>&gt;</span>&#123;&#123; post.author.username &#125;&#125;<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">small</span> <span class="attr">class</span>=<span class="string">"text-muted"</span>&gt;</span>&#123;&#123; post.timestamp &#125;&#125;<span class="tag">&lt;/<span class="name">small</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; post.body &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> &#123;% endfor %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>在 route.py 中设置将 以倒序排列的 推文传入 index <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 取得 发布的内容 以时间倒序来排列显示</span><br><span class="line">posts &#x3D; Post.query.order_by(Post.timestamp.desc()).all()</span><br></pre></td></tr></table></figure>
+<h4 id="分页操作-主要在-index-html-内进行修改判断，在-route-py-内稍微修改"><a href="#分页操作-主要在-index-html-内进行修改判断，在-route-py-内稍微修改" class="headerlink" title="分页操作 (主要在 index.html 内进行修改判断，在 route.py 内稍微修改)"></a>分页操作 (主要在 index.html 内进行修改判断，在 route.py 内稍微修改)</h4><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/page_2.png" alt></li>
+<li>route.py 定义 posts 便于 index.html 调用  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 取得 发布的内容 以时间倒序来排列显示</span><br><span class="line"> page &#x3D; request.args.get(&#39;page&#39;, 1, type&#x3D;int)</span><br><span class="line"> # paginate(page, 2, False): 返回页数，每页两个推文，默认超出后不会报错</span><br><span class="line"> posts &#x3D; Post.query.order_by(Post.timestamp.desc()).paginate(page, 2, False)</span><br><span class="line"> return render_template(&#39;index.html&#39;, form&#x3D;form, posts&#x3D;posts, n_followers&#x3D;n_followers, n_followed&#x3D;n_followed)</span><br></pre></td></tr></table></figure></li>
+<li>index.html 内定义 页面页数的变换 (Flask request 库的学习) <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">nav</span> <span class="attr">aria-label</span>=<span class="string">"Page navigation"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"pagination"</span>&gt;</span></span><br><span class="line">                # 添加判断 </span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"&#123;% if not posts.has_prev %&#125;disabled&#123;% endif %&#125;"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for('index', page=posts.prev_num) &#125;&#125;"</span> <span class="attr">aria-label</span>=<span class="string">"Previous"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span><span class="symbol">&amp;laquo;</span> Prev<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                &#123;# posts.iter_page() 以当前页为中心显示左右页数 #&#125;</span><br><span class="line">                &#123;% for i in posts.iter_pages(right_current=3) %&#125;</span><br><span class="line">                    &#123;% if i %&#125;</span><br><span class="line">                        &#123;# 判断是当前页面然后颜色不同 为 active 样式 #&#125;</span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"&#123;% if i == posts.page %&#125;active&#123;% endif %&#125;"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for("</span><span class="attr">index</span>", <span class="attr">page</span>=<span class="string">i)</span> &#125;&#125;"&gt;</span>&#123;&#123; i &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    &#123;% else %&#125;</span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"disabled"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    &#123;% endif %&#125;</span><br><span class="line">                &#123;% endfor %&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"&#123;% if not posts.has_next %&#125;disabled&#123;% endif %&#125;"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for('index', page=posts.next_num) &#125;&#125;"</span> <span class="attr">aria-label</span>=<span class="string">"Next"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span><span class="symbol">&amp;raquo;</span> Next<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h4 id="编辑用户个人界面和关注取关操作"><a href="#编辑用户个人界面和关注取关操作" class="headerlink" title="编辑用户个人界面和关注取关操作"></a>编辑用户个人界面和关注取关操作</h4><p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/unfollow.png" alt><br><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/follow.png" alt></p>
+<ol>
+<li>由于考虑到用户界面可能与主界面有 图片等部分重叠，从 index.html 内截取 Post 部分放入新建的 post_content.html 内，在 index.html 内引用 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&#123;#   运用函数后返回的不是列表，需要 .Item 转换为列表   #&#125;</span><br><span class="line">&#123;% for post in posts.items %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"media"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"media-left"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for('user_page', username=post.author.username) &#125;&#125;"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;&#123; post.author.avatar_img &#125;&#125;"</span> <span class="attr">alt</span>=<span class="string">"avatar"</span> <span class="attr">width</span>=<span class="string">"64px"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"media-body"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"media-heading"</span>&gt;</span>&#123;&#123; post.author.username &#125;&#125;<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">small</span> <span class="attr">class</span>=<span class="string">"text-muted"</span>&gt;</span>&#123;&#123; post.timestamp &#125;&#125;<span class="tag">&lt;/<span class="name">small</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; post.body &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">&#123;# 页面跳转#&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span> <span class="attr">aria-label</span>=<span class="string">"Page navigation"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"pagination"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"&#123;% if not posts.has_prev %&#125;disabled&#123;% endif %&#125;"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for('index', page=posts.prev_num) &#125;&#125;"</span> <span class="attr">aria-label</span>=<span class="string">"Previous"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span><span class="symbol">&amp;laquo;</span> Prev<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                &#123;# posts.iter_page() 以当前页为中心显示左右页数 #&#125;</span><br><span class="line">                &#123;% for i in posts.iter_pages(right_current=3) %&#125;</span><br><span class="line">                    &#123;% if i %&#125;</span><br><span class="line">                        &#123;# 判断是当前页面然后颜色不同 为 active 样式 #&#125;</span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"&#123;% if i == posts.page %&#125;active&#123;% endif %&#125;"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for("</span><span class="attr">index</span>", <span class="attr">page</span>=<span class="string">i)</span> &#125;&#125;"&gt;</span>&#123;&#123; i &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    &#123;% else %&#125;</span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"disabled"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    &#123;% endif %&#125;</span><br><span class="line">                &#123;% endfor %&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"&#123;% if not posts.has_next %&#125;disabled&#123;% endif %&#125;"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for('index', page=posts.next_num) &#125;&#125;"</span> <span class="attr">aria-label</span>=<span class="string">"Next"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span><span class="symbol">&amp;raquo;</span> Next<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>在 route.py 内建立 个人信息，关注与取关 页面，并赋予功能 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">@app.route(&#39;&#x2F;user_page&#x2F;&lt;username&gt;&#39;)</span><br><span class="line"> @login_required</span><br><span class="line"> def user_page(username):</span><br><span class="line">     user &#x3D; User.query.filter_by(username&#x3D;username).first()</span><br><span class="line">     if user:</span><br><span class="line">         page &#x3D; request.args.get(&#39;page&#39;, 1, type&#x3D;int)</span><br><span class="line">         posts &#x3D; Post.query.filter_by(user_id&#x3D;user.id).order_by(Post.timestamp.desc()).paginate(page, 2, False)</span><br><span class="line">         return render_template(&#39;user_page.html&#39;, user&#x3D;user, posts&#x3D;posts)</span><br><span class="line">     else:</span><br><span class="line">         return &#39;404&#39;</span><br><span class="line"> </span><br><span class="line"> @app.route(&#39;&#x2F;follow&#x2F;&lt;username&gt;&#39;, methods&#x3D;[&#39;GET&#39;, &#39;POST&#39;])</span><br><span class="line"> @login_required</span><br><span class="line"> def follow(username):</span><br><span class="line">     user &#x3D; User.query.filter_by(username&#x3D;username).first()</span><br><span class="line">     if user:</span><br><span class="line">         current_user.follow(user)</span><br><span class="line">         db.session.commit()</span><br><span class="line">         page &#x3D; request.args.get(&#39;page&#39;, 1, type&#x3D;int)</span><br><span class="line">         posts &#x3D; Post.query.filter_by(user_id&#x3D;user.id).order_by(Post.timestamp.desc()).paginate(page, 2, False)</span><br><span class="line">         return render_template(&#39;user_page.html&#39;, user&#x3D;user, posts&#x3D;posts)</span><br><span class="line">     else:</span><br><span class="line">         return &#39;404&#39;</span><br><span class="line"> </span><br><span class="line"> @app.route(&#39;&#x2F;unfollow&#x2F;&lt;username&gt;&#39;, methods&#x3D;[&#39;GET&#39;, &#39;POST&#39;])</span><br><span class="line"> @login_required</span><br><span class="line"> def unfollow(username):</span><br><span class="line">     user &#x3D; User.query.filter_by(username&#x3D;username).first()</span><br><span class="line">     if user:</span><br><span class="line">         current_user.unfollow(user)</span><br><span class="line">         db.session.commit()</span><br><span class="line">         page &#x3D; request.args.get(&#39;page&#39;, 1, type&#x3D;int)</span><br><span class="line">         posts &#x3D; Post.query.filter_by(user_id&#x3D;user.id).order_by(Post.timestamp.desc()).paginate(page, 2, False)</span><br><span class="line">         return render_template(&#39;user_page.html&#39;, user&#x3D;user, posts&#x3D;posts)</span><br><span class="line">     else:</span><br><span class="line">         return &#39;404&#39;</span><br></pre></td></tr></table></figure></li>
+<li>建立个人信息界面 user_page.html <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line">&#123;% block app_content %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;&#123; current_user.username &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">            # 如果是用户正在观看自己的 个人信息，增加 填写信息 按钮</span><br><span class="line">            &#123;% if current_user == user %&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>Edit Profile<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            # 如果用户正在看其他人的页面，添加 关注与取关 按钮</span><br><span class="line">            &#123;% else %&#125;</span><br><span class="line">                &#123;% if current_user.is_following(user) %&#125;</span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for("</span><span class="attr">unfollow</span>", <span class="attr">username</span>=<span class="string">user.username)</span> &#125;&#125;"&gt;</span>Unfollow<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                &#123;% else %&#125;</span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for("</span><span class="attr">follow</span>", <span class="attr">username</span>=<span class="string">user.username)</span> &#125;&#125;"&gt;</span>Follow<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                &#123;% endif %&#125;</span><br><span class="line">            &#123;% endif %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">            &#123;% include "post_content.html" %&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h4 id="Flask-上传文件-用来修改头像"><a href="#Flask-上传文件-用来修改头像" class="headerlink" title="Flask 上传文件 (用来修改头像)"></a>Flask 上传文件 (用来修改头像)</h4><p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/upload_img.png" alt></p>
+<ol>
+<li>编写 上传文件 页面 edit_profile.html <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block app_content %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Upload Your Avatar Image<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span></span><br><span class="line">            &#123;% import 'bootstrap/wtf.html' as wtf %&#125;</span><br><span class="line">            &#123;&#123; wtf.quick_form(form) &#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;%  endblock %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>建立 上传表单 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 上传文件使用 库</span><br><span class="line">from flask_wtf.file import FileField, FileRequired</span><br><span class="line">class UploadPhotoForm(FlaskForm):</span><br><span class="line">     photo &#x3D;FileField(validators&#x3D;[FileRequired()])</span><br><span class="line">     submit &#x3D; SubmitField(&#39;Upload&#39;)</span><br></pre></td></tr></table></figure></li>
+<li>在用户信息界面将 Edit Profile 链接到 上传页面 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;&#123;&#123; url_for(&quot;edit_profile&quot;) &#125;&#125;&quot;&gt;Edit Profile&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure></li>
+<li>在 route.py 完善 上传页面配置 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">from werkzeug.utils import secure_filename</span><br><span class="line">@app.route(&#39;&#x2F;edit_profile&#39;, methods&#x3D;[&#39;GET&#39;, &#39;POST&#39;])</span><br><span class="line">def edit_profile():</span><br><span class="line">    form &#x3D; UploadPhotoForm()</span><br><span class="line">    if form.validate_on_submit():</span><br><span class="line">        f &#x3D; form.photo.data</span><br><span class="line">        # secure_filename 对用户上传的 软件名 进行再次包装，防止入侵</span><br><span class="line">        filename &#x3D; secure_filename(f.filename)</span><br><span class="line">        if f.filename &#x3D;&#x3D; &quot;&quot;:</span><br><span class="line">            flash(&quot;No selected file&quot;, category&#x3D;&quot;danger&quot;)</span><br><span class="line">            return render_template(&quot;edit_profile.html&quot;, form&#x3D;form)</span><br><span class="line">        # 如果文件名是允许的后缀，可以进行操作</span><br><span class="line">        if f and allowed_file(f.filename):</span><br><span class="line">            # secure_filename 对用户上传的 软件名 进行再次包装，防止入侵</span><br><span class="line">            filename &#x3D; secure_filename(f.filename)</span><br><span class="line">            # 定义上传图片保存位置</span><br><span class="line">            f.save(os.path.join(&#39;app&#39;, &#39;static&#39;, &#39;asset&#39;, filename))</span><br><span class="line">            # 将数据库中默认的头像转变为用户自定义头像</span><br><span class="line">            current_user.avatar_img &#x3D; &quot;&#x2F;static&#x2F;asset&#x2F;&quot; + filename</span><br><span class="line">            db.session.commit()</span><br><span class="line">            return redirect(url_for(&quot;user_page&quot;, username&#x3D;current_user.username))</span><br><span class="line">    return render_template(&quot;edit_profile.html&quot;, form&#x3D;form)</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Liu
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/null-608fcd3dbda24e58.gif" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>python 学习</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/08/flask-note2/">Flask-note2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/06/flask-note1/">Flask_note1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/05/save-git-problem/">Windows下 Git 因移动文件夹导致的问题及解决</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/03/pyecharts-map/">pyecharts-Map</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/01/pyecharts-pie/">pyecharts-Pie</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/05/save-git-problem/">Windows下 Git 因移动文件夹导致的问题及解决</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-chang-yong-ming-ling/">linux_常用命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/27/css-note/">css_note</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/03/pyecharts-map/">pyecharts-Map</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/python-chang-yong-mo-kuai/">python_常用模块</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/08/flask-note2/">Flask-note2</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2020/08/08/flask-note2/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/08/08/flask-note2/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/08/08/flask-note2/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Flask-Study/" style="font-size: 13.920969945751228px;" class="tag-cloud-link">Flask_Study</a>
+    
+    <a href="/tags/Windows-problem/" style="font-size: 18.14706044175063px;" class="tag-cloud-link">Windows problem</a>
+    
+    <a href="/tags/Linux-study/" style="font-size: 19.704502623003798px;" class="tag-cloud-link">Linux_study</a>
+    
+    <a href="/tags/scrapy-study/" style="font-size: 13.522726016397856px;" class="tag-cloud-link">scrapy_study</a>
+    
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 10.71194755332209px;" class="tag-cloud-link">前端学习</a>
+    
+    <a href="/tags/Pyecharts/" style="font-size: 18.864784541991657px;" class="tag-cloud-link">Pyecharts</a>
+    
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 16.230161657196618px;" class="tag-cloud-link">Python 模块</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://www.crushing.xyz/" target="_blank">GODLIN</a>
+    </li>
+    
+    <li>
+        <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/#id9" target="_blank">BeautifulSoup 中文文档</a>
+    </li>
+    
+    <li>
+        <a href="https://requests.readthedocs.io/zh_CN/latest/user/quickstart.html" target="_blank">Requests 中文文档</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/forgotten-forever" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/xia-chong-yu-bing-74-74" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Liu Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <script type="text/javascript" src="\js\FunnyTitle.js"></script>
+    <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"scripFrom":"local","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"heigut":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: 'https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/background',
+      ext: 'jpg',
+      maxCount: '10'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
