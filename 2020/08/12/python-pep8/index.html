@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Liu">
+    
+    <meta name="description" content="python 学习">
+    
+    
+    
+    
+    
+    
+    <title>Python_PEP8编程风格规范 | BLOG</title>
+    <link href="http://yoursite.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/small_bg.jpg');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/https:/cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/null-608fcd3dbda24e58.gif'
+        var previews = 'https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview01.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview02.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview03.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview04.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview05.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview06.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview07.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview08.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview09.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview10.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview11.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview12.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview13.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview15.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://yoursite.com">
+                
+                <!-- 这里background直接使用logo_image(url) -->
+                <style>
+
+                </style>
+                    
+                <div class="navbar-brand"></div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Flask-Study/">Flask_Study</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Windows-problem/">Windows problem</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Linux-study/">Linux_study</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">BLOG</a>
+        >
+        <span>Python_PEP8编程风格规范</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2020/08/12/python-pep8/">Python_PEP8编程风格规范</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/">PEP8 编程风格规范</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-08-12
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2020/08/12/python-pep8/">Python_PEP8编程风格规范</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2020-08-12
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/">PEP8 编程风格规范</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="PEP8-编程风格规范"><a href="#PEP8-编程风格规范" class="headerlink" title="PEP8 编程风格规范"></a>PEP8 编程风格规范</h1><h2 id="代码布局-Code-Lay-Out"><a href="#代码布局-Code-Lay-Out" class="headerlink" title="代码布局 (Code Lay-Out)"></a>代码布局 (Code Lay-Out)</h2><h3 id="1-缩进-Indentation"><a href="#1-缩进-Indentation" class="headerlink" title="1. 缩进 (Indentation)"></a>1. 缩进 (Indentation)</h3><ul>
+<li>每个缩进级别 <strong>4个</strong> 空格</li>
+<li>连续行所包装元素  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 同开始分界符(左括号)对齐</span><br><span class="line">  foo &#x3D; long_function_name(var_one, var_two,</span><br><span class="line">                           var_three, var_four)</span><br><span class="line">  </span><br><span class="line">  # 续行多缩进一级以同其他代码区别</span><br><span class="line">  def long_function_name(</span><br><span class="line">          var_one, var_two, var_three,</span><br><span class="line">          var_four):</span><br><span class="line">      print(var_one)</span><br><span class="line">  </span><br><span class="line">  # 悬挂缩进需要多缩进一级</span><br><span class="line">  foo &#x3D; long_function_name(</span><br><span class="line">      var_one, var_two,</span><br><span class="line">      var_three, var_four)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Python隐式续行 <code>垂直对齐于圆括号、方括号和花括号</code></li>
+<li>悬挂缩进 <code>第一行不应该包括参数，并且在续行中 (续行来说，4空格的规则可以不遵守) 需要再缩进一级以便清楚表示</code></li>
+</ul>
+</li>
+<li>多行结束右圆/方/花括号可以单独一行书写，和上一行的缩进对齐;也可以和多行开始的第一行的第一个字符对齐<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">my_list &#x3D; [</span><br><span class="line">    1, 2, 3,</span><br><span class="line">    4, 5, 6,</span><br><span class="line">    ]</span><br><span class="line">result &#x3D; some_function_that_takes_arguments(</span><br><span class="line">    &#39;a&#39;, &#39;b&#39;, &#39;c&#39;,</span><br><span class="line">    &#39;d&#39;, &#39;e&#39;, &#39;f&#39;,</span><br><span class="line">    )</span><br><span class="line">my_list &#x3D; [</span><br><span class="line">    1, 2, 3,</span><br><span class="line">    4, 5, 6,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></li>
+<li>推荐使用空格来进行缩进。Python 3不允许tab和空格混合使用。</li>
+</ul>
+<h3 id="2-每行最大长度-Maximum-Line-Length"><a href="#2-每行最大长度-Maximum-Line-Length" class="headerlink" title="2. 每行最大长度(Maximum Line Length)"></a>2. 每行最大长度(Maximum Line Length)</h3><ul>
+<li>所有行都限制在 <strong>79</strong> 个字符以内</li>
+<li>连续大段的文字（比如文档字符串(docstring)或注释），其结构上的限制更少，这些行应该被限制在72个字符长度内。</li>
+<li>换行方式是利用Python圆括号、方括号和花括号中的隐式续行。长行可以通过在括号内换行来分成多行。应该最好加上反斜杠来区别续行。</li>
+</ul>
+<h3 id="3-二元运算符之前还是之后换行"><a href="#3-二元运算符之前还是之后换行" class="headerlink" title="3. 二元运算符之前还是之后换行?"></a>3. 二元运算符之前还是之后换行?</h3><ul>
+<li>Kunth 风格: 尽管在段落中的公式总是在二元运算符之后换行，但显示公式时总是在二元运算符之前换行</li>
+<li>如果项目约定，也可以在二元运算符之后换行</li>
+</ul>
+<h3 id="4-空行-支持control-L-换行符作为空格"><a href="#4-空行-支持control-L-换行符作为空格" class="headerlink" title="4. 空行 (支持control + L 换行符作为空格)"></a>4. 空行 (支持control + L 换行符作为空格)</h3><ul>
+<li>使用 <strong>2个</strong> 空行来分隔最外层的 <strong>函数(function)</strong> 和 <strong>类(class)</strong> 定义</li>
+<li>使用 <strong>1个</strong> 空行来分隔 <strong>类中的方法(method)</strong> 定义</li>
+<li>额外的空行(尽量少) 来分隔一组相关的函数</li>
+<li>在函数内使用空行(尽量少) 使代码逻辑更加清晰</li>
+</ul>
+<h3 id="5-源文件编码-Source-File-Encoding"><a href="#5-源文件编码-Source-File-Encoding" class="headerlink" title="5. 源文件编码(Source File Encoding)"></a>5. 源文件编码(Source File Encoding)</h3><ul>
+<li>python 2 使用 ASCII</li>
+<li>python 3 使用 UTF-8 </li>
+<li>Python标准库中的所有<strong>标识符</strong>都必须只采用ASCII编码的标识符，在可行的条件下也应当使用英文词</li>
+</ul>
+<h3 id="6-模块引用-Imports"><a href="#6-模块引用-Imports" class="headerlink" title="6. 模块引用(Imports)"></a>6. 模块引用(Imports)</h3><ul>
+<li><p>imports 分行写，不应都写在一行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 分开写</span><br><span class="line">import os</span><br><span class="line"># 被允许的</span><br><span class="line">from subprocess import Popen, PIPE</span><br></pre></td></tr></table></figure></li>
+<li><p>imports 写在代码文件的开头，位于模块(module)<strong>注释</strong>和<strong>文档字符串</strong>(docstring)之<strong>后</strong>，模块<strong>全局变量</strong>(globals)和<strong>常量</strong>(constants)声明之””.</p>
+</li>
+<li><p>imports 顺序 (不同的 imports 之间用空格隔开)</p>
+<ol>
+<li>标准库 imports </li>
+<li>相关第三方 imports</li>
+<li>本地应用/库的特定 imports</li>
+</ol>
+</li>
+<li><p>推荐使用绝对(absolute) imports (易读且会报错)</p>
+<p>  <code>from mypkg import sibling</code></p>
+</li>
+<li><p>显式的相对imports也是一种可以接受的替代方式.特别是当处理复杂的包布局(package layouts)时，采用绝对imports会显得啰嗦.</p>
+<p>  <code>from .sibling import example</code></p>
+</li>
+<li><p>标准库代码应当一直使用绝对imports，避免复杂的包布局.<br>隐式的相对imports应该永不使用，并且Python 3中已经被去掉了.</p>
+</li>
+<li><p>如果从包含类的模块import的类与本地命名产生冲突，可以直接 import 模块</p>
+</li>
+<li><p>避免使用通配符进行 imports， 会产生许多不必要的麻烦</p>
+</li>
+</ul>
+<h3 id="7-模块级的双下划线命名-Module-level-dunder-names"><a href="#7-模块级的双下划线命名-Module-level-dunder-names" class="headerlink" title="7. 模块级的双下划线命名(Module level dunder names)"></a>7. 模块级的双下划线命名(Module level dunder names)</h3><ul>
+<li>模块及级下划线命名的<strong>变量</strong>，<strong>函数</strong>，应该在 文档的多行注释字符串之后</li>
+</ul>
+<h3 id="8-字符串的引用-String-Quotes"><a href="#8-字符串的引用-String-Quotes" class="headerlink" title="8. 字符串的引用(String Quotes)"></a>8. 字符串的引用(String Quotes)</h3><ul>
+<li>当字符串中包含单引号时，采用双引号来表示字符串，可以避免使用反斜杠，代码也更易读</li>
+<li>在一个项目中最好字符串都用单引号或者双引号</li>
+</ul>
+<h3 id="9-表达式和语句中的空格-Whitespace-In-Expressions-And-Statements"><a href="#9-表达式和语句中的空格-Whitespace-In-Expressions-And-Statements" class="headerlink" title="9. 表达式和语句中的空格(Whitespace In Expressions And Statements)"></a>9. 表达式和语句中的空格(Whitespace In Expressions And Statements)</h3><ul>
+<li><strong>方括号</strong>、<strong>圆括号</strong>和<strong>花括号</strong>之后避免使用空格</li>
+<li><strong>逗号</strong>，<strong>分号</strong>或<strong>冒号</strong>之前避免使用空格</li>
+<li>切片操作时避免使用空格<ul>
+<li>冒号和二元运算符是一样的，应该在其左右两边保留相同数量的空格；</li>
+<li>扩展切片操作中，所有冒号的左右两边空格数都应该相等；</li>
+<li>切片操作中的参数被省略时，应该也忽略空格.</li>
+</ul>
+</li>
+<li>调用函数时传递参数list的括号之前避免使用空格</li>
+<li>索引和切片操作的左括号之前避免使用空格</li>
+<li>赋值(或其他)运算符周围使用多个空格来和其他语句对齐</li>
+<li>避免任何行末的空格.</li>
+<li>二元运算符的两边都使用一个空格：赋值运算符(=)，增量赋值运算符(+=, -= etc.)，比较运算符(==, &lt;, &gt;, !=, &lt;&gt;, &lt;=, &gt;=, in, not in, is, is not)，布尔运算符(and, or, not).</li>
+<li>优先级不同的运算符，则在优先级较低的操作符周围增加空白.(不要用超过1个空格，永远保持二元运算符两侧的空白数量一样.)</li>
+<li>使用=符号来表示关键字参数或参数默认值时，不要在其周围使用空格.</li>
+<li>函数注解中的:也遵循一般的:加空格的规则，在-&gt;两侧各使用一个空格.</li>
+<li>在组合使用函数注解和参数默认值时，需要在=两侧各使用一个空格(只有当这个参数既有函数注解，又有默认值的时候).</li>
+<li>复合语句(即将多行语句写在一行)一般是不鼓励使用的.</li>
+<li>短小的if/for/while中的语句写在一行,多分支的不要使用</li>
+</ul>
+<h3 id="10-何时在末尾加逗号-When-to-use-trailing-commas"><a href="#10-何时在末尾加逗号-When-to-use-trailing-commas" class="headerlink" title="10. 何时在末尾加逗号(When to use trailing commas)"></a>10. 何时在末尾加逗号(When to use trailing commas)</h3><ul>
+<li>定义单元素元组(tuple)时是必需的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FILES &#x3D; (&#39;setup.cfg&#39;,)</span><br></pre></td></tr></table></figure></li>
+<li>在将来有可能扩展的列表末尾添加冗余的逗号，每一个元素写在单独的一行，并在行尾添加逗号，右括号单独占一行.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FILES &#x3D; [</span><br><span class="line">    &#39;setup.cfg&#39;,</span><br><span class="line">    &#39;tox.ini&#39;,</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="11-注释-Comments"><a href="#11-注释-Comments" class="headerlink" title="11. 注释(Comments)"></a>11. 注释(Comments)</h3><ul>
+<li>当代码有改动时，一定要优先更改注释使其保持最新.</li>
+<li>注释应该是完整的多个句子.如果注释是一个短语或一个句子，其首字母应该大写，除非开头是一个以小写字母开头的标识符(永远不要更改标识符的大小写).</li>
+<li>注释很短，结束的句号可以被忽略.块注释通常由一段或几段完整的句子组成，每个句子都应该以句号结束.</li>
+<li>在句尾的句号后再加上2个空格.</li>
+<li>尽量用英文写注释</li>
+<li>块注释(Block Comments)<ul>
+<li>一般写在对应代码之前，并且和对应代码有同样的缩进级别.块注释的每一行都应该以#和一个空格开头(除非该文本是在注释内缩进对齐的).</li>
+</ul>
+</li>
+<li>行内注释(Inline Comments)<ul>
+<li>尽量少用行内注释.  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x &#x3D; x + 1                 # x自加</span><br></pre></td></tr></table></figure></li>
+<li>行内注释是和代码语句写在一行内的注释.行内注释应该至少和代码语句之间有两个空格的间隔，并且以#和一个空格开始.</li>
+</ul>
+</li>
+<li>文档字符串注释(Documentation Strings)<ul>
+<li>所有的公共模块，函数，类和方法都应该有文档字符串.对于非公共方法，文档字符串不是必要的，但你应该留有注释说明该方法的功能，该注释应当出现在def的下一行.</li>
+<li>多行文档字符串以单行”””结尾，不能有其他字符</li>
+<li>对于仅有一行的文档字符串，结尾处的”””应该也写在这一行.</li>
+</ul>
+</li>
+</ul>
+<h3 id="12-命名约定-Naming-Conventions"><a href="#12-命名约定-Naming-Conventions" class="headerlink" title="12. 命名约定(Naming Conventions)"></a>12. 命名约定(Naming Conventions)</h3><ul>
+<li><p>首要原则(Overriding Principle)</p>
+<ul>
+<li>对于用户可见的公共部分API，其命名应当表达出功能用途而不是其具体的实现细节.</li>
+</ul>
+</li>
+<li><p>命名风格(Descriptive: Naming Styles)</p>
+<ul>
+<li>CapitalizedWords (也叫做CapWords或者CamelCase – 因为单词首字母大写看起来很像驼峰).也被称作StudlyCaps.<br>注意：当CapWords里包含缩写时，将缩写部分的字母都大写.HTTPServerError比HttpServerError要好.</li>
+<li>mixedCase (注意：和CapitalizedWords不同在于其首字母小写！)</li>
+<li>Capitalized_Words_With_Underscores (这种风格超丑！)</li>
+<li>UPPER_CASE_WITH_UNDERSCORES(带下划线大写)</li>
+<li>UPPERCASE(大写)</li>
+<li>lower_case_with_underscores(带下划线小写)</li>
+<li>lowercase(小写)</li>
+<li>B (单个大写字母)</li>
+<li>b (单个小写字母)</li>
+<li>特殊形式<ul>
+<li>_single_leading_underscore: 以单个下划线开头是”内部使用”的弱标志。</li>
+<li>single_trailing_underscore_: 以单个下划线结尾用来避免和Python关键词产生冲突  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class_&#x3D;&quot;xxx&quot;</span><br></pre></td></tr></table></figure></li>
+<li><strong>double_leading_underscore: 以双下划线开头的风格命名类属性表示触发命名修饰（在FooBar类中，</strong>boo命名会被修饰成_FooBar__boo)</li>
+<li><strong>double_leading_and_trailing_underscore</strong>: 以双下划线开头和结尾的命名风格表示“魔术”对象或属性，存在于用户控制的命名空间(user-controlled namespaces)里</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>命名约定(Prescriptive: Naming Conventions)</p>
+<ul>
+<li>需要避免的命名(Names To Avoid)<ul>
+<li>字符’l’(L的小写的字母)</li>
+<li>’O’(o大写的字母)</li>
+<li>’I’(i的大写的字母)</li>
+</ul>
+</li>
+<li>ASCII兼容性(ASCII Compatibility)</li>
+<li>包和模块命名(Package And Module Names)<ul>
+<li>模块命名应短小，且为全小写.若下划线能提高可读性，也可以在模块名中使用</li>
+<li>包命名也应该短小，且为全小写，但不应使用下划线.</li>
+<li>使用C或C++写的扩展模块有相应的Python模块提供更高级的接口时, C/C++模块名以下划线开头(例如，_sociket)</li>
+</ul>
+</li>
+<li>类命名(Class Names)<ul>
+<li>驼峰(CapWords)的命名约定</li>
+</ul>
+</li>
+<li>类型变量命名(Type variable names)<ul>
+<li>类型变量名称通常应使用简短的驼峰命名</li>
+</ul>
+</li>
+<li>异常命名(Exception Names)<ul>
+<li>类命名约定也适用与异常.不同的是，如果异常实际上是抛出错误的话，异常名前应该加上”Error”的前缀.</li>
+</ul>
+</li>
+<li>函数命名(Function Names)<ul>
+<li>函数命名应该都是小写，必要时使用下划线来提高可读性.</li>
+</ul>
+</li>
+<li>全局变量命名(Global Variable Names)<ul>
+<li>引用方式设计为from M import *的模块，应该使用<strong>all</strong>机制来避免import全局变量，或者采用下划线前缀的旧约定来命名全局变量，从而表明这些变量是“模块非公开的”.</li>
+</ul>
+</li>
+<li>函数和方法参数(Function And Method Arguments)<ul>
+<li>实例方法的第一参数永远都是self.</li>
+<li>类方法的第一个参数永远都是cls.</li>
+<li>在函数参数名和保留关键字冲突时，相对于使用缩写或拼写简化，使用以下划线结尾的命名一般更好.比如，class_比clss更好.</li>
+</ul>
+</li>
+<li>方法命名和实例变量(Method Names And Instance Variables)<ul>
+<li>使用函数命名的规则：小写单词，必要时使用下划线分开以提高可读性.</li>
+<li>仅对于非公开方法和变量命名在开头使用一个下划线</li>
+<li>避免和子类的命名冲突，使用两个下划线开头来触发Python的命名修饰机制.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>常量(Constants)</p>
+<ul>
+<li>常量通常是在模块级别定义的，使用全部大写并用下划线将单词分开.如：MAX_OVERFLOW和TOTAL .</li>
+</ul>
+</li>
+</ul>
+<h3 id="13-公开和内部接口-Public-And-Internal-Interfaces"><a href="#13-公开和内部接口-Public-And-Internal-Interfaces" class="headerlink" title="13. 公开和内部接口(Public And Internal Interfaces)"></a>13. 公开和内部接口(Public And Internal Interfaces)</h3><ul>
+<li>任何向后兼容性保证仅对公开接口适用</li>
+<li>文档化的接口被认为是公开的，除非文档中明确申明了它们是临时的或者内部接口，不保证向后兼容性.所有文档中未提到的接口应该被认为是内部的.</li>
+<li>为了更好审视公开接口和内部接口，模块应该在<strong>all属性中明确申明公开API是哪些.将</strong>all__设为空list表示该模块中没有公开API.</li>
+</ul>
+<h3 id="14-编程建议-Programming-Recommendations"><a href="#14-编程建议-Programming-Recommendations" class="headerlink" title="14. 编程建议(Programming Recommendations)"></a>14. 编程建议(Programming Recommendations)</h3><ul>
+<li>代码应该以不影响其他Python实现(PyPy，Jython，IronPython，Cython，Psyco等)的方式编写.<ul>
+<li>库中性能敏感的部分，用’’.join形式来代替.这会确保在所有不同的实现中字符串拼接是线性时间的.</li>
+<li>不要依赖于 CPython 在字符串拼接时的优化实现</li>
+</ul>
+</li>
+<li>与单例作比较，像None应该用is或is not，从不使用==操作符</li>
+<li>用<strong>is not</strong>操作符而不是not … is.虽然这两个表达式是功能相同的，前一个是更可读的，是首选.</li>
+<li>始终使用def语句来代替直接绑定了一个lambda表达式的赋值语句.</li>
+<li>捕获异常时，尽可能使用明确的异常，而不是用一个空的except:语句.(限制使用空except语句)</li>
+<li>绑定异常给一个名字时，最好使用 Python 2.6 里添加的明确的名字绑定语法：</li>
+<li>对于所有try / except子句，将try子句限制为必需的绝对最小代码量.同样，这样可以避免屏蔽错误.</li>
+<li>坚持使用return语句.函数内的return语句都应该返回一个表达式，或者None.如果一个return语句返回一个表达式，另一个没有返回值的应该用return None清晰的说明，并且在一个函数的结尾应该明确使用一个return语句(如果有返回值的话).</li>
+<li>用字符串方法代替字符串模块.</li>
+<li>用’’.startswith()和’’.endswith()代替字符串切片来检查前缀和后缀.startswith()和endswith()是更简洁的，不容易出错的.</li>
+<li>对象类型的比较应该始终使用isinstance()而不是直接比较.</li>
+<li>对于序列(字符串、列表、元组)来说，空的序列为False：</li>
+<li>对于序列(字符串、列表、元组)来说，空的序列为False：</li>
+<li>不要让字符串对尾随的空格有依赖.这样的尾随空格是视觉上无法区分的，一些编辑器(或者，reindent.py)会将其裁剪掉.</li>
+<li>不要用==比较True和False.</li>
+</ul>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Liu
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/null-608fcd3dbda24e58.gif" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>python 学习</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/12/python-pep8/">Python_PEP8编程风格规范</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/10/pyecharts-liquid/">pyecharts-Liquid</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/08/flask-note2/">Flask-note2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/06/flask-note1/">Flask_note1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/05/save-git-problem/">Windows下 Git 因移动文件夹导致的问题及解决</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/03/pyecharts-map/">pyecharts-Map</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/01/pyecharts-pie/">pyecharts-Pie</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/05/save-git-problem/">Windows下 Git 因移动文件夹导致的问题及解决</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/27/css-note/">css_note</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/08/flask-note2/">Flask-note2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/06/flask-note1/">Flask_note1</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2020/08/12/python-pep8/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/08/12/python-pep8/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/08/12/python-pep8/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Flask-Study/" style="font-size: 11.293307577364569px;" class="tag-cloud-link">Flask_Study</a>
+    
+    <a href="/tags/Windows-problem/" style="font-size: 16.10219656308166px;" class="tag-cloud-link">Windows problem</a>
+    
+    <a href="/tags/Linux-study/" style="font-size: 10.905076920703733px;" class="tag-cloud-link">Linux_study</a>
+    
+    <a href="/tags/scrapy-study/" style="font-size: 8.630874431228415px;" class="tag-cloud-link">scrapy_study</a>
+    
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 12.47302401452287px;" class="tag-cloud-link">前端学习</a>
+    
+    <a href="/tags/Pyecharts/" style="font-size: 18.228060996021696px;" class="tag-cloud-link">Pyecharts</a>
+    
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 19.44983757058091px;" class="tag-cloud-link">Python 模块</a>
+    
+    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 14.714617051060312px;" class="tag-cloud-link">PEP8 编程风格规范</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://www.crushing.xyz/" target="_blank">GODLIN</a>
+    </li>
+    
+    <li>
+        <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/#id9" target="_blank">BeautifulSoup 中文文档</a>
+    </li>
+    
+    <li>
+        <a href="https://requests.readthedocs.io/zh_CN/latest/user/quickstart.html" target="_blank">Requests 中文文档</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/forgotten-forever" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/xia-chong-yu-bing-74-74" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Liu Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <script type="text/javascript" src="\js\FunnyTitle.js"></script>
+    <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"scripFrom":"local","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"heigut":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: 'https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/background',
+      ext: 'jpg',
+      maxCount: '10'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
