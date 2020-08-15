@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Liu">
+    
+    <meta name="description" content="python 学习">
+    
+    
+    
+    
+    
+    
+    <title>Chrome-Elements | BLOG</title>
+    <link href="http://yoursite.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/small_bg.jpg');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/https:/cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/null-608fcd3dbda24e58.gif'
+        var previews = 'https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview01.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview02.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview03.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview04.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview05.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview06.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview07.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview08.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview09.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview10.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview11.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview12.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview13.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview15.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://yoursite.com">
+                
+                <!-- 这里background直接使用logo_image(url) -->
+                <style>
+
+                </style>
+                    
+                <div class="navbar-brand"></div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Flask-Study/">Flask_Study</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Windows-problem/">Windows problem</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Linux-study/">Linux_study</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">BLOG</a>
+        >
+        <span>Chrome-Elements</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2020/08/15/chrome-elements/">Chrome-Elements</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Chrome-DevTools/">Chrome DevTools</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-08-15
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2020/08/15/chrome-elements/">Chrome-Elements</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2020-08-15
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Chrome-DevTools/">Chrome DevTools</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="Google-DevTools-开发者工具"><a href="#Google-DevTools-开发者工具" class="headerlink" title="Google DevTools 开发者工具"></a>Google DevTools 开发者工具</h1><h2 id="打开-Chrome-开发者工具"><a href="#打开-Chrome-开发者工具" class="headerlink" title="打开 Chrome 开发者工具"></a>打开 Chrome 开发者工具</h2><h3 id="1-在-Chrome-菜单中选择-更多工具-gt-开发者工具"><a href="#1-在-Chrome-菜单中选择-更多工具-gt-开发者工具" class="headerlink" title="1. 在 Chrome 菜单中选择 更多工具-&gt;开发者工具"></a>1. 在 Chrome 菜单中选择 <strong>更多工具-&gt;开发者工具</strong></h3><h3 id="2-在页面元素上右键点击，选择检查-Windows-下快捷键-F12"><a href="#2-在页面元素上右键点击，选择检查-Windows-下快捷键-F12" class="headerlink" title="2. 在页面元素上右键点击，选择检查 (Windows 下快捷键 F12)"></a>2. 在页面元素上右键点击，选择<strong>检查</strong> (Windows 下快捷键 F12)</h3><h3 id="3-使用快捷键-Ctrl-Shift-I-Windows-或-Cmd-Opt-I-Mac"><a href="#3-使用快捷键-Ctrl-Shift-I-Windows-或-Cmd-Opt-I-Mac" class="headerlink" title="3. 使用快捷键 Ctrl + Shift + I(Windows) 或 Cmd + Opt + I (Mac)"></a>3. 使用快捷键 <strong>Ctrl + Shift + I</strong>(Windows) 或 <strong>Cmd + Opt + I</strong> (Mac)</h3><h3 id="1-元素面板-Elements"><a href="#1-元素面板-Elements" class="headerlink" title="1. 元素面板 (Elements)"></a>1. 元素面板 (Elements)</h3><ul>
+<li><p>使用元素面板自由操作 <strong>DOM</strong> 和 <strong>CSS</strong> 来迭代布局和设计页面</p>
+<ol>
+<li><p>检查和调整页面</p>
+<ul>
+<li>摘要 (TL;DR)<ol>
+<li>在 <strong><em>Elements 面板</em></strong>中检查和实时编辑 <strong>DOM 树中</strong>的任何元素<ul>
+<li>双击选定元素即可对 DOM 节点实时编辑更改</li>
+</ul>
+</li>
+<li>在 <strong><em>Styles 窗格</em></strong>中查看和更改应用到任何选定元素的 CSS 规则<ul>
+<li>在 Styles 窗格中实时编辑样式属性名称和值。所有样式均可修改，除了灰色部分（与 User Agent 样式表一样）。</li>
+<li>要编辑名称或值，请点击它，进行更改，然后按 Tab 或 Enter 保存更改。</li>
+</ul>
+</li>
+<li>在 <strong><em>Computed 窗格</em></strong>中查看和修改选定元素的框模型<ul>
+<li>Computed 窗格检查和编辑当前元素的框模型参数。 框模型中的所有值均可修改，只需点击它们即可。</li>
+<li>同轴矩形包含当前元素 padding、border 和 margin 属性的 top、bottom、left、right 值。</li>
+<li>对于位置为非静态的元素，还会显示 position 矩形，包含 top、right、bottom 和 left 属性的值。</li>
+<li>对于 position: fixed 和 position: absolute 元素，中心域包含选定元素实际的 offsetWidth × offsetHeight 像素尺寸。所有值都可以通过双击修改，就像 Styles 窗格中的属性值一样。 不过，无法保证这些更改能够生效，因为这要取决于具体的元素定位详情。</li>
+</ul>
+</li>
+<li>在 <strong><em>Sources 面板</em></strong>中查看在本地对页面所做的修改<ul>
+<li>粉色背景的线表示移除，绿色背景的线表示添加。</li>
+<li>查看对页面所做的实时编辑的历史记录<ol>
+<li>在 Styles 窗格中，点击您修改的文件。DevTools 会将您带到 Sources 面板。</li>
+<li>右键点击文件</li>
+<li>选择 Local modifications</li>
+</ol>
+</li>
+<li>检查所做的修改<ol>
+<li>展开顶级文件名查看做出修改的时间 做出修改的时间。</li>
+<li>展开第二级项目查看修改相应的不同（前和后）。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>撤销更改<ul>
+<li>未设置永久制作 : 每次重新加载页面时，所有实时编辑都会丢失</li>
+<li>设置永久制作，撤销更改 : <ol>
+<li>使用 Ctrl+Z (Windows) 或 Cmd+Z (Mac) 通过 Elements 面板快速撤消对 DOM 或样式所做的细微更改。</li>
+<li>撤消对文件所做的所有本地修改，请打开 Sources 面板，然后选择文件名旁的 revert。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>使用 Styles 可以修改与元素关联的 CSS</p>
+<ul>
+<li>摘要 (TL;DR)<ul>
+<li>利用 Styles 窗格，可以在本地以尽可能多的方法更改 CSS，包括修改现有样式、添加新样式，以及为样式添加规则。</li>
+<li>如果希望样式可以保持（不会在重新加载后消失），则需要将其保存到开发工作区中</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><p>检查应用到元素的样式: <code>选择一个元素以检查其样式。 Styles 窗格可以显示应用到选定元素的 CSS 规则，优先级从高到低：</code></p>
+<ul>
+<li><p>顶端为 element.style。这些样式要么直接使用样式属性（例如 </p><p style="color:green">）直接应用到元素，要么在 DevTools 中应用。</p>
+</li>
+<li><p>下方是与元素匹配的任何 CSS 规则。例如，在下面的屏幕截图中，选定元素从 tools.css 中定义的规则接收 line-height:24px。</p>
+</li>
+<li><p>再下方是继承的样式，其中包括与选定元素的祖先实体匹配的任何可继承样式规则。 例如，在下面的屏幕截图中，选定元素从 user agent stylesheet 继承 display:list-item。</p>
+</li>
+<li><p>样式: 标签与其下方带编号的项目对应</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/style.png" alt="style"></p>
+<ol>
+<li>与元素匹配的选择器的关联样式。</li>
+<li>User Agent 样式表清晰标记，并且在网页上经常被 CSS 替换。</li>
+<li>已被级联规则替换的规则将显示为带删除线的文本。</li>
+<li>继承的样式将在“Inherited from <NODE>”标头下显示为一组。点击标头中的 DOM 节点可以导航到其在 DOM 树视图中的位置。</NODE></li>
+<li>灰色的条目不是已定义的规则，而是在运行时计算的规则。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>检查受选择器影响的元素: <code>在 Styles 窗格中将鼠标悬停在 CSS 选择器上可以查看受该选择器影响的所有元素——(此功能仅突出显示视口中的元素；视口以外的其他元素也可能受选择器影响。)</code><br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/mouse_stay.png" alt="mouse_stay"></p>
+</li>
+<li><p>添加、启用和停用 CSS 类</p>
+<ul>
+<li><p>点击 .cls 按钮可以查看与当前选定元素关联的所有 CSS 类。 从这里，您可以执行以下操作：</p>
+<ol>
+<li>启用或停用当前与元素关联的类</li>
+<li>向元素添加新类。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/style_css.png" alt="style_css"></p>
+</li>
+</ul>
+</li>
+<li><p>编辑现有属性名称或值</p>
+<ul>
+<li>点击 CSS 属性名称或值可以对其进行编辑</li>
+<li>在名称或值突出显示时，按 <strong>Tab</strong> 可以向<strong>前</strong>移动到下一个属性、名称或选择器。</li>
+<li>按 <strong>Shift+Tab</strong> 可以向<strong>后</strong>移动。</li>
+<li>编辑数字式 CSS 属性值时，可以使用下面的键盘快捷键增大和减小值：<ol>
+<li>使用向上键和向下键能够以 1 为增量增大和减小值（如果当前值介于 -1 和 1 之间，则增量为 0.1）。</li>
+<li>使用 Alt+向上键和 Alt+向下键能够以 0.1 为增量增大和减小值。</li>
+<li>使用 Shift+向上键能够以 10 为增量增大值；使用 Shift+向下键能够以 10 为增量减小值。</li>
+<li>使用 Shift+Page Up（Windows、Linux）或 Shift+Function+向上键 (Mac) 能够以 100 为增量增大值。使用 Shift+Page Down（Windows、Linux）或 Shift+Function+向下键 (Mac) 能够以 100 为增量减小值。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>添加新属性声明 <code>点击可编辑 CSS 规则中的空白处可以创建一个新声明。 键入，或者将 CSS 粘贴到 Styles 窗格中。属性及其值将解析并输入到正确的字段中。——( 要启用或停用样式声明，请选中或取消选中旁边的复选框。)</code></p>
+</li>
+<li><p>添加样式规则 <code>点击 (New Style Rule 按钮 图标为 右上角 + ) 按钮可以添加一个新的 CSS 规则。点击并按住按钮可以选择要向哪一个样式表添加规则。</code></p>
+</li>
+<li><p>添加或移除动态样式（伪类） <code>可以在元素上手动设置动态伪类选择器（例如 :active、:focus、:hover 和 :visited）</code></p>
+<ul>
+<li>设置动态状态的两种方式<ol>
+<li>在 Elements 面板内右键点击某个元素，然后从菜单中选择目标伪类 (:active、:focus、:hover 和 :visited) ，将其启用或停用。<br> <img src="!%5B%5D(https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/20200815110607.png)" alt="force_state1"></li>
+<li>在 Elements 面板中选择元素，然后在 Styles 窗格中点击 :hov 按钮，使用复选框启用或停用当前选定元素的选择器。<br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/20200815110529.png" alt="force_state"></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>向样式规则添加背景色或颜色</p>
+<ul>
+<li><p>向样式规则添加 color 和 background-color 声明的快捷方式</p>
+<ol>
+<li><p>样式规则的右下角有一个由三个点组成的图标。您需要将鼠标悬停到样式规则上才能看到这个图标。</p>
+</li>
+<li><p>将鼠标悬停到此图标上可以调出用于添加 字体color 声明 或 background-color 声明 的按钮。点击这些按钮之一可以将声明添加到样式规则中。</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/20200815110717.png" alt="add_color"></p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>使用 Color Picker 修改颜色 <code>在 Styles 窗格中查找一个定义颜色的 CSS 声明（例如 color: blue）。 声明值的左侧有一个带颜色的小正方形。 正方形的颜色与声明值匹配。 点击小正方形可以打开 Color Picker。</code><br> <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/select_color.png" alt="select_color"></p>
+<ul>
+<li><p>与 Color Picker 交互：</p>
+<ol>
+<li><p>取色器 <code>点击取色器按钮将其启用，在实时页面上将鼠标悬停到某种颜色上，然后点击，将当前选定的声明值设置为您悬停的颜色。</code></p>
+</li>
+<li><p>当前颜色。当前值的可视表示。</p>
+</li>
+<li><p>当前值。当前颜色的十六进制、RGBA 或 HSL 表示。</p>
+</li>
+<li><p>调色板。 <code>提供多种调色板</code></p>
+<ul>
+<li>Page Colors。一组从页面的 CSS 自动生成的颜色。</li>
+<li>Material Design。一组符合 Material Design 规范的颜色。</li>
+<li>Custom。您选择的任意一组颜色。DevTools 可以保存您的自定义调色板（甚至在不同的页面间），直至您将其删除。</li>
+<li>修改自定义调色板<ul>
+<li>按加号按钮可以将当前颜色添加到调色板中。 点击并按住颜色可以将其拖动到不同的位置，或者将其拖动到垃圾桶图标进行删除。 右键点击颜色并选择 Remove color 可以将其删除。 选择 Remove all to the right 可以删除当前选定颜色右侧的所有颜色。 右键点击调色板区域中的任何位置，然后选择 Clear template 可以删除模板的所有颜色。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>着色和阴影选择器。</p>
+</li>
+<li><p>色调选择器。</p>
+</li>
+<li><p>不透明度选择器。</p>
+</li>
+<li><p>颜色值选择器。点击可以在 RGBA、HSL 和十六进制之间切换。</p>
+</li>
+<li><p>调色板选择器。点击可以选择不同的模板。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/color_picker.png" alt="color_picker"></p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>查看和编辑 CSS 自定义属性（CSS 变量）</p>
+<ul>
+<li>自定义属性通常在 :root 选择器中定义。 要查看在 :root 中定义的自定义属性，请检查 <html> 元素。</html></li>
+</ul>
+</li>
+<li><p>编辑 Sass、Less 或 Stylus <code>借助 CSS 源映射，DevTools 可以将生成的文件自动映射到源代码文件，这样，您可以在 Sources 面板中实时编辑这些文件并查看结果，而不用离开 DevTools 或刷新页面。</code></p>
+</li>
+<li><p>预处理器工作流 <code>检查样式由生成的 CSS 文件提供的元素时，Elements 面板会显示原始的源文件而不是生成的 CSS 文件的链接。</code></p>
+<ul>
+<li>跳转到源文件<ol>
+<li>点击链接，在 Sources 面板中打开（可编辑）源文件。</li>
+<li>Ctrl + 点击（或 Cmd + 点击）任何 CSS 属性名称或值，打开源文件并跳转到相应行。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>启用/停用 CSS 源映射和自动重新加载 <code>默认情况下，CSS 源映射处于启用状态</code></p>
+<ul>
+<li>启用 CSS 源映射和 CSS 重新重新加载<ol>
+<li>打开 DevTools 的 Settings 面板并点击 General。</li>
+<li>开启 Enable CSS source maps 和 Auto-reload generated CSS。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>通过 DOM 更新实时修改页面的内容和结构。</p>
+<ul>
+<li>摘要 (TL;DR)<ol>
+<li>DOM 定义您的页面结构。每一个 DOM 节点都是一个页面元素，例如，标题节点或段落节点。</li>
+<li>通过渲染的 DOM 实时编辑页面的内容和结构。</li>
+<li>无法在 Elements 面板中通过 DOM 更改修改源文件。重新加载页面会清空任何 DOM 树修改。</li>
+<li>使用 DOM 断点留意 DOM 更改。</li>
+</ol>
+</li>
+</ul>
+<ol>
+<li><p>检查元素</p>
+<ul>
+<li>右键点击页面上的任何元素并选择 检查 (Inspect)。</li>
+<li>按 Ctrl + Shift + C (Windows) 或 Cmd + Shift + C (Mac)，在 Inspect Element 模式下打开 DevTools，然后将鼠标悬停到某个元素上。 DevTools 会在 Elements 面板中自动突出显示您悬停的元素。点击元素可以退出检查模式，同时保持元素在 Elements 面板中处于突出显示状态。</li>
+<li>点击 Inspect Element 按钮 转到 Inspect Element 模式，然后点击元素。</li>
+</ul>
+</li>
+<li><p>DOM 导航</p>
+<ul>
+<li>折叠的节点的旁边会有一个<strong>向右箭头</strong></li>
+<li>展开的节点的旁边会有一个<strong>向下箭头</strong></li>
+<li>使用鼠标<ul>
+<li>点击一次可以突出显示节点。</li>
+<li>要展开节点，请双击节点上的任何地方，或者点击节点旁边的箭头。</li>
+<li>要折叠节点，请点击节点旁边的箭头。</li>
+</ul>
+</li>
+<li>使用键盘<ul>
+<li>按向上箭头键可以选择当前节点上方的节点。</li>
+<li>按向下箭头可以选择当前节点下方的节点。</li>
+<li>按向右箭头键可以展开折叠的节点。再按一次可以移动到（已展开）节点的第一个子级。 您可以使用此方法快速导航到深度嵌套的节点。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>面包屑导航记录导航</p>
+<ul>
+<li><p>Elements 面板的底部是面包屑导航记录。</p>
+</li>
+<li><p>当前选定的节点将以蓝色突出显示。左侧是当前节点的父级。 再左侧是父级的父级。以此类推，一直到 DOM 树。</p>
+</li>
+<li><p>在结构中向上导航会移动突出显示焦点：</p>
+</li>
+<li><p>DevTools 会在记录中显示尽可能多的项目。如果状态栏无法显示全部记录，将在记录截断的地方显示一个省略号 (…)。点击省略号可以显示隐藏的元素：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/DOM_tree.png" alt="DOM_tree"></p>
+</li>
+</ul>
+</li>
+<li><p>显示 more actions 菜单</p>
+<ul>
+<li>右键点击节点</li>
+<li>选择节点，然后点击节点前方的 “…” 按钮 (more action 按钮))。按钮仅在当前选定的元素上显示。</li>
+</ul>
+</li>
+<li><p>编辑 DOM 节点和属性</p>
+<ul>
+<li>直接在节点名称或属性上双击。</li>
+<li>突出显示节点，按 Enter，然后按 Tab， 直到选中名称或属性。</li>
+<li>鼠标右键打开 more actions 菜单 并选择 Add Attribute 或 Edit Attribute。 Edit Attribute 取决于上下文；您点击的部分决定要编辑的内容。</li>
+</ul>
+</li>
+<li><p>以 HTML 形式编辑 DOM 节点及其子级</p>
+<ul>
+<li>打开 HTML 形式编辑器<ol>
+<li>鼠标右键打开 more actions 菜单并选择 Edit Attribute。</li>
+<li>按 F2 (Windows / Linux) 或 Fn+F2 (Mac)。</li>
+</ol>
+</li>
+<li>保存更改<ul>
+<li>按 Ctrl+Enter (Windows / Linux) 或 Cmd+Enter (Mac) 保存更改。</li>
+</ul>
+</li>
+<li>按 Esc 可以退出编辑器而不保存。</li>
+</ul>
+</li>
+<li><p>移动 DOM 节点 <code>点击、按住并拖动节点可将其移动。</code></p>
+</li>
+<li><p>删除 DOM 节点</p>
+<ul>
+<li>鼠标右键打开 more actions 菜单并选择 Delete Node。</li>
+<li>选择节点并按 Delete 键。</li>
+<li>如果意外删除了节点，按 Ctrl + Z（Mac 上为 Cmd + Z）可以撤消您的上一步操作。</li>
+</ul>
+</li>
+<li><p>滚动到视图</p>
+<ul>
+<li>悬停或选择 DOM 节点时，渲染的节点将在视口中突出显示</li>
+<li>节点滚动到屏幕以外，在节点位于当前视口上方时您将在视口顶部看到提示，而在节点位于当前视口下方时，您将在底部看到提示</li>
+</ul>
+</li>
+<li><p>设置 DOM 断点以调试复杂的 JavaScript 应用</p>
+<ul>
+<li>将 DOM 断点设置为在元素属性修改时触发<ol>
+<li>子树修改触发 <code>添加、移除或移动子元素时将触发子树修改断点</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;在 main-content 元素上设置子树修改，以下代码将触发断点：</span><br><span class="line">var element &#x3D; document.getElementById(&#39;main-content&#39;);</span><br><span class="line">&#x2F;&#x2F;modify the element&#39;s subtree.</span><br><span class="line">var mySpan &#x3D; document.createElement(&#39;span&#39;);</span><br><span class="line">element.appendChild( mySpan );</span><br></pre></td></tr></table></figure></li>
+<li>属性修改触发 <code>动态更改元素的属性 (class, id, name) 时将发生属性修改</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var element &#x3D; document.getElementById(&#39;main-content&#39;);</span><br><span class="line">&#x2F;&#x2F; class attribute of element has been modified.</span><br><span class="line">element.className &#x3D; &#39;active&#39;;</span><br></pre></td></tr></table></figure></li>
+<li>节点移除 <code>从 DOM 中移除有问题的节点时将触发节点移除修改：</code> <pre><code>document.getElementById(&apos;main-content&apos;).remove();</code></pre></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>与 DOM 断点交互 <code>Elements 和 Sources 面板均包含一个用于管理 DOM 断点的窗格,每个断点都会列出元素标识符和断点类型。 (DOM Breakpoints)</code></p>
+<ul>
+<li>断点交互<ol>
+<li>悬停在元素标识符上可以显示元素在页面上的相应位置（类似于在 Elements 面板中悬停在节点上）。</li>
+<li>点击元素可以将其在 Elements 面板中选中。</li>
+<li>切换复选框可以启用或停用断点。</li>
+</ol>
+</li>
+<li>触发 DOM 断点时，断点将在 DOM Breakpoints 窗格中突出显示。 Call Stack 窗格将显示调试程序暂停的原因：</li>
+</ul>
+</li>
+<li><p>查看元素事件侦听器 (Event Listeners 查看与 DOM 节点关联的 JavaScript 事件侦听器。)</p>
+<ul>
+<li>Event Listeners 窗格中的顶级项目将显示具有已注册侦听器的事件类型。</li>
+<li>点击事件类型（例如 click）旁的箭头可以查看已注册事件处理程序的列表。 每个处理程序都由一个类似于 CSS 选择器的元素标识符标识，例如 document 或 button#call-to-action。如果已为相同元素注册多个处理程序，将重复列示元素。</li>
+<li>点击元素标识符旁的展开箭头可以查看事件处理程序的属性。Event Listeners 窗格将列出每个侦听器的以下属性：<ul>
+<li>handler : 包含一个回调函数。右键点击函数并选择 Show Function Definition 可以查看函数的定义位置（如果源代码可用）。</li>
+<li>useCapture : 指示 addEventListener 上的 useCapture 标志是否设置的布尔值。</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>查看祖先实体事件侦听器 <ul>
+<li>如果启用 Ancestors 复选框，除了当前选定节点的事件侦听器外，还会显示其祖先实体的事件侦听器。</li>
+<li>如果停用复选框，将仅显示当前选定节点的事件侦听器。</li>
+</ul>
+</li>
+<li>查看框架侦听器<ul>
+<li>启用 Framework listeners 复选框时，DevTools 会自动解析事件代码的框架或内容库封装部分，然后告诉您实际将事件绑定到代码中的位置。</li>
+<li>如果停用 Framework listeners 复选框，事件侦听器代码很可能会在框架或内容库代码的其他地方解析。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Liu
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/null-608fcd3dbda24e58.gif" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>python 学习</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/15/chrome-elements/">Chrome-Elements</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/13/pyecharts-funnel/">pyecharts-Funnel</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/12/python-pep8/">Python_PEP8编程风格规范</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/10/pyecharts-liquid/">pyecharts-Liquid</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/08/flask-note2/">Flask-note2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/06/flask-note1/">Flask_note1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/05/save-git-problem/">Windows下 Git 因移动文件夹导致的问题及解决</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/03/pyecharts-map/">pyecharts-Map</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/01/pyecharts-pie/">pyecharts-Pie</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/05/save-git-problem/">Windows下 Git 因移动文件夹导致的问题及解决</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/08/flask-note2/">Flask-note2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/06/flask-note1/">Flask_note1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/10/pyecharts-liquid/">pyecharts-Liquid</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/13/pyecharts-funnel/">pyecharts-Funnel</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/15/chrome-elements/">Chrome-Elements</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2020/08/15/chrome-elements/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/08/15/chrome-elements/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/08/15/chrome-elements/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Flask-Study/" style="font-size: 15.262436221217923px;" class="tag-cloud-link">Flask_Study</a>
+    
+    <a href="/tags/Windows-problem/" style="font-size: 18.199089044977725px;" class="tag-cloud-link">Windows problem</a>
+    
+    <a href="/tags/Linux-study/" style="font-size: 17.44233065518227px;" class="tag-cloud-link">Linux_study</a>
+    
+    <a href="/tags/scrapy-study/" style="font-size: 17.274450539421853px;" class="tag-cloud-link">scrapy_study</a>
+    
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 18.47471117089794px;" class="tag-cloud-link">前端学习</a>
+    
+    <a href="/tags/Pyecharts/" style="font-size: 9.129421726140215px;" class="tag-cloud-link">Pyecharts</a>
+    
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 18.68758888968702px;" class="tag-cloud-link">Python 模块</a>
+    
+    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 11.461054864176482px;" class="tag-cloud-link">PEP8 编程风格规范</a>
+    
+    <a href="/tags/Chrome-DevTools/" style="font-size: 17.703055459066697px;" class="tag-cloud-link">Chrome DevTools</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://www.crushing.xyz/" target="_blank">GODLIN</a>
+    </li>
+    
+    <li>
+        <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/#id9" target="_blank">BeautifulSoup 中文文档</a>
+    </li>
+    
+    <li>
+        <a href="https://requests.readthedocs.io/zh_CN/latest/user/quickstart.html" target="_blank">Requests 中文文档</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/forgotten-forever" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/xia-chong-yu-bing-74-74" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Liu Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <script type="text/javascript" src="\js\FunnyTitle.js"></script>
+    <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"scripFrom":"local","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"heigut":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: 'https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/background',
+      ext: 'jpg',
+      maxCount: '10'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>

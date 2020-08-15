@@ -12,7 +12,7 @@
     
     
     
-    <title>pyecharts-Funnel | BLOG</title>
+    <title>archive_a | BLOG</title>
     <link href="http://yoursite.com" rel="prefetch" />
 
     
@@ -103,7 +103,7 @@
                 
                 
                 
-                <li class="">
+                <li class="current">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -170,34 +170,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    
-<article class="article well article-body" id="article">
+                    <article class="article well article-body" id="article-archive">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://yoursite.com">BLOG</a>
         >
-        <span>pyecharts-Funnel</span>
+        <span>归档</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2020/08/13/pyecharts-funnel/">pyecharts-Funnel</a>
+                <a href="/archives">归档</a>
             </h1>
-        </div>
-        <div class="tag-article">
-            
-            <span class="label label-gal">
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/Pyecharts/">Pyecharts</a>
-                
-            </span>
-            
-            <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2020-08-13
-            </span>
-            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -205,34 +190,103 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2020/08/13/pyecharts-funnel/">pyecharts-Funnel</a>
+                    <a href="/archives">归档</a>
                 </h4>
             </div>
-            <p>
-                <i class="fa fa-calendar"></i> 2020-08-13
-            </p>
-            <p>
-                
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/Pyecharts/">Pyecharts</a>
-                
-                
-                
-            </p>
         </center>
     </div>
-    <div class="content-article">
-        <h1 id="pyecharts-Bar"><a href="#pyecharts-Bar" class="headerlink" title="pyecharts_Bar"></a>pyecharts_Bar</h1><p><a href="http://pyecharts.org/#/zh-cn/" target="_blank" rel="noopener">全部来自于官方文档，主要用于方便自己查找</a></p>
-<h2 id="Funnel：漏斗图"><a href="#Funnel：漏斗图" class="headerlink" title="Funnel：漏斗图"></a><code>Funnel：漏斗图</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">x_data &#x3D; []</span><br><span class="line">y_data &#x3D; []</span><br><span class="line"></span><br><span class="line">data &#x3D; [[x_data[i], y_data[i]] for i in range(len(x_data))</span><br><span class="line"></span><br><span class="line">(</span><br><span class="line">    Funnel(init_opts &#x3D; opts.InitOpts(width&#x3D;&quot;“, height&#x3D;&quot;&quot;))</span><br><span class="line">    .add(</span><br><span class="line">        series_name &#x3D; &quot;&quot;,</span><br><span class="line">        data_pair&#x3D;data,</span><br><span class="line">        ...</span><br><span class="line">    )</span><br><span class="line">    .set_global_opts(title_opts&#x3D;opts.TitleOpts(title&#x3D;&quot;漏斗图主标题&quot;, subtitle&#x3D;&quot;副标题&quot;))</span><br><span class="line">    .render(&quot;xxx.html&quot;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>add()  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">def add(</span><br><span class="line">  # 系列名称，用于 tooltip 的显示，legend 的图例筛选。</span><br><span class="line">  series_name: str,</span><br><span class="line"></span><br><span class="line">  # 系列数据项，格式为 [(key1, value1), (key2, value2)]</span><br><span class="line">  data_pair: Sequence,</span><br><span class="line"></span><br><span class="line">  # 是否选中图例</span><br><span class="line">  is_selected: bool &#x3D; True,</span><br><span class="line"></span><br><span class="line">  # 系列 label 颜色</span><br><span class="line">  color: Optional[str] &#x3D; None,</span><br><span class="line"></span><br><span class="line">  # 数据排序， 可以取 &#39;ascending&#39;，&#39;descending&#39;，&#39;none&#39;（表示按 data 顺序）</span><br><span class="line">  sort_: str &#x3D; &quot;descending&quot;,</span><br><span class="line"></span><br><span class="line">  # 数据图形间距</span><br><span class="line">  gap: Numeric &#x3D; 0,</span><br><span class="line"></span><br><span class="line">  # 标签配置项，参考 &#96;series_options.LabelOpts&#96;</span><br><span class="line">  label_opts: Union[opts.LabelOpts, dict] &#x3D; opts.LabelOpts(),</span><br><span class="line"></span><br><span class="line">  # 提示框组件配置项，参考 &#96;series_options.TooltipOpts&#96;</span><br><span class="line">  tooltip_opts: Union[opts.TooltipOpts, dict, None] &#x3D; None,</span><br><span class="line"></span><br><span class="line">  # 图元样式配置项，参考 &#96;series_options.ItemStyleOpts&#96;</span><br><span class="line">  itemstyle_opts: Union[opts.ItemStyleOpts, dict, None] &#x3D; None,</span><br><span class="line">  )</span><br></pre></td></tr></table></figure></li>
-</ul>
-
+    <div class="content-article" style="margin-top: 30px;">
+        
+        
+            <h1 style="font-size: 24px; margin-top: 40px;">2020年</h1>
+            
+        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
+            
+             
+             
+                        <a href="/2020/08/15/chrome-elements/">Chrome-Elements</a>
+                        <br>
+            
+             
+                        <a href="/2020/08/13/pyecharts-funnel/">pyecharts-Funnel</a>
+                        <br>
+            
+             
+                        <a href="/2020/08/12/python-pep8/">Python_PEP8编程风格规范</a>
+                        <br>
+            
+             
+                        <a href="/2020/08/10/pyecharts-liquid/">pyecharts-Liquid</a>
+                        <br>
+            
+             
+                        <a href="/2020/08/08/flask-note2/">Flask-note2</a>
+                        <br>
+            
+             
+                        <a href="/2020/08/06/flask-note1/">Flask_note1</a>
+                        <br>
+            
+             
+                        <a href="/2020/08/05/save-git-problem/">Windows下 Git 因移动文件夹导致的问题及解决</a>
+                        <br>
+            
+             
+                        <a href="/2020/08/03/pyecharts-map/">pyecharts-Map</a>
+                        <br>
+            
+             
+                        <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
+                        <br>
+            
+             
+                        <a href="/2020/08/01/pyecharts-pie/">pyecharts-Pie</a>
+                        <br>
+            
+             
+                        <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
+                        <br>
+            
+             
+                        <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
+                        <br>
+            
+             
+                        <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
+                        <br>
+            
+             
+                        <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
+                        <br>
+            
+             
+                        <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
+                        <br>
+            
+             
+                        <a href="/2020/07/29/linux-chang-yong-ming-ling/">linux_常用命令</a>
+                        <br>
+            
+             
+                        <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                        <br>
+            
+             
+                        <a href="/2020/07/27/css-note/">css_note</a>
+                        <br>
+            
+             
+                        <a href="/2020/07/26/python-chang-yong-mo-kuai/">python_常用模块</a>
+                        <br>
+            
+             
+                        <a href="/2020/07/26/hello-world/">Hello World</a>
+                        <br>
+            
+                    </div>
+        
     </div>
 </article>
-
-
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -366,19 +420,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2020/08/05/save-git-problem/">Windows下 Git 因移动文件夹导致的问题及解决</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
                 </span>
             </li>
             
@@ -390,37 +438,43 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2020/08/01/pyecharts-pie/">pyecharts-Pie</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/26/python-chang-yong-mo-kuai/">python_常用模块</a>
+                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
+                    <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/10/pyecharts-liquid/">pyecharts-Liquid</a>
+                    <a href="/2020/08/06/flask-note1/">Flask_note1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/12/python-pep8/">Python_PEP8编程风格规范</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2020/08/13/pyecharts-funnel/">pyecharts-Funnel</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/08/15/chrome-elements/">Chrome-Elements</a>
                 </span>
             </li>
             
@@ -435,17 +489,17 @@
 
                 
                 <li>
-                    <a href="/2020/08/13/pyecharts-funnel/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/archives/2020/08/page/2/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/08/13/pyecharts-funnel/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/archives/2020/08/page/2/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/08/13/pyecharts-funnel/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/archives/2020/08/page/2/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -453,23 +507,23 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Flask-Study/" style="font-size: 16.65424791489346px;" class="tag-cloud-link">Flask_Study</a>
+    <a href="/tags/Flask-Study/" style="font-size: 11.746387186771102px;" class="tag-cloud-link">Flask_Study</a>
     
-    <a href="/tags/Windows-problem/" style="font-size: 19.13168415340583px;" class="tag-cloud-link">Windows problem</a>
+    <a href="/tags/Windows-problem/" style="font-size: 11.50831691133519px;" class="tag-cloud-link">Windows problem</a>
     
-    <a href="/tags/Linux-study/" style="font-size: 8.782716184845501px;" class="tag-cloud-link">Linux_study</a>
+    <a href="/tags/Linux-study/" style="font-size: 18.43928745855169px;" class="tag-cloud-link">Linux_study</a>
     
-    <a href="/tags/scrapy-study/" style="font-size: 16.921910186964162px;" class="tag-cloud-link">scrapy_study</a>
+    <a href="/tags/scrapy-study/" style="font-size: 17.870455184905865px;" class="tag-cloud-link">scrapy_study</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 17.416050527404217px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 19.154896567746462px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/Pyecharts/" style="font-size: 8.771340944360581px;" class="tag-cloud-link">Pyecharts</a>
+    <a href="/tags/Pyecharts/" style="font-size: 12.736754445714931px;" class="tag-cloud-link">Pyecharts</a>
     
-    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 19.507239121421044px;" class="tag-cloud-link">Python 模块</a>
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 10.662846596327237px;" class="tag-cloud-link">Python 模块</a>
     
-    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 8.453964125287706px;" class="tag-cloud-link">PEP8 编程风格规范</a>
+    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 15.557045919600576px;" class="tag-cloud-link">PEP8 编程风格规范</a>
     
-    <a href="/tags/Chrome-DevTools/" style="font-size: 9.670668420197357px;" class="tag-cloud-link">Chrome DevTools</a>
+    <a href="/tags/Chrome-DevTools/" style="font-size: 19.57033076419821px;" class="tag-cloud-link">Chrome DevTools</a>
     
 </div>
                 
