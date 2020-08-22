@@ -12,7 +12,7 @@
     
     
     
-    <title>Hello World | BLOG</title>
+    <title>pyechart_local_service | BLOG</title>
     <link href="http://yoursite.com" rel="prefetch" />
 
     
@@ -176,19 +176,26 @@
         <i class="fa fa-home"></i>
         <a href="http://yoursite.com">BLOG</a>
         >
-        <span>Hello World</span>
+        <span>pyechart_local_service</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2020/07/26/hello-world/">Hello World</a>
+                <a href="/2020/08/22/pyechart-local-service/">pyechart_local_service</a>
             </h1>
         </div>
         <div class="tag-article">
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2020-07-26
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Pyecharts/">Pyecharts</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-08-22
             </span>
             
         </div>
@@ -198,32 +205,52 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                    <a href="/2020/08/22/pyechart-local-service/">pyechart_local_service</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2020-07-26
+                <i class="fa fa-calendar"></i> 2020-08-22
             </p>
             <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Pyecharts/">Pyecharts</a>
+                
                 
                 
             </p>
         </center>
     </div>
     <div class="content-article">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h1 id="pyecharts-assets"><a href="#pyecharts-assets" class="headerlink" title="pyecharts_assets"></a>pyecharts_assets</h1><p><a href="https://assets.pyecharts.org/" target="_blank" rel="noopener">全部来自于官方文档，主要用于方便自己查找</a></p>
+<h2 id="解决-pyecharts-在生成-Html-时由于网络问题无法在网页显示-生成图片"><a href="#解决-pyecharts-在生成-Html-时由于网络问题无法在网页显示-生成图片" class="headerlink" title="解决 pyecharts 在生成 Html 时由于网络问题无法在网页显示 生成图片"></a>解决 pyecharts 在生成 Html 时由于网络问题无法在网页显示 生成图片</h2><h3 id="pyecharts-assets-提供了-pyecharts-的静态资源文件。可通过-localhost-server-或者-notebook-server-启动本地服务。"><a href="#pyecharts-assets-提供了-pyecharts-的静态资源文件。可通过-localhost-server-或者-notebook-server-启动本地服务。" class="headerlink" title="pyecharts-assets 提供了 pyecharts 的静态资源文件。可通过 localhost-server 或者 notebook-server 启动本地服务。"></a>pyecharts-assets 提供了 pyecharts 的静态资源文件。可通过 localhost-server 或者 notebook-server 启动本地服务。</h3><ul>
+<li>Localhost-Server</li>
+</ul>
+<ol>
+<li><p>首先将项目下载到本地</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 通过 git clone</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;pyecharts&#x2F;pyecharts-assets.git</span><br><span class="line"> </span><br><span class="line"># 或者直接下载压缩包</span><br><span class="line">$ wget https:&#x2F;&#x2F;github.com&#x2F;pyecharts&#x2F;pyecharts-assets&#x2F;archive&#x2F;master.zip</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动服务器</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd pyecharts-assets</span><br><span class="line">$ python -m http.server</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置 host</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 只需要在顶部声明 CurrentConfig.ONLINE_HOST 即可</span><br><span class="line">from pyecharts.globals import CurrentConfig</span><br><span class="line"> </span><br><span class="line">CurrentConfig.ONLINE_HOST &#x3D; &quot;http:&#x2F;&#x2F;127.0.0.1:8000&#x2F;assets&#x2F;&quot;</span><br><span class="line"> </span><br><span class="line"># 接下来所有图形的静态资源文件都会来自刚启动的服务器</span><br><span class="line">from pyecharts.charts import Bar</span><br><span class="line">bar &#x3D; Bar()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>Notebook-Server</li>
+</ul>
+<ol>
+<li><p>安装拓展插件</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ cd pyecharts-assets</span><br><span class="line"># 安装并激活插件</span><br><span class="line">$ jupyter nbextension install assets</span><br><span class="line">$ jupyter nbextension enable assets&#x2F;main</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置 host</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 只需要在顶部声明 CurrentConfig.ONLINE_HOST 即可</span><br><span class="line">from pyecharts.globals import CurrentConfig, OnlineHostType</span><br><span class="line"></span><br><span class="line"># OnlineHostType.NOTEBOOK_HOST 默认值为 http:&#x2F;&#x2F;localhost:8888&#x2F;nbextensions&#x2F;assets&#x2F;</span><br><span class="line">CurrentConfig.ONLINE_HOST &#x3D; OnlineHostType.NOTEBOOK_HOST</span><br><span class="line"></span><br><span class="line"># 接下来所有图形的静态资源文件都会来自刚启动的服务器</span><br><span class="line">from pyecharts.charts import Bar</span><br><span class="line">bar &#x3D; Bar()</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+</li>
+</ol>
+<p><strong>未解决问题 : 需要注意的是对于词云图 任然存在显示白屏问题*</strong></p>
 
     </div>
 </article>
@@ -362,6 +389,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2020/07/29/linux-chang-yong-ming-ling/">linux_常用命令</a>
                 </span>
             </li>
@@ -374,13 +407,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                    <a href="/2020/08/03/pyecharts-map/">pyecharts-Map</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/03/pyecharts-map/">pyecharts-Map</a>
+                    <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
                 </span>
             </li>
             
@@ -392,19 +425,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/08/flask-note2/">Flask-note2</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2020/08/06/flask-note1/">Flask_note1</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/08/10/pyecharts-liquid/">pyecharts-Liquid</a>
                 </span>
             </li>
             
@@ -420,6 +441,12 @@
                 </span>
             </li>
             
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/17/chrome-network/">Chrome-Network</a>
+                </span>
+            </li>
+            
         </ul>
     </div>
 </aside>
@@ -431,17 +458,17 @@
 
                 
                 <li>
-                    <a href="/2020/07/26/hello-world/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2020/08/22/pyechart-local-service/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/07/26/hello-world/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2020/08/22/pyechart-local-service/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/07/26/hello-world/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2020/08/22/pyechart-local-service/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -449,23 +476,23 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Flask-Study/" style="font-size: 15.467301479291642px;" class="tag-cloud-link">Flask_Study</a>
+    <a href="/tags/Flask-Study/" style="font-size: 12.113485452773096px;" class="tag-cloud-link">Flask_Study</a>
     
-    <a href="/tags/Windows-problem/" style="font-size: 12.411005596456251px;" class="tag-cloud-link">Windows problem</a>
+    <a href="/tags/Windows-problem/" style="font-size: 13.72054406791824px;" class="tag-cloud-link">Windows problem</a>
     
-    <a href="/tags/Linux-study/" style="font-size: 19.594744984370227px;" class="tag-cloud-link">Linux_study</a>
+    <a href="/tags/Linux-study/" style="font-size: 17.812715034661394px;" class="tag-cloud-link">Linux_study</a>
     
-    <a href="/tags/scrapy-study/" style="font-size: 19.36860564967002px;" class="tag-cloud-link">scrapy_study</a>
+    <a href="/tags/scrapy-study/" style="font-size: 14.582494477905104px;" class="tag-cloud-link">scrapy_study</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 14.171280181837375px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 18.71479805753624px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/Pyecharts/" style="font-size: 19.912709558462616px;" class="tag-cloud-link">Pyecharts</a>
+    <a href="/tags/Pyecharts/" style="font-size: 14.688028668991025px;" class="tag-cloud-link">Pyecharts</a>
     
-    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 9.396631779019984px;" class="tag-cloud-link">Python 模块</a>
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 8.782486169812453px;" class="tag-cloud-link">Python 模块</a>
     
-    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 18.38471972038988px;" class="tag-cloud-link">PEP8 编程风格规范</a>
+    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 16.26768138158267px;" class="tag-cloud-link">PEP8 编程风格规范</a>
     
-    <a href="/tags/Chrome-DevTools/" style="font-size: 13.863377198562302px;" class="tag-cloud-link">Chrome DevTools</a>
+    <a href="/tags/Chrome-DevTools/" style="font-size: 19.732068568084372px;" class="tag-cloud-link">Chrome DevTools</a>
     
 </div>
                 

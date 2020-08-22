@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>pyechart_local_service</title>
+      <link href="/2020/08/22/pyechart-local-service/"/>
+      <url>/2020/08/22/pyechart-local-service/</url>
+      
+        <content type="html"><![CDATA[<h1 id="pyecharts-assets"><a href="#pyecharts-assets" class="headerlink" title="pyecharts_assets"></a>pyecharts_assets</h1><p><a href="https://assets.pyecharts.org/" target="_blank" rel="noopener">全部来自于官方文档，主要用于方便自己查找</a></p><h2 id="解决-pyecharts-在生成-Html-时由于网络问题无法在网页显示-生成图片"><a href="#解决-pyecharts-在生成-Html-时由于网络问题无法在网页显示-生成图片" class="headerlink" title="解决 pyecharts 在生成 Html 时由于网络问题无法在网页显示 生成图片"></a>解决 pyecharts 在生成 Html 时由于网络问题无法在网页显示 生成图片</h2><h3 id="pyecharts-assets-提供了-pyecharts-的静态资源文件。可通过-localhost-server-或者-notebook-server-启动本地服务。"><a href="#pyecharts-assets-提供了-pyecharts-的静态资源文件。可通过-localhost-server-或者-notebook-server-启动本地服务。" class="headerlink" title="pyecharts-assets 提供了 pyecharts 的静态资源文件。可通过 localhost-server 或者 notebook-server 启动本地服务。"></a>pyecharts-assets 提供了 pyecharts 的静态资源文件。可通过 localhost-server 或者 notebook-server 启动本地服务。</h3><ul><li>Localhost-Server</li></ul><ol><li><p>首先将项目下载到本地</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 通过 git clone</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;pyecharts&#x2F;pyecharts-assets.git</span><br><span class="line"> </span><br><span class="line"># 或者直接下载压缩包</span><br><span class="line">$ wget https:&#x2F;&#x2F;github.com&#x2F;pyecharts&#x2F;pyecharts-assets&#x2F;archive&#x2F;master.zip</span><br></pre></td></tr></table></figure></li><li><p>启动服务器</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd pyecharts-assets</span><br><span class="line">$ python -m http.server</span><br></pre></td></tr></table></figure></li><li><p>设置 host</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 只需要在顶部声明 CurrentConfig.ONLINE_HOST 即可</span><br><span class="line">from pyecharts.globals import CurrentConfig</span><br><span class="line"> </span><br><span class="line">CurrentConfig.ONLINE_HOST &#x3D; &quot;http:&#x2F;&#x2F;127.0.0.1:8000&#x2F;assets&#x2F;&quot;</span><br><span class="line"> </span><br><span class="line"># 接下来所有图形的静态资源文件都会来自刚启动的服务器</span><br><span class="line">from pyecharts.charts import Bar</span><br><span class="line">bar &#x3D; Bar()</span><br></pre></td></tr></table></figure></li></ol><ul><li>Notebook-Server</li></ul><ol><li><p>安装拓展插件</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ cd pyecharts-assets</span><br><span class="line"># 安装并激活插件</span><br><span class="line">$ jupyter nbextension install assets</span><br><span class="line">$ jupyter nbextension enable assets&#x2F;main</span><br></pre></td></tr></table></figure></li><li><p>设置 host</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 只需要在顶部声明 CurrentConfig.ONLINE_HOST 即可</span><br><span class="line">from pyecharts.globals import CurrentConfig, OnlineHostType</span><br><span class="line"></span><br><span class="line"># OnlineHostType.NOTEBOOK_HOST 默认值为 http:&#x2F;&#x2F;localhost:8888&#x2F;nbextensions&#x2F;assets&#x2F;</span><br><span class="line">CurrentConfig.ONLINE_HOST &#x3D; OnlineHostType.NOTEBOOK_HOST</span><br><span class="line"></span><br><span class="line"># 接下来所有图形的静态资源文件都会来自刚启动的服务器</span><br><span class="line">from pyecharts.charts import Bar</span><br><span class="line">bar &#x3D; Bar()</span><br></pre></td></tr></table></figure></li></ol><p><strong>未解决问题 : 需要注意的是对于词云图 任然存在显示白屏问题*</strong></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Pyecharts </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Chrome-Network</title>
       <link href="/2020/08/17/chrome-network/"/>
       <url>/2020/08/17/chrome-network/</url>
