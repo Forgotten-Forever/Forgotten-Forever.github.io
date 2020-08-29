@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Liu">
+    
+    <meta name="description" content="python 学习">
+    
+    
+    
+    
+    
+    
+    <title>Git-command | BLOG</title>
+    <link href="http://yoursite.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/small_bg.jpg');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/https:/cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/null-608fcd3dbda24e58.gif'
+        var previews = 'https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview01.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview02.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview03.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview04.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview05.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview06.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview07.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview08.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview09.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview10.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview11.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview12.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview13.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview15.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://yoursite.com">
+                
+                <!-- 这里background直接使用logo_image(url) -->
+                <style>
+
+                </style>
+                    
+                <div class="navbar-brand"></div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Flask-Study/">Flask_Study</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Windows-problem/">Windows problem</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Linux-study/">Linux_study</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">BLOG</a>
+        >
+        <span>Git-command</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2020/08/29/git-command/">Git-command</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Git/">Git</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-08-29
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2020/08/29/git-command/">Git-command</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2020-08-29
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Git/">Git</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2 id="Git-常用命令以及使用情况"><a href="#Git-常用命令以及使用情况" class="headerlink" title="Git 常用命令以及使用情况"></a>Git 常用命令以及使用情况</h2><h3 id="1-配置-Git"><a href="#1-配置-Git" class="headerlink" title="1. 配置 Git"></a>1. 配置 Git</h3><ul>
+<li><h4 id="配置全局用户"><a href="#配置全局用户" class="headerlink" title="配置全局用户"></a>配置全局用户</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;用户名&quot;</span><br><span class="line">$ git config --global user.email &quot;git账号&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="配置别名-非必要"><a href="#配置别名-非必要" class="headerlink" title="配置别名 (非必要)"></a>配置别名 (非必要)</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global co checkout</span><br><span class="line">$ git config --global ss status</span><br><span class="line">$ git config --global cm commit</span><br><span class="line">$ git config --global br branch</span><br><span class="line">$ git config --global rg reflog</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="删除全局配置"><a href="#删除全局配置" class="headerlink" title="删除全局配置"></a>删除全局配置</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global --unset (别名配置)</span><br><span class="line">$ git config --global --unset user.xxx</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-查看-Git-信息"><a href="#2-查看-Git-信息" class="headerlink" title="2. 查看 Git 信息"></a>2. 查看 Git 信息</h3><ul>
+<li><h4 id="查看系统配置"><a href="#查看系统配置" class="headerlink" title="查看系统配置"></a>查看系统配置</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="查看用户配置"><a href="#查看用户配置" class="headerlink" title="查看用户配置"></a>查看用户配置</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~&#x2F;.gitconfig</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="查看当前项目的-git-配置"><a href="#查看当前项目的-git-配置" class="headerlink" title="查看当前项目的 git 配置"></a>查看当前项目的 git 配置</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat .git&#x2F;config</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="查看暂存区文件"><a href="#查看暂存区文件" class="headerlink" title="查看暂存区文件"></a>查看暂存区文件</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git ls-files</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="查看本地-git-命令历史"><a href="#查看本地-git-命令历史" class="headerlink" title="查看本地 git 命令历史"></a>查看本地 git 命令历史</h4><h5 id="显示的是一个-HEAD-指向发生改变的时间列表，"><a href="#显示的是一个-HEAD-指向发生改变的时间列表，" class="headerlink" title="(显示的是一个 HEAD 指向发生改变的时间列表，"></a>(显示的是一个 HEAD 指向发生改变的时间列表，</h5><h5 id="在切换分支、git-commit-提交、git-reset-撤销-commit时-HEAD-指向改变，可以使用-git-reset-head-02b5293-恢复"><a href="#在切换分支、git-commit-提交、git-reset-撤销-commit时-HEAD-指向改变，可以使用-git-reset-head-02b5293-恢复" class="headerlink" title="在切换分支、git commit 提交、git reset 撤销 commit时 HEAD 指向改变，可以使用 git reset --head 02b5293 恢复"></a>在切换分支、<code>git commit</code> 提交、<code>git reset</code> 撤销 commit时 HEAD 指向改变，可以使用 <code>git reset --head 02b5293</code> 恢复</h5><h5 id="在-git-checkout-lt-filename-gt-撤销、git-stash-存储文件时-HEAD-不会改变，这些修改也没有被提交，不可恢复"><a href="#在-git-checkout-lt-filename-gt-撤销、git-stash-存储文件时-HEAD-不会改变，这些修改也没有被提交，不可恢复" class="headerlink" title="在 git checkout -- &lt;filename&gt; 撤销、git stash 存储文件时 HEAD 不会改变，这些修改也没有被提交，不可恢复"></a>在 <code>git checkout -- &lt;filename&gt;</code> 撤销、<code>git stash</code> 存储文件时 HEAD 不会改变，这些修改也没有被提交，不可恢复</h5><h5 id="git-reflog-会被定期清理"><a href="#git-reflog-会被定期清理" class="headerlink" title="git reflog 会被定期清理)"></a>git reflog 会被定期清理)</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reflog</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="查看所有-git-命令"><a href="#查看所有-git-命令" class="headerlink" title="查看所有 git 命令"></a>查看所有 git 命令</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git --help -a</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="查看当前-HERD-指向"><a href="#查看当前-HERD-指向" class="headerlink" title="查看当前 HERD 指向"></a>查看当前 HERD 指向</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat .git&#x2F;HEAD</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="git-查看多页文件时-D-向下翻一行-F-向下翻页-B-向上翻页-Q-退出"><a href="#git-查看多页文件时-D-向下翻一行-F-向下翻页-B-向上翻页-Q-退出" class="headerlink" title="git 查看多页文件时, D 向下翻一行, F 向下翻页, B 向上翻页, Q 退出"></a>git 查看多页文件时, <strong>D</strong> 向下翻一行, <strong>F</strong> 向下翻页, <strong>B</strong> 向上翻页, <strong>Q</strong> 退出</h4></li>
+<li><h4 id="git-查看提交历史"><a href="#git-查看提交历史" class="headerlink" title="git 查看提交历史"></a>git 查看提交历史</h4><ul>
+<li>git 中一条分支就是一个指针，新建一条分支就是基于当前指针新建一个指针</li>
+<li>切换分支 : 将HEAD指向某条分支 (指针)</li>
+<li>切换至某个 commit : 将 HEAD 指向某个 commit</li>
+<li><code>git log --graph</code> 图形化符号含义<ul>
+<li><code>*</code> : 一次 commit</li>
+<li><code>|</code> : 分支前进</li>
+<li><code>/</code> : 分叉</li>
+<li><code>\</code> : 分之合入</li>
+<li><code>|/</code> : 新分支<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ git log --online                --&gt; 将 commit 记录 逐行显示</span><br><span class="line">            --grep&#x3D;&quot;关键字&quot;        --&gt; 查找 commit 提交注释 中与关键字有关的记录</span><br><span class="line">            --graph               --&gt; 记录图形化显示</span><br><span class="line">            --all                 --&gt; 将所有记录详细显示出来</span><br><span class="line">            --author &quot;username&quot;   --&gt; 查找此作者的提交记录</span><br><span class="line">            --reverse             --&gt; 将 commit 提交记录倒序显示</span><br><span class="line">            -num                  --&gt; 显示最近 num 次提交 git log -10</span><br><span class="line">            -p                    --&gt; 显示每次提交引入的差异 (按 补丁 的格式输出)</span><br><span class="line">            --before &#x3D; 1 day&#x2F;1 week&#x2F;1 &quot;2020-08-29&quot;    --&gt; 查找规定时间之前的记录 (一天， 一周)</span><br><span class="line">            --after &#x3D; &quot;2020-8-23&quot; --&gt; 查找规定时间之后的操作</span><br><span class="line">            --stat                --&gt; 显示每次更新的文件修改信息统计,会列出具体文件列表</span><br><span class="line">            --abbrev-commit       --&gt; 仅显示 SHA-1 的前几个字符，而非所有 40 个字符</span><br><span class="line">            --pretty&#x3D;format:&quot;xxx&quot; --&gt; 可以定制要显示的记录格式</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-Git-常用命令"><a href="#3-Git-常用命令" class="headerlink" title="3. Git 常用命令"></a>3. Git 常用命令</h3><ul>
+<li><h4 id="查看工作区和暂存区的状态"><a href="#查看工作区和暂存区的状态" class="headerlink" title="查看工作区和暂存区的状态"></a>查看工作区和暂存区的状态</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="add-将工作区的文件提交到暂存区"><a href="#add-将工作区的文件提交到暂存区" class="headerlink" title="add 将工作区的文件提交到暂存区"></a><code>add</code> 将工作区的文件提交到暂存区</h4><ul>
+<li><h5 id="添加指定文件到暂存区-追踪新增的指定文件"><a href="#添加指定文件到暂存区-追踪新增的指定文件" class="headerlink" title="添加指定文件到暂存区 (追踪新增的指定文件)"></a>添加指定文件到暂存区 (追踪新增的指定文件)</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add [file1] [file2] ...</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="添加指定文件到暂存区，包括子目录"><a href="#添加指定文件到暂存区，包括子目录" class="headerlink" title="添加指定文件到暂存区，包括子目录"></a>添加指定文件到暂存区，包括子目录</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add [dir]</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="添加当前目录的所有文件到暂存区（追踪所有新增的文件）"><a href="#添加当前目录的所有文件到暂存区（追踪所有新增的文件）" class="headerlink" title="添加当前目录的所有文件到暂存区（追踪所有新增的文件）"></a>添加当前目录的所有文件到暂存区（追踪所有新增的文件）</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">  &lt;&#x3D;&#x3D;&gt;</span><br><span class="line">$ git add -a</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="删除工作区-暂存区的文件"><a href="#删除工作区-暂存区的文件" class="headerlink" title="删除工作区/暂存区的文件"></a>删除工作区/暂存区的文件</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm [file1] [file2] ...</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="停止追踪指定文件，但该文件会保留在工作区"><a href="#停止追踪指定文件，但该文件会保留在工作区" class="headerlink" title="停止追踪指定文件，但该文件会保留在工作区"></a>停止追踪指定文件，但该文件会保留在工作区</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cached [file]</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="改名工作区-暂存区的文件"><a href="#改名工作区-暂存区的文件" class="headerlink" title="改名工作区/暂存区的文件"></a>改名工作区/暂存区的文件</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mv [old_filename] [new_filename]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h4 id="commit-将暂存区文件提交到本地仓库"><a href="#commit-将暂存区文件提交到本地仓库" class="headerlink" title="commit 将暂存区文件提交到本地仓库"></a><code>commit</code> 将暂存区文件提交到本地仓库</h4><ul>
+<li><h5 id="将暂存区的文件提交到本地仓库并添加提交说明"><a href="#将暂存区的文件提交到本地仓库并添加提交说明" class="headerlink" title="将暂存区的文件提交到本地仓库并添加提交说明"></a>将暂存区的文件提交到本地仓库并添加提交说明</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;本次提交说明&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="跳过验证继续提交"><a href="#跳过验证继续提交" class="headerlink" title="跳过验证继续提交"></a>跳过验证继续提交</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git commit --no-verify</span><br><span class="line">$ git commit -n</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="add-和-commit-合并，便捷写法-未追踪的文件无法提交"><a href="#add-和-commit-合并，便捷写法-未追踪的文件无法提交" class="headerlink" title="add 和 commit 合并，便捷写法 (未追踪的文件无法提交)"></a>add 和 commit 合并，便捷写法 (未追踪的文件无法提交)</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -am &quot;本次提交说明&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="编辑器会弹出上一次提交的信息，可以在这里修改提交信息-既可以修改上次提交的文件内容，也可以修改上次提交的说明"><a href="#编辑器会弹出上一次提交的信息，可以在这里修改提交信息-既可以修改上次提交的文件内容，也可以修改上次提交的说明" class="headerlink" title="编辑器会弹出上一次提交的信息，可以在这里修改提交信息 (既可以修改上次提交的文件内容，也可以修改上次提交的说明)"></a>编辑器会弹出上一次提交的信息，可以在这里修改提交信息 (既可以修改上次提交的文件内容，也可以修改上次提交的说明)</h5><h5 id="如果暂存区有内容，这个新的-commit-会把任何修改内容和上一个-commit-的内容结合起来。如果暂存区没有内容，那么这个操作就只会把上次的-commit-消息重写一遍。-永远不要修复一个已经推送到公共仓库中的提交，会拒绝推送到仓库"><a href="#如果暂存区有内容，这个新的-commit-会把任何修改内容和上一个-commit-的内容结合起来。如果暂存区没有内容，那么这个操作就只会把上次的-commit-消息重写一遍。-永远不要修复一个已经推送到公共仓库中的提交，会拒绝推送到仓库" class="headerlink" title="如果暂存区有内容，这个新的 commit 会把任何修改内容和上一个 commit 的内容结合起来。如果暂存区没有内容，那么这个操作就只会把上次的 commit 消息重写一遍。[永远不要修复一个已经推送到公共仓库中的提交，会拒绝推送到仓库]"></a>如果暂存区有内容，这个新的 commit 会把任何修改内容和上一个 commit 的内容结合起来。如果暂存区没有内容，那么这个操作就只会把上次的 commit 消息重写一遍。[永远不要修复一个已经推送到公共仓库中的提交，会拒绝推送到仓库]</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit --amend</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="修复提交，同时修改提交信息"><a href="#修复提交，同时修改提交信息" class="headerlink" title="修复提交，同时修改提交信息"></a>修复提交，同时修改提交信息</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit --amend -m &quot;本次提交说明&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="加入-–no-edit-标记会修复提交但不修改提交信息，编辑器不会弹出上一次提交的信息"><a href="#加入-–no-edit-标记会修复提交但不修改提交信息，编辑器不会弹出上一次提交的信息" class="headerlink" title="加入 –no-edit 标记会修复提交但不修改提交信息，编辑器不会弹出上一次提交的信息"></a>加入 –no-edit 标记会修复提交但不修改提交信息，编辑器不会弹出上一次提交的信息</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend --no-edit</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h4 id="将本地分支与远程分支关联"><a href="#将本地分支与远程分支关联" class="headerlink" title="将本地分支与远程分支关联"></a>将本地分支与远程分支关联</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push -u origin BranchName</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="将本地仓库文件推送到远程分支-如果远程仓库没有这个分支，会新建一个同名远程分支，省略分支名代表两者同名-分支推送顺序-lt-来源地-gt-lt-目的地-gt"><a href="#将本地仓库文件推送到远程分支-如果远程仓库没有这个分支，会新建一个同名远程分支，省略分支名代表两者同名-分支推送顺序-lt-来源地-gt-lt-目的地-gt" class="headerlink" title="将本地仓库文件推送到远程分支,如果远程仓库没有这个分支，会新建一个同名远程分支，省略分支名代表两者同名 (分支推送顺序 [&lt;来源地&gt; : &lt;目的地&gt;])"></a>将本地仓库文件推送到远程分支,如果远程仓库没有这个分支，会新建一个同名远程分支，省略分支名代表两者同名 (分支推送顺序 [&lt;来源地&gt; : &lt;目的地&gt;])</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</span><br><span class="line">$ git push origin BranchName</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="省略本地分支名，表示删除指定的远程分支-lt-gt-推送一个空的本地分支到远程分支"><a href="#省略本地分支名，表示删除指定的远程分支-lt-gt-推送一个空的本地分支到远程分支" class="headerlink" title="省略本地分支名，表示删除指定的远程分支 &lt;==&gt; 推送一个空的本地分支到远程分支"></a>省略本地分支名，表示删除指定的远程分支 &lt;==&gt; 推送一个空的本地分支到远程分支</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin :master</span><br><span class="line">  &lt;&#x3D;&#x3D;&gt;</span><br><span class="line">$ git push origin --delete master</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机"><a href="#不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机" class="headerlink" title="不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机"></a>不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push --all origin</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="建立当前分支和远程分支的追踪关系-如果当前分支与远程分支之间存在追踪关系-推送时则可以省略分支和-u"><a href="#建立当前分支和远程分支的追踪关系-如果当前分支与远程分支之间存在追踪关系-推送时则可以省略分支和-u" class="headerlink" title="建立当前分支和远程分支的追踪关系 (如果当前分支与远程分支之间存在追踪关系, 推送时则可以省略分支和 -u)"></a>建立当前分支和远程分支的追踪关系 (如果当前分支与远程分支之间存在追踪关系, 推送时则可以省略分支和 -u)</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 不存在追踪</span><br><span class="line">$ git push -u origin master </span><br><span class="line"># 存在 追踪</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="如果远程主机的版本比本地版本更新，推送时-Git-会报错，要求先在本地做-git-pull-合并差异，然后再推送到远程主机。这时，如果你一定要推送，可以使用-–-force-选项-尽量避免使用"><a href="#如果远程主机的版本比本地版本更新，推送时-Git-会报错，要求先在本地做-git-pull-合并差异，然后再推送到远程主机。这时，如果你一定要推送，可以使用-–-force-选项-尽量避免使用" class="headerlink" title="如果远程主机的版本比本地版本更新，推送时 Git 会报错，要求先在本地做 git pull 合并差异，然后再推送到远程主机。这时，如果你一定要推送，可以使用 –-force 选项 (尽量避免使用)"></a>如果远程主机的版本比本地版本更新，推送时 Git 会报错，要求先在本地做 git pull 合并差异，然后再推送到远程主机。这时，如果你一定要推送，可以使用 –-force 选项 (尽量避免使用)</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push --force origin | git push -f origin</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h4 id="拉取远程分支的代码到本地镜像仓库"><a href="#拉取远程分支的代码到本地镜像仓库" class="headerlink" title="拉取远程分支的代码到本地镜像仓库"></a>拉取远程分支的代码到本地镜像仓库</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="拉取并合并项目其他人的一个分支-lt-gt-fetch-merge"><a href="#拉取并合并项目其他人的一个分支-lt-gt-fetch-merge" class="headerlink" title="拉取并合并项目其他人的一个分支 &lt;==&gt; fetch + merge"></a>拉取并合并项目其他人的一个分支 &lt;==&gt; fetch + merge</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git pull origin BranchName</span><br><span class="line">    &lt;&#x3D;&#x3D;&gt;</span><br><span class="line">$ git fetch origin BranchName</span><br><span class="line">$ git merge origin&#x2F;BranchName</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h4 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h4><ol>
+<li><h5 id="默认-fast-forward-，HEAD-指针直接指向被合并的分支"><a href="#默认-fast-forward-，HEAD-指针直接指向被合并的分支" class="headerlink" title="默认 fast-forward ，HEAD 指针直接指向被合并的分支"></a>默认 fast-forward ，HEAD 指针直接指向被合并的分支</h5><h5 id="在当前分支的提交历史中添加进被合并分支的提交历史"><a href="#在当前分支的提交历史中添加进被合并分支的提交历史" class="headerlink" title="在当前分支的提交历史中添加进被合并分支的提交历史"></a>在当前分支的提交历史中添加进被合并分支的提交历史</h5> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge BranchName</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="禁止快进式合并"><a href="#禁止快进式合并" class="headerlink" title="禁止快进式合并"></a>禁止快进式合并</h5><h5 id="生成一个新的提交-，会让当前分支的提交历史不会那么乱"><a href="#生成一个新的提交-，会让当前分支的提交历史不会那么乱" class="headerlink" title="[生成一个新的提交]，会让当前分支的提交历史不会那么乱"></a>[生成一个新的提交]，会让当前分支的提交历史不会那么乱</h5> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge --no-ff</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="squash：-不会生成新的提交-，会将被合并分支多次提交的内容直接存到工作区和暂存区，由开发者手动去提交，这样当前分支最终只会多出一条提交记录，不会掺杂被合并分支的提交历史"><a href="#squash：-不会生成新的提交-，会将被合并分支多次提交的内容直接存到工作区和暂存区，由开发者手动去提交，这样当前分支最终只会多出一条提交记录，不会掺杂被合并分支的提交历史" class="headerlink" title="squash：[不会生成新的提交]，会将被合并分支多次提交的内容直接存到工作区和暂存区，由开发者手动去提交，这样当前分支最终只会多出一条提交记录，不会掺杂被合并分支的提交历史"></a>squash：[不会生成新的提交]，会将被合并分支多次提交的内容直接存到工作区和暂存区，由开发者手动去提交，这样当前分支最终只会多出一条提交记录，不会掺杂被合并分支的提交历史</h5> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge --squash</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><h4 id="查看本地分支"><a href="#查看本地分支" class="headerlink" title="查看本地分支"></a>查看本地分支</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch </span><br><span class="line">  &lt;&#x3D;&#x3D;&gt; </span><br><span class="line">$ git branch -l</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="查看本地分支对应的远程分支"><a href="#查看本地分支对应的远程分支" class="headerlink" title="查看本地分支对应的远程分支"></a>查看本地分支对应的远程分支</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -vv</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a>查看远程分支</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -r</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="查看所有分支-包括本地分支与远程分支"><a href="#查看所有分支-包括本地分支与远程分支" class="headerlink" title="查看所有分支 (包括本地分支与远程分支)"></a>查看所有分支 (包括本地分支与远程分支)</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h6 id="查看所有分支包括最新的提交信息"><a href="#查看所有分支包括最新的提交信息" class="headerlink" title="查看所有分支包括最新的提交信息"></a>查看所有分支包括最新的提交信息</h6>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -av</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="新建分支，在别的分支下新建一个分支，新分支会复制当前分支的内容，-注意：如果当前分支有修改，但是没有提交到仓库，此时修改的内容是不会被复制到新分支的"><a href="#新建分支，在别的分支下新建一个分支，新分支会复制当前分支的内容，-注意：如果当前分支有修改，但是没有提交到仓库，此时修改的内容是不会被复制到新分支的" class="headerlink" title="新建分支，在别的分支下新建一个分支，新分支会复制当前分支的内容，(注意：如果当前分支有修改，但是没有提交到仓库，此时修改的内容是不会被复制到新分支的)"></a>新建分支，在别的分支下新建一个分支，新分支会复制当前分支的内容，(注意：如果当前分支有修改，但是没有提交到仓库，此时修改的内容是不会被复制到新分支的)</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch BranchName</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="切换分支-切换分支时，本地工作区，仓库都会相应切换到对应分支的内容"><a href="#切换分支-切换分支时，本地工作区，仓库都会相应切换到对应分支的内容" class="headerlink" title="切换分支 (切换分支时，本地工作区，仓库都会相应切换到对应分支的内容)"></a>切换分支 (切换分支时，本地工作区，仓库都会相应切换到对应分支的内容)</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout BranchName</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h6 id="创建并切换到新建分支"><a href="#创建并切换到新建分支" class="headerlink" title="创建并切换到新建分支"></a>创建并切换到新建分支</h6>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b BranchName</span><br></pre></td></tr></table></figure>
+</li>
+<li><h6 id="基于-master-分支新建一个分支，并切换到该分支"><a href="#基于-master-分支新建一个分支，并切换到该分支" class="headerlink" title="基于 master 分支新建一个分支，并切换到该分支"></a>基于 master 分支新建一个分支，并切换到该分支</h6>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b BranchName master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="删除本地分支，会阻止删除包含未合并并更改的分支"><a href="#删除本地分支，会阻止删除包含未合并并更改的分支" class="headerlink" title="删除本地分支，会阻止删除包含未合并并更改的分支"></a>删除本地分支，会阻止删除包含未合并并更改的分支</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d BranchName</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h6 id="强制删除一个本地分支，即使有未合并并更改的分支"><a href="#强制删除一个本地分支，即使有未合并并更改的分支" class="headerlink" title="强制删除一个本地分支，即使有未合并并更改的分支"></a>强制删除一个本地分支，即使有未合并并更改的分支</h6>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -D BranchName</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="修改当前分支名"><a href="#修改当前分支名" class="headerlink" title="修改当前分支名"></a>修改当前分支名</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -m BranchName</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h4 id="临时将工作区文件修改保存至堆栈，用于后续恢复当前工作区内容-以便于新建一个分支进行操作而不被当前分支影响"><a href="#临时将工作区文件修改保存至堆栈，用于后续恢复当前工作区内容-以便于新建一个分支进行操作而不被当前分支影响" class="headerlink" title="临时将工作区文件修改保存至堆栈，用于后续恢复当前工作区内容 (以便于新建一个分支进行操作而不被当前分支影响)"></a>临时将工作区文件修改保存至堆栈，用于后续恢复当前工作区内容 (以便于新建一个分支进行操作而不被当前分支影响)</h4><h4 id="如果文件没有提交到暂存区-（使用-git-add-追踪新的文件）-，使用该命令会提示-No-local-changes-to-save-，无法将修改保存到堆栈中"><a href="#如果文件没有提交到暂存区-（使用-git-add-追踪新的文件）-，使用该命令会提示-No-local-changes-to-save-，无法将修改保存到堆栈中" class="headerlink" title="如果文件没有提交到暂存区[（使用 git add . 追踪新的文件）]，使用该命令会提示 No local changes to save ，无法将修改保存到堆栈中"></a>如果文件没有提交到暂存区[（使用 git add . 追踪新的文件）]，使用该命令会提示 No local changes to save ，无法将修改保存到堆栈中</h4><ol>
+<li><h5 id="将所有未提交的修改（提交到暂存区）保存至堆栈中"><a href="#将所有未提交的修改（提交到暂存区）保存至堆栈中" class="headerlink" title="将所有未提交的修改（提交到暂存区）保存至堆栈中"></a>将所有未提交的修改（提交到暂存区）保存至堆栈中</h5> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="给本次存储加个备注，以防时间久了忘了"><a href="#给本次存储加个备注，以防时间久了忘了" class="headerlink" title="给本次存储加个备注，以防时间久了忘了"></a>给本次存储加个备注，以防时间久了忘了</h5> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git status save &quot;临时存储&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="查看存储记录"><a href="#查看存储记录" class="headerlink" title="查看存储记录"></a>查看存储记录</h5> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash list</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="在-Windows-上和-PowerShell-中，需要加双引号"><a href="#在-Windows-上和-PowerShell-中，需要加双引号" class="headerlink" title="在 Windows 上和 PowerShell 中，需要加双引号"></a>在 Windows 上和 PowerShell 中，需要加双引号</h5><ul>
+<li><h6 id="在-Windows-上和-PowerShell-中，需要加双引号-1"><a href="#在-Windows-上和-PowerShell-中，需要加双引号-1" class="headerlink" title="在 Windows 上和 PowerShell 中，需要加双引号"></a>在 Windows 上和 PowerShell 中，需要加双引号</h6>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash apply &quot;stash@&#123;index&#125;&quot;</span><br></pre></td></tr></table></figure></li>
+<li><h6 id="恢复的同时把-stash-记录也删了"><a href="#恢复的同时把-stash-记录也删了" class="headerlink" title="恢复的同时把 stash 记录也删了"></a>恢复的同时把 stash 记录也删了</h6>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash pop &quot;stash@&#123;index&#125;&quot;</span><br></pre></td></tr></table></figure></li>
+<li><h6 id="删除-stash-记录"><a href="#删除-stash-记录" class="headerlink" title="删除 stash 记录"></a>删除 stash 记录</h6>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash drop &quot;stash@&#123;index&#125;&quot;</span><br></pre></td></tr></table></figure></li>
+<li><h5 id="删除所有存储的进度"><a href="#删除所有存储的进度" class="headerlink" title="删除所有存储的进度"></a>删除所有存储的进度</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash clear</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><h5 id="你接到一个修复紧急-bug-的任务时候，一般都是先创建一个新的-bug-分支来修复它，然后合并，最后删除。"><a href="#你接到一个修复紧急-bug-的任务时候，一般都是先创建一个新的-bug-分支来修复它，然后合并，最后删除。" class="headerlink" title="你接到一个修复紧急 bug 的任务时候，一般都是先创建一个新的 bug 分支来修复它，然后合并，最后删除。"></a>你接到一个修复紧急 bug 的任务时候，一般都是先创建一个新的 bug 分支来修复它，然后合并，最后删除。</h5><h5 id="但是，如果当前你正在开发功能中，短时间还无法完成，无法直接提交到仓库，这时候可以先把当前工作区的内容-git-stash-一下，然后去修复-bug，修复后，再-git-stash-pop，恢复之前的工作内容。"><a href="#但是，如果当前你正在开发功能中，短时间还无法完成，无法直接提交到仓库，这时候可以先把当前工作区的内容-git-stash-一下，然后去修复-bug，修复后，再-git-stash-pop，恢复之前的工作内容。" class="headerlink" title="但是，如果当前你正在开发功能中，短时间还无法完成，无法直接提交到仓库，这时候可以先把当前工作区的内容 git stash 一下，然后去修复 bug，修复后，再 git stash pop，恢复之前的工作内容。"></a>但是，如果当前你正在开发功能中，短时间还无法完成，无法直接提交到仓库，这时候可以先把当前工作区的内容 git stash 一下，然后去修复 bug，修复后，再 git stash pop，恢复之前的工作内容。</h5></li>
+</ul>
+</li>
+<li><h4 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h4><ul>
+<li><h5 id="查看工作区和暂存区单个文件的对比"><a href="#查看工作区和暂存区单个文件的对比" class="headerlink" title="查看工作区和暂存区单个文件的对比"></a>查看工作区和暂存区单个文件的对比</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git diff filename</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="查看工作区和暂存区所有文件的对比"><a href="#查看工作区和暂存区所有文件的对比" class="headerlink" title="查看工作区和暂存区所有文件的对比"></a>查看工作区和暂存区所有文件的对比</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git diff</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="查看工作区和暂存区所有文件的对比，并显示出所有有差异的文件列表"><a href="#查看工作区和暂存区所有文件的对比，并显示出所有有差异的文件列表" class="headerlink" title="查看工作区和暂存区所有文件的对比，并显示出所有有差异的文件列表"></a>查看工作区和暂存区所有文件的对比，并显示出所有有差异的文件列表</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git diff --stat</span><br><span class="line"># 1.你修改了某个文件，但是没有提交到暂存区，这时候会有对比的内容</span><br><span class="line"># 一旦提交到暂存区，就不会有对比的内容(因为暂存区已经更新)</span><br><span class="line"># 2.如果你新建了一个文件，但是没有提交到暂存区，这时候 diff 是没有结果的</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="查看远程分支和本地分支的对比"><a href="#查看远程分支和本地分支的对比" class="headerlink" title="查看远程分支和本地分支的对比"></a>查看远程分支和本地分支的对比</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git diff origin&#x2F;branchname..branchname</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="查看两个本地分支所有的对比"><a href="#查看两个本地分支所有的对比" class="headerlink" title="查看两个本地分支所有的对比"></a>查看两个本地分支所有的对比</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git diff branchname..branchname</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h3 id="remote"><a href="#remote" class="headerlink" title="remote"></a>remote</h3><ul>
+<li><h4 id="查看所有远程主机"><a href="#查看所有远程主机" class="headerlink" title="查看所有远程主机"></a>查看所有远程主机</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="查看关联的远程仓库的详细信息"><a href="#查看关联的远程仓库的详细信息" class="headerlink" title="查看关联的远程仓库的详细信息"></a>查看关联的远程仓库的详细信息</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="删除远程仓库的-“关联”"><a href="#删除远程仓库的-“关联”" class="headerlink" title="删除远程仓库的 “关联”"></a>删除远程仓库的 “关联”</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote rm ProjectName</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="设置远程仓库的-“关联”"><a href="#设置远程仓库的-“关联”" class="headerlink" title="设置远程仓库的 “关联”"></a>设置远程仓库的 “关联”</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote set-url origin &lt;newurl&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Liu
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/null-608fcd3dbda24e58.gif" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>python 学习</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/29/git-command/">Git-command</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/27/git-reset-shi-yong-diao-keng/">Git-reset使用掉坑</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/22/getting-start-with-git/">Getting-start-with-Git</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/22/pyechart-local-service/">pyechart_local_service</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/17/chrome-network/">Chrome-Network</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/15/chrome-elements/">Chrome-Elements</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/13/pyecharts-funnel/">pyecharts-Funnel</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/12/python-pep8/">Python_PEP8编程风格规范</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/10/pyecharts-liquid/">pyecharts-Liquid</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/08/flask-note2/">Flask-note2</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/05/save-git-problem/">Windows下 Git 因移动文件夹导致的问题及解决</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/27/css-note/">css_note</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/12/python-pep8/">Python_PEP8编程风格规范</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/15/chrome-elements/">Chrome-Elements</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/17/chrome-network/">Chrome-Network</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/22/getting-start-with-git/">Getting-start-with-Git</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/29/git-command/">Git-command</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2020/08/29/git-command/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/08/29/git-command/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/08/29/git-command/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Flask-Study/" style="font-size: 12.517616035849144px;" class="tag-cloud-link">Flask_Study</a>
+    
+    <a href="/tags/Windows-problem/" style="font-size: 18.125680441887127px;" class="tag-cloud-link">Windows problem</a>
+    
+    <a href="/tags/Linux-study/" style="font-size: 14.052922091974562px;" class="tag-cloud-link">Linux_study</a>
+    
+    <a href="/tags/scrapy-study/" style="font-size: 13.78381986687087px;" class="tag-cloud-link">scrapy_study</a>
+    
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 12.229890289693426px;" class="tag-cloud-link">前端学习</a>
+    
+    <a href="/tags/Pyecharts/" style="font-size: 18.627187869941185px;" class="tag-cloud-link">Pyecharts</a>
+    
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 12.007513422263461px;" class="tag-cloud-link">Python 模块</a>
+    
+    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 16.448981307232742px;" class="tag-cloud-link">PEP8 编程风格规范</a>
+    
+    <a href="/tags/Chrome-DevTools/" style="font-size: 11.22096202128484px;" class="tag-cloud-link">Chrome DevTools</a>
+    
+    <a href="/tags/Git/" style="font-size: 13.346161141176943px;" class="tag-cloud-link">Git</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://www.crushing.xyz/" target="_blank">GODLIN</a>
+    </li>
+    
+    <li>
+        <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/#id9" target="_blank">BeautifulSoup 中文文档</a>
+    </li>
+    
+    <li>
+        <a href="https://requests.readthedocs.io/zh_CN/latest/user/quickstart.html" target="_blank">Requests 中文文档</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/forgotten-forever" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/xia-chong-yu-bing-74-74" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Liu Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <script type="text/javascript" src="\js\FunnyTitle.js"></script>
+    <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"scripFrom":"local","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"heigut":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: 'https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/background',
+      ext: 'jpg',
+      maxCount: '10'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
