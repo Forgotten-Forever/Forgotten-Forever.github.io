@@ -132,15 +132,15 @@
                         
                         
                         <li>
+                            <a href="/tags/Chrome-DevTools/">Chrome DevTools</a>
+                        </li>
+                        
+                        <li>
                             <a href="/tags/Flask-Study/">Flask_Study</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/Windows-problem/">Windows problem</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/tags/Linux-study/">Linux_study</a>
+                            <a href="/tags/Git/">Git</a>
                         </li>
                         
                         
@@ -223,175 +223,355 @@
         </center>
     </div>
     <div class="content-article">
-        <h1 id="模块制作"><a href="#模块制作" class="headerlink" title="模块制作"></a>模块制作</h1><pre><code>1. **&quot;&quot;&quot; &quot;&quot;&quot; / #** : `顶格写的注释被称为文档 (__doc__)，在模块中的注释与帮助，可以通过 help(model_name) 查看`
-2. **import model_name / from model_name import function_name**</code></pre><h1 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h1><pre><code>1. **random 随机模块**
-    1. `random.random     随机生成 0~1 间小数`
-    2. `random.randint    随机生成指定范围的整数，包含上下限`
-    3. `random.randrange  随机生成指定 range 范围的整数，不包含上限    randrange(self, start, stop=None, step=1, _int=int)`
-    4. `random.choice     随机获取指定序列的一个元素`
-    5. `random.sample     随机获取指定序列的指定个元素 sample(self, population, k) (k:获取元素数目，population:指定序列(列表))`
-    6. `random.shuffle    随机打乱序列(列表)数据`
-2. **pip 内置包管理工具**
-    1. `pip install package (-i 国内源地址  换源)`
-    2. `pip uninstall package`
-    3. `pip list  展示`
-    4. `pip update 更新`
-    5. `windows 安装不上部分包`
-        1. `安装 wheel 包 (先支持安装 .whl 包)`
-        2. `pip install package.whl`
-    6. `linux 压缩包安装`
-        1. `解压`
-        2. `找到 setup.py`
-        3. `python setup.py install 安装包`
-3. **os 路径**
-    1. `os.system(&quot;cmd命令&quot;) 调用 cmd 并执行命令`
-    2. `os.chdir  修改 python 工作路径 os.chdir(&quot;D:\\&quot;)`
-    3. `os.mkdir  创建文件夹，在当前路径下`
-    4. `os.path`
-        1. `os.path.isdir   是否是文件夹`
-        2. `os.path.getsize 获取文件/夹大小`
-        3. `os.path.join(&apos;a&apos;, &apos;b&apos;)   自动拼接成路径 ==&gt; &apos;a\\b&apos;`
-        4. `os.path.dirname 返回文件目录，可以嵌套一直向上返回目录`
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; os.path.dirname(os.path.dirname(os.path.abspath(&#39;board&#39;)))</span><br><span class="line">     &#39;E:\\python_study\\Django&#39;</span><br></pre></td></tr></table></figure>
-        5. `os.path.abspath 绝对路径`
-4. **sys 系统**
-    1. `sys.argv 接收调用python脚本时传递的参数，以列表格式，第一个参数是文件本身相对路径`
-    2. `sys.exit()    涉及到时间以及内存分配方面释放`
-5. **file** : 
-    `open(file, mode=&apos;r&apos;, buffering=None, encoding=None, errors=None, newline=None, closefd=True) 读取文件`
-6. **WordCloud 词云模块**
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install wordcloud</span><br></pre></td></tr></table></figure>
-    1. `常用参数`
-        + `width 词云图片宽度，默认400像素`
-        + `height 词云图片高度 默认200像素`
-        + `background_color 词云图片的背景颜色，默认为黑色`
-        + `font_step 字号增大的步进间隔 默认1号`
-        + `font_path 指定字体路径 默认None，对于中文可用font_path=&apos;msyh.ttc&apos;`
-        + `mini_font_size 最小字号 默认4号`
-        + `max_font_size 最大字号 根据高度自动调节`
-        + `max_words 最大词数 默认200`
-        + `stop_words 不显示的单词 stop_words={&quot;python&quot;,&quot;java&quot;}`
-        + `Scale 默认值1。值越大，图像密度越大越清晰`
-        + `prefer_horizontal：默认值0.90，浮点数类型。表示在水平如果不合适，就旋转为垂直方向，水平放置的词数占0.9？`
-        + `relative_scaling：默认值0.5，浮点型。设定按词频倒序排列，上一个词相对下一位词的大小倍数。有如下取值：“0”表示大小标准只参考频率排名，“1”如果词频是2倍，大小也是2倍`
-        + `mask 指定词云形状图片，默认为矩形`
-          `通过以下代码读入外部词云形状图片（需要先pip install imageio安装imageio）`
-           <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> imageio</span><br><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud</span><br><span class="line">mk = imageio.imread(<span class="string">"picture.png"</span>)</span><br><span class="line">w = WordCloud(mask=mk)</span><br></pre></td></tr></table></figure>
-7. **jieba 中文分词**
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install jieba</span><br></pre></td></tr></table></figure>
-    1. `方法`
-        + `jieba.cut: 返回的结构是一个可迭代的 generator，可以使用 for 循环来获得分词后得到的每一个词语(unicode)` 
-            + `cut(self, sentence, cut_all=False, HMM=True, use_paddle=False)`
-            + `参数`
-                1. `需要分词的字符串`
-                2. `cut_all 参数: 用来控制是否采用全模式`
-                3. `HMM 参数: 用来控制是否使用 HMM 模型`
-                4. `use_paddle 参数: 用来控制是否使用paddle模式下的分词模式，paddle模式采用延迟加载方式，通过enable_paddle接口安装paddlepaddle-tiny，并且import相关代码`
-        + `jieba.cut_for_search: 返回的结构是一个可迭代的 generator，可以使用 for 循环来获得分词后得到的每一个词语(unicode)`
-            + `cut_for_search(self, sentence, HMM=True)`
-            + `参数`
-                1. `需要分词的字符串`
-                2. `是否使用 HMM 模型。该方法适合用于搜索引擎构建倒排索引的分词，粒度比较细`
-        + `jieba.lcut: 返回list`
-          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lcut</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> list(self.cut(*args, **kwargs))</span><br></pre></td></tr></table></figure>
-        + `jieba.lcut_for_search: 返回 list`
-          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lcut_for_search</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> list(self.cut_for_search(*args, **kwargs))</span><br></pre></td></tr></table></figure>
-8. **turtle 绘图**
-    `turtle: 绘图包`
-    `fillcolor：填充颜色`
-    `begin_fill/end_fill 开始/结束填充`
-    1. 设置画布大小
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">turtle.screensize(canvwidth&#x3D;None,canvheight&#x3D;None,bg&#x3D;None)，</span><br><span class="line">    参数分别为画布的宽(单位像素),高,背景颜色。</span><br><span class="line">如： turtle.screensize(800,600,&quot;green&quot;)</span><br><span class="line">    turtle.screensize()#返回默认大小(400,300)</span><br></pre></td></tr></table></figure>
-    2. 画笔(画笔的属性，颜色、画线的宽度等)
-        + 参数
-            + `turtle.pensize(): 设置画笔的宽度；`
-            + `turtle.pencolor(): 没有参数传入，返回当前画笔颜色，传入参数设置画笔颜色，可以是字符串如&quot;green&quot;,&quot;red&quot;,也可以是RGB3元组。`
-            + `turtle.speed(speed): 设置画笔移动速度，画笔绘制的速度范围[0,10]整数，数字越大越快。`
-            + `turtle.forward(distance): 向当前画笔方向移动distance像素长度`
-            + `turtle.backward(distance): 向当前画笔相反方向移动distance像素长`度
-            + `turtle.right(degree): 顺时针移动degree°`
-            + `turtle.left(degree): 逆时针移动degree°`
-            + `turtle.pendown(): 移动时绘制图形，缺省时也为绘制`
-            + `turtle.goto(x,y): 将画笔移动到坐标为x,y的位置`
-            + `turtle.penup(): 提起笔移动，不绘制图形，用于另起一个地方绘制`
-            + `turtle.circle(): 画圆，半径为正(负)，表示圆心在画笔的左边(右边)画圆`
-            + `setx( ): 将当前x轴移动到指定位置`
-            + `sety( ): 将当前y轴移动到指定位置`
-            + `setheading(angle): 设置当前朝向为angle角度`
-            + `home(): 设置当前画笔位置为原点，朝向东。`
-            + `dot(r): 绘制一个指定直径和颜色的圆点`
-        + 画笔控制命令
-            + `turtle.fillcolor(colorstring): 绘制图形的填充颜色`
-            + `turtle.color(color1, color2): 同时设置pencolor=color1, fillcolor=color2`
-            + `turtle.filling(): 返回当前是否在填充状态`
-            + `turtle.begin_fill(): 准备开始填充图形`
-            + `turtle.end_fill(): 填充完成`
-            + `turtle.hideturtle(): 隐藏画笔的turtle形状`
-            + `turtle.showturtle(): 显示画笔的turtle形状`
-        + 全局控制命令
-            + `turtle.clear(): 清空turtle窗口，但是turtle的位置和状态不会改变`
-            + `turtle.reset(): 清空窗口，重置turtle状态为起始状态`
-            + `turtle.undo(): 撤销上一个turtle动作`
-            + `turtle.isvisible(): 返回当前turtle是否可见`
-            + `stamp(): 复制当前图形`
-            + `turtle.write(s [,font=(&quot;font-name&quot;,font_size,&quot;font_type&quot;)]): 写文本，s为文本内容，font是字体的参数，分别为字体名称，大小和类型；font为可选项，font参数也是可选项`
-            + `turtle.delay(delay=None): 设置或返回以毫秒为单位的绘图延迟`
-9. **MyQR 二维码生成器** 
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">from MyQR import myqr</span><br><span class="line">import os</span><br><span class="line">myqr.run(</span><br><span class="line">        word &#x3D; &#39;&#39;,           # 可以是字符串也可以是网址 (网址前加 http(s):&#x2F;&#x2F;)</span><br><span class="line">        version &#x3D; 1,         # 容错率等级 1 为最高</span><br><span class="line">        level &#x3D; &#39;H&#39;,          # 控制纠错水平，范围是 L, M, Q, H，从左向右依次增高</span><br><span class="line">        picture &#x3D; &#39;&#39;,        # 二维码和图片合成，二维码路径</span><br><span class="line">        colorized &#x3D; &#39;True&#39;,  # 是否为彩色二维码</span><br><span class="line">        contrast &#x3D; 1.0,      # 调节图片对比度, 1.0 表示原始图片，更小的值表示更低对比度，更大反之，1.0 为默认</span><br><span class="line">        brightness &#x3D; 1.0,    # 调节图片亮度，越大越亮，越小越暗</span><br><span class="line">        save_name &#x3D; &#39;&#39;,      # 生成二维码图片名称，可以是 jpg, png, bmp, gif</span><br><span class="line">        save_dir &#x3D; os.getcwd()  # 控制生成位置</span><br><span class="line">        )</span><br></pre></td></tr></table></figure>
-10. **JSON**
-    1. ##### json.dumps()  `将 Python 对象编码成 JSON 字符串`
-    2. ##### json.loads()  `将已编码的 JSON 字符串解码为 Python 对象`
+        <h1 id="模块制作"><a href="#模块制作" class="headerlink" title="模块制作"></a>模块制作</h1><ol>
+<li><p><strong>“”” “”” / #</strong> : <code>顶格写的注释被称为文档 (__doc__)，在模块中的注释与帮助，可以通过 help(model_name) 查看</code></p>
+</li>
+<li><p><strong>import model_name / from model_name import function_name</strong></p>
+<h1 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h1></li>
+<li><p><strong>random 随机模块</strong></p>
+<ol>
+<li><code>random.random     随机生成 0~1 间小数</code></li>
+<li><code>random.randint    随机生成指定范围的整数，包含上下限</code></li>
+<li><code>random.randrange  随机生成指定 range 范围的整数，不包含上限    randrange(self, start, stop=None, step=1, _int=int)</code></li>
+<li><code>random.choice     随机获取指定序列的一个元素</code></li>
+<li><code>random.sample     随机获取指定序列的指定个元素 sample(self, population, k) (k:获取元素数目，population:指定序列(列表))</code></li>
+<li><code>random.shuffle    随机打乱序列(列表)数据</code></li>
+</ol>
+</li>
+<li><p><strong>pip 内置包管理工具</strong></p>
+<ol>
+<li><code>pip install package (-i 国内源地址  换源)</code></li>
+<li><code>pip uninstall package</code></li>
+<li><code>pip list  展示</code></li>
+<li><code>pip update 更新</code></li>
+<li><code>windows 安装不上部分包</code><ol>
+<li><code>安装 wheel 包 (先支持安装 .whl 包)</code></li>
+<li><code>pip install package.whl</code></li>
+</ol>
+</li>
+<li><code>linux 压缩包安装</code><ol>
+<li><code>解压</code></li>
+<li><code>找到 setup.py</code></li>
+<li><code>python setup.py install 安装包</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><strong>os 路径</strong></p>
+<ol>
+<li><code>os.system(&quot;cmd命令&quot;) 调用 cmd 并执行命令</code></li>
+<li><code>os.chdir  修改 python 工作路径 os.chdir(&quot;D:\\&quot;)</code></li>
+<li><code>os.mkdir  创建文件夹，在当前路径下</code></li>
+<li><code>os.walk(pwd) 返回一个生成器(generator),遍历得到内容</code><ul>
+<li>每次遍历所得到的返回对象都是一个三元组(path, dirs, files) <ul>
+<li>path : 指的是当前正在遍历的这个文件夹的本身路径地址</li>
+<li>dirs : 内容是该文件夹中所有的目录的名字 (不包括子目录)，有多个以列表返回</li>
+<li>files : 内容是指该文件夹中所有的文件 (不包括子目录)，有多个以列表返回</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>os.csandir()    返回文件详细信息，需要遍历读取</code><ul>
+<li>使用 stat() 方法 查看<ul>
+<li>st_size   : 文件的体积大小 (单位 :bytes /1024 == KB)</li>
+<li>st_atime  : 文件的最近访问时间</li>
+<li>st_mtime  : 文件的最近修改时间</li>
+<li>st_ctime  : Windows 下表示创建时间</li>
+<li>st_birthtime : 只在 Mac、Linux 下可用,表示创建时间<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"></span><br><span class="line">for file in os.scandir(&quot;..&#x2F;&quot;):</span><br><span class="line">    print(file, file.name, file.stat())</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">&lt;DirEntry &#39;.git&#39;&gt; .git os.stat_result(st_mode&#x3D;16895, st_ino&#x3D;0, st_dev&#x3D;0, st_nlink&#x3D;0, st_uid&#x3D;0, st_gid&#x3D;0, st_size&#x3D;0, st_atime&#x3D;1598876157, st_mtime&#x3D;1598876157, st_ctime&#x3D;1570419765)</span><br><span class="line">&lt;DirEntry &#39;.idea&#39;&gt; .idea os.stat_result(st_mode&#x3D;16895, st_ino&#x3D;0, st_dev&#x3D;0, st_nlink&#x3D;0, st_uid&#x3D;0, st_gid&#x3D;0, st_size&#x3D;0, st_atime&#x3D;1598876405, st_mtime&#x3D;1598876368, st_ctime&#x3D;1598661487)</span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>os.path</code><ol>
+<li><code>os.path.isdir   是否是文件夹</code></li>
+<li><code>os.path.getsize 获取文件/夹大小</code></li>
+<li><code>os.path.join(&#39;a&#39;, &#39;b&#39;)   自动拼接成路径 ==&gt; &#39;a\\b&#39;</code></li>
+<li><code>os.path.dirname 返回文件目录，可以嵌套一直向上返回目录</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; os.path.dirname(os.path.dirname(os.path.abspath(&#39;board&#39;)))</span><br><span class="line">     &#39;E:\\python_study\\Django&#39;</span><br></pre></td></tr></table></figure></li>
+<li><code>os.path.abspath 绝对路径</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><strong>sys 系统</strong></p>
+<ol>
+<li><code>sys.argv 接收调用python脚本时传递的参数，以列表格式，第一个参数是文件本身相对路径</code></li>
+<li><code>sys.exit()    涉及到时间以及内存分配方面释放</code></li>
+</ol>
+</li>
+<li><p><strong>file</strong> :<br>  <code>open(file, mode=&#39;r&#39;, buffering=None, encoding=None, errors=None, newline=None, closefd=True) 读取文件</code></p>
+</li>
+<li><p><strong>WordCloud 词云模块</strong></p>
+  <figure class="highlight plain"><figcaption><span>install wordcloud```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1. &#96;常用参数&#96;</span><br><span class="line">    + &#96;width 词云图片宽度，默认400像素&#96;</span><br><span class="line">    + &#96;height 词云图片高度 默认200像素&#96;</span><br><span class="line">    + &#96;background_color 词云图片的背景颜色，默认为黑色&#96;</span><br><span class="line">    + &#96;font_step 字号增大的步进间隔 默认1号&#96;</span><br><span class="line">    + &#96;font_path 指定字体路径 默认None，对于中文可用font_path&#x3D;&#39;msyh.ttc&#39;&#96;</span><br><span class="line">    + &#96;mini_font_size 最小字号 默认4号&#96;</span><br><span class="line">    + &#96;max_font_size 最大字号 根据高度自动调节&#96;</span><br><span class="line">    + &#96;max_words 最大词数 默认200&#96;</span><br><span class="line">    + &#96;stop_words 不显示的单词 stop_words&#x3D;&#123;&quot;python&quot;,&quot;java&quot;&#125;&#96;</span><br><span class="line">    + &#96;Scale 默认值1。值越大，图像密度越大越清晰&#96;</span><br><span class="line">    + &#96;prefer_horizontal：默认值0.90，浮点数类型。表示在水平如果不合适，就旋转为垂直方向，水平放置的词数占0.9？&#96;</span><br><span class="line">    + &#96;relative_scaling：默认值0.5，浮点型。设定按词频倒序排列，上一个词相对下一位词的大小倍数。有如下取值：“0”表示大小标准只参考频率排名，“1”如果词频是2倍，大小也是2倍&#96;</span><br><span class="line">    + &#96;mask 指定词云形状图片，默认为矩形&#96;</span><br><span class="line">      &#96;通过以下代码读入外部词云形状图片（需要先pip install imageio安装imageio）&#96;</span><br><span class="line">        &#96;&#96;&#96;&#96;python</span><br><span class="line">      import imageio</span><br><span class="line">      from wordcloud import WordCloud</span><br><span class="line">      mk &#x3D; imageio.imread(&quot;picture.png&quot;)</span><br><span class="line">      w &#x3D; WordCloud(mask&#x3D;mk)</span><br><span class="line">      &#96;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>jieba 中文分词</strong></p>
+  <figure class="highlight plain"><figcaption><span>install jieba```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. &#96;方法&#96;</span><br><span class="line">    + &#96;jieba.cut: 返回的结构是一个可迭代的 generator，可以使用 for 循环来获得分词后得到的每一个词语(unicode)&#96; </span><br><span class="line">        + &#96;&#96;&#96;cut(self, sentence, cut_all&#x3D;False, HMM&#x3D;True, use_paddle&#x3D;False)</span><br></pre></td></tr></table></figure>
+<pre><code>    + `参数`
+        1. `需要分词的字符串`
+        2. `cut_all 参数: 用来控制是否采用全模式`
+        3. `HMM 参数: 用来控制是否使用 HMM 模型`
+        4. `use_paddle 参数: 用来控制是否使用paddle模式下的分词模式，paddle模式采用延迟加载方式，通过enable_paddle接口安装paddlepaddle-tiny，并且import相关代码`
++ `jieba.cut_for_search: 返回的结构是一个可迭代的 generator，可以使用 for 循环来获得分词后得到的每一个词语(unicode)`
+    + ```cut_for_search(self, sentence, HMM=True)```
+    + `参数`
+        1. `需要分词的字符串`
+        2. `是否使用 HMM 模型。该方法适合用于搜索引擎构建倒排索引的分词，粒度比较细`
++ `jieba.lcut: 返回list`
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lcut</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> list(self.cut(*args, **kwargs))</span><br></pre></td></tr></table></figure>
++ `jieba.lcut_for_search: 返回 list`
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lcut_for_search</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> list(self.cut_for_search(*args, **kwargs))</span><br></pre></td></tr></table></figure></code></pre></li>
+<li><p><strong>turtle 绘图</strong><br>  <code>turtle: 绘图包</code><br>  <code>fillcolor：填充颜色</code><br>  <code>begin_fill/end_fill 开始/结束填充</code></p>
+<ol>
+<li>设置画布大小<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">turtle.screensize(canvwidth&#x3D;None,canvheight&#x3D;None,bg&#x3D;None)，</span><br><span class="line">    参数分别为画布的宽(单位像素),高,背景颜色。</span><br><span class="line">如： turtle.screensize(800,600,&quot;green&quot;)</span><br><span class="line">    turtle.screensize()#返回默认大小(400,300)</span><br></pre></td></tr></table></figure></li>
+<li>画笔(画笔的属性，颜色、画线的宽度等)<ul>
+<li>参数<ul>
+<li><code>turtle.pensize(): 设置画笔的宽度；</code></li>
+<li><code>turtle.pencolor(): 没有参数传入，返回当前画笔颜色，传入参数设置画笔颜色，可以是字符串如&quot;green&quot;,&quot;red&quot;,也可以是RGB3元组。</code></li>
+<li><code>turtle.speed(speed): 设置画笔移动速度，画笔绘制的速度范围[0,10]整数，数字越大越快。</code></li>
+<li><code>turtle.forward(distance): 向当前画笔方向移动distance像素长度</code></li>
+<li><code>turtle.backward(distance): 向当前画笔相反方向移动distance像素长</code>度</li>
+<li><code>turtle.right(degree): 顺时针移动degree°</code></li>
+<li><code>turtle.left(degree): 逆时针移动degree°</code></li>
+<li><code>turtle.pendown(): 移动时绘制图形，缺省时也为绘制</code></li>
+<li><code>turtle.goto(x,y): 将画笔移动到坐标为x,y的位置</code></li>
+<li><code>turtle.penup(): 提起笔移动，不绘制图形，用于另起一个地方绘制</code></li>
+<li><code>turtle.circle(): 画圆，半径为正(负)，表示圆心在画笔的左边(右边)画圆</code></li>
+<li><code>setx( ): 将当前x轴移动到指定位置</code></li>
+<li><code>sety( ): 将当前y轴移动到指定位置</code></li>
+<li><code>setheading(angle): 设置当前朝向为angle角度</code></li>
+<li><code>home(): 设置当前画笔位置为原点，朝向东。</code></li>
+<li><code>dot(r): 绘制一个指定直径和颜色的圆点</code></li>
+</ul>
+</li>
+<li>画笔控制命令<ul>
+<li><code>turtle.fillcolor(colorstring): 绘制图形的填充颜色</code></li>
+<li><code>turtle.color(color1, color2): 同时设置pencolor=color1, fillcolor=color2</code></li>
+<li><code>turtle.filling(): 返回当前是否在填充状态</code></li>
+<li><code>turtle.begin_fill(): 准备开始填充图形</code></li>
+<li><code>turtle.end_fill(): 填充完成</code></li>
+<li><code>turtle.hideturtle(): 隐藏画笔的turtle形状</code></li>
+<li><code>turtle.showturtle(): 显示画笔的turtle形状</code></li>
+</ul>
+</li>
+<li>全局控制命令<ul>
+<li><code>turtle.clear(): 清空turtle窗口，但是turtle的位置和状态不会改变</code></li>
+<li><code>turtle.reset(): 清空窗口，重置turtle状态为起始状态</code></li>
+<li><code>turtle.undo(): 撤销上一个turtle动作</code></li>
+<li><code>turtle.isvisible(): 返回当前turtle是否可见</code></li>
+<li><code>stamp(): 复制当前图形</code></li>
+<li><code>turtle.write(s [,font=(&quot;font-name&quot;,font_size,&quot;font_type&quot;)]): 写文本，s为文本内容，font是字体的参数，分别为字体名称，大小和类型；font为可选项，font参数也是可选项</code></li>
+<li><code>turtle.delay(delay=None): 设置或返回以毫秒为单位的绘图延迟</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>MyQR 二维码生成器</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">from MyQR import myqr</span><br><span class="line">import os</span><br><span class="line">myqr.run(</span><br><span class="line">        word &#x3D; &#39;&#39;,           # 可以是字符串也可以是网址 (网址前加 http(s):&#x2F;&#x2F;)</span><br><span class="line">        version &#x3D; 1,         # 容错率等级 1 为最高</span><br><span class="line">        level &#x3D; &#39;H&#39;,          # 控制纠错水平，范围是 L, M, Q, H，从左向右依次增高</span><br><span class="line">        picture &#x3D; &#39;&#39;,        # 二维码和图片合成，二维码路径</span><br><span class="line">        colorized &#x3D; &#39;True&#39;,  # 是否为彩色二维码</span><br><span class="line">        contrast &#x3D; 1.0,      # 调节图片对比度, 1.0 表示原始图片，更小的值表示更低对比度，更大反之，1.0 为默认</span><br><span class="line">        brightness &#x3D; 1.0,    # 调节图片亮度，越大越亮，越小越暗</span><br><span class="line">        save_name &#x3D; &#39;&#39;,      # 生成二维码图片名称，可以是 jpg, png, bmp, gif</span><br><span class="line">        save_dir &#x3D; os.getcwd()  # 控制生成位置</span><br><span class="line">        )</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>JSON</strong></p>
+<ol>
+<li><h5 id="json-dumps-将-Python-对象编码成-JSON-字符串-将json格式的字符串-str-转换为字典类型-dict-的数据"><a href="#json-dumps-将-Python-对象编码成-JSON-字符串-将json格式的字符串-str-转换为字典类型-dict-的数据" class="headerlink" title="json.dumps()  将 Python 对象编码成 JSON 字符串,将json格式的字符串(str)转换为字典类型(dict)的数据"></a>json.dumps()  <code>将 Python 对象编码成 JSON 字符串,将json格式的字符串(str)转换为字典类型(dict)的数据</code></h5></li>
+<li><h5 id="json-loads-将已编码的-JSON-字符串解码为-Python-对象-返回来，是将字典类型-dict-的数据转换成json格式的字符串"><a href="#json-loads-将已编码的-JSON-字符串解码为-Python-对象-返回来，是将字典类型-dict-的数据转换成json格式的字符串" class="headerlink" title="json.loads()  将已编码的 JSON 字符串解码为 Python 对象,返回来，是将字典类型(dict)的数据转换成json格式的字符串"></a>json.loads()  <code>将已编码的 JSON 字符串解码为 Python 对象,返回来，是将字典类型(dict)的数据转换成json格式的字符串</code></h5></li>
+<li><h5 id="json-load-用于读取json格式的文件，将文件中的数据转换为字典类型-dict"><a href="#json-load-用于读取json格式的文件，将文件中的数据转换为字典类型-dict" class="headerlink" title="json.load()   用于读取json格式的文件，将文件中的数据转换为字典类型(dict)"></a>json.load()   <code>用于读取json格式的文件，将文件中的数据转换为字典类型(dict)</code></h5></li>
+<li><h5 id="json-dump-主要用于存入json格式的文件，将字典类型转换为json形式的字符串"><a href="#json-dump-主要用于存入json格式的文件，将字典类型转换为json形式的字符串" class="headerlink" title="json.dump()   主要用于存入json格式的文件，将字典类型转换为json形式的字符串"></a>json.dump()   <code>主要用于存入json格式的文件，将字典类型转换为json形式的字符串</code></h5><p> eg: </p>
+<ol>
+<li><code>将 python 数据结构转换为 JSON</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line">data &#x3D; &#123;</span><br><span class="line">    &quot;name&quot;: &#39;ACME&#39;,</span><br><span class="line">    &quot;shares&quot;: 100,</span><br><span class="line">    &quot;price&quot;: 524.24</span><br><span class="line">&#125;</span><br><span class="line">json_str &#x3D; json.dumps(data)</span><br></pre></td></tr></table></figure></li>
+<li><code>将一个 JSON 编码字符串转换回一个 Python 数据结构</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data &#x3D; json.loads(json_str)</span><br></pre></td></tr></table></figure></li>
+<li><code>编码解码 JSON 数据</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 写入一个 json 数据</span><br><span class="line">with open(&quot;data.json&quot;, &#39;w&#39;) as f:</span><br><span class="line">    json.dump(data, f)</span><br><span class="line"></span><br><span class="line">with open(&#39;data.json&#39;, &#39;r&#39;) as f:</span><br><span class="line">    data &#x3D; json.load(f)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><strong>Requests</strong><br> <code>import requests</code></p>
+<ol>
+<li><p>请求</p>
+<ol>
+<li><p>请求方式</p>
+<ul>
+<li><p><strong>GET</strong></p>
+<p>  <code>requests.get(url)</code></p>
+<ul>
+<li>传递 URL 参数   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">payload &#x3D; &#123;&#39;key1&#39;: &#39;value1&#39;, &#39;key2&#39;: [&#39;value2&#39;, &#39;value3&#39;]&#125;</span><br><span class="line">r &#x3D; requests.get(&quot;http:&#x2F;&#x2F;httpbin.org&#x2F;get&quot;, params&#x3D;payload)</span><br><span class="line"># http:&#x2F;&#x2F;httpbin.org&#x2F;get?key1&#x3D;value1&amp;key2&#x3D;value2&amp;key2&#x3D;value3</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>POST</strong></p>
+<p>  <code>r = requests.post(url, data={&quot;key&quot;: &quot;value&quot;}</code></p>
+<ul>
+<li>传递 data 参数  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">payload &#x3D; &#123;&#39;key1&#39;: &#39;value1&#39;, &#39;key2&#39;: &#39;value2&#39;&#125;</span><br><span class="line">r &#x3D; requests.post(&quot;http:&#x2F;&#x2F;httpbin.org&#x2F;post&quot;, data&#x3D;payload)</span><br><span class="line">print(r.text)</span><br><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">      &quot;form&quot;: &#123;</span><br><span class="line">          &quot;key2&quot;: &quot;value2&quot;,</span><br><span class="line">          &quot;key1&quot;: &quot;value1&quot;</span><br><span class="line">          &#125;,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>PUT</strong></p>
+<p>  <code>r = requests.put(url, data={&quot;key&quot;: &quot;value&quot;})</code></p>
+</li>
+<li><p><strong>DELETE</strong></p>
+<p>  <code>r = requests.delete(url)</code></p>
+</li>
+<li><p><strong>HEAD</strong></p>
+<p>  <code>r = requests.head(url)</code></p>
+</li>
+<li><p><strong>OPTIONS</strong></p>
+<p>  <code>r = requests.options(url)</code></p>
+</li>
+</ul>
+</li>
+<li><p>请求头</p>
+<ul>
+<li>fake_useragent 模块随机产生请求头  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line">  headers = &#123;<span class="string">"User-Agent"</span>: str(UserAgent().random)&#125;</span><br><span class="line">   ```     </span><br><span class="line">+ 传递浏览器参数</span><br></pre></td></tr></table></figure>
+headers = {‘User-Agent’: ‘Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36’}<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">3. Cookie</span><br><span class="line">    + 响应中的 Cookie</span><br><span class="line">      &#96;&#96;&#96;python</span><br><span class="line">      import requests</span><br><span class="line">      r &#x3D; requests.get(&#39;https:&#x2F;&#x2F;requests.readthedocs.io&#x2F;zh_CN&#x2F;latest&#x2F;user&#x2F;quickstart.html&#39;)</span><br><span class="line">      print(r.cookies)</span><br><span class="line">      # &lt;RequestsCookieJar[Cookie(version&#x3D;0, name&#x3D;&#39;__cfduid&#39;, value&#x3D;&#39;d22fadb1898ae38e2bc7f811090da41db1595923633&#39;, </span><br><span class="line">      # port&#x3D;None, port_specified&#x3D;False, domain&#x3D;&#39;.readthedocs.io&#39;, domain_specified&#x3D;True, domain_initial_dot&#x3D;True, path&#x3D;&#39;&#x2F;&#39;, path_specified&#x3D;True, secure&#x3D;False, expires&#x3D;1598515633, discard&#x3D;False, comment&#x3D;None, comment_url&#x3D;None, rest&#x3D;&#123;&#39;HttpOnly&#39;: None, &#39;SameSite&#39;: &#39;Lax&#39;&#125;, rfc2109&#x3D;False)]&gt;</span><br></pre></td></tr></table></figure></li>
+<li>发送 Cookies<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">'https://requests.readthedocs.io/zh_CN/latest/user/quickstart.html'</span></span><br><span class="line">cookies = dict(Cookie=<span class="string">"(version=0, name='__cfduid', value='d22fadb1898ae38e2bc7f811090da41db1595923633', port=None, port_specified=False, domain='.readthedocs.io', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=1598515633, discard=False, comment=None, comment_url=None, rest=&#123;'HttpOnly': None, 'SameSite': 'Lax'&#125;)"</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>响应</p>
+<ul>
+<li><code>响应状态码 r.status_code</code></li>
+<li><code>响应头 r.headers</code></li>
+</ul>
+<ol>
+<li><p>二进制响应内容 r.content (对于非文本请求)</p>
+<p> Requests 会自动为你解码 gzip 和 deflate 传输编码的响应数据。</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以请求返回的二进制数据创建一张图片</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line">r = requests.get(url=<span class="string">''</span>)</span><br><span class="line">i = Image.open(BytesIO(r.content))</span><br></pre></td></tr></table></figure></li>
+<li><p>JSON 响应内容 r.json</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">import</span> requests</span><br><span class="line">   r = requests.get(url=<span class="string">''</span>)</span><br><span class="line">   r.json()</span><br><span class="line">    ``` </span><br><span class="line"><span class="number">3.</span> 原始响应内容(原始套接字响应) r.raw</span><br><span class="line">    ```python</span><br><span class="line">   <span class="keyword">import</span> requests</span><br><span class="line">   r = requests.get(url=<span class="string">''</span>, stream=<span class="literal">True</span>)</span><br><span class="line">   print(r.raw)</span><br><span class="line">   <span class="comment"># &lt;requests.packages.urllib3.response.HTTPResponse object at 0x101194810&gt;</span></span><br><span class="line">   print(r.raw.read(<span class="number">10</span>))</span><br><span class="line">   <span class="comment"># '\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\x03'</span></span><br></pre></td></tr></table></figure>
 
-        eg: 
-        1. `将 python 数据结构转换为 JSON`
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line">data &#x3D; &#123;</span><br><span class="line">    &quot;name&quot;: &#39;ACME&#39;,</span><br><span class="line">    &quot;shares&quot;: 100,</span><br><span class="line">    &quot;price&quot;: 524.24</span><br><span class="line">&#125;</span><br><span class="line">json_str &#x3D; json.dumps(data)</span><br></pre></td></tr></table></figure>
-        2. `将一个 JSON 编码字符串转换回一个 Python 数据结构`
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data &#x3D; json.loads(json_str)</span><br></pre></td></tr></table></figure>
-        3. `编码解码 JSON 数据`
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 写入一个 json 数据</span><br><span class="line">with open(&quot;data.json&quot;, &#39;w&#39;) as f:</span><br><span class="line">    json.dump(data, f)</span><br><span class="line"></span><br><span class="line">with open(&#39;data.json&#39;, &#39;r&#39;) as f:</span><br><span class="line">    data &#x3D; json.load(f)</span><br></pre></td></tr></table></figure>
-11. **Requests**
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br></pre></td></tr></table></figure>
-1. 请求
-    1. 请求方式
 
-        + **GET**
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ol start="12">
+<li><p>Socket() 模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">socket.socket(socket_family, socket_type, protocol&#x3D;0)</span><br><span class="line">socket_family: socket.AF_UNIX 或 socket.AF_INET</span><br><span class="line">socket_type:   socket.SOCK_STREAM (TCP) 或 socket.SOCK_DGRAM (UDP)</span><br><span class="line">protocol:      通常省略，默认为 0</span><br></pre></td></tr></table></figure>
+<p>TCP/IP 套接字  tcpSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>UDP/IP 套接字  udpSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)<br>{如果使用 from socket import * 大大缩短代码 tcpSocket = socket(AF_INET, SOCK_STREAM)}</p>
+<ul>
+<li>套接字内置方法<ol>
+<li>服务器套接字<ul>
+<li><code>s.bind()</code>    将地址 (主机名，端口号对) 绑定到套接字</li>
+<li><code>s.listen()</code>  设置并启动 TCP 监听器</li>
+<li><code>s.accept()</code>  被动接受 TCP 客户端连接，一直等待直到连接到达 (阻塞)</li>
+</ul>
+</li>
+<li>客户端套接字<ul>
+<li><code>s.connect()</code> 主动发起 TCP 服务器连接</li>
+<li><code>s.connect_ex()</code>  类似 connect ,但以错误码形式返回问题，不是抛出异常</li>
+</ul>
+</li>
+<li>普通套接字方法<ul>
+<li><code>s.recv()</code>    接收 TCP 消息</li>
+<li><code>s.recv_into()</code>   接收 TCP 消息到指定缓冲区</li>
+<li><code>s.send()</code>    发送 TCP 消息</li>
+<li><code>s.sendall()</code> 完整地发送 TCP 消息</li>
+<li><code>s.recvfrom()</code>    接收 UDP 消息</li>
+<li><code>s.recvfrom_into()</code>   接收 UDP 消息到指定缓冲区</li>
+<li><code>s.sendto()</code>  发送 UDP 消息</li>
+<li><code>s.getpeername()</code> 连接到套接字 (TCP) 的远程地址</li>
+<li><code>s.getsockname()</code> 当前套接字的地址</li>
+<li><code>s.getsockopt()</code>  返回给定套接字选项的值</li>
+<li><code>s.setsockopt()</code>  设置给定套接字选项的值</li>
+<li><code>s.shutdown()</code>    关闭连接</li>
+<li><code>s.close()</code>      关闭套接字</li>
+<li><code>s.detach()</code>      在未关闭文件描述的情况下关闭套接字，返回文件描述符</li>
+<li><code>s.ioctl()</code>       控制套接字的模式 (仅支持 Windows)</li>
+</ul>
+</li>
+<li>面向阻塞的套接字方法<ul>
+<li><code>s.setblocking()</code> 设置套接字的阻塞或非阻塞模式</li>
+<li><code>s.settimeout()</code>  设置阻塞套接字操作的超时时间</li>
+<li><code>s.gettimeout()</code>  或去阻塞套接字操作的超时时间</li>
+</ul>
+</li>
+<li>面向文件的套接字方法<ul>
+<li><code>s.fileno()</code>     套接字的文件描述符</li>
+<li><code>s.makefile()</code>    创建与套接字关联的文件对象</li>
+</ul>
+</li>
+<li>数据属性<ul>
+<li><code>s.family</code>        套接字家族</li>
+<li><code>s.type</code>          套接字类型</li>
+<li><code>s.proto</code>         套接字协议</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>glob 模块 (采取类似于“正则”的方式，进行文件匹配)</p>
+<table>
+<thead>
+<tr>
+<th align="center">模式</th>
+<th align="center">意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">*</td>
+<td align="center">匹配所有</td>
+</tr>
+<tr>
+<td align="center">?</td>
+<td align="center">匹配任何单个字符</td>
+</tr>
+<tr>
+<td align="center">[seq]</td>
+<td align="center">匹配 seq 中的任何字符</td>
+</tr>
+<tr>
+<td align="center">[!seq]</td>
+<td align="center">匹配任何不在 seq 中的字符</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import glob</span><br><span class="line"></span><br><span class="line">for i in glob.glob(&quot;..&#x2F;*.txt&quot;):</span><br><span class="line">    print(i)</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">..\Django_note.txt</span><br><span class="line">..\Email_Token.txt</span><br><span class="line">..\jQuery_note.txt</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">for i in glob.glob(&quot;..&#x2F;*a*.txt&quot;):</span><br><span class="line">    print(i)</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">..\Django_note.txt</span><br><span class="line">..\Email_Token.txt</span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>shutil 模块 (复制、移动文件及文件夹)  <code>import shutil</code></p>
+<ol>
+<li><p><code>shutil.copy(&quot;要复制的文件&quot;, &quot;要复制到的位置&quot;)</code> 复制文件 </p>
+</li>
+<li><p><code>shutil.copytree(&quot;要复制的文件夹&quot;, &quot;要复制到的新文件夹的位置&quot;)</code> 复制文件夹，相当于重命名文件夹</p>
+<ul>
+<li>将某个文件夹移动到另外一个文件夹(该文件夹必须是新文件夹)，不能是已经存在了的文件夹；</li>
+</ul>
+</li>
+<li><p><code>shutil.move(&quot;要移动的文件/文件夹&quot;, &quot;要移动到的位置&quot;)</code>  移动文件/文件夹</p>
+<ul>
+<li>文件夹或者文件被移动后，原始文件就没有了</li>
+</ul>
+</li>
+<li><p><code>shutil.rmtree(&quot;要删除的文件夹&quot;)</code> 删除文件夹</p>
+</li>
+</ol>
+</li>
+</ol>
+<ol start="15">
+<li>创建和解压压缩包 (.zip 格式)   <code>import zipfile</code></li>
+</ol>
+<pre><code>1. 读取压缩包内文件 [有时候需要在 filename.encoding(&quot;cp437&quot;).decode(&quot;utf-8&quot;)]
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import zipfile</span><br><span class="line"></span><br><span class="line">with zipfile.ZipFile(&quot;..&#x2F;ziji.zip&quot;, &quot;r&quot;) as zipobj:</span><br><span class="line">    print(zipobj.namelist())</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">[&#39;1.gif&#39;, &#39;__pycache__&#x2F;&#39;, &#39;__pycache__&#x2F;taichi.cpython-37.pyc&#39;, &#39;build&#x2F;&#39;,]</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">with zipfile.ZipFile(&quot;..&#x2F;ziji.zip&quot;, &quot;r&quot;) as zipobj:</span><br><span class="line">  for filename in zipobj.namelist():</span><br><span class="line">      print(filename.encode(&quot;gbk&quot;).decode(&quot;gbk&quot;))</span><br></pre></td></tr></table></figure>
 
-            ``requests.get(url)``
-            + 传递 URL 参数
-                 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">payload &#x3D; &#123;&#39;key1&#39;: &#39;value1&#39;, &#39;key2&#39;: [&#39;value2&#39;, &#39;value3&#39;]&#125;</span><br><span class="line">r &#x3D; requests.get(&quot;http:&#x2F;&#x2F;httpbin.org&#x2F;get&quot;, params&#x3D;payload)</span><br><span class="line"># http:&#x2F;&#x2F;httpbin.org&#x2F;get?key1&#x3D;value1&amp;key2&#x3D;value2&amp;key2&#x3D;value3</span><br></pre></td></tr></table></figure>
-        + **POST**
 
-            ``r = requests.post(url, data={&quot;key&quot;: &quot;value&quot;}``
-            + 传递 data 参数
-                <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">payload &#x3D; &#123;&#39;key1&#39;: &#39;value1&#39;, &#39;key2&#39;: &#39;value2&#39;&#125;</span><br><span class="line">r &#x3D; requests.post(&quot;http:&#x2F;&#x2F;httpbin.org&#x2F;post&quot;, data&#x3D;payload)</span><br><span class="line">print(r.text)</span><br><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">      &quot;form&quot;: &#123;</span><br><span class="line">          &quot;key2&quot;: &quot;value2&quot;,</span><br><span class="line">          &quot;key1&quot;: &quot;value1&quot;</span><br><span class="line">          &#125;,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        + **PUT**
+2. 读取压缩包内的文件信息
 
-            ``r = requests.put(url, data={&quot;key&quot;: &quot;value&quot;})``
-        + **DELETE**
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import zipfile</span><br><span class="line"></span><br><span class="line">with zipfile.ZipFile(&quot;..&#x2F;ziji.zip&quot;, &quot;r&quot;) as zipobj:</span><br><span class="line">     for filename in zipobj.namelist():</span><br><span class="line">         info &#x3D; zipobj.getinfo(filename)</span><br><span class="line">         new_filename &#x3D; filename.encode(&quot;cp437&quot;).decode(&quot;utf-8&quot;)</span><br><span class="line">         print(new_filename, info.file_size&#x2F;1024&#x2F;1024, info.compress_size&#x2F;1024&#x2F;1024)</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">1.gif 0.3085899353027344 0.3054962158203125</span><br><span class="line">build&#x2F;taichi&#x2F;Analysis-00.toc 0.1259927749633789 0.011130332946777344</span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
 
-            ``r = requests.delete(url)``
-        + **HEAD**
 
-            ``r = requests.head(url)``
-        + **OPTIONS**
+3. 解压压缩包
 
-            ``r = requests.options(url)``
-    2. 请求头
-        + fake_useragent 模块随机产生请求头
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line">  headers = &#123;<span class="string">"User-Agent"</span>: str(UserAgent().random)&#125;</span><br><span class="line">   ```     </span><br><span class="line">+ 传递浏览器参数</span><br></pre></td></tr></table></figure>
-          headers = {&apos;User-Agent&apos;: &apos;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36&apos;}
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">3. Cookie</span><br><span class="line">    + 响应中的 Cookie</span><br><span class="line">      &#96;&#96;&#96;python</span><br><span class="line">      import requests</span><br><span class="line">      r &#x3D; requests.get(&#39;https:&#x2F;&#x2F;requests.readthedocs.io&#x2F;zh_CN&#x2F;latest&#x2F;user&#x2F;quickstart.html&#39;)</span><br><span class="line">      print(r.cookies)</span><br><span class="line">      # &lt;RequestsCookieJar[Cookie(version&#x3D;0, name&#x3D;&#39;__cfduid&#39;, value&#x3D;&#39;d22fadb1898ae38e2bc7f811090da41db1595923633&#39;, </span><br><span class="line">      # port&#x3D;None, port_specified&#x3D;False, domain&#x3D;&#39;.readthedocs.io&#39;, domain_specified&#x3D;True, domain_initial_dot&#x3D;True, path&#x3D;&#39;&#x2F;&#39;, path_specified&#x3D;True, secure&#x3D;False, expires&#x3D;1598515633, discard&#x3D;False, comment&#x3D;None, comment_url&#x3D;None, rest&#x3D;&#123;&#39;HttpOnly&#39;: None, &#39;SameSite&#39;: &#39;Lax&#39;&#125;, rfc2109&#x3D;False)]&gt;</span><br></pre></td></tr></table></figure>
-        + 发送 Cookies
-          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">'https://requests.readthedocs.io/zh_CN/latest/user/quickstart.html'</span></span><br><span class="line">cookies = dict(Cookie=<span class="string">"(version=0, name='__cfduid', value='d22fadb1898ae38e2bc7f811090da41db1595923633', port=None, port_specified=False, domain='.readthedocs.io', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=1598515633, discard=False, comment=None, comment_url=None, rest=&#123;'HttpOnly': None, 'SameSite': 'Lax'&#125;)"</span>)</span><br></pre></td></tr></table></figure>
-2. 响应
-    + `响应状态码 r.status_code`
-    + `响应头 r.headers`
-    1. 二进制响应内容 r.content (对于非文本请求)
 
-        Requests 会自动为你解码 gzip 和 deflate 传输编码的响应数据。
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以请求返回的二进制数据创建一张图片</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line">r = requests.get(url=<span class="string">''</span>)</span><br><span class="line">i = Image.open(BytesIO(r.content))</span><br></pre></td></tr></table></figure>
-    2. JSON 响应内容 r.json
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">import</span> requests</span><br><span class="line">   r = requests.get(url=<span class="string">''</span>)</span><br><span class="line">   r.json()</span><br><span class="line">    ``` </span><br><span class="line"><span class="number">3.</span> 原始响应内容(原始套接字响应) r.raw</span><br><span class="line">    ```python</span><br><span class="line">   <span class="keyword">import</span> requests</span><br><span class="line">   r = requests.get(url=<span class="string">''</span>, stream=<span class="literal">True</span>)</span><br><span class="line">   print(r.raw)</span><br><span class="line">   <span class="comment"># &lt;requests.packages.urllib3.response.HTTPResponse object at 0x101194810&gt;</span></span><br><span class="line">   print(r.raw.read(<span class="number">10</span>))</span><br><span class="line">   <span class="comment"># '\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\x03'</span></span><br></pre></td></tr></table></figure></code></pre>
+    + `extract(&quot;压缩包内要解压的文件名&quot;, &quot;要解压到的位置&quot;)` : 将压缩包内单个文件解压出来  
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import zipfile</span><br><span class="line">            </span><br><span class="line">with zipfile.ZipFile(&quot;..&#x2F;ziji.zip&quot;, &quot;r&quot;) as zipobj:</span><br><span class="line">    zipobj.extract(&quot;1.gif&quot;, &quot;.&#x2F;&quot;)</span><br></pre></td></tr></table></figure>
+    + `extractall(&quot;解压到的位置&quot;)` : 将压缩包内所有文件解压出来
+
+
+4. 创建压缩包
+
+    + 对某些文件，创建压缩包
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import zipfile</span><br><span class="line"></span><br><span class="line">file_list &#x3D; [&quot;practice_16_20.py&quot;, &quot;Practice_21-24.py&quot;]</span><br><span class="line">with zipfile.ZipFile(r&quot;.测试用压缩包.zip&quot;, &quot;w&quot;) as zipobj:</span><br><span class="line">    for file in file_list:</span><br><span class="line">        zipobj.write(file)</span><br></pre></td></tr></table></figure>
+     + 向已存在压缩包内添加文件
+         <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import zipfile</span><br><span class="line"></span><br><span class="line">file_list &#x3D; [&quot;test1.txt&quot;, &quot;test2.py&quot;]</span><br><span class="line">with zipfile.ZipFile(r&quot;.测试用压缩包.zip&quot;, &quot;a&quot;) as zipobj:</span><br><span class="line">    for file in file_list:</span><br><span class="line">        zipobj.write(file)</span><br></pre></td></tr></table></figure></code></pre>
     </div>
 </article>
 
@@ -529,25 +709,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/08/01/pyecharts-pie/">pyecharts-Pie</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/08/08/flask-note2/">Flask-note2</a>
+                    <a href="/2020/08/15/chrome-elements/">Chrome-Elements</a>
                 </span>
             </li>
             
@@ -559,7 +721,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/10/pyecharts-liquid/">pyecharts-Liquid</a>
+                    <a href="/2020/08/29/git-command/">Git-command</a>
                 </span>
             </li>
             
@@ -571,19 +733,37 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2020/07/29/linux-chang-yong-ming-ling/">linux_常用命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2020/08/13/pyecharts-funnel/">pyecharts-Funnel</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/22/pyechart-local-service/">pyechart_local_service</a>
+                    <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/29/git-command/">Git-command</a>
+                    <a href="/2020/08/10/pyecharts-liquid/">pyecharts-Liquid</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
                 </span>
             </li>
             
@@ -616,25 +796,25 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Flask-Study/" style="font-size: 18.23861117644349px;" class="tag-cloud-link">Flask_Study</a>
+    <a href="/tags/Chrome-DevTools/" style="font-size: 19.57533432757847px;" class="tag-cloud-link">Chrome DevTools</a>
     
-    <a href="/tags/Windows-problem/" style="font-size: 11.855388956936775px;" class="tag-cloud-link">Windows problem</a>
+    <a href="/tags/Flask-Study/" style="font-size: 18.061195409783597px;" class="tag-cloud-link">Flask_Study</a>
     
-    <a href="/tags/Linux-study/" style="font-size: 11.880468159575122px;" class="tag-cloud-link">Linux_study</a>
+    <a href="/tags/Git/" style="font-size: 8.414742696324478px;" class="tag-cloud-link">Git</a>
     
-    <a href="/tags/scrapy-study/" style="font-size: 9.323286217477252px;" class="tag-cloud-link">scrapy_study</a>
+    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 12.457531698345818px;" class="tag-cloud-link">PEP8 编程风格规范</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 9.816534147779247px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/Windows-problem/" style="font-size: 16.688893697874573px;" class="tag-cloud-link">Windows problem</a>
     
-    <a href="/tags/Pyecharts/" style="font-size: 16.07224119534925px;" class="tag-cloud-link">Pyecharts</a>
+    <a href="/tags/Linux-study/" style="font-size: 16.962239288492132px;" class="tag-cloud-link">Linux_study</a>
     
-    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 9.76624062298867px;" class="tag-cloud-link">Python 模块</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 14.5015280965792px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 19.716491850519077px;" class="tag-cloud-link">PEP8 编程风格规范</a>
+    <a href="/tags/scrapy-study/" style="font-size: 16.531123402475284px;" class="tag-cloud-link">scrapy_study</a>
     
-    <a href="/tags/Chrome-DevTools/" style="font-size: 15.900043186724979px;" class="tag-cloud-link">Chrome DevTools</a>
+    <a href="/tags/Pyecharts/" style="font-size: 18.115336763834385px;" class="tag-cloud-link">Pyecharts</a>
     
-    <a href="/tags/Git/" style="font-size: 8.373744494333737px;" class="tag-cloud-link">Git</a>
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 17.051067310210104px;" class="tag-cloud-link">Python 模块</a>
     
 </div>
                 
