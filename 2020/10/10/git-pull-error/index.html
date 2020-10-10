@@ -12,7 +12,7 @@
     
     
     
-    <title>Hello World | BLOG</title>
+    <title>Git_pull_error | BLOG</title>
     <link href="http://yoursite.com" rel="prefetch" />
 
     
@@ -176,19 +176,26 @@
         <i class="fa fa-home"></i>
         <a href="http://yoursite.com">BLOG</a>
         >
-        <span>Hello World</span>
+        <span>Git_pull_error</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2020/07/26/hello-world/">Hello World</a>
+                <a href="/2020/10/10/git-pull-error/">Git_pull_error</a>
             </h1>
         </div>
         <div class="tag-article">
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2020-07-26
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Git/">Git</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-10-10
             </span>
             
         </div>
@@ -198,32 +205,46 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                    <a href="/2020/10/10/git-pull-error/">Git_pull_error</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2020-07-26
+                <i class="fa fa-calendar"></i> 2020-10-10
             </p>
             <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Git/">Git</a>
+                
                 
                 
             </p>
         </center>
     </div>
     <div class="content-article">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h4 id="Git-pull-文件时出现错误"><a href="#Git-pull-文件时出现错误" class="headerlink" title="Git pull 文件时出现错误"></a>Git pull 文件时出现错误</h4><h5 id="错误报告-“error-RPC-failed-curl-18-transfer-closed-with-outstanding-read-data-remaining”"><a href="#错误报告-“error-RPC-failed-curl-18-transfer-closed-with-outstanding-read-data-remaining”" class="headerlink" title="错误报告 : “error: RPC failed; curl 18 transfer closed with outstanding read data remaining”"></a>错误报告 : “error: RPC failed; curl 18 transfer closed with outstanding read data remaining”</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">error: RPC failed; curl 18 transfer closed with outstanding read data remaining</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br><span class="line">fatal: early EOF</span><br><span class="line">fatal: index-pack failed</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h5 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h5><h5 id="1-网络下载速度太慢"><a href="#1-网络下载速度太慢" class="headerlink" title="1.网络下载速度太慢"></a>1.<strong>网络下载速度太慢</strong></h5><ul>
+<li><p>错误应对 : 修改下载速度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.lowSpeedLimit 0</span><br><span class="line">git config --global http.lowSpeedTime 999999</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="2-缓存太小下载文件过大导致缓存溢出"><a href="#2-缓存太小下载文件过大导致缓存溢出" class="headerlink" title="2. 缓存太小下载文件过大导致缓存溢出"></a>2. <strong>缓存太小下载文件过大导致缓存溢出</strong></h5><ul>
+<li><p>查看缓冲区大小,单位为 b</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+</li>
+</ul>
+<ul>
+<li><p>错误应对 : 全局修改 postBuffer 的默认大小,增加缓冲</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.postBuffer 524288000</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 
     </div>
 </article>
@@ -362,31 +383,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/17/chrome-network/">Chrome-Network</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2020/08/15/chrome-elements/">Chrome-Elements</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/27/git-reset-shi-yong-diao-keng/">Git-reset使用掉坑</a>
+                    <a href="/2020/08/08/flask-note2/">Flask-note2</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                    <a href="/2020/08/06/flask-note1/">Flask_note1</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                    <a href="/2020/08/29/git-command/">Git-command</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/12/python-pep8/">Python_PEP8编程风格规范</a>
                 </span>
             </li>
             
@@ -398,19 +419,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/22/pyechart-local-service/">pyechart_local_service</a>
+                    <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/13/pyecharts-funnel/">pyecharts-Funnel</a>
+                    <a href="/2020/08/10/pyecharts-liquid/">pyecharts-Liquid</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/01/pyecharts-pie/">pyecharts-Pie</a>
+                    <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
                 </span>
             </li>
             
@@ -431,17 +452,17 @@
 
                 
                 <li>
-                    <a href="/2020/07/26/hello-world/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2020/10/10/git-pull-error/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/07/26/hello-world/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2020/10/10/git-pull-error/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/07/26/hello-world/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2020/10/10/git-pull-error/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -449,25 +470,25 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Chrome-DevTools/" style="font-size: 16.997516952419126px;" class="tag-cloud-link">Chrome DevTools</a>
+    <a href="/tags/Chrome-DevTools/" style="font-size: 15.739452416987763px;" class="tag-cloud-link">Chrome DevTools</a>
     
-    <a href="/tags/Flask-Study/" style="font-size: 16.248807816156518px;" class="tag-cloud-link">Flask_Study</a>
+    <a href="/tags/Flask-Study/" style="font-size: 13.541305283747505px;" class="tag-cloud-link">Flask_Study</a>
     
-    <a href="/tags/Git/" style="font-size: 16.98344138086931px;" class="tag-cloud-link">Git</a>
+    <a href="/tags/Git/" style="font-size: 10.57607922247371px;" class="tag-cloud-link">Git</a>
     
-    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 16.13780890654764px;" class="tag-cloud-link">PEP8 编程风格规范</a>
+    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 9.52893978558312px;" class="tag-cloud-link">PEP8 编程风格规范</a>
     
-    <a href="/tags/Windows-problem/" style="font-size: 14.236347089727037px;" class="tag-cloud-link">Windows problem</a>
+    <a href="/tags/Windows-problem/" style="font-size: 17.24232267172996px;" class="tag-cloud-link">Windows problem</a>
     
-    <a href="/tags/Linux-study/" style="font-size: 13.947808271930958px;" class="tag-cloud-link">Linux_study</a>
+    <a href="/tags/Linux-study/" style="font-size: 16.726109085309744px;" class="tag-cloud-link">Linux_study</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 17.7786905809697px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 16.173480250118338px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/scrapy-study/" style="font-size: 9.5068972913082px;" class="tag-cloud-link">scrapy_study</a>
+    <a href="/tags/scrapy-study/" style="font-size: 16.787182355378064px;" class="tag-cloud-link">scrapy_study</a>
     
-    <a href="/tags/Pyecharts/" style="font-size: 13.811599555944728px;" class="tag-cloud-link">Pyecharts</a>
+    <a href="/tags/Pyecharts/" style="font-size: 18.036451000075864px;" class="tag-cloud-link">Pyecharts</a>
     
-    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 19.489138149290337px;" class="tag-cloud-link">Python 模块</a>
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 17.92512285057931px;" class="tag-cloud-link">Python 模块</a>
     
 </div>
                 

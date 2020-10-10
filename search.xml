@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Git_pull_error</title>
+      <link href="/2020/10/10/git-pull-error/"/>
+      <url>/2020/10/10/git-pull-error/</url>
+      
+        <content type="html"><![CDATA[<h4 id="Git-pull-文件时出现错误"><a href="#Git-pull-文件时出现错误" class="headerlink" title="Git pull 文件时出现错误"></a>Git pull 文件时出现错误</h4><h5 id="错误报告-“error-RPC-failed-curl-18-transfer-closed-with-outstanding-read-data-remaining”"><a href="#错误报告-“error-RPC-failed-curl-18-transfer-closed-with-outstanding-read-data-remaining”" class="headerlink" title="错误报告 : “error: RPC failed; curl 18 transfer closed with outstanding read data remaining”"></a>错误报告 : “error: RPC failed; curl 18 transfer closed with outstanding read data remaining”</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">error: RPC failed; curl 18 transfer closed with outstanding read data remaining</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br><span class="line">fatal: early EOF</span><br><span class="line">fatal: index-pack failed</span><br></pre></td></tr></table></figure><h5 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h5><h5 id="1-网络下载速度太慢"><a href="#1-网络下载速度太慢" class="headerlink" title="1.网络下载速度太慢"></a>1.<strong>网络下载速度太慢</strong></h5><ul><li><p>错误应对 : 修改下载速度</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.lowSpeedLimit 0</span><br><span class="line">git config --global http.lowSpeedTime 999999</span><br></pre></td></tr></table></figure></li></ul><h5 id="2-缓存太小下载文件过大导致缓存溢出"><a href="#2-缓存太小下载文件过大导致缓存溢出" class="headerlink" title="2. 缓存太小下载文件过大导致缓存溢出"></a>2. <strong>缓存太小下载文件过大导致缓存溢出</strong></h5><ul><li><p>查看缓冲区大小,单位为 b</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure></li></ul><ul><li><p>错误应对 : 全局修改 postBuffer 的默认大小,增加缓冲</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.postBuffer 524288000</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git-commands-02</title>
       <link href="/2020/09/05/git-commands-02/"/>
       <url>/2020/09/05/git-commands-02/</url>
