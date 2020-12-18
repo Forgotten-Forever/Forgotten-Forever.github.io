@@ -12,7 +12,7 @@
     
     
     
-    <title>Hello World | BLOG</title>
+    <title>Python 的垃圾回收机制 | BLOG</title>
     <link href="http://yoursite.com" rel="prefetch" />
 
     
@@ -176,19 +176,26 @@
         <i class="fa fa-home"></i>
         <a href="http://yoursite.com">BLOG</a>
         >
-        <span>Hello World</span>
+        <span>Python 的垃圾回收机制</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2020/07/26/hello-world/">Hello World</a>
+                <a href="/2020/12/18/python-de-la-ji-hui-shou-ji-zhi/">Python 的垃圾回收机制</a>
             </h1>
         </div>
         <div class="tag-article">
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2020-07-26
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Python-%E9%9D%A2%E8%AF%95/">Python 面试</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-12-18
             </span>
             
         </div>
@@ -198,32 +205,73 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2020/07/26/hello-world/">Hello World</a>
+                    <a href="/2020/12/18/python-de-la-ji-hui-shou-ji-zhi/">Python 的垃圾回收机制</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2020-07-26
+                <i class="fa fa-calendar"></i> 2020-12-18
             </p>
             <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Python-%E9%9D%A2%E8%AF%95/">Python 面试</a>
+                
                 
                 
             </p>
         </center>
     </div>
     <div class="content-article">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h3 id="Python-的内存回收机制"><a href="#Python-的内存回收机制" class="headerlink" title="Python 的内存回收机制"></a>Python 的内存回收机制</h3><ul>
+<li><p>垃圾回收机制，就是我们常说的<strong>GC(Garbage collection)</strong>。高级编程语言，如java，c#等，都采用了垃圾回收机制，减轻程序员对于内存的处理压力。但这并不代表内存泄漏等问题可以被完全杜绝</p>
+</li>
+<li><p>就python而言，主要采用的是常见的引用<strong><em>计数机制</em></strong>，同时结合<strong><em>标记-清除</em></strong>和<strong><em>分代收集</em></strong>两种机制。</p>
+</li>
+</ul>
+<h4 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a><strong>引用计数</strong></h4><ul>
+<li>python中一切皆对象，<em>每一个Python对象都有一个引用计数器</em>，用于记录有多少其他对象指向(引用)这个对象。那什么时候引用计数增加，什么时候引用计数减少呢？</li>
+</ul>
+<h5 id="引用计数增加"><a href="#引用计数增加" class="headerlink" title="引用计数增加"></a><strong>引用计数增加</strong></h5><ol>
+<li>对象被创建：<code>x = “test”</code></li>
+<li>另外的别名被创建：<code>y = x</code></li>
+<li>对象被作为参数传递给函数（新的本地引用）: <code>foobar(x)</code></li>
+<li>对象成为容器对象的一个元素：<code>myList = [x, ‘xyz’]</code></li>
+</ol>
+<h5 id="引用计数减少"><a href="#引用计数减少" class="headerlink" title="引用计数减少"></a><strong>引用计数减少</strong></h5><ol>
+<li>一个本地引用离开了其作用范围。如fooc()函数结束时，func函数中的局部变量（全局变量不会）</li>
+<li>对象的别名被显式销毁：<code>del y</code></li>
+<li>对象的一个别名被赋值给其他对象：<code>x = 123</code></li>
+<li>对象被从一个窗口对象中移除：<code>myList.remove(x)</code></li>
+<li>窗口对象本身被销毁：<code>del myList</code></li>
+</ol>
+<h5 id="当引用计数变为0时，会回收对象释放内存空间。"><a href="#当引用计数变为0时，会回收对象释放内存空间。" class="headerlink" title="当引用计数变为0时，会回收对象释放内存空间。"></a><strong>当引用计数变为0时，会回收对象释放内存空间。</strong></h5><h5 id="引用计数法有很明显的优点："><a href="#引用计数法有很明显的优点：" class="headerlink" title="引用计数法有很明显的优点："></a><strong>引用计数法有很明显的优点：</strong></h5><ul>
+<li><strong>实现简单</strong></li>
+<li><strong>实时性</strong>：一旦没有引用，内存就直接释放了。不用像其他机制等到特定时机。实时性还带来一个好处：处理回收内存的时间分摊到了平时。</li>
+</ul>
+<h5 id="非常显著的的缺点："><a href="#非常显著的的缺点：" class="headerlink" title="非常显著的的缺点："></a><strong>非常显著的的缺点：</strong></h5><ul>
+<li><strong>维护引用计数消耗资源</strong>，维护引用计数的次数和引用赋值成正比，而不像mark and sweep等基本与回收的内存数量有关。</li>
+<li><strong>无法解决循环引用的问题</strong>。A和B相互引用而再没有外部引用A与B中的任何一个，它们的引用计数都为1，但显然应该被回收。</li>
+<li>为解决上面2个问题，python又引入了<strong>两种GC机制</strong></li>
+</ul>
+<h4 id="标记-清除"><a href="#标记-清除" class="headerlink" title="标记-清除"></a><strong>标记-清除</strong></h4><ul>
+<li>此GC机制，主要是为了<strong>解决循环引用问题</strong>。</li>
+<li>标记清除（Mark—Sweep）算法是一种基于<strong>追踪回收</strong>（tracing GC）技术实现的垃圾回收算法。它分为两个阶段：<ol>
+<li>第一阶段是<strong>标记阶段</strong>，GC会把所有的『活动对象』打上标记，</li>
+<li>第二阶段是<strong>把那些没有标记的对象『非活动对象』进行回收</strong>。那么GC又是如何判断哪些是活动对象哪些是非活动对象的呢？</li>
+</ol>
+</li>
+<li>对象之间通过引用（指针）连在一起，构成一个<strong>有向图</strong>，对象构成这个有向图的节点，而引用关系构成这个有向图的边。从根对象（root object）出发，沿着有向边遍历对象，可达的（reachable）对象标记为活动对象，不可达的对象就是要被清除的非活动对象。根对象就是全局变量、调用栈、寄存器</li>
+<li>标记清除算法作为python的辅助垃圾收集技术<strong>主要处理</strong>的是一些<strong>容器对象</strong>，比如list、dict、tuple，instance等，因为对于字符串、数值对象是不可能造成循环引用问题。</li>
+</ul>
+<h4 id="分代回收"><a href="#分代回收" class="headerlink" title="分代回收"></a><strong>分代回收</strong></h4><ul>
+<li>分代回收是一种<strong>以空间换时间</strong>的操作方式，</li>
+<li>Python将内存根据对象的存活时间划分为不同的集合，每个集合称为一个代，Python将内存分为了3“代”，分别为<em>年轻代</em>（第0代）、<em>中年代</em>（第1代）、<em>老年代</em>（第2代），他们对应的是3个链表，它们的垃圾收集频率与对象的存活时间的增大而减小。<ul>
+<li>新创建的对象都会分配在年轻代，年轻代链表的总数达到上限时，Python垃圾收集机制就会被触发，把那些可以被回收的对象回收掉，而那些不会回收的对象就会被移到中年代去，依此类推，</li>
+<li>老年代中的对象是存活时间最久的对象，甚至是存活于整个系统的生命周期内。同时，分代回收是建立在标记清除技术基础之上。分代回收同样作为Python的辅助垃圾收集技术处理那些容器对象。</li>
+</ul>
+</li>
+</ul>
 
     </div>
 </article>
@@ -362,7 +410,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/29/git-command/">Git-command</a>
+                    <a href="/2020/08/17/chrome-network/">Chrome-Network</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/15/chrome-elements/">Chrome-Elements</a>
                 </span>
             </li>
             
@@ -374,49 +428,43 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                    <a href="/2020/08/12/python-pep8/">Python_PEP8编程风格规范</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/27/css-note/">css_note</a>
+                    <a href="/2020/08/22/getting-start-with-git/">Getting-start-with-Git</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
+                    <a href="/2020/07/29/linux-chang-yong-ming-ling/">linux_常用命令</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/01/pyecharts-pie/">pyecharts-Pie</a>
+                    <a href="/2020/08/22/pyechart-local-service/">pyechart_local_service</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
+                    <a href="/2020/08/10/pyecharts-liquid/">pyecharts-Liquid</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
+                    <a href="/2020/10/10/git-pull-error/">Git_pull_error</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/09/05/git-commands-02/">Git-commands-02</a>
+                    <a href="/2020/10/17/heroku-da-jian-xue-xi-shi-yong-de-v2ray/">HeroKu 搭建学习使用的 V2ray</a>
                 </span>
             </li>
             
@@ -431,17 +479,17 @@
 
                 
                 <li>
-                    <a href="/2020/07/26/hello-world/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2020/12/18/python-de-la-ji-hui-shou-ji-zhi/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/07/26/hello-world/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2020/12/18/python-de-la-ji-hui-shou-ji-zhi/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/07/26/hello-world/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2020/12/18/python-de-la-ji-hui-shou-ji-zhi/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -449,29 +497,29 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Chrome-DevTools/" style="font-size: 14.225137095483673px;" class="tag-cloud-link">Chrome DevTools</a>
+    <a href="/tags/Chrome-DevTools/" style="font-size: 14.020044695867103px;" class="tag-cloud-link">Chrome DevTools</a>
     
-    <a href="/tags/Flask-Study/" style="font-size: 19.37453326944189px;" class="tag-cloud-link">Flask_Study</a>
+    <a href="/tags/Flask-Study/" style="font-size: 16.861746894389576px;" class="tag-cloud-link">Flask_Study</a>
     
-    <a href="/tags/Git/" style="font-size: 9.50596714543462px;" class="tag-cloud-link">Git</a>
+    <a href="/tags/Git/" style="font-size: 11.073609096658181px;" class="tag-cloud-link">Git</a>
     
-    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 9.781112623223478px;" class="tag-cloud-link">PEP8 编程风格规范</a>
+    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 17.224826650693636px;" class="tag-cloud-link">PEP8 编程风格规范</a>
     
-    <a href="/tags/Windows-problem/" style="font-size: 12.233035621619287px;" class="tag-cloud-link">Windows problem</a>
+    <a href="/tags/Windows-problem/" style="font-size: 15.706889337987063px;" class="tag-cloud-link">Windows problem</a>
     
-    <a href="/tags/Linux-study/" style="font-size: 9.234373185179804px;" class="tag-cloud-link">Linux_study</a>
+    <a href="/tags/Linux-study/" style="font-size: 8.391122450921323px;" class="tag-cloud-link">Linux_study</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 8.564464517326275px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 12.912928251519332px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/scrapy-study/" style="font-size: 16.750370992070838px;" class="tag-cloud-link">scrapy_study</a>
+    <a href="/tags/scrapy-study/" style="font-size: 9.862896840094791px;" class="tag-cloud-link">scrapy_study</a>
     
-    <a href="/tags/Pyecharts/" style="font-size: 9.001718006873258px;" class="tag-cloud-link">Pyecharts</a>
+    <a href="/tags/Pyecharts/" style="font-size: 18.192674044595172px;" class="tag-cloud-link">Pyecharts</a>
     
-    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 14.42682621764888px;" class="tag-cloud-link">Python 模块</a>
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 16.73642864454835px;" class="tag-cloud-link">Python 模块</a>
     
-    <a href="/tags/HeroKu-Server/" style="font-size: 17.203553691907448px;" class="tag-cloud-link">HeroKu Server</a>
+    <a href="/tags/HeroKu-Server/" style="font-size: 10.262597549719086px;" class="tag-cloud-link">HeroKu Server</a>
     
-    <a href="/tags/Python-%E9%9D%A2%E8%AF%95/" style="font-size: 19.15129131446342px;" class="tag-cloud-link">Python 面试</a>
+    <a href="/tags/Python-%E9%9D%A2%E8%AF%95/" style="font-size: 14.551962863008713px;" class="tag-cloud-link">Python 面试</a>
     
 </div>
                 
