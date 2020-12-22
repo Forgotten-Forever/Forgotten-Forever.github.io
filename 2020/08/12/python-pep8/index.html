@@ -45,6 +45,14 @@
         }
     </style>
     
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: 'U8H1iyu5mFjFx6raVVFTm9S2-gzGzoHsz',
+        appKey: 'd1Q8XiwqhVryYzng4eR7EuQp'
+      })
+    </script>
+    
     <!--<script type="text/javascript">
       if (document.images) {
         var avatar = new Image();
@@ -71,25 +79,6 @@
     </ul>
 </section>
     <!-- 欧尼酱功能, 谁用谁知道 -->
-    
-    <div class="gal-menu gal-dropdown">
-    <div class="circle" id="gal">
-        <div class="ring">
-            <a href="http://yoursite.com" class="menuItem" style="left: 50%; top: 15%;">首页</a>
-            
-            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
-            
-            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
-            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
-            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
-
-            
-            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
-            
-        </div>
-        <audio id="audio" src="/imgs/oni.mp3"></audio>
-    </div>
-</div>
     
     <header class="navbar navbar-inverse" id="gal-header">
     <div class="container">
@@ -217,6 +206,10 @@
                 <i class="fa fa-calendar"></i> 2020-08-12
             </span>
             
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -237,6 +230,8 @@
                 <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/">PEP8 编程风格规范</a>
                 
                 
+                
+                <i class="fa fa-eye"></i>
                 
             </p>
         </center>
@@ -510,6 +505,18 @@
     
     <!-- 要配置好leancloud才能开启此小工具 -->
     
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
     
     <aside id="sidebar-recent_posts">
     <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
@@ -599,7 +606,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/15/chrome-elements/">Chrome-Elements</a>
+                    <a href="/2020/08/17/chrome-network/">Chrome-Network</a>
                 </span>
             </li>
             
@@ -611,7 +618,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/27/git-reset-shi-yong-diao-keng/">Git-reset使用掉坑</a>
+                    <a href="/2020/08/06/flask-note1/">Flask_note1</a>
                 </span>
             </li>
             
@@ -635,25 +642,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/27/css-note/">css_note</a>
+                    <a href="/2020/08/01/pyecharts-line/">pyecharts-Line</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/29/linux-chang-yong-ming-ling/">linux_常用命令</a>
+                    <a href="/2020/08/10/pyecharts-liquid/">pyecharts-Liquid</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/22/pyechart-local-service/">pyechart_local_service</a>
+                    <a href="/2020/07/30/pyecharts-series-options/">pyecharts_series_options</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/05/git-commands-02/">Git-commands-02</a>
+                    <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
                 </span>
             </li>
             
@@ -686,29 +693,29 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Chrome-DevTools/" style="font-size: 16.894351445054003px;" class="tag-cloud-link">Chrome DevTools</a>
+    <a href="/tags/Chrome-DevTools/" style="font-size: 11.65208695435965px;" class="tag-cloud-link">Chrome DevTools</a>
     
-    <a href="/tags/Flask-Study/" style="font-size: 10.90707741158693px;" class="tag-cloud-link">Flask_Study</a>
+    <a href="/tags/Flask-Study/" style="font-size: 15.716630495217945px;" class="tag-cloud-link">Flask_Study</a>
     
-    <a href="/tags/Git/" style="font-size: 16.447626901133383px;" class="tag-cloud-link">Git</a>
+    <a href="/tags/Git/" style="font-size: 11.352720761332225px;" class="tag-cloud-link">Git</a>
     
-    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 12.966186365631556px;" class="tag-cloud-link">PEP8 编程风格规范</a>
+    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 18.354297041837228px;" class="tag-cloud-link">PEP8 编程风格规范</a>
     
-    <a href="/tags/Windows-problem/" style="font-size: 12.80721339933542px;" class="tag-cloud-link">Windows problem</a>
+    <a href="/tags/Windows-problem/" style="font-size: 12.828074918780942px;" class="tag-cloud-link">Windows problem</a>
     
-    <a href="/tags/Linux-study/" style="font-size: 18.356934299079796px;" class="tag-cloud-link">Linux_study</a>
+    <a href="/tags/Linux-study/" style="font-size: 10.679360169173512px;" class="tag-cloud-link">Linux_study</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 14.136060554130808px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 16.368572130704088px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/scrapy-study/" style="font-size: 8.001096297413788px;" class="tag-cloud-link">scrapy_study</a>
+    <a href="/tags/scrapy-study/" style="font-size: 16.34345993204454px;" class="tag-cloud-link">scrapy_study</a>
     
-    <a href="/tags/Pyecharts/" style="font-size: 19.060665241020622px;" class="tag-cloud-link">Pyecharts</a>
+    <a href="/tags/Pyecharts/" style="font-size: 15.594504781954651px;" class="tag-cloud-link">Pyecharts</a>
     
-    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 15.44851940733502px;" class="tag-cloud-link">Python 模块</a>
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 19.880796811860012px;" class="tag-cloud-link">Python 模块</a>
     
-    <a href="/tags/HeroKu-Server/" style="font-size: 12.602052818479994px;" class="tag-cloud-link">HeroKu Server</a>
+    <a href="/tags/HeroKu-Server/" style="font-size: 10.443438652800392px;" class="tag-cloud-link">HeroKu Server</a>
     
-    <a href="/tags/Python-%E9%9D%A2%E8%AF%95/" style="font-size: 19.687221558361102px;" class="tag-cloud-link">Python 面试</a>
+    <a href="/tags/Python-%E9%9D%A2%E8%AF%95/" style="font-size: 8.933783323022347px;" class="tag-cloud-link">Python 面试</a>
     
 </div>
                 
@@ -717,6 +724,10 @@
     
     <li>
         <a href="https://www.crushing.xyz/" target="_blank">GODLIN</a>
+    </li>
+    
+    <li>
+        <a href="https://ggbool.xyz/" target="_blank">GGboy</a>
     </li>
     
     <li>
@@ -734,6 +745,10 @@
     
     <li>
         <a href="https://github.com/forgotten-forever" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://docs.justfeeling.me/" target="_blank">note</a>
     </li>
     
     <li>
@@ -821,8 +836,12 @@
 
 
 
-<script src="/js/oni.js"></script>
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
 
+<script src="/js/comment/leancloud.js"></script>
 
 
 

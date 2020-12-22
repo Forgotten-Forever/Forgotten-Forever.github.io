@@ -45,6 +45,14 @@
         }
     </style>
     
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: 'U8H1iyu5mFjFx6raVVFTm9S2-gzGzoHsz',
+        appKey: 'd1Q8XiwqhVryYzng4eR7EuQp'
+      })
+    </script>
+    
     <!--<script type="text/javascript">
       if (document.images) {
         var avatar = new Image();
@@ -71,25 +79,6 @@
     </ul>
 </section>
     <!-- 欧尼酱功能, 谁用谁知道 -->
-    
-    <div class="gal-menu gal-dropdown">
-    <div class="circle" id="gal">
-        <div class="ring">
-            <a href="http://yoursite.com" class="menuItem" style="left: 50%; top: 15%;">首页</a>
-            
-            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
-            
-            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
-            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
-            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
-
-            
-            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
-            
-        </div>
-        <audio id="audio" src="/imgs/oni.mp3"></audio>
-    </div>
-</div>
     
     <header class="navbar navbar-inverse" id="gal-header">
     <div class="container">
@@ -267,6 +256,18 @@
     
     <!-- 要配置好leancloud才能开启此小工具 -->
     
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
     
     <aside id="sidebar-recent_posts">
     <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
@@ -356,12 +357,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/17/chrome-network/">Chrome-Network</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2020/08/15/chrome-elements/">Chrome-Elements</a>
                 </span>
             </li>
@@ -374,13 +369,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/08/29/git-command/">Git-command</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/08/27/git-reset-shi-yong-diao-keng/">Git-reset使用掉坑</a>
+                    <a href="/2020/08/12/python-pep8/">Python_PEP8编程风格规范</a>
                 </span>
             </li>
             
@@ -392,25 +381,37 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/30/pyecharts-bar/">pyecharts_Bar</a>
+                    <a href="/2020/07/31/pixabay-pa-qu/">pixabay_爬取</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/07/30/pyecharts-global-options/">pyecharts_global_options</a>
+                    <a href="/2020/08/22/pyechart-local-service/">pyechart_local_service</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/17/heroku-da-jian-xue-xi-shi-yong-de-v2ray/">HeroKu 搭建学习使用的 V2ray</a>
+                    <a href="/2020/08/13/pyecharts-funnel/">pyecharts-Funnel</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/12/18/python-de-la-ji-hui-shou-ji-zhi/">Python 的垃圾回收机制</a>
+                    <a href="/2020/08/02/pyecharts-wordcloud/">pyecharts-WordCloud</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/05/git-commands-02/">Git-commands-02</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/10/10/git-pull-error/">Git_pull_error</a>
                 </span>
             </li>
             
@@ -443,29 +444,29 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Chrome-DevTools/" style="font-size: 9.7327729394664px;" class="tag-cloud-link">Chrome DevTools</a>
+    <a href="/tags/Chrome-DevTools/" style="font-size: 11.879290211341777px;" class="tag-cloud-link">Chrome DevTools</a>
     
-    <a href="/tags/Flask-Study/" style="font-size: 16.95284231994767px;" class="tag-cloud-link">Flask_Study</a>
+    <a href="/tags/Flask-Study/" style="font-size: 15.421135870836027px;" class="tag-cloud-link">Flask_Study</a>
     
-    <a href="/tags/Git/" style="font-size: 8.146987340437274px;" class="tag-cloud-link">Git</a>
+    <a href="/tags/Git/" style="font-size: 8.114725315282454px;" class="tag-cloud-link">Git</a>
     
-    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 19.624522623415615px;" class="tag-cloud-link">PEP8 编程风格规范</a>
+    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 17.6234760066409px;" class="tag-cloud-link">PEP8 编程风格规范</a>
     
-    <a href="/tags/Windows-problem/" style="font-size: 13.813786794503944px;" class="tag-cloud-link">Windows problem</a>
+    <a href="/tags/Windows-problem/" style="font-size: 18.39020405668373px;" class="tag-cloud-link">Windows problem</a>
     
-    <a href="/tags/Linux-study/" style="font-size: 14.374227590901096px;" class="tag-cloud-link">Linux_study</a>
+    <a href="/tags/Linux-study/" style="font-size: 18.681380200573283px;" class="tag-cloud-link">Linux_study</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 15.447945683008932px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 16.337799875036453px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/scrapy-study/" style="font-size: 11.703388695219713px;" class="tag-cloud-link">scrapy_study</a>
+    <a href="/tags/scrapy-study/" style="font-size: 13.115127439341137px;" class="tag-cloud-link">scrapy_study</a>
     
-    <a href="/tags/Pyecharts/" style="font-size: 13.196698780599885px;" class="tag-cloud-link">Pyecharts</a>
+    <a href="/tags/Pyecharts/" style="font-size: 14.061372326097537px;" class="tag-cloud-link">Pyecharts</a>
     
-    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 16.499773855531036px;" class="tag-cloud-link">Python 模块</a>
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 18.927298098635568px;" class="tag-cloud-link">Python 模块</a>
     
-    <a href="/tags/HeroKu-Server/" style="font-size: 15.60137816684215px;" class="tag-cloud-link">HeroKu Server</a>
+    <a href="/tags/HeroKu-Server/" style="font-size: 10.765552505904111px;" class="tag-cloud-link">HeroKu Server</a>
     
-    <a href="/tags/Python-%E9%9D%A2%E8%AF%95/" style="font-size: 15.454310226161681px;" class="tag-cloud-link">Python 面试</a>
+    <a href="/tags/Python-%E9%9D%A2%E8%AF%95/" style="font-size: 16.648844365270648px;" class="tag-cloud-link">Python 面试</a>
     
 </div>
                 
@@ -474,6 +475,10 @@
     
     <li>
         <a href="https://www.crushing.xyz/" target="_blank">GODLIN</a>
+    </li>
+    
+    <li>
+        <a href="https://ggbool.xyz/" target="_blank">GGboy</a>
     </li>
     
     <li>
@@ -491,6 +496,10 @@
     
     <li>
         <a href="https://github.com/forgotten-forever" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://docs.justfeeling.me/" target="_blank">note</a>
     </li>
     
     <li>
@@ -578,8 +587,12 @@
 
 
 
-<script src="/js/oni.js"></script>
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
 
+<script src="/js/comment/leancloud.js"></script>
 
 
 
