@@ -12,7 +12,7 @@
     
     
     
-    <title>Windows中pyspider安装以及错误处理 | BLOG</title>
+    <title>tags: Redis | BLOG</title>
     <link href="http://yoursite.com" rel="prefetch" />
 
     
@@ -178,38 +178,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    
-<article class="article well article-body" id="article">
+                    <article class="article well article-body" id="article-tag">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://yoursite.com">BLOG</a>
         >
-        <span>Windows中pyspider安装以及错误处理</span>
+        <span>标签</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2020/12/24/windows-zhong-pyspider-an-zhuang-yi-ji-cuo-wu-chu-li/">Windows中pyspider安装以及错误处理</a>
+                <a href="/tags/Redis/index.html">Redis</a>
             </h1>
-        </div>
-        <div class="tag-article">
-            
-            <span class="label label-gal">
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/pyspider/">pyspider</a>
-                
-            </span>
-            
-            <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2020-12-24
-            </span>
-            
-            <span class="label label-gal">
-                <i class="fa fa-eye"></i>
-            </span>
-            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -217,125 +198,21 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2020/12/24/windows-zhong-pyspider-an-zhuang-yi-ji-cuo-wu-chu-li/">Windows中pyspider安装以及错误处理</a>
+                    <a href="/tags/Redis/index.html">Redis</a>
                 </h4>
             </div>
-            <p>
-                <i class="fa fa-calendar"></i> 2020-12-24
-            </p>
-            <p>
-                
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/pyspider/">pyspider</a>
-                
-                
-                
-                <i class="fa fa-eye"></i>
-                
-            </p>
         </center>
     </div>
-    <div class="content-article">
-        <h3 id="Windows中Pyspider安装以及错误处理"><a href="#Windows中Pyspider安装以及错误处理" class="headerlink" title="Windows中Pyspider安装以及错误处理"></a>Windows中Pyspider安装以及错误处理</h3><h4 id="安装-pyspider-过程中出现错误-ERROR-Command-errored-out-with-exit-status-10-python-setup-py-egg-info-Check-the-logs-for-full-command-output"><a href="#安装-pyspider-过程中出现错误-ERROR-Command-errored-out-with-exit-status-10-python-setup-py-egg-info-Check-the-logs-for-full-command-output" class="headerlink" title="安装 pyspider 过程中出现错误 ERROR: Command errored out with exit status 10: python setup.py egg_info Check the logs for full command output."></a>安装 pyspider 过程中出现错误 <code>ERROR: Command errored out with exit status 10: python setup.py egg_info Check the logs for full command output.</code></h4><ul>
-<li><p><strong>报错信息</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/pycurl_error.png" alt></p>
-</li>
-<li><p>观察发现 <code>pycurl</code>  模块下载出错 导致无法继续下载</p>
-</li>
-</ul>
-<h4 id="单独安装-pycurl"><a href="#单独安装-pycurl" class="headerlink" title="单独安装 pycurl"></a><strong>单独安装 pycurl</strong></h4><ul>
-<li><p>下载地址 <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycurl" target="_blank" rel="noopener">https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycurl</a></p>
-</li>
-<li><p>一定要单独下载后本地安装对应版本</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/install_pycurl.png" alt></p>
-</li>
-<li><p><strong>pip 下载本地文件</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/pip_pycurl.png" alt></p>
-</li>
-<li><p>搜索 <code>pycurl</code> 下载 合适的版本 一定要与 python 版本符合</p>
-<ul>
-<li><p><strong>版本不符报错</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/pycurl_verror.png" alt></p>
-</li>
-<li><p><strong>查看 python 版本</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/python_version.png" alt></p>
-</li>
-<li><p><code>pycurl</code> : 名称  <code>pycurl‑7.43.0.4‑cp37‑cp37m‑win_amd64.whl</code>, <strong>cp</strong> 为 对应python版本</p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="async-错误"><a href="#async-错误" class="headerlink" title="async 错误"></a><strong>async 错误</strong></h4><ul>
-<li><p><strong>错误图片</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/async_error.png" alt></p>
-</li>
-<li><p><strong>错误原因</strong></p>
-<ul>
-<li>python3 中，已经将async 设置为关键字，而pyspider 版本更新缓慢并没有在此处修改，所以导致pyspider 不能正常启动。</li>
-</ul>
-</li>
-<li><p>修改 pyspider 源码将 async 改为其它非关键字 (<strong>只修改 async 关键字的，其他含有这些字符的不需要修改</strong>)</p>
-<ul>
-<li><p><strong>需要修改的源码所在位置</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/replace_loc.png" alt></p>
-</li>
-<li><p><strong>修改源码</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/replace_arync.png" alt></p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="Wsgidav-错误"><a href="#Wsgidav-错误" class="headerlink" title="Wsgidav 错误"></a><strong>Wsgidav 错误</strong></h4><ul>
-<li><p><strong>错误图片</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/wsgidav_error.png" alt></p>
-</li>
-<li><p><strong>错误原因</strong></p>
-<ul>
-<li>WsgiDav 新版本 已将更改源码 <code>&#39;domaincontroller&#39;: NeedAuthController(app),</code> 为 <code>&#39;http_authenticator&#39;: {&#39;HTTPAuthenticator&#39;: NeedAuthController(app),},</code></li>
-</ul>
-</li>
-<li><p><strong>修改源码</strong></p>
-<ul>
-<li><p><strong>修改</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/webdav_replace.png" alt></p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="werkzeug-wsgi-错误"><a href="#werkzeug-wsgi-错误" class="headerlink" title="werkzeug.wsgi 错误"></a><strong>werkzeug.wsgi 错误</strong></h4><ul>
-<li><p><strong>错误图片</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/werkzeug_error.png" alt></p>
-</li>
-<li><p><strong>错误原因</strong></p>
-<ul>
-<li><code>werkzeug</code> 1.0.0 版本及以上，没有<em>DispatcherMiddleware</em>方法</li>
-<li><code>Pyspider</code> 需要 <code>werkzeug</code>库版本在 <strong>0.15–1.0(不允许为1.0)</strong></li>
-</ul>
-</li>
-<li><p><strong>重新下载 <code>werkzeug</code> 版本</strong></p>
-<ul>
-<li><p><code>pip install --upgrade werkzeug==0.16.1</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/install_werkzeug.png" alt></p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="io-Loop-错误"><a href="#io-Loop-错误" class="headerlink" title="io_Loop 错误"></a><strong>io_Loop 错误</strong></h4><ul>
-<li><strong>报错</strong> : <code>TypeError: initialize() got an unexpected keyword argument ‘io_loop’</code></li>
-<li><strong>错误原因</strong> : python环境中，默认tornado版本是最新的5.0，在4.0之后就废弃了io_loop参数</li>
-<li><strong>重新更新 <code>tornado</code> 版本</strong> : <code>pip install --upgrade tornado==4.5.1</code></li>
-</ul>
-<h4 id="成功启动"><a href="#成功启动" class="headerlink" title="*成功启动 *"></a>*<em>成功启动 *</em></h4><ul>
-<li><p><code>pyspider all</code> 启动成功</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/pyspider_success.png" alt></p>
-</li>
-</ul>
-
+    <div class="content-article" style="margin-top: 30px;">
+        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
+            
+            <a href="/2021/03/01/redis-basis/">redis_basis</a>
+            <br>
+            
+            
+        </div>
     </div>
 </article>
-
-
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -372,17 +249,17 @@
 
                 
                 <li>
-                    <a href="/2020/12/24/windows-zhong-pyspider-an-zhuang-yi-ji-cuo-wu-chu-li/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/tags/Redis/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/12/24/windows-zhong-pyspider-an-zhuang-yi-ji-cuo-wu-chu-li/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/tags/Redis/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/12/24/windows-zhong-pyspider-an-zhuang-yi-ji-cuo-wu-chu-li/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/tags/Redis/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -390,33 +267,33 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Chrome-DevTools/" style="font-size: 14.981325672612462px;" class="tag-cloud-link">Chrome DevTools</a>
+    <a href="/tags/Chrome-DevTools/" style="font-size: 15.798163543441728px;" class="tag-cloud-link">Chrome DevTools</a>
     
-    <a href="/tags/Flask-Study/" style="font-size: 18.31966710088119px;" class="tag-cloud-link">Flask_Study</a>
+    <a href="/tags/Flask-Study/" style="font-size: 16.274121300655025px;" class="tag-cloud-link">Flask_Study</a>
     
-    <a href="/tags/Git/" style="font-size: 12.31572735040327px;" class="tag-cloud-link">Git</a>
+    <a href="/tags/Git/" style="font-size: 13.562850537436816px;" class="tag-cloud-link">Git</a>
     
-    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 11.711930954977895px;" class="tag-cloud-link">PEP8 编程风格规范</a>
+    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 19.39055233904551px;" class="tag-cloud-link">PEP8 编程风格规范</a>
     
-    <a href="/tags/Windows-problem/" style="font-size: 12.125431003832485px;" class="tag-cloud-link">Windows problem</a>
+    <a href="/tags/Windows-problem/" style="font-size: 14.537777985468491px;" class="tag-cloud-link">Windows problem</a>
     
-    <a href="/tags/Linux-study/" style="font-size: 16.573246429713244px;" class="tag-cloud-link">Linux_study</a>
+    <a href="/tags/Linux-study/" style="font-size: 15.585465686401715px;" class="tag-cloud-link">Linux_study</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 17.809101937230103px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 18.965213436310194px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/scrapy-study/" style="font-size: 15.195528496897435px;" class="tag-cloud-link">scrapy_study</a>
+    <a href="/tags/scrapy-study/" style="font-size: 19.224782447972075px;" class="tag-cloud-link">scrapy_study</a>
     
-    <a href="/tags/Pyecharts/" style="font-size: 8.596495057334035px;" class="tag-cloud-link">Pyecharts</a>
+    <a href="/tags/Pyecharts/" style="font-size: 13.999776088025325px;" class="tag-cloud-link">Pyecharts</a>
     
-    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 15.683131524265335px;" class="tag-cloud-link">Python 模块</a>
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 19.85626853483892px;" class="tag-cloud-link">Python 模块</a>
     
-    <a href="/tags/HeroKu-Server/" style="font-size: 15.05112441576748px;" class="tag-cloud-link">HeroKu Server</a>
+    <a href="/tags/HeroKu-Server/" style="font-size: 11.311077268985121px;" class="tag-cloud-link">HeroKu Server</a>
     
-    <a href="/tags/Python-%E9%9D%A2%E8%AF%95/" style="font-size: 15.751885269894089px;" class="tag-cloud-link">Python 面试</a>
+    <a href="/tags/Python-%E9%9D%A2%E8%AF%95/" style="font-size: 18.47150334621108px;" class="tag-cloud-link">Python 面试</a>
     
-    <a href="/tags/pyspider/" style="font-size: 12.107692803655269px;" class="tag-cloud-link">pyspider</a>
+    <a href="/tags/pyspider/" style="font-size: 11.813192534957068px;" class="tag-cloud-link">pyspider</a>
     
-    <a href="/tags/Redis/" style="font-size: 15.677418208935432px;" class="tag-cloud-link">Redis</a>
+    <a href="/tags/Redis/" style="font-size: 9.403176656855814px;" class="tag-cloud-link">Redis</a>
     
 </div>
                 
