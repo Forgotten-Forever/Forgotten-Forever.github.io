@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Liu">
+    
+    <meta name="description" content="python 学习">
+    
+    
+    
+    
+    
+    
+    <title>DynamoDB_Get_Start.md | BLOG</title>
+    <link href="http://yoursite.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/small_bg.jpg');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: 'U8H1iyu5mFjFx6raVVFTm9S2-gzGzoHsz',
+        appKey: 'd1Q8XiwqhVryYzng4eR7EuQp'
+      })
+    </script>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/https:/cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview20.gif'
+        var previews = 'https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview01.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview02.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview03.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview04.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview05.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview06.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview07.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview08.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview09.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview10.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview11.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview12.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview13.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview15.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview16.gif,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview17.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview18.gif,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview19.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview21.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview23.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview25.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview26.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview27.jpg,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview29.gif,https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview30.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://yoursite.com">
+                
+                <!-- 这里background直接使用logo_image(url) -->
+                <style>
+
+                </style>
+                    
+                <div class="navbar-brand"></div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Chrome-DevTools/">Chrome DevTools</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Flask-Study/">Flask_Study</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Git/">Git</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">BLOG</a>
+        >
+        <span>DynamoDB_Get_Start.md</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2021/06/27/dynamodb-get-start-md/">DynamoDB_Get_Start.md</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2021-06-27
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2021/06/27/dynamodb-get-start-md/">DynamoDB_Get_Start.md</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2021-06-27
+            </p>
+            <p>
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2 id="Dynamodb-入门学习"><a href="#Dynamodb-入门学习" class="headerlink" title="Dynamodb 入门学习"></a>Dynamodb 入门学习</h2><h3 id="DynamoDB-本地部署"><a href="#DynamoDB-本地部署" class="headerlink" title="DynamoDB 本地部署"></a>DynamoDB 本地部署</h3><h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
+<li>安装 Java 8 及以上版本</li>
+<li>下载并安装 aws CLI <a href="https://awscli.amazonaws.com/AWSCLIV2.msi" target="_blank" rel="noopener">下载地址</a></li>
+<li>下载 DynamoDB 文件 <a href="https://s3.ap-northeast-1.amazonaws.com/dynamodb-local-tokyo/dynamodb_local_latest.zip" target="_blank" rel="noopener">下载链接</a></li>
+</ul>
+<h4 id="安装及部署"><a href="#安装及部署" class="headerlink" title="安装及部署"></a>安装及部署</h4><ol>
+<li><p>将下载的 DynamoDB 压缩包文件 解压到 自定义文件下</p>
+</li>
+<li><p>在 自定义文件夹下 (DynamoDBLocal.jar 同级目录内) 打开 命令行窗口</p>
+</li>
+<li><p>输入以下命令，启动 DynamoDB</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置凭证用于工作使用，凭证内容可以自定义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AWS Access Key ID [None]: *********************</span><br><span class="line">AWS Secret Access Key [None]: *****************</span><br><span class="line">Default region name [None]: us-west-2</span><br><span class="line">Default output format [None]: json</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="Python-操作-DynamoDB"><a href="#Python-操作-DynamoDB" class="headerlink" title="Python 操作 DynamoDB"></a>Python 操作 DynamoDB</h3><h4 id="准备工作-1"><a href="#准备工作-1" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
+<li><p>pip 安装 外置包 boto3 操作 DynamoDB </p>
+<p><code>pip install boto3</code></p>
+</li>
+</ul>
+<h4 id="连接-DynamoDB-数据库"><a href="#连接-DynamoDB-数据库" class="headerlink" title="连接 DynamoDB 数据库"></a>连接 DynamoDB 数据库</h4><ol>
+<li><p>本地连接</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dynamodb = boto3.resource(<span class="string">'ddynamodb'</span>, endpoint_url=<span class="string">"http://localhost:8000"</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="2">
+<li><p>使用线上 Web 服务 (region_name: 表示使用服务器区域)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dynamodb = boto3.resource(<span class="string">'dynamodb'</span>, region_name=<span class="string">'us-west-2'</span>)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="创建表操作-create-table"><a href="#创建表操作-create-table" class="headerlink" title="创建表操作: create_table()"></a>创建表操作: create_table()</h4><ul>
+<li><p><code>create_table()</code></p>
+<ul>
+<li>调用时，需要指定表名称、主键属性及其数据类型</li>
+<li><code>KeySchema</code> : 设置分区键与排序键</li>
+<li><code>ProvisionedThroughput</code> : 必须参数，定义读取与写入单位</li>
+<li><code>AttributeDefinitions</code> : 设置分区主键与排序主键内容类型</li>
+</ul>
+</li>
+<li><p>创表实例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">table = dynamodb.create_table(</span><br><span class="line">        TableName=<span class="string">'Movies'</span>,</span><br><span class="line">        KeySchema=[</span><br><span class="line">            <span class="comment"># 设置分区键</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">'AttributeName'</span>: <span class="string">'year'</span>,</span><br><span class="line">                <span class="string">'KeyType'</span>: <span class="string">'HASH'</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment"># 设置排序键</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">'AttributeName'</span>: <span class="string">'title'</span>,</span><br><span class="line">                <span class="string">'KeyType'</span>: <span class="string">'RANGE'</span></span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        AttributeDefinitions=[</span><br><span class="line">            <span class="comment"># 设置分区键 year 的数据类型 为 Number</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">'AttributeName'</span>: <span class="string">'year'</span>,</span><br><span class="line">                <span class="string">'AttributeType'</span>: <span class="string">'N'</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment"># 设置排序键 title 的数据类型为 String</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">'AttributeName'</span>: <span class="string">'title'</span>,</span><br><span class="line">                <span class="string">'AttributeType'</span>: <span class="string">'S'</span></span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        <span class="comment"># 定义读取与写入容量单位</span></span><br><span class="line">        ProvisionedThroughput=&#123;</span><br><span class="line">            <span class="string">'ReadCapacityUnits'</span>: <span class="number">10</span>,</span><br><span class="line">            <span class="string">'WriteCapacityUnits'</span>: <span class="number">10</span></span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="将-JSON-数据加载到-表内-put-item"><a href="#将-JSON-数据加载到-表内-put-item" class="headerlink" title="将 JSON 数据加载到 表内: put_item()"></a>将 JSON 数据加载到 表内: put_item()</h4><ul>
+<li><p>加载实例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_movies</span><span class="params">(movies, dynamodb=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> dynamodb:</span><br><span class="line">        dynamodb = boto3.resource(<span class="string">'dynamodb'</span>, endpoint_url=<span class="string">"http://localhost:8000"</span>)</span><br><span class="line"></span><br><span class="line">    table = dynamodb.Table(<span class="string">'Movies'</span>)</span><br><span class="line">    <span class="keyword">for</span> movie <span class="keyword">in</span> movies:</span><br><span class="line">        <span class="comment"># 读取并显示数据到面板</span></span><br><span class="line">        year = int(movie[<span class="string">'year'</span>])</span><br><span class="line">        title = movie[<span class="string">'title'</span>]</span><br><span class="line">        print(<span class="string">"Adding movie:"</span>, year, title)</span><br><span class="line">        <span class="comment"># 加载数据</span></span><br><span class="line">        table.put_item(Item=movie)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">"moviedata.json"</span>) <span class="keyword">as</span> json_file:</span><br><span class="line">        movie_list = json.load(json_file, parse_float=Decimal)</span><br><span class="line">    load_movies(movie_list)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="CRUD-操作"><a href="#CRUD-操作" class="headerlink" title="CRUD 操作"></a>CRUD 操作</h4><h5 id="向已存在表内创建新项目-put-item"><a href="#向已存在表内创建新项目-put-item" class="headerlink" title="向已存在表内创建新项目 put_item()"></a>向已存在表内创建新项目 put_item()</h5><ul>
+<li><p>创建实例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建新项目</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">put_movie</span><span class="params">(title, year, plot, rating, dynamodb=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> dynamodb:</span><br><span class="line">        dynamodb = boto3.resource(<span class="string">'dynamodb'</span>, endpoint_url=<span class="string">'http://localhost:8000'</span>)</span><br><span class="line"></span><br><span class="line">    table = dynamodb.Table(<span class="string">'Movies'</span>)</span><br><span class="line">    response = table.put_item(</span><br><span class="line">        Item=&#123;</span><br><span class="line">            <span class="string">'year'</span>: year,</span><br><span class="line">            <span class="string">'title'</span>: title,</span><br><span class="line">            <span class="string">'info'</span>: &#123;</span><br><span class="line">                <span class="string">'plot'</span>: plot,</span><br><span class="line">                <span class="string">'rating'</span>: rating</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    movie_resp = put_movie(<span class="string">'The Big New Movie'</span>, <span class="number">2015</span>, <span class="string">'Nothing happens at all.'</span>, <span class="number">0</span>)</span><br><span class="line">    print(<span class="string">'Put movie succeeded:'</span>)</span><br><span class="line">    pprint(movie_resp)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="指定主键值读取项目-get-item"><a href="#指定主键值读取项目-get-item" class="headerlink" title="指定主键值读取项目: get_item()"></a>指定主键值读取项目: get_item()</h5><ul>
+<li><p><code>get_item(Key={&#39;分区键名&#39;: data1, &#39;排序键名： data2})</code></p>
+</li>
+<li><p>读取实例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> boto3</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">from</span> botocore.exceptions <span class="keyword">import</span> ClientError</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_movie</span><span class="params">(title, year, dynamodb=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> dynamodb:</span><br><span class="line">        dynamodb = boto3.resource(<span class="string">'dynamodb'</span>, endpoint_url=<span class="string">'http://localhost:8000'</span>)</span><br><span class="line"></span><br><span class="line">    table = dynamodb.Table(<span class="string">'Movies'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = table.get_item(Key=&#123;<span class="string">'year'</span>: year, <span class="string">'title'</span>: title&#125;)</span><br><span class="line">    <span class="keyword">except</span> ClientError <span class="keyword">as</span> e:</span><br><span class="line">        print(e.response[<span class="string">'Error'</span>][<span class="string">'Message'</span>])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> response[<span class="string">'Item'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    movie = get_movie(<span class="string">'The Big New Movie'</span>, <span class="number">2015</span>,)</span><br><span class="line">    <span class="keyword">if</span> movie:</span><br><span class="line">        print(<span class="string">'Get movie succeeded:'</span>)</span><br><span class="line">        pprint(movie)</span><br><span class="line">        <span class="comment"># python 3.6 没有 sort_dicts 形参</span></span><br><span class="line">        <span class="comment"># pprint(movie, sort_dicts=False)</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="更新项目-更新现有属性的值、添加新属性或删除属性-update-item"><a href="#更新项目-更新现有属性的值、添加新属性或删除属性-update-item" class="headerlink" title="更新项目 (更新现有属性的值、添加新属性或删除属性): update_item()"></a>更新项目 (更新现有属性的值、添加新属性或删除属性): update_item()</h5><ul>
+<li><p><code>update_item()</code> </p>
+<ul>
+<li>更改现有属性的值</li>
+<li>向现有项目内添加新的列表属性</li>
+</ul>
+</li>
+<li><p>注意事项</p>
+<ul>
+<li><code>DecimalEncoder</code> 类用于打印使用 <code>Decimal</code> 类存储的数字。BotoSDK 使用<code>Decimal</code>类来保存 Amazon DynamoDB 数字值。</li>
+<li>使用 <code>UpdateExpression</code> 来描述您要对指定项目执行的所有更新</li>
+<li><code>ReturnValues</code>参数用于指示 DynamoDB 仅返回更新后的属性 (<code>UPDATED_NEW</code>)</li>
+</ul>
+</li>
+<li><p>更新实现</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> boto3</span><br><span class="line"><span class="keyword">from</span> decimal <span class="keyword">import</span> Decimal</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">update_movie</span><span class="params">(title, year, rating, plot, actors, dynamodb=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> dynamodb:</span><br><span class="line">        dynamodb = boto3.resource(<span class="string">'dynamodb'</span>, endpoint_url=<span class="string">'http://localhost:8000'</span>)</span><br><span class="line"></span><br><span class="line">    table = dynamodb.Table(<span class="string">'Movies'</span>)</span><br><span class="line"></span><br><span class="line">    response = table.update_item(</span><br><span class="line">        Key=&#123;</span><br><span class="line">            <span class="string">'year'</span>: year,</span><br><span class="line">            <span class="string">'title'</span>: title</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment"># UpdateExpression 来描述您要对指定项目执行的所有更新。</span></span><br><span class="line">        <span class="comment"># 对更新内容设置</span></span><br><span class="line">        UpdateExpression=<span class="string">'set info.rating=:r, info.plot=:p, info.actors=:a'</span>,</span><br><span class="line">        ExpressionAttributeValues=&#123;</span><br><span class="line">            <span class="string">':r'</span>: Decimal(rating),</span><br><span class="line">            <span class="string">':p'</span>: plot,</span><br><span class="line">            <span class="string">':a'</span>: actors</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment"># ReturnValues参数用于指示 DynamoDB 仅返回更新后的属性 (UPDATED_NEW)。</span></span><br><span class="line">        ReturnValues=<span class="string">"UPDATED_NEW"</span></span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    update_response = update_movie(</span><br><span class="line">        <span class="string">'The Big New Movie'</span>, <span class="number">2015</span>, <span class="number">5.5</span>, <span class="string">'Everything happens all at once.'</span>,</span><br><span class="line">        [<span class="string">'larry'</span>, <span class="string">'Moe'</span>, <span class="string">'Curly'</span>]</span><br><span class="line">    )</span><br><span class="line">    print(<span class="string">"Ypdate movie succeeded:"</span>)</span><br><span class="line">    pprint(update_response)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="增加原子计数器-update-item"><a href="#增加原子计数器-update-item" class="headerlink" title="增加原子计数器: update_item()"></a>增加原子计数器: update_item()</h5><ul>
+<li><p><code>update_item()</code></p>
+<ul>
+<li>递增或递减现有属性的值而不干扰其他写入请求</li>
+</ul>
+</li>
+<li><p>原子计数器实例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> boto3</span><br><span class="line"><span class="keyword">from</span> decimal <span class="keyword">import</span> Decimal</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"></span><br><span class="line"><span class="comment"># 增加原子计数器：使用update_item方法递增或递减现有属性的值而不干扰其他写入请求</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">increase_rating</span><span class="params">(title, year, rating_increase, dynamodb=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> dynamodb:</span><br><span class="line">        dynamodb = boto3.resource(<span class="string">'dynamodb'</span>, endpoint_url=<span class="string">'http://localhost:8000'</span>)</span><br><span class="line"></span><br><span class="line">    table = dynamodb.Table(<span class="string">'Movies'</span>)</span><br><span class="line">    response = table.update_item(</span><br><span class="line">        Key=&#123;</span><br><span class="line">            <span class="string">'year'</span>: year,</span><br><span class="line">            <span class="string">'title'</span>: title</span><br><span class="line">        &#125;,</span><br><span class="line">        UpdateExpression=<span class="string">"set info.rating = info.rating + :val"</span>,</span><br><span class="line">        ExpressionAttributeValues=&#123;</span><br><span class="line">            <span class="string">':val'</span>: Decimal(rating_increase)</span><br><span class="line">        &#125;,</span><br><span class="line">        ReturnValues=<span class="string">'UPDATED_NEW'</span></span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    update_response = increase_rating(<span class="string">'The Big New Movie'</span>, <span class="number">2015</span>, <span class="number">1</span>)</span><br><span class="line">    print(<span class="string">'Update movie succeeded:'</span>)</span><br><span class="line">    pprint(update_response)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="满足指定条件更新项目-update-item"><a href="#满足指定条件更新项目-update-item" class="headerlink" title="满足指定条件更新项目: update_item()"></a>满足指定条件更新项目: update_item()</h5><ul>
+<li><p>注意事项</p>
+<ul>
+<li><code>ExpressionAttributeValues</code> 提供值替换功能。使用此参数是因为您不能在任何表达式 (包括 <code>KeyConditionExpression</code>) 中使用文本。您可使用表达式属性值 <code>:yyyy</code> 来解决此问题。</li>
+</ul>
+</li>
+<li><p>更新实例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> boto3</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">from</span> botocore.exceptions <span class="keyword">import</span> ClientError</span><br><span class="line"></span><br><span class="line"><span class="comment"># 有条件更新项目 (演员数目)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove_actors</span><span class="params">(title, year, actor_count, dynamodb=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> dynamodb:</span><br><span class="line">        dynamodb = boto3.resource(<span class="string">'dynamodb'</span>, endpoint_url=<span class="string">'http://localhost:8000'</span>)</span><br><span class="line"></span><br><span class="line">    table = dynamodb.Table(<span class="string">'Movies'</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = table.update_item(</span><br><span class="line">            Key=&#123;</span><br><span class="line">                <span class="string">'year'</span>: year,</span><br><span class="line">                <span class="string">'title'</span>: title</span><br><span class="line">            &#125;,</span><br><span class="line">            UpdateExpression=<span class="string">'remove info.actors[0]'</span>,</span><br><span class="line">            ConditionExpression=<span class="string">"size(info.actors) &gt;= :num"</span>,</span><br><span class="line">            ExpressionAttributeValues=&#123;<span class="string">':num'</span>: actor_count&#125;,</span><br><span class="line">            ReturnValues=<span class="string">"UPDATED_NEW"</span></span><br><span class="line">        )</span><br><span class="line">    <span class="keyword">except</span> ClientError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="keyword">if</span> e.response[<span class="string">"Error"</span>][<span class="string">"Code"</span>] == <span class="string">"ConditionalCheckFailedException"</span>:</span><br><span class="line">            print(e.response[<span class="string">"Error"</span>][<span class="string">"Message"</span>])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">raise</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    print(<span class="string">"Attempting conditional update (expecting failure) ..."</span>)</span><br><span class="line">    update_response = remove_actors(<span class="string">'The Big New Movie'</span>, <span class="number">2015</span>, <span class="number">3</span>)</span><br><span class="line">    <span class="keyword">if</span> update_response:</span><br><span class="line">        print(<span class="string">'Update movie succeeded:'</span>)</span><br><span class="line">        pprint(update_response)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="删除项目-delete-item"><a href="#删除项目-delete-item" class="headerlink" title="删除项目: delete_item()"></a>删除项目: delete_item()</h5><ul>
+<li><p><code>delete_item()</code> </p>
+<ul>
+<li>通过指定项目主键删除项目</li>
+</ul>
+</li>
+<li><p>删除实例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> boto3</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">from</span> decimal <span class="keyword">import</span> Decimal</span><br><span class="line"><span class="keyword">from</span> botocore.exceptions <span class="keyword">import</span> ClientError</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除项目 delete_item 通过指定主键删除</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete_underrated_movie</span><span class="params">(title, year, rating, dynamodb=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> dynamodb:</span><br><span class="line">        dynamodb = boto3.resource(<span class="string">'dynamodb'</span>, endpoint_url=<span class="string">"http://localhost:8000"</span>)</span><br><span class="line"></span><br><span class="line">    table = dynamodb.Table(<span class="string">'Movies'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = table.delete_item(</span><br><span class="line">            Key=&#123;</span><br><span class="line">                <span class="string">'year'</span>: year,</span><br><span class="line">                <span class="string">'title'</span>: title</span><br><span class="line">            &#125;,</span><br><span class="line">            ConditionExpression=<span class="string">"info.rating &gt;= :val"</span>,</span><br><span class="line">            ExpressionAttributeValues=&#123;</span><br><span class="line">                <span class="string">":val"</span>: Decimal(rating)</span><br><span class="line">            &#125;</span><br><span class="line">        )</span><br><span class="line">    <span class="keyword">except</span> ClientError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="keyword">if</span> e.response[<span class="string">'Error'</span>][<span class="string">'Code'</span>] == <span class="string">"ConditionalCheckFailedException"</span>:</span><br><span class="line">            print(e.response[<span class="string">"Error"</span>][<span class="string">"Message"</span>])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">raise</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    print(<span class="string">"Attempting a conditional delete ..."</span>)</span><br><span class="line">    delete_response = delete_underrated_movie(<span class="string">'The Big New Movie'</span>, <span class="number">2015</span>, <span class="number">5</span>)</span><br><span class="line">    <span class="keyword">if</span> delete_response:</span><br><span class="line">        print(<span class="string">'Delete movie succeeded:'</span>)</span><br><span class="line">        pprint(delete_response)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="查询和扫描数据"><a href="#查询和扫描数据" class="headerlink" title="查询和扫描数据"></a>查询和扫描数据</h4><ul>
+<li><code>query()</code> : 检索表中数据，分区键值必选，排序键可选</li>
+<li><code>scan()</code> : 检索表中所有数据</li>
+</ul>
+<h5 id="单条件查询-query"><a href="#单条件查询-query" class="headerlink" title="单条件查询: query()"></a>单条件查询: query()</h5><ul>
+<li><p>注意事项</p>
+<ul>
+<li>使用从 <code>ConditionExpression</code> 导入的 <code>Key</code> 和 <code>Attr</code> 函数时，Boto 3 开发工具包会为您构建一个 <code>boto3.dynamodb.conditions</code>。您还可以字符串形式指定 <code>ConditionExpression</code>。</li>
+</ul>
+</li>
+<li><p>查询实例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> boto3</span><br><span class="line"><span class="keyword">from</span> boto3.dynamodb.conditions <span class="keyword">import</span> Key</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据分区键 query 查找 同一分区内数据</span></span><br><span class="line"><span class="comment"># 检索 year 1985 发行的所有电影。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">query_movies</span><span class="params">(year, dynamodb=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> dynamodb:</span><br><span class="line">        dynamodb = boto3.resource(<span class="string">'dynamodb'</span>, endpoint_url=<span class="string">'http://localhost:8000'</span>)</span><br><span class="line"></span><br><span class="line">    table = dynamodb.Table(<span class="string">'Movies'</span>)</span><br><span class="line"></span><br><span class="line">    response = table.query(</span><br><span class="line">        KeyConditionExpression=Key(<span class="string">'year'</span>).eq(year)</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> response[<span class="string">'Items'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    query_year = <span class="number">1985</span></span><br><span class="line">    print(<span class="string">f'Movies from <span class="subst">&#123;query_year&#125;</span>'</span>)</span><br><span class="line">    movies = query_movies(query_year)</span><br><span class="line">    <span class="keyword">for</span> movie <span class="keyword">in</span> movies:</span><br><span class="line">        print(movie[<span class="string">'year'</span>], <span class="string">':'</span>, movie[<span class="string">'title'</span>])</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="多条件混合查询"><a href="#多条件混合查询" class="headerlink" title="多条件混合查询"></a>多条件混合查询</h5><ul>
+<li><p>查询实例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> boto3</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">from</span> boto3.dynamodb.conditions <span class="keyword">import</span> Key</span><br><span class="line"></span><br><span class="line"><span class="comment"># 多条件查询</span></span><br><span class="line"><span class="comment"># 将检索 year 1992 发行并且 title 以字母“A”至字母“L”开头的所有电影</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">query_and_project_movies</span><span class="params">(year, title_range, dynamodb=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> dynamodb:</span><br><span class="line">        dynamodb = boto3.resource(<span class="string">'dynamodb'</span>, endpoint_url=<span class="string">'http://localhost:8000'</span>)</span><br><span class="line"></span><br><span class="line">    table = dynamodb.Table(<span class="string">'Movies'</span>)</span><br><span class="line">    print(<span class="string">f'获取年份、标题、类型和主角'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 表达式属性名称只能引用投影表达式中的项。</span></span><br><span class="line">    response = table.query(</span><br><span class="line">        ProjectionExpression=<span class="string">"#yr, title, info.genres, info.actors[0]"</span>,</span><br><span class="line">        ExpressionAttributeNames=&#123;<span class="string">'#yr'</span>: <span class="string">'year'</span>&#125;,</span><br><span class="line">        KeyConditionExpression=</span><br><span class="line">        Key(<span class="string">'year'</span>).eq(year) &amp; Key(<span class="string">'title'</span>).between(title_range[<span class="number">0</span>], title_range[<span class="number">1</span>])</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> response[<span class="string">'Items'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    query_year = <span class="number">1992</span></span><br><span class="line">    query_range = (<span class="string">'A'</span>, <span class="string">'L'</span>)</span><br><span class="line">    print(<span class="string">f'Get movies from <span class="subst">&#123;query_year&#125;</span> with titles from <span class="subst">&#123;query_range[<span class="number">0</span>]&#125;</span> to <span class="subst">&#123;query_range[<span class="number">1</span>]&#125;</span>'</span>)</span><br><span class="line">    movies = query_and_project_movies(query_year, query_range)</span><br><span class="line">    <span class="keyword">for</span> movie <span class="keyword">in</span> movies:</span><br><span class="line">        print(<span class="string">f'\n<span class="subst">&#123;movie[<span class="string">"year"</span>]&#125;</span> : <span class="subst">&#123;movie[<span class="string">"title"</span>]&#125;</span>'</span>)</span><br><span class="line">        pprint(movie[<span class="string">'info'</span>])</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="扫描数据-scan"><a href="#扫描数据-scan" class="headerlink" title="扫描数据: scan()"></a>扫描数据: scan()</h5><ul>
+<li><p><code>scan()</code></p>
+<ul>
+<li>读取整个表中的所有项目，并返回表中的所有数据</li>
+<li>提供一个可选的 <code>filter_expression</code>，以便仅返回符合条件的项目。但是，筛选条件仅在扫描整个表后应用。</li>
+</ul>
+</li>
+<li><p>注意事项</p>
+<ul>
+<li><code>FilterExpression</code> 用于指定一个条件，以便仅返回符合条件的项目。所有其他项目都将被舍弃</li>
+<li><code>ProjectionExpression</code> 用于指定要在扫描结果中包含的属性。</li>
+<li>响应中的 <code>LastEvaluatedKey</code> 值随后通过 <code>scan</code> 参数传递给 <code>ExclusiveStartKey</code> 方法。当返回最后一页后，<code>LastEvaluatedKey</code> 将不是响应的一部分。</li>
+<li><code>ExpressionAttributeNames</code> 提供名称替换功能。我们使用这个是因为<code>year</code>是 DynamoDB 中的保留字您不能直接在任何表达式中使用它，包括<code>KeyConditionExpression</code>。您可使用表达式属性名称 <code>#yr</code> 来解决此问题</li>
+</ul>
+</li>
+<li><p>扫描实例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> boto3</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">from</span> boto3.dynamodb.conditions <span class="keyword">import</span> Key</span><br><span class="line"></span><br><span class="line"><span class="comment"># scan 方法将读取整个表中的所有项目，并返回表中的所有数据。</span></span><br><span class="line"><span class="comment"># 可提供一个可选的 filter_expression，以便仅返回符合条件的项目</span></span><br><span class="line"><span class="comment"># 筛选条件仅在扫描整个表后应用, 不适合单纯的查找操作</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 扫描整个 Movies 表，表中包含约 5000 个项目。</span></span><br><span class="line"><span class="comment"># 扫描时可指定可选筛选条件，以便仅检索 20 世纪 50 年代以来的电影 (约 100 个项目)，同时舍弃所有其他项目</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">scan_movies</span><span class="params">(year_range, display_movies, dynamodb=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> dynamodb:</span><br><span class="line">        dynamodb = boto3.resource(<span class="string">'dynamodb'</span>, endpoint_url=<span class="string">'http://localhost:8000'</span>)</span><br><span class="line"></span><br><span class="line">    table = dynamodb.Table(<span class="string">"Movies"</span>)</span><br><span class="line">    scan_kwargs = &#123;</span><br><span class="line">        <span class="comment"># 指定一个条件，以便仅返回符合条件的项目。所有其他项目都将被舍弃。</span></span><br><span class="line">        <span class="string">'FilterExpression'</span>: Key(<span class="string">'year'</span>).between(*year_range),</span><br><span class="line">        <span class="comment"># 指定要在扫描结果中包含的属性</span></span><br><span class="line">        <span class="string">'ProjectionExpression'</span>: <span class="string">"#yr, title, info.rating"</span>,</span><br><span class="line">        <span class="comment"># ExpressionAttributeNames 提供名称替换功能。我们使用这个是因为year是 DynamoDB 中的保留字您不能直接在任何表达式中使用它，</span></span><br><span class="line">        <span class="comment"># 包括KeyConditionExpression。您可使用表达式属性名称 #yr 来解决此问题。</span></span><br><span class="line">        <span class="string">'ExpressionAttributeNames'</span>: &#123;<span class="string">'#yr'</span>: <span class="string">"year"</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    done = <span class="literal">False</span></span><br><span class="line">    start_key = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> done:</span><br><span class="line">        <span class="keyword">if</span> start_key:</span><br><span class="line">            scan_kwargs[<span class="string">'ExclusiveStartKey'</span>] = start_key</span><br><span class="line">        response = table.scan(**scan_kwargs)</span><br><span class="line">        <span class="comment"># 调用外部的 print_movies 进行输出</span></span><br><span class="line">        display_movies(response.get(<span class="string">'Items'</span>, []))</span><br><span class="line">        start_key = response.get(<span class="string">'LastEvaluatedKey'</span>, <span class="literal">None</span>)</span><br><span class="line">        done = start_key <span class="keyword">is</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_movies</span><span class="params">(movies)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> movie <span class="keyword">in</span> movies:</span><br><span class="line">            print(<span class="string">f'\n<span class="subst">&#123;movie[<span class="string">"year"</span>]&#125;</span> : <span class="subst">&#123;movie[<span class="string">"title"</span>]&#125;</span>'</span>)</span><br><span class="line">            pprint(movie[<span class="string">'info'</span>])</span><br><span class="line"></span><br><span class="line">    query_range = (<span class="number">1950</span>, <span class="number">1959</span>)</span><br><span class="line">    print(<span class="string">f"Scanning for movies released from <span class="subst">&#123;query_range[<span class="number">0</span>]&#125;</span> to <span class="subst">&#123;query_range[<span class="number">1</span>]&#125;</span>..."</span>)</span><br><span class="line">    scan_movies(query_range, print_movies)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h4><h5 id="删除已创建的表-delete"><a href="#删除已创建的表-delete" class="headerlink" title="删除已创建的表: delete()"></a>删除已创建的表: delete()</h5><ul>
+<li><p>删除实例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> boto3</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete_movie_table</span><span class="params">(dynamodb=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> dynamodb:</span><br><span class="line">        dynamodb = boto3.resource(<span class="string">'dynamodb'</span>, endpoint_url=<span class="string">"http://localhost:8000"</span>)</span><br><span class="line"></span><br><span class="line">    table = dynamodb.Table(<span class="string">'Movies'</span>)</span><br><span class="line">    table.delete()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    delete_movie_table()</span><br><span class="line">    print(<span class="string">'Movies table deleted.'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Liu
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview20.gif" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>python 学习</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2021/06/27/dynamodb-get-start-md/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2021/06/27/dynamodb-get-start-md/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2021/06/27/dynamodb-get-start-md/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Chrome-DevTools/" style="font-size: 15.838784875638538px;" class="tag-cloud-link">Chrome DevTools</a>
+    
+    <a href="/tags/Flask-Study/" style="font-size: 15.946967019453908px;" class="tag-cloud-link">Flask_Study</a>
+    
+    <a href="/tags/Git/" style="font-size: 18.234259364592592px;" class="tag-cloud-link">Git</a>
+    
+    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 13.665852608216422px;" class="tag-cloud-link">PEP8 编程风格规范</a>
+    
+    <a href="/tags/Windows-problem/" style="font-size: 8.20580003544589px;" class="tag-cloud-link">Windows problem</a>
+    
+    <a href="/tags/Linux-study/" style="font-size: 8.671674416828399px;" class="tag-cloud-link">Linux_study</a>
+    
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 16.53486881483796px;" class="tag-cloud-link">前端学习</a>
+    
+    <a href="/tags/scrapy-study/" style="font-size: 12.510920216603289px;" class="tag-cloud-link">scrapy_study</a>
+    
+    <a href="/tags/Pyecharts/" style="font-size: 17.65137890049599px;" class="tag-cloud-link">Pyecharts</a>
+    
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 13.676106211472016px;" class="tag-cloud-link">Python 模块</a>
+    
+    <a href="/tags/HeroKu-Server/" style="font-size: 17.04997271608169px;" class="tag-cloud-link">HeroKu Server</a>
+    
+    <a href="/tags/Python-%E9%9D%A2%E8%AF%95/" style="font-size: 13.550414285251883px;" class="tag-cloud-link">Python 面试</a>
+    
+    <a href="/tags/pyspider/" style="font-size: 15.994741130400165px;" class="tag-cloud-link">pyspider</a>
+    
+    <a href="/tags/Redis/" style="font-size: 18.565982685717657px;" class="tag-cloud-link">Redis</a>
+    
+    <a href="/tags/Scrapy/" style="font-size: 17.767876540401804px;" class="tag-cloud-link">Scrapy</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://www.crushing.xyz/" target="_blank">GODLIN</a>
+    </li>
+    
+    <li>
+        <a href="https://ggbool.xyz/" target="_blank">GGboy</a>
+    </li>
+    
+    <li>
+        <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/#id9" target="_blank">BeautifulSoup 中文文档</a>
+    </li>
+    
+    <li>
+        <a href="https://requests.readthedocs.io/zh_CN/latest/user/quickstart.html" target="_blank">Requests 中文文档</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/forgotten-forever" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://docs.justfeeling.me/" target="_blank">note</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/xia-chong-yu-bing-74-74" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/06/27/python-scrapy-post/">Python_Scrapy_Post</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/06/27/dynamodb-get-start-md/">DynamoDB_Get_Start.md</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/03/01/redis-basis/">redis_basis</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/12/24/windows-zhong-pyspider-an-zhuang-yi-ji-cuo-wu-chu-li/">Windows中pyspider安装以及错误处理</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/12/18/python-de-la-ji-hui-shou-ji-zhi/">Python 的垃圾回收机制</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/10/17/heroku-da-jian-xue-xi-shi-yong-de-v2ray/">HeroKu 搭建学习使用的 V2ray</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/10/10/git-pull-error/">Git_pull_error</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/05/git-commands-02/">Git-commands-02</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/29/git-command/">Git-command</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/27/git-reset-shi-yong-diao-keng/">Git-reset使用掉坑</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Liu Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <script type="text/javascript" src="\js\FunnyTitle.js"></script>
+    <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"scripFrom":"local","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"heigut":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: 'https://cdn.jsdelivr.net/gh/Forgotten-Forever/BlogImages/images/preview',
+      ext: 'jpg',
+      maxCount: '25'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+
+<script src="/js/comment/leancloud.js"></script>
+
+
+
+</html>

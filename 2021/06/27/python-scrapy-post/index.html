@@ -12,7 +12,7 @@
     
     
     
-    <title>linux_vi编辑器 | BLOG</title>
+    <title>Python_Scrapy_Post | BLOG</title>
     <link href="http://yoursite.com" rel="prefetch" />
 
     
@@ -184,13 +184,13 @@
         <i class="fa fa-home"></i>
         <a href="http://yoursite.com">BLOG</a>
         >
-        <span>linux_vi编辑器</span>
+        <span>Python_Scrapy_Post</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                <a href="/2021/06/27/python-scrapy-post/">Python_Scrapy_Post</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -198,12 +198,12 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/Linux-study/">Linux_study</a>
+                <a href="/tags/Scrapy/">Scrapy</a>
                 
             </span>
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2020-07-29
+                <i class="fa fa-calendar"></i> 2021-06-27
             </span>
             
             <span class="label label-gal">
@@ -217,17 +217,17 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2020/07/29/linux-vi-bian-ji-qi/">linux_vi编辑器</a>
+                    <a href="/2021/06/27/python-scrapy-post/">Python_Scrapy_Post</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2020-07-29
+                <i class="fa fa-calendar"></i> 2021-06-27
             </p>
             <p>
                 
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/Linux-study/">Linux_study</a>
+                <a href="/tags/Scrapy/">Scrapy</a>
                 
                 
                 
@@ -237,134 +237,31 @@
         </center>
     </div>
     <div class="content-article">
-        <h2 id="linux-vi-编辑器"><a href="#linux-vi-编辑器" class="headerlink" title="linux vi 编辑器"></a>linux vi 编辑器</h2><ol>
-<li><h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><code>vi启动后默认进入的是命令模式，按一下[Esc]键可以返回命令模式。在命令模式中输入字幕“i”就可以进入vi的输入模式编辑文件。</code></li>
-</ol>
-<ul>
-<li><h4 id="vi-的启动和退出"><a href="#vi-的启动和退出" class="headerlink" title="vi 的启动和退出"></a>vi 的启动和退出</h4><ul>
-<li><h5 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h5><p>  <code>直接输入命令vi不指定文件名，由于这是一个没有命名的空文件，显示了vi的版本信息。使用vi打开文件，如果文件存在打开存在文件；如果不存在的话，将以我们指定的参数作为文件名。</code></p>
+        <h3 id="Python-爬虫处理-Post-请求"><a href="#Python-爬虫处理-Post-请求" class="headerlink" title="Python 爬虫处理 Post 请求"></a>Python 爬虫处理 Post 请求</h3><h4 id="Post-请求发送的数据为-Data-数据"><a href="#Post-请求发送的数据为-Data-数据" class="headerlink" title="Post 请求发送的数据为 Data 数据"></a>Post 请求发送的数据为 Data 数据</h4><ul>
+<li><p>携带 Data 数据的 post 请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">RequestURL:http:&#x2F;&#x2F;127.0.0.1:8080&#x2F;test&#x2F;test.do</span><br><span class="line">Request Method:POST</span><br><span class="line">Status Code:200 OK</span><br><span class="line"></span><br><span class="line">Request Headers</span><br><span class="line">Accept:text&#x2F;html,application&#x2F;xhtml+xml,application&#x2F;xml;q&#x3D;0.9,image&#x2F;webp,*&#x2F;*;q&#x3D;0.8</span><br><span class="line">Accept-Encoding:gzip,deflate,sdch</span><br><span class="line">Accept-Language:zh-CN,zh;q&#x3D;0.8,en;q&#x3D;0.6</span><br><span class="line">AlexaToolbar-ALX_NS_PH:AlexaToolbar&#x2F;alxg-3.2</span><br><span class="line">Cache-Control:max-age&#x3D;0</span><br><span class="line">Connection:keep-alive</span><br><span class="line">Content-Length:25</span><br><span class="line">Content-Type:application&#x2F;x-www-form-urlencoded</span><br><span class="line">Cookie:JSESSIONID&#x3D;74AC93F9F572980B6FC10474CD8EDD8D</span><br><span class="line">Host:127.0.0.1:8080</span><br><span class="line">Origin:http:&#x2F;&#x2F;127.0.0.1:8080</span><br><span class="line">Referer:http:&#x2F;&#x2F;127.0.0.1:8080&#x2F;test&#x2F;index.jsp</span><br><span class="line">User-Agent:Mozilla&#x2F;5.0 (Windows NT 6.1)AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;33.0.1750.149 Safari&#x2F;537.36</span><br><span class="line"></span><br><span class="line">Form Data</span><br><span class="line">name:mikan</span><br><span class="line">address:street</span><br><span class="line"></span><br><span class="line">Response Headers</span><br><span class="line">Content-Length:2</span><br><span class="line">Date:Sun, 11 May 2014 11:05:33 GMT</span><br><span class="line">Server:Apache-Coyote&#x2F;1.1</span><br></pre></td></tr></table></figure>
 </li>
-<li><h5 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h5><ul>
-<li><code>方向键</code></li>
-<li><code>向上移动光标：k</code></li>
-<li><code>向左移动光标：h</code> </li>
-<li><code>向右移动光标：l</code></li>
-<li><code>向下移动光标：j</code></li>
-</ul>
-</li>
-<li><h5 id="翻页"><a href="#翻页" class="headerlink" title="翻页"></a>翻页</h5><ul>
-<li><code>Ctrl+F 向前翻整页</code> </li>
-<li><code>Ctrl+U 向前翻半页</code></li>
-<li><code>Ctrl+B 向后翻整页</code></li>
-<li><code>Ctrl+D 向后翻半页</code></li>
-</ul>
-</li>
-<li><h5 id="行内快速跳转"><a href="#行内快速跳转" class="headerlink" title="行内快速跳转"></a>行内快速跳转</h5><ul>
-<li><code>^ 移动到本行行首</code></li>
-<li><code>$ 移动到本行行尾</code></li>
-</ul>
-</li>
-<li><h5 id="在命令模式下，使用以下命令可以快速的在行间跳转"><a href="#在命令模式下，使用以下命令可以快速的在行间跳转" class="headerlink" title="在命令模式下，使用以下命令可以快速的在行间跳转"></a>在命令模式下，使用以下命令可以快速的在行间跳转</h5><ul>
-<li><code>1G 跳转到文件首行</code></li>
-<li><code>G 跳转到尾行</code></li>
-<li><code>#G 跳转到文件的#行</code></li>
-</ul>
-</li>
-<li><h5 id="删除操作-命令模式"><a href="#删除操作-命令模式" class="headerlink" title="删除操作 (命令模式)"></a>删除操作 (命令模式)</h5><ul>
-<li><code>x 删除光标处的单个字符</code></li>
-<li><code>dd 删除光标所在行</code></li>
-<li><code>dw 删除当前字符到单词尾包括空格的所有字符</code></li>
-<li><code>#x 例如3x删除光标处向右的三个字符</code></li>
-<li><code>#dd 例如3dd从当前行开始向下删除三行文本</code></li>
-</ul>
-</li>
-<li><h5 id="复制操作"><a href="#复制操作" class="headerlink" title="复制操作"></a>复制操作</h5><ul>
-<li><p><code>yy 命令复制当前整行的内容到vi缓冲区</code></p>
-</li>
-<li><p><code>yw 复制当前光标所在位置到单词尾字符的内容到vi缓存区，相当于复制一个单词</code></p>
-</li>
-<li><p><code>y$ 复制光标所在位置到行尾内容到缓存区</code></p>
-</li>
-<li><p><code>y^ 复制光标所在位置到行首内容到缓存区</code></p>
-<p>  <code>#yy例如：5yy就是复制5行
-　　          #yw例如：2yw就是复制两个单词</code></p>
+<li><p>使用 Requests 模块发生 携带 Data 数据 的 post 请求</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">response = requests.post(</span><br><span class="line">    url = <span class="string">"请求 url 地址"</span>,</span><br><span class="line">    headers = <span class="string">"请求头字典"</span>,</span><br><span class="line">    data = <span class="string">"请求数据字典"</span>,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+
 </li>
 </ul>
+<h4 id="Post-请求发送的数据为-Request-Payload-数据"><a href="#Post-请求发送的数据为-Request-Payload-数据" class="headerlink" title="Post 请求发送的数据为 Request Payload 数据"></a>Post 请求发送的数据为 Request Payload 数据</h4><ul>
+<li><p>携带 Request Payload 数据的 post 请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">General</span><br><span class="line">Request URL: https:&#x2F;&#x2F;account.alibabacloud.com&#x2F;csp&#x2F;report.htm</span><br><span class="line">Request Method: POST</span><br><span class="line">Status Code: 200 </span><br><span class="line">Remote Address: 47.88.251.186:443</span><br><span class="line">Referrer Policy: strict-origin-when-cross-origin</span><br><span class="line"></span><br><span class="line">Response Headers</span><br><span class="line">content-encoding: gzip</span><br><span class="line">content-type: text&#x2F;html;charset&#x3D;UTF-8</span><br><span class="line">date: Fri, 25 Jun 2021 07:54:07 GMT</span><br><span class="line">eagleeye-traceid: 0a98a6bb16246076475364468e2bdc</span><br><span class="line">server: Tengine</span><br><span class="line">strict-transport-security: max-age&#x3D;0</span><br><span class="line">timing-allow-origin: *</span><br><span class="line">vary: Accept-Encoding</span><br><span class="line"></span><br><span class="line">Request Headers</span><br><span class="line">:authority: account.alibabacloud.com</span><br><span class="line">:method: POST</span><br><span class="line">:path: &#x2F;csp&#x2F;report.htm</span><br><span class="line">:scheme: https</span><br><span class="line">accept: *&#x2F;*</span><br><span class="line">accept-encoding: gzip, deflate, br</span><br><span class="line">accept-language: zh-CN,zh;q&#x3D;0.9</span><br><span class="line">content-length: 1047</span><br><span class="line">content-type: application&#x2F;csp-report</span><br><span class="line">cookie: ******************************************************************************************************</span><br><span class="line">origin: https:&#x2F;&#x2F;account.alibabacloud.com</span><br><span class="line">referer: https:&#x2F;&#x2F;account.alibabacloud.com&#x2F;login&#x2F;login.htm</span><br><span class="line">sec-ch-ua: &quot; Not;A Brand&quot;;v&#x3D;&quot;99&quot;, &quot;Google Chrome&quot;;v&#x3D;&quot;91&quot;, &quot;Chromium&quot;;v&#x3D;&quot;91&quot;</span><br><span class="line">sec-ch-ua-mobile: ?0</span><br><span class="line">sec-fetch-dest: report</span><br><span class="line">sec-fetch-mode: no-cors</span><br><span class="line">sec-fetch-site: same-origin</span><br><span class="line">user-agent: Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;91.0.4472.114 Safari&#x2F;537.36</span><br><span class="line"></span><br><span class="line">Request Payload</span><br><span class="line">&#123;&quot;csp-report&quot;:&#123;&quot;document-uri&quot;:&quot;https:&#x2F;&#x2F;account.alibabacloud.com&#x2F;login&#x2F;login.htm&quot;,&quot;referrer&quot;:&quot;https:&#x2F;&#x2F;www.google.com&#x2F;&quot;,&quot;violated-directive&quot;:&quot;script-src-elem&quot;,&quot;effective-directive&quot;:&quot;script-src-elem&quot;,&quot;original-policy&quot;:&quot;base-uri &#39;self&#39;;script-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; &#39;report-sample&#39; https: http: &#39;sha256-lfXlPY3+MCPOPb4mrw1Y961+745U3WlDQVcOXdchSQc&#x3D;&#39; &#39;sha256-QbgF6nrAFOI1VumLs3RwKgg0Qmj5JImgLwiAhJOUoeQ&#x3D;&#39; &#39;sha256-rRMdkshZyJlCmDX27XnL7g3zXaxv7ei6Sg+yt4R3svU&#x3D;&#39; &#39;sha256-kbHtQyYDQKz4SWMQ8OHVol3EC0t3tHEJFPCSwNG9NxQ&#x3D;&#39; &#39;sha256-46mc3H6z56gnOReRHr&#x2F;&#x2F;8M7FxjqtSaDN7KetqqduuiE&#x3D;&#39; &#39;Strict-Dynamic&#39; &#39;unsafe-hashes&#39; &#39;nonce-0MVMRYu19o&#39;;frame-src &#39;self&#39; *.aliyun.com *.alibaba.com *.alibabacloud.com gaic.alicdn.com g.alicdn.com;worker-src blob: &#39;self&#39; data:;object-src &#39;self&#39; g.alicdn.com;frame-ancestors *.aliyun.com;report-uri &#x2F;csp&#x2F;report.htm;&quot;,&quot;disposition&quot;:&quot;report&quot;,&quot;blocked-uri&quot;:&quot;inline&quot;,&quot;line-number&quot;:59,&quot;source-file&quot;:&quot;https:&#x2F;&#x2F;account.alibabacloud.com&#x2F;login&#x2F;login.htm&quot;,&quot;status-code&quot;:0,&quot;script-sample&quot;:&quot;var ALIYUN_ACCOUNT_LOGIN_CONFIG &#x3D; &#123;\n    &quot;&#125;&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><h5 id="恢复文件"><a href="#恢复文件" class="headerlink" title="恢复文件"></a>恢复文件</h5><p>  <code>vi在编辑某一个文件时，会生成一个临时文件，这个文件以 . 开头并以 .swp结尾。正常退出该文件自动删除，如果意外退出例如忽然断电，该文件不会删除，我们在下次编辑时可以选择一下命令处理</code></p>
-<ul>
-<li><code>O 只读打开，不改变文件内容</code></li>
-<li><code>E 继续编辑文件，不恢复.swp文件保存的内容</code></li>
-<li><code>R 将恢复上次编辑以后未保存文件内容</code></li>
-<li><code>Q 退出vi</code></li>
-<li><code>D 删除.swp文件+ 或者使用vi －r 文件名来恢复未保存的内容</code></li>
-</ul>
-</li>
-</ul>
+<li><p>使用 Requests 模块发生 携带  Request Payload 数据 的 post 请求</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"></span><br><span class="line">url = <span class="string">""</span></span><br><span class="line">payloadHeaders = &#123;</span><br><span class="line">    <span class="string">"user-agent"</span>: <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36"</span>,</span><br><span class="line">    <span class="string">"content-type"</span>: <span class="string">"application/json;charset=UTF-8"</span>,</span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">payloadData = &#123;<span class="string">"query"</span>: [],</span><br><span class="line">               <span class="string">"start"</span>: <span class="number">6000</span>,</span><br><span class="line">               <span class="string">"rows"</span>: <span class="number">100</span>,</span><br><span class="line">               <span class="string">"sort_field"</span>: &#123;<span class="string">"sort_field"</span>: <span class="string">"ImpactFactor"</span>&#125;,</span><br><span class="line">               <span class="string">"highlight_field"</span>: <span class="string">""</span>,</span><br><span class="line">               <span class="string">"pinyin_title"</span>: [],</span><br><span class="line">               <span class="string">"class_code"</span>: <span class="string">""</span>,</span><br><span class="line">               <span class="string">"core_periodical"</span>: [],</span><br><span class="line">               <span class="string">"sponsor_region"</span>: [],</span><br><span class="line">               <span class="string">"publishing_period"</span>: [],</span><br><span class="line">               <span class="string">"publish_status"</span>: <span class="string">""</span>,</span><br><span class="line">               <span class="string">"return_fields"</span>: [<span class="string">"Title"</span>, <span class="string">"Id"</span>, <span class="string">"CorePeriodical"</span>, <span class="string">"Award"</span>, <span class="string">"IsPrePublished"</span>]&#125;</span><br><span class="line"></span><br><span class="line">response = requests.post(url,</span><br><span class="line">                         <span class="comment"># 将 data 转化为 json 格式数据</span></span><br><span class="line">                         data=json.dumps(payloadData),</span><br><span class="line">                         headers=payloadHeaders)</span><br><span class="line">dates = response.json()</span><br><span class="line">print(dates[<span class="string">'value'</span>][<span class="number">-1</span>])</span><br><span class="line">print(len(dates[<span class="string">'value'</span>]))</span><br></pre></td></tr></table></figure>
+
+
+
 </li>
 </ul>
-<ol start="2">
-<li><h3 id="输入模式"><a href="#输入模式" class="headerlink" title="输入模式"></a>输入模式</h3><p> <code>在这个模式中我们可以编辑、修改、输入等编辑工作，在编辑器最后一行显示一个“--INSERT--”标志着vi进入了输入模式。当需要保存文件时，先返回命令模式，再进入末行模式保存。</code></p>
-<ul>
-<li><code>Home 光标到行首</code></li>
-<li><code>End 光标到行尾</code></li>
-<li><code>Page Up 和 Page Down 上下翻页</code></li>
-<li><code>Delect 删除光标位置的字符</code></li>
-<li><h4 id="编辑操作-进入输入模式命令"><a href="#编辑操作-进入输入模式命令" class="headerlink" title="编辑操作 进入输入模式命令"></a>编辑操作 进入输入模式命令</h4><ul>
-<li><code>i 插入命令</code> </li>
-<li><code>a 附加命令</code> </li>
-<li><code>o 打开命令</code> </li>
-<li><code>c 修改命令</code></li>
-<li><code>r 取代命令</code></li>
-<li><code>s 替换命令</code></li>
-<li><code>Esc 退出命令</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h3 id="末行模式"><a href="#末行模式" class="headerlink" title="末行模式"></a>末行模式</h3><p> <code>在命令模式输入&quot;: &quot;即可进入该模式</code></p>
-</li>
-</ol>
-<ul>
-<li><h4 id="查找和替换"><a href="#查找和替换" class="headerlink" title="查找和替换"></a>查找和替换</h4><ul>
-<li><h5 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h5><ul>
-<li><p><code>至上而下的查找</code><br>　　<br>  <code>/ 要查找的字符窜，其中/代表从光标所在位置起开始查找，例如：/ work</code></p>
-</li>
-<li><p><code>至下而上的查找</code></p>
-<p>  <code>？要查找的字符窜 例如：/ work</code></p>
-</li>
-<li><p><code>替换</code>  <code>如果替换的范围较大时，在所有的命令尾加一个c命令，强制每个替换需要用户进行确认，例如:s/old/new/c 或s/old/new/gc</code></p>
-<ul>
-<li><code>:s/old/new 用new替换行中首次出现的old</code></li>
-<li><code>: s/old/new/g 用new替换行中所有出现的old</code></li>
-<li><code>:#,# s/old/new/g 用new替换从第＃行到第＃行中出现的old</code></li>
-<li><code>：% s/old/new/g 用new替换整篇中出现的old</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="保存文件"><a href="#保存文件" class="headerlink" title="保存文件"></a>保存文件</h5><p>  <code>如果文件已经有文件名，我们在末行模式直接输入w保存，如果没有文件名，输入w 文件名进行保存或另存为。例如：w test其中test是文件名。</code></p>
-</li>
-<li><h5 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h5><ul>
-<li><code>q! : 强制退出，不保存当前文件内容</code></li>
-<li><code>q  : 正常退出，不保存需改</code></li>
-<li><code>wq : 保存退出</code></li>
-<li><code>wq!: 保存强制退出</code></li>
-</ul>
-</li>
-<li><h5 id="显示行号和取消行号-末行模式使用"><a href="#显示行号和取消行号-末行模式使用" class="headerlink" title="显示行号和取消行号(末行模式使用)"></a>显示行号和取消行号(末行模式使用)</h5><ul>
-<li><code>set nu 显示行号</code></li>
-<li><code>set nonu 取消行号</code></li>
-</ul>
-</li>
-<li><h5 id="撤销操作"><a href="#撤销操作" class="headerlink" title="撤销操作"></a>撤销操作</h5><ul>
-<li><code>u 命令取消最近一次的操作，可以使用多次来恢复原有的操作</code></li>
-<li><code>U 取消所有操作</code></li>
-<li><code>Ctrl+R 可以恢复对使用u命令的操作</code></li>
-</ul>
-</li>
-</ul>
-</li>
+<h4 id="两者区别"><a href="#两者区别" class="headerlink" title="两者区别"></a>两者区别</h4><ul>
+<li>请求头中 <code>Content-Type: application/x-www-form-urlencoded</code>，那么就是一个 POST 表单请求，请求主体将以一个标准的键值对和&amp;的querystring形式出现。这种方式是HTML表单的默认设置，所以在过去这种方式更加常见。</li>
+<li>其他形式的POST请求，是放到 Request payload 中（现在是为了方便阅读，使用了Json这样的数据格式），请求的<code>Content-Type: application/json;charset=UTF-8</code>或者不指定。</li>
 </ul>
 
     </div>
@@ -407,17 +304,17 @@
 
                 
                 <li>
-                    <a href="/2020/07/29/linux-vi-bian-ji-qi/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2021/06/27/python-scrapy-post/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/07/29/linux-vi-bian-ji-qi/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2021/06/27/python-scrapy-post/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/07/29/linux-vi-bian-ji-qi/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2021/06/27/python-scrapy-post/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -425,35 +322,35 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Chrome-DevTools/" style="font-size: 12.804549606282439px;" class="tag-cloud-link">Chrome DevTools</a>
+    <a href="/tags/Chrome-DevTools/" style="font-size: 15.316005185138462px;" class="tag-cloud-link">Chrome DevTools</a>
     
-    <a href="/tags/Flask-Study/" style="font-size: 14.102450483012458px;" class="tag-cloud-link">Flask_Study</a>
+    <a href="/tags/Flask-Study/" style="font-size: 11.020453362749258px;" class="tag-cloud-link">Flask_Study</a>
     
-    <a href="/tags/Git/" style="font-size: 15.408025948421358px;" class="tag-cloud-link">Git</a>
+    <a href="/tags/Git/" style="font-size: 15.373541719432744px;" class="tag-cloud-link">Git</a>
     
-    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 12.870835042430606px;" class="tag-cloud-link">PEP8 编程风格规范</a>
+    <a href="/tags/PEP8-%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC%E8%A7%84%E8%8C%83/" style="font-size: 16.78377303996869px;" class="tag-cloud-link">PEP8 编程风格规范</a>
     
-    <a href="/tags/Windows-problem/" style="font-size: 10.201499710373916px;" class="tag-cloud-link">Windows problem</a>
+    <a href="/tags/Windows-problem/" style="font-size: 17.95010559120839px;" class="tag-cloud-link">Windows problem</a>
     
-    <a href="/tags/Linux-study/" style="font-size: 12.06792133955405px;" class="tag-cloud-link">Linux_study</a>
+    <a href="/tags/Linux-study/" style="font-size: 12.280934626914206px;" class="tag-cloud-link">Linux_study</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 19.502896621930844px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 12.03127124024618px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/scrapy-study/" style="font-size: 18.477633216379914px;" class="tag-cloud-link">scrapy_study</a>
+    <a href="/tags/scrapy-study/" style="font-size: 9.081315187335404px;" class="tag-cloud-link">scrapy_study</a>
     
-    <a href="/tags/Pyecharts/" style="font-size: 8.101957072304993px;" class="tag-cloud-link">Pyecharts</a>
+    <a href="/tags/Pyecharts/" style="font-size: 8.374820151912004px;" class="tag-cloud-link">Pyecharts</a>
     
-    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 9.19191470425181px;" class="tag-cloud-link">Python 模块</a>
+    <a href="/tags/Python-%E6%A8%A1%E5%9D%97/" style="font-size: 15.836557461423833px;" class="tag-cloud-link">Python 模块</a>
     
-    <a href="/tags/HeroKu-Server/" style="font-size: 13.219412021892529px;" class="tag-cloud-link">HeroKu Server</a>
+    <a href="/tags/HeroKu-Server/" style="font-size: 17.92986171149243px;" class="tag-cloud-link">HeroKu Server</a>
     
-    <a href="/tags/Python-%E9%9D%A2%E8%AF%95/" style="font-size: 17.730630481460516px;" class="tag-cloud-link">Python 面试</a>
+    <a href="/tags/Python-%E9%9D%A2%E8%AF%95/" style="font-size: 11.010661896833454px;" class="tag-cloud-link">Python 面试</a>
     
-    <a href="/tags/pyspider/" style="font-size: 8.463385096783547px;" class="tag-cloud-link">pyspider</a>
+    <a href="/tags/pyspider/" style="font-size: 17.208089841215873px;" class="tag-cloud-link">pyspider</a>
     
-    <a href="/tags/Redis/" style="font-size: 15.239188232127528px;" class="tag-cloud-link">Redis</a>
+    <a href="/tags/Redis/" style="font-size: 15.709149540784997px;" class="tag-cloud-link">Redis</a>
     
-    <a href="/tags/Scrapy/" style="font-size: 16.04309828639303px;" class="tag-cloud-link">Scrapy</a>
+    <a href="/tags/Scrapy/" style="font-size: 17.037484590665272px;" class="tag-cloud-link">Scrapy</a>
     
 </div>
                 
